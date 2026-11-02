@@ -1,49 +1,50 @@
-usecase-beta  
-    direction LR
+```mermaid
+flowchart LR
+    Owner(["Car owner"])
+    Timer(["Weekly timer"])
+    Nextgen(["Nextgen VN"])
+    ChoTot(["Chợ Tốt"])
+    VETC(["VETC"])
 
-    actor CarOwner**(**"Car Owner"**)**  
-    actor VETC**(**"VETC"**)**  
-    actor CarplaService**(**"Carpla Service"**)**  
-    actor EInvoicePortal**(**"Electronic Invoice Portal"**)**  
-    actor EVCharging**(**"Electric Vehicle Charging Stations"**)**  
-    actor InspectionPortal**(**"Vehicle Inspection Portal"**)**  
-    actor TrafficFinePortal**(**"Traffic Fine Lookup Portal"**)**  
-    actor SecuredRegistry**(**"Secured Transaction Registry Portal"**)**
-
-    systemBoundary VehicleIDStatus\["Verified Vehicle Report System \- Vehicle Identification & Status"\]  
-        UC01**(**"UC-1.01: Enter VIN to initialize Report"**)**  
-        UC02**(**"UC-1.02: View Vehicle Identification"**)**  
-        UC03**(**"UC-1.03: View Verified Minimum Mileage"**)**  
-        UC04**(**"UC-1.04: View Maintenance & Repair History in Carpla Service"**)**  
-        UC05**(**"UC-1.05: Upload External Maintenance & Repair Invoices"**)**  
-        UC06**(**"UC-1.06: View Battery State of Health (SoH**)**")  
-        UC07**(**"UC-1.07: Refresh Legal Status"**)**  
-        UC08**(**"UC-1.08: View Inspection Status"**)**  
-        UC09**(**"UC-1.09: View Unpaid Traffic Fine Status"**)**  
-        UC10**(**"UC-1.10: View Mortgage Status"**)**  
+    subgraph MarketPrice["Verified Vehicle Report - Market Price"]
+        UC11(["UC-2.11: Stop Market Price Tracking"])
+        UC01(["UC-2.01: View Market Price"])
+        UC02(["UC-2.02: View 12-Week Price Trend Chart"])
+        UC04(["UC-2.04: Calculate Weekly Market Price"])
+        UC05(["UC-2.05: Sync Listings from Partner Marketplaces"])
+        UC06(["UC-2.06: Sync 180-Day Listing History (for the 1st time signed up car)"])
+        UC07(["UC-2.07: Normalize and Clean Listings"])
+        UC03(["UC-2.03: Check Verified Mileage Plausibility"])
+        UC08(["UC-2.08: Select Comparable Vehicles"])
+        UC10(["UC-2.10: Backfill 12-Week Price History"])
+        UC09(["UC-2.09: Calculate Market Price and Confidence"])
     end
 
-    CarOwner \-- UC01  
-    CarOwner \-- UC02  
-    CarOwner \-- UC03  
-    CarOwner \-- UC04  
-    CarOwner \-- UC05  
-    CarOwner \-- UC06  
-    CarOwner \-- UC07  
-    CarOwner \-- UC08  
-    CarOwner \-- UC09  
-    CarOwner \-- UC10
+    Owner --- UC11
+    Owner --- UC01
+    Timer --- UC04
 
-    UC02 \-- VETC  
-    UC03 \-- VETC  
-    UC04 \-- CarplaService  
-    UC05 \-- EInvoicePortal  
-    UC06 \-- EVCharging  
-    UC07 \-- InspectionPortal  
-    UC07 \-- TrafficFinePortal  
-    UC07 \-- SecuredRegistry
+    UC05 --- Nextgen
+    UC06 --- Nextgen
+    UC05 --- ChoTot
+    UC06 --- ChoTot
+    UC03 --- VETC
+    UC10 --- VETC
 
-    UC05 ..\> : extend UC04  
-    UC08 ..\> : include UC07  
-    UC09 ..\> : include UC07  
-    UC10 ..\> : include UC07  
+    UC01 -.->|include| UC02
+    UC01 -.->|include| UC04
+    UC02 -.->|include| UC04
+
+    UC04 -.->|include| UC05
+    UC04 -.->|include| UC07
+    UC04 -.->|include| UC03
+    UC04 -.->|include| UC08
+    UC04 -.->|include| UC09
+
+    UC10 -.->|include| UC07
+    UC10 -.->|include| UC08
+    UC10 -.->|include| UC09
+
+    UC06 -.->|extend| UC05
+    UC06 -.->|extend| UC10
+```
