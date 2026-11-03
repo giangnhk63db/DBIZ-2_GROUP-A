@@ -1,4 +1,4 @@
-\`\`\`mermaid  
+```mermaid 
 flowchart LR  
    CO\["Car Owner"\]  
    BUYER\["Used Car Buyer"\]  
@@ -51,5 +51,5 @@ flowchart LR
    %% Xanh \= thong tin: 0,5 \| Do \= tien: 4,8,11,12,14,16,17,20,21 \| con lai \= san pham (den)  
    linkStyle 0,5 stroke:\#0433ff,stroke-width:2px,color:\#0433ff  
    linkStyle 4,8,11,12,14,16,17,20,21 stroke:\#ff2600,stroke-width:2px,color:\#ff2600  
-\`\`\`
+```
 
