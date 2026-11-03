@@ -1,5 +1,4 @@
-***Chuyển từ drawio sang:***
-
+```mermaid
 flowchart LR  
    CO\["Car Owner"\]  
    BUYER\["Used Car Buyer"\]  
@@ -28,4 +27,5 @@ flowchart LR
    linkStyle 0,3 stroke:\#0433ff,stroke-width:2px,color:\#0433ff  
    linkStyle 1,2 stroke:\#000000,stroke-width:2px  
    linkStyle 4,5 stroke:\#ff2600,stroke-width:2px,color:\#ff2600
+```
 
