@@ -1,7 +1,7 @@
 **Activity Diagram: AD-UC-1.01 Enter VIN to initialize Report**
 
 *1\. Diagram*
-
+```mermaid
 swimlane-beta TB
 
 subgraph CAR\["Car Owner"\]
@@ -49,7 +49,7 @@ d1 \--\>\|"yes"\| s3 \--\> d2
 d2 \--\>\|"no"\| s4 \--\> a3
 
 d2 \--\>\|"yes"\| s5 \--\> a4 \--\> stop2
-
+```
 **Reading notes:**
 
 - The workflow strictky prioritizes client-side format validation (FR-01-01-FE) as the primary gatekeeper to filter out invalid inputs before initiating any backend database interactions.  
