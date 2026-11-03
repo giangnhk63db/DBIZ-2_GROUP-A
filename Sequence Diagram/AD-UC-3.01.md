@@ -1,7 +1,7 @@
 # **Activity Diagram: AD-UC-3.01**
 
 1. ## **Code**
-
+```mermaid
 swimlane-beta TB
 
  subgraph CO\["Car Owner"\]
@@ -35,6 +35,7 @@ start \--\> a1 \--\> s1 \--\> d1
 d1 \--\>\|"Report initialized for VIN"\| s2 \--\> s3 \--\> stop1
 
 d1 \--\>\|"Report not initialized for VIN"\| s4 \--\> stop2
+```
 
 2. ## **Node trace**
 
