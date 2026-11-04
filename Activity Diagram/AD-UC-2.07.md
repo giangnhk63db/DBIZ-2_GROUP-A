@@ -20,43 +20,44 @@
 ## 
 
 1. **Diagram:**
-
-'''\---  
-config:  
-flowchart:  
-  nodeSpacing: 80  
-  rankSpacing: 90  
-  curve: linear  
-\---  
-flowchart TB  
-subgraph TIMER\["Weekly Timer"\]  
-  start@{ shape: f-circ }  
-  t1@{ shape: hourglass, label: "Every week" }  
-end  
-subgraph SYS\["TASCO Mobility System"\]  
-  direction TB  
-  s1**(**"Map brand and model to TASCO catalog (FR-02-03-BE**)**")  
-  s2**(**"Convert prices to VND and mileage to km (FR-02-03-BE**)**")  
-  d1{"Published within 90 days and not removed?"}  
-  d2{"Mandatory fields present, price above zero, not marked 'Negotiable'?"}  
-  d3{"Duplicate of a listing on another marketplace?"}  
-  s3**(**"Keep only the most recently published listing (FR-02-03-BE**)**")  
-  m2{" "}  
-  s4**(**"Pass cleaned listing to pricing (FR-02-03-BE**)**")  
-  m1{" "}  
-  s5**(**"Exclude listing from pricing (FR-02-03-BE**)**")  
-  stop1@{ shape: fr-circ }  
-  stop2@{ shape: fr-circ }  
-end  
-start \--\> t1 \--\> s1 \--\> s2 \--\> d1  
-d1 \--\>\|"\[yes\]"\| d2  
-d1 \--\>\|"\[no\]"\| m1  
-d2 \--\>\|"\[yes\]"\| d3  
-d2 \--\>\|"\[no\]"\| m1  
-d3 \--\>\|"\[yes\]"\| s3 \--\> m2  
-d3 \--\>\|"\[no\]"\| m2  
-m2 \--\> s4 \--\> stop1  
-m1 \--\> s5 \--\> stop2 ''' 
+'''
+---
+config:
+flowchart:
+  nodeSpacing: 80
+  rankSpacing: 90
+  curve: linear
+---
+flowchart TB
+subgraph TIMER["Weekly Timer"]
+  start@{ shape: f-circ }
+  t1@{ shape: hourglass, label: "Every week" }
+end
+subgraph SYS["TASCO Mobility System"]
+  direction TB
+  s1("Map brand and model to TASCO catalog (FR-02-03-BE)")
+  s2("Convert prices to VND and mileage to km (FR-02-03-BE)")
+  d1{"Published within 90 days and not removed?"}
+  d2{"Mandatory fields present, price above zero, not marked 'Negotiable'?"}
+  d3{"Duplicate of a listing on another marketplace?"}
+  s3("Keep only the most recently published listing (FR-02-03-BE)")
+  m2{" "}
+  s4("Pass cleaned listing to pricing (FR-02-03-BE)")
+  m1{" "}
+  s5("Exclude listing from pricing (FR-02-03-BE)")
+  stop1@{ shape: fr-circ }
+  stop2@{ shape: fr-circ }
+end
+start --> t1 --> s1 --> s2 --> d1
+d1 -->|"[yes]"| d2
+d1 -->|"[no]"| m1
+d2 -->|"[yes]"| d3
+d2 -->|"[no]"| m1
+d3 -->|"[yes]"| s3 --> m2
+d3 -->|"[no]"| m2
+m2 --> s4 --> stop1
+m1 --> s5 --> stop2
+'''
 **Reading notes**
 
 - The checks are applied in sequence: recency/removal first, required-field and price validity second, and cross-marketplace duplicate handling last.  
