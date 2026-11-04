@@ -132,14 +132,14 @@ Reading notes:
 
 |Check|Result|By|Date|
 |-|-|-|-|
-|Renders on mermaid.live|OK|Vũ Hương Ly||
-|Every decision has guards on all outgoing flows, no overlap, no gap|OK (d1 to d5)|Vũ Hương Ly|2026-11-04|
-|No action has two incoming flows (merge used instead)|OK (m1, m2, m3 used)|Vũ Hương Ly|2026-11-04|
-|Every fork has a matching join|OK (no fork in this diagram)|Vũ Hương Ly|2026-11-04|
-|Every system action cites an FR|OK|Vũ Hương Ly|2026-11-04|
+|Renders on mermaid.live|PASS|Vũ Hương Ly||
+|Every decision has guards on all outgoing flows, no overlap, no gap|PASS (d1 to d5)|Vũ Hương Ly|2026-11-04|
+|No action has two incoming flows (merge used instead)|PASS (m1, m2, m3 used)|Vũ Hương Ly|2026-11-04|
+|Every fork has a matching join|PASS (no fork in this diagram)|Vũ Hương Ly|2026-11-04|
+|Every system action cites an FR|PASS|Vũ Hương Ly|2026-11-04|
 |Every FR of this use case appears in the diagram|1 of 1|Vũ Hương Ly|2026-11-04|
-|Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes|OK (TASCO Mobility System)|Vũ Hương Ly|2026-11-04|
-|Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions|OK except lane name (open question 6)|Vũ Hương Ly|2026-11-04|
+|Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes|PASS (TASCO Mobility System)|Vũ Hương Ly|2026-11-04|
+|Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions|PASS except lane name (open question 6)|Vũ Hương Ly|2026-11-04|
 |AI critic prompt run, findings resolved or logged as open questions|Pending|||
 
 
