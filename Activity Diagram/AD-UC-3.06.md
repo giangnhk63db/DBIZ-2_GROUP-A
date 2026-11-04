@@ -19,67 +19,40 @@
 
 1. ## **Code**
 
+```mermaid
 swimlane-beta TB
-
-subgraph CO\["Car Owner"\]
-
+subgraph CO["Car Owner"]
 start@{ shape: sm-circ }
-
-e1**(**"Submit sale request (AD-UC-3.01**)**")
-
-e2**(**"Receive and view car price (FR-03-06**)**")
-
+e1("Submit sale request (AD-UC-3.01)")
+e2("Receive and view car price (FR-03-06)")
 stop1@{ shape: fr-circ }
-
 stop2@{ shape: fr-circ }
-
 end
-
-subgraph TMS\["Tasco Mobility System"\]
-
-s00**(**"Update legal status data (AD-UC-3.03**,** AD-UC-3.04**,** AD-UC-3.05**)**")
-
-s1**(**"Collect verified inspection & status**,** latest market price and car owner declared mileage**,** desired price and phone number (FR-03-03-BE**)**")
-
-d1{"Market price available?**(**FR-03-03-BE**)**"}
-
-s2**(**"Package verified inspection & status**,** latest market price and car owner declared mileage**,** desired price and phone number (FR-03-03-BE**)**")
-
-s3**(**"Package verified inspection & status and car owner declared information with price marked as unavailable (FR-03-03-BE**)**")
-
+subgraph TMS["Tasco Mobility System"]
+s00("Update legal status data (AD-UC-3.03, AD-UC-3.04, AD-UC-3.05)")
+s1("Collect verified inspection & status, latest market price and car owner declared mileage, desired price and phone number (FR-03-03-BE)")
+d1{"Market price available?(FR-03-03-BE)"}
+s2("Package verified inspection & status, latest market price and car owner declared mileage, desired price and phone number (FR-03-03-BE)")
+s3("Package verified inspection & status and car owner declared information with price marked as unavailable (FR-03-03-BE)")
 m1{" "}
-
-d2{"Forward package to Carpla CRM **(**FR-03-03-BE**)**"}
-
-s4**(**"Wait 5 seconds and add 1 to retry count (FR-03-03-BE**)**")
-
-s5**(**"Keep sale request as not forwarded for later resending (FR-03-03-BE**)**")
-
-s6**(**"Notify car owner that the sale request could not be forwarded (FR-03-06-FE**)**")
-
+d2{"Forward package to Carpla CRM (FR-03-03-BE)"}
+s4("Wait 5 seconds and add 1 to retry count (FR-03-03-BE)")
+s5("Keep sale request as not forwarded for later resending (FR-03-03-BE)")
+s6("Notify car owner that the sale request could not be forwarded (FR-03-06-FE)")
 end
-
-subgraph CRM\["Carpla CRM"\]
-
-c1**(**"Receive packaged verified inspection & status**,** market price and car owner declared information (FR-03-04**)**")
-
-c2**(**"Review**,** decide price and send to car owner (FR-03-04**,** FR-03-05**)**")
-
+subgraph CRM["Carpla CRM"]
+c1("Receive packaged verified inspection & status, market price and car owner declared information (FR-03-04)")
+c2("Review, decide price and send to car owner (FR-03-04, FR-03-05)")
 end
+start --> e1 --> s00 --> s1 --> d1
+d1 -->|"Yes"| s2 --> m1
+d1 -->|"No"| s3 --> m1
+m1 --> d2
+d2 -->|"Forwarded"| c1 --> c2 --> e2 --> stop1
+d2 -->|"Forward failed and fewer than 3 retries made"| s4 --> m1
+d2 -->|"Forward failed and 3 retries made"| s5 --> s6 --> stop2
+```
 
-start \--\> e1 \--\> s00 \--\> s1 \--\> d1
-
-d1 \--\>\|"Yes"\| s2 \--\> m1
-
-d1 \--\>\|"No"\| s3 \--\> m1
-
-m1 \--\> d2
-
-d2 \--\>\|"Forwarded"\| c1 \--\> c2 \--\> e2 \--\> stop1
-
-d2 \--\>\|"Forward failed and fewer than 3 retries made"\| s4 \--\> m1
-
-d2 \--\>\|"Forward failed and 3 retries made"\| s5 \--\> s6 \--\> stop2
 
 2. ## **Node trace** 
 
