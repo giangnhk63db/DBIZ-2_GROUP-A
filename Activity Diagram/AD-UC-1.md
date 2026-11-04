@@ -54,12 +54,6 @@ swimlane-beta TB
   
   m1 --> a3 --> stop1
 ```
-**Reading notes:**\
-\
-* Validation Priority: The workflow strictly prioritizes client-side format validation (FR-01-01-FE) as the primary gatekeeper to filter out invalid inputs before initiating any backend database interactions.\
-* Backend Verification: A secondary backend validation (FR-01-01-BE) verifies the checksum logic and actual database existence. If the VIN does not exist, the system actively triggers a specific error message "VIN does not exist".\
-* Control Flow Integrity: To adhere to UML structural integrity, both validation failure paths (format error and non-existent VIN) safely converge into a single control merge node (`m1`) before returning the validation error to the user.\
-\
 **Reading notes:**
 
 * Validation Priority: The workflow strictly prioritizes client-side format validation (FR-01-01-FE) as the primary gatekeeper to filter out invalid inputs before initiating any backend database interactions.
