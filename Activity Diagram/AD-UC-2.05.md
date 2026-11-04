@@ -22,109 +22,57 @@
 ```mermaid 
 
 swimlane-beta TB
-
-subgraph SYS\["TASCO Mobility"]
-
-&#x20;   start@{ shape: sm-circ }
-
+  subgraph SYS["TASCO Mobility"]
+    start@{ shape: sm-circ }
     f1@{ shape: fork }
-
     mN{" "}
-
     rN("Request incremental sync from Nextgen Việt Nam, make and model only (FR-02-02-INT1)")
-
     dN{"Nextgen Việt Nam synced?"}
-
     kN("Store Nextgen Việt Nam listings with source and sync time (FR-02-02-BE2)")
-
     qN{"Retry limit reached?"}
-
     wN@{ shape: hourglass }
-
     eN("Log ERROR with HTTP status for Nextgen Việt Nam (FR-02-02-INT1)")
-
     mjN{" "}
-
     mC{" "}
-
     rC("Request incremental sync from Chợ Tốt, make and model only (FR-02-02-INT2)")
-
     dC{"Chợ Tốt synced?"}
-
     kC("Store Chợ Tốt listings with source and sync time (FR-02-02-BE2)")
-
     qC{"Retry limit reached?"}
-
     wC@{ shape: hourglass }
-
     eC("Log ERROR with HTTP status for Chợ Tốt (FR-02-02-INT2)")
-
     mjC{" "}
-
     j1@{ shape: join }
-
     d1{"Which marketplaces synced?"}
-
-    s6("Return API\\\_FAILED result (FR-02-02-INT2)")
-
+    s6("Return API_FAILED result (FR-02-02-INT2)")
     s7("Flag partial sync status (FR-02-02-INT1, FR-02-02-INT2)")
-
     stop1@{ shape: fr-circ }
+  end
+  subgraph NGX["Nextgen Việt Nam"]
+    lN("Return new, price-updated and removed listings")
+  end
+  subgraph CT["Chợ Tốt - Carousell Group"]
+    lC("Return new, price-updated and removed listings")
+  end
+  start --> f1
+  f1 --> mN --> rN --> dN
+  dN -->|"[yes]"| lN --> kN --> mjN
+  dN -->|"[no]"| qN
+  qN -->|"[no, fewer than 3 retries]"| wN
+  wN -->|"6 hours after the failed attempt"| mN
+  qN -->|"[yes, 3 retries used]"| eN --> mjN
+  mjN --> j1
+  f1 --> mC --> rC --> dC
+  dC -->|"[yes]"| lC --> kC --> mjC
+  dC -->|"[no]"| qC
+  qC -->|"[no, fewer than 3 retries]"| wC
+  wC -->|"6 hours after the failed attempt"| mC
+  qC -->|"[yes, 3 retries used]"| eC --> mjC
+  mjC --> j1
+  j1 --> d1
+  d1 -->|"[none]"| s6 --> stop1
+  d1 -->|"[only one]"| s7 --> stop1
+  d1 -->|"[both]"| stop1
 
-
-end
-
-subgraph NGX\["Nextgen Việt Nam"]
-
-&#x20;   lN("Return new, price-updated and removed listings")
-
-
-end
-
-subgraph CT\["Chợ Tốt - Carousell Group"]
-
-&#x20;   lC("Return new, price-updated and removed listings")
-
-
-end
-
-start --> f1
-
-f1 --> mN --> rN --> dN
-
-dN -->|"\[yes]"| lN --> kN --> mjN
-
-dN -->|"\[no]"| qN
-
-qN -->|"\[no, fewer than 3 retries]"| wN
-
-wN -->|"6 hours after the failed attempt"| mN
-
-qN -->|"\[yes, 3 retries used]"| eN --> mjN
-
-mjN --> j1
-
-f1 --> mC --> rC --> dC
-
-dC -->|"\[yes]"| lC --> kC --> mjC
-
-dC -->|"\[no]"| qC
-
-qC -->|"\[no, fewer than 3 retries]"| wC
-
-wC -->|"6 hours after the failed attempt"| mC
-
-qC -->|"\[yes, 3 retries used]"| eC --> mjC
-
-mjC --> j1
-
-j1 --> d1
-
-d1 -->|"\[none]"| s6 --> stop1
-
-d1 -->|"\[only one]"| s7 --> stop1
-
-d1 -->|"\[both]"| stop1
 
 ```
 
