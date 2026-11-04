@@ -18,7 +18,7 @@
 | Author | Nguyễn Hà Phương |
 
 ## 
-
+```
 1. **Diagram:**
 
 \---  
@@ -66,7 +66,7 @@ m4 \--\> s8 \--\> m3
 m3 \--\> d4  
 d4 \--\>\|"\[yes\]"\| m2  
 d4 \--\>\|"\[no\]"\| s9 \--\> a2 \--\> stop1
-
+```
 **Reading notes**
 
 - If the vehicle model is not yet in the listing store, the system displays “Calculating Price” and synchronizes 180 days of listing history. If the model is already present, it skips that first-time setup and proceeds to the checkpoint calculations.  
