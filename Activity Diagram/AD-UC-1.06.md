@@ -22,32 +22,40 @@
 ## **1\. Diagram**
 
 *Code:*  
-swimlane-beta TB  
- subgraph CAR\["Car Owner"\]  
-   start@{ shape: sm-circ }  
-   a1**(**"Select view EV battery health status (FR-01-08-FE**)**")  
-   a2**(**"View Battery State of Health (SoH**)** metrics & reports **(**FR-01-08-FE**)**")  
-   error\_view**(**"View error notification popup: 'Cannot connect to station' (FR-01-08-FE**)**")  
-   stop1@{ shape: fr-circ }  
-   stop2@{ shape: fr-circ }  
- end  
- subgraph SYS\["TASCO Mobility System"\]  
-   m1{" "}  
-   s1**(**"Request charging session telemetry and battery metrics (FR-01-08-BE**)**")  
-   s3**(**"Calculate SoH using charging time ratio from V1 to V2 (FR-01-08-BE**)**")  
-   s2**(**"Max 3 retries exceeded: log error & prepare notification (FR-01-08-BE**)**")  
- end  
- subgraph STA\["Electronic Vehicle Charging Stations"\]  
-   e1**(**"Retrieve charging logs and data (FR-01-08-INT**)**")  
+```mermaid
+
+swimlane-beta TB
+ subgraph CAR["Car Owner"]
+   start@{ shape: sm-circ }
+   a1("Select view EV battery health status (FR-01-08-FE)")
+   a2("View Battery State of Health (SoH) metrics & reports (FR-01-08-FE)")
+   error_view("View error notification popup: 'Cannot connect to station' (FR-01-08-FE)")
+   stop1@{ shape: fr-circ }
+   stop2@{ shape: fr-circ }
+ end
+ subgraph SYS["TASCO Mobility System"]
+   m1{" "}
+   s1("Request charging session telemetry and battery metrics (FR-01-08-BE)")
+   s3("Calculate SoH using charging time ratio from V1 to V2 (FR-01-08-BE)")
+   s2("Max 3 retries exceeded: log error & prepare notification (FR-01-08-BE)")
+ end
+ subgraph STA["Electronic Vehicle Charging Stations"]
+   e1("Retrieve charging logs and data (FR-01-08-INT)")
    d1{"Charging station data available & API connection?"}
+
 
  end
 
- start \--\> a1 \--\> m1  
- m1 \--\> s1 \--\> e1 \--\> d1  
- d1 \--\>\|"\[retry \< 3\]"\| m1  
- d1 \--\>\|"\[success\]"\| s3 \--\> a2 \--\> stop1  
- d1 \--\>\|"\[max retries exceeded\]"\| s2 \--\> error\_view \--\> stop2
+
+
+
+ start --> a1 --> m1
+ m1 --> s1 --> e1 --> d1
+ d1 -->|"[retry < 3]"| m1
+ d1 -->|"[success]"| s3 --> a2 --> stop1
+ d1 -->|"[max retries exceeded]"| s2 --> error_view --> stop2
+
+```
 
 **Reading notes:**
 
@@ -65,7 +73,7 @@ swimlane-beta TB
 | s1 | Action | Request charging session telemetry and battery metrics | FR-01-08-BE |
 | e1 | Action | Return charging logs and telemetry data | FR-01-08-INT |
 | d1 | Decision | Charging station data valid & accessible? | FR-01-08-BE / BR-RET-02 |
-| s3 | Action | Calculate SoH using charging time ratio from V1 to V2: SoH \=  $\frac{Charging\ time\ from\ V1\ ->\ V2\ (current)}{Charging\ time\ from\ V1\ ->\ V2\ (new\ battery)}$$\times$ 100% | FR-01-08-BE |
+| s3 | Action | Calculate SoH using charging time ratio from V1 to V2: <br>$\text{SoH} = \frac{\text{Charging time from } V_1 \to V_2 \text{ (current)}}{\text{Charging time from } V_1 \to V_2 \text{ (new battery)}} \times 100\%$ | FR-01-08-BE |
 | a2 | Action | View Battery State of Health (SoH) metrics & reports | FR-01-08-FE |
 | s2 | Action | Max 3 retries exceeded: log error & prepare notification | FR-01-08-BE |
 | error\_view | Action | View error notification popup: 'Cannot connect to station' | FR-01-08-FE |
@@ -76,7 +84,7 @@ swimlane-beta TB
 
 | Rule ID | Description | Applied Node |
 | :---- | :---- | :---- |
-| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 attempts. If all 3 attempts fail, the system halts the retry loop, logs a error, and notifies the user. | d1, s\_retry, s2 |
+| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 attempts. If all 3 attempts fail, the system halts the retry loop, logs a error, and notifies the user. | d1 |
 
 ## **3\. Branches and acceptance tests**
 
