@@ -19,7 +19,7 @@
 
 ## **1\. Diagram**
 
-```
+``` mermaid
 swimlane-beta TB
   subgraph SYS["TASCO Mobility"]
     t1@{ shape: hourglass }
