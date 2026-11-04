@@ -18,7 +18,7 @@
 | Author | Nguyễn Hương Giang  |
 
 1. ## **Code**
-
+```mermaid
 swimlane-beta TB
 
 subgraph CO\["Car Owner"\]
@@ -52,6 +52,7 @@ start \--\> a1 \--\> s1 \--\> d1
 d1 \--\>\|"Yes"\| s2 \--\> s3 \--\> stop1
 
 d1 \--\>\|"No"\| s4 \--\> stop2
+```
 
 2. ## **Node trace**
 
