@@ -22,12 +22,12 @@
 1. **Diagram:**
 ---
 config:
-flowchart:
+swimlane-beta:
   nodeSpacing: 80
   rankSpacing: 90
   curve: linear
 ---
-flowchart TB
+swimlane-beta TB
 subgraph TIMER["Weekly Timer"]
   start@{ shape: f-circ }
   t1@{ shape: hourglass, label: "Every week" }
