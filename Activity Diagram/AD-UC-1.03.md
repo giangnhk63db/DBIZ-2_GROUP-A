@@ -21,35 +21,40 @@
 
 ## **1\. Diagram**
 
-*Code:*  
-swimlane-beta TB  
- subgraph CAR\["Car Owner"\]  
-   start@{ shape: sm-circ }  
-   a1**(**"Select view toll history and route distance (FR-01-03-FE**)**")  
-   a2**(**"See toll history timeline and minimum calculated distance (FR-01-03-FE**)**")  
-   error\_view**(**"View error notification popup: 'Connection timeout**,** please try again' (FR-01-03-FE**)**")  
-   stop1@{ shape: fr-circ }  
-   stop2@{ shape: fr-circ }  
- end  
- subgraph SYS\["TASCO Mobility System"\]  
-   s1**(**"Send toll data request to VETC System (FR-01-03-BE**)**")  
-   s3**(**"Parse toll station logs and timestamp sequence (FR-01-03-BE**)**")  
-   s4**(**"Apply route algorithm to calculate minimum travel distance (FR-01-03-BE**)**")  
-   s2**(**"Max 3 retries exceeded: log connection timeout & notify user (FR-01-03-BE**)**")  
-   m4{" "}  
- end  
- subgraph VETC\["VETC Toll System"\]  
-   v1**(**"Retrieve station passing logs and toll transaction history (FR-01-03-INT**)**")  
+*Code:* 
+
+```mermaid
+swimlane-beta TB
+ subgraph CAR["Car Owner"]
+   start@{ shape: sm-circ }
+   a1("Select view toll history and route distance (FR-01-03-FE)")
+   a2("See toll history timeline and minimum calculated distance (FR-01-03-FE)")
+   error_view("View error notification popup: 'Connection timeout, please try again' (FR-01-03-FE)")
+   stop1@{ shape: fr-circ }
+   stop2@{ shape: fr-circ }
+ end
+ subgraph SYS["TASCO Mobility System"]
+   s1("Send toll data request to VETC System (FR-01-03-BE)")
+   s3("Parse toll station logs and timestamp sequence (FR-01-03-BE)")
+   s4("Apply route algorithm to calculate minimum travel distance (FR-01-03-BE)")
+   s2("Max 3 retries exceeded: log connection timeout & notify user (FR-01-03-BE)")
+   m4{" "}
+ end
+ subgraph VETC["VETC Toll System"]
+   v1("Retrieve station passing logs and toll transaction history (FR-01-03-INT)")
    d1{" VETC data available & API connection?"}
+
 
  end
 
- start \--\> a1 \--\> m4  
- m4 \--\> s1 \--\> v1 \--\> d1  
- d1 \--\>\|"\[retry \< 3\]"\| m4   
- d1 \--\>\|"\[success\]"\| s3 \--\> s4 \--\> a2 \--\> stop1  
- d1 \--\>\|"\[max retries exceeded\]"\| s2 \--\> error\_view \--\> stop2
 
+ start --> a1 --> m4
+ m4 --> s1 --> v1 --> d1
+ d1 -->|"[retry < 3]"| m4 
+ d1 -->|"[success]"| s3 --> s4 --> a2 --> stop1
+ d1 -->|"[max retries exceeded]"| s2 --> error_view --> stop2
+
+```
 **Reading notes:**
 
 * Request & VETC Integration: The car owner selects to view toll history, triggering the TASCO system to request station passing logs from the VETC system.  
