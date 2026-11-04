@@ -32,8 +32,8 @@ usecase-beta
     UC05 -- SecuredRegistry
     UC07 -- CarplaStaff
     UC08 -- CarplaStaff
-```
 
 
     UC01 ..> : include UC02
     UC01 ..> : include UC06
+```
