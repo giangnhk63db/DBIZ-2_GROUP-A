@@ -60,7 +60,7 @@ swimlane-beta TB
 **Reading notes:**
 
 * Telemetry Request: The operator requests charging session telemetry to check battery status.  
-* Station Data Retrieval & Validation: The charging station returns logs; the system evaluates data validity and accessibility with a maximum of 3 retries using merge node m1.  
+* Station Data Retrieval & Validation: The charging station returns logs; the system evaluates data validity and accessibility with a maximum of 3 retries using merge node m1. This gives 1 initial request + 3 retries = 4 attempts in total. 
 * SoH Calculation & Display: If valid, State of Health is computed using the charging time ratio and displayed on the UI.  
 * Error Management: If all retries fail, a persistent error is logged and a connection failure popup is shown, terminating at dedicated end node stop2.
 
@@ -84,7 +84,7 @@ swimlane-beta TB
 
 | Rule ID | Description | Applied Node |
 | :---- | :---- | :---- |
-| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 attempts. If all 3 attempts fail, the system halts the retry loop, logs a error, and notifies the user. | d1 |
+| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 attempts (maximum 4 attempts in total). If all 3 attempts fail, the system halts the retry loop, logs a error, and notifies the user. | d1 |
 
 ## **3\. Branches and acceptance tests**
 
