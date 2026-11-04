@@ -21,12 +21,12 @@
 
 ```mermaid
 swimlane-beta TB
-  subgraph SYS\["TASCO Mobility"]
+  subgraph SYS["TASCO Mobility"]
     t1@{ shape: hourglass }
     s1("Sync listings from partner marketplaces, UC-2.05 (FR-02-02-INT1, FR-02-02-INT2)")
     d1{"At least one marketplace synced?"}
-    s2("Record API\_FAILED status (FR-02-02-INT2)")
-    o1\["Weekly price record \[API\_FAILED]"]
+    s2("Record API_FAILED status (FR-02-02-INT2)")
+    o1["Weekly price record [API_FAILED]"]
     s8("Send failure alert (FR-02-01-BE)")
     stop1@{ shape: fr-circ }
     m1{" "}
@@ -37,8 +37,8 @@ swimlane-beta TB
     s5("Select comparable vehicles, UC-2.08 (FR-02-05-BE)")
     d4{"At least 30 comparable listings?"}
     m2{" "}
-    s6("Record INSUFFICIENT\_DATA status (FR-02-01-BE, FR-02-06-BE)")
-    o2\["Weekly price record \[INSUFFICIENT\_DATA]"]
+    s6("Record INSUFFICIENT_DATA status (FR-02-01-BE, FR-02-06-BE)")
+    o2["Weekly price record [INSUFFICIENT_DATA]"]
     s7("Calculate market price and confidence level, UC-2.09 (FR-02-06-BE, FR-02-04-BE)")
     d5{"Calculation succeeded?"}
     s9("Save weekly price record (FR-02-06-BE)")
@@ -47,18 +47,18 @@ swimlane-beta TB
     stop2@{ shape: fr-circ }
   end
   t1 -->|"every week at a fixed time"| s1 --> d1
-  d1 -->|"\[no]"| s2 --> o1 --> s8 --> stop1
-  d1 -->|"\[yes]"| m1
+  d1 -->|"[no]"| s2 --> o1 --> s8 --> stop1
+  d1 -->|"[yes]"| m1
   m1 --> d2
-  d2 -->|"\[no]"| stop2
-  d2 -->|"\[yes]"| s3 --> s4 --> d3
-  d3 -->|"\[below threshold]"| m2
-  d3 -->|"\[plausible]"| s5 --> d4
-  d4 -->|"\[no, after widening]"| m2
-  d4 -->|"\[yes]"| s7 --> d5
+  d2 -->|"[no]"| stop2
+  d2 -->|"[yes]"| s3 --> s4 --> d3
+  d3 -->|"[below threshold]"| m2
+  d3 -->|"[plausible]"| s5 --> d4
+  d4 -->|"[no, after widening]"| m2
+  d4 -->|"[yes]"| s7 --> d5
   m2 --> s6 --> o2 --> m3
-  d5 -->|"\[yes]"| s9 --> m3
-  d5 -->|"\[no]"| s10 --> m3
+  d5 -->|"[yes]"| s9 --> m3
+  d5 -->|"[no]"| s10 --> m3
   m3 --> m1
 ```
 
