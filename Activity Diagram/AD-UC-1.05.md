@@ -22,6 +22,7 @@
 ## **1\. Diagram**
 
 *Code:*  
+```mermaid
 swimlane-beta TB  
   subgraph CAR\["Car Owner"\]  
     start@{ shape: sm-circ }  
@@ -59,7 +60,10 @@ swimlane-beta TB
   d3 \--\>\|"\[yes\]"\| s6 \--\> m2  
   d3 \--\>\|"\[no\]"\| s7 \--\> m2  
   m2 \--\> m4  
-  m4 \--\> a3 \--\> stop1  
+  m4 \--\> a3 \--\> stop1
+
+```
+
 **Reading notes:**
 
 * File Upload & Validation: The car owner uploads an external invoice file (PDF/XML/Image), and the system validates its format and size before storing it.  
