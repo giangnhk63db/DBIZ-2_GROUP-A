@@ -107,7 +107,7 @@ Reading notes:
 ### Note
 N: Nextgen Việt Nam
 
-C: Chợ Tốt
+C: Chợ Tốt - Carousell Group
 
 ### Business rule description
 
