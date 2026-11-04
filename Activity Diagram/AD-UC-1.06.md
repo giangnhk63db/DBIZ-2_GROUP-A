@@ -92,7 +92,7 @@ swimlane-beta TB
 | :---- | :---- | :---- | :---- |
 | d1 \[retry \< 3\] | Charging data request request sent to charging station | Station returns timeout or inaccessible data on attempt 1, 2, 3 | System automatically loops back via merge node m1 to request data again |
 | d1 \[success\] | Charging data request sent to charging station | Station returns accessible and valid charging logs successfully | System calculates SoH metrics and renders the battery health |
-| d1 \[max retries exceeded\] | Charging data request failed twice previously | Station continues to return connection errors on the 4th attempt | System stops retrying, logs error, triggers error popup, and stops at stop2 |
+| d1 \[max retries exceeded\] | Charging data request failed 3 times previously | Station continues to return connection errors on the 4th attempt | System stops retrying, logs error, triggers error popup, and stops at stop2 |
 
 ## 
 
