@@ -58,7 +58,7 @@ swimlane-beta TB
 **Reading notes:**
 
 * Request & VETC Integration: The car owner selects to view toll history, triggering the TASCO system to request station passing logs from the VETC system.  
-* Validation & Retry Loop: The system checks if the connection and data are valid; if an API failure occurs with fewer than 3 attempts, it retries via merge node m4.  
+* Validation & Retry Loop: The system checks if the connection and data are valid; if an API failure occurs with fewer than 3 retries, it retries via merge node m4.  
 * Success & Distance Calculation: Valid logs are parsed and processed through a routing algorithm to compute the minimum travel distance for display on the UI.   
 * Error Handling: If maximum retries are exceeded, a timeout error notification is displayed on UI and terminates at a dedicated end node stop2.
 
@@ -83,16 +83,16 @@ swimlane-beta TB
 
 | Rule ID | Description | Applied Node |
 | :--- | :--- | :--- |
-| BR-RET-01 | VETC Integration Retry Rule: When requesting toll transaction logs from the external VETC Toll System, if a connection timeout or API failure occurs, the TASCO backend must automatically retry, up to 3 retries after the initial request (maximum 4 attempts in total). If the 3rd retry also fails, the system stops retrying, logs the timeout error and notifies the user. | d1 |
-| BR-DIST-01 | **Minimum Travel Distance Accumulation Rule:** The system sorts station passing logs chronologically ($S_1 \rightarrow S_2 \rightarrow \dots \rightarrow S_n$) and computes the total distance with: $$D_{\text{total}} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$$. Notations: $S_i, S_{i+1}$ are two consecutive toll stations passed by the vehicle, $d(S_i, S_{i+1})$ is the shortest-route distance between them, obtained from the Map Service. Turnaround and duplicate rule: A turnaround $A \rightarrow B \rightarrow A$ still counts both segments ($A$ to $B$ and $B$ to $A$); only consecutive records at the same station ($S_i = S_{i+1}$, e.g. duplicate card scan) have an increment of $0$. The final result is rendered on the UI. | s4 |
+| BR-RET-01 | VETC Integration Retry Rule: When requesting toll transaction logs from the external VETC Toll System, if a connection timeout or API failure occurs, the TASCO backend must automatically retry, up to 3 retries after the initial request (maximum 4 attempts in total). If the 3rd retry (4th attempt) also fails, the system stops retrying, logs the timeout error and notifies the user. | d1 |
+| BR-DIST-01 | Minimum Travel Distance Accumulation Rule: The system sorts station passing logs chronologically ($S_1 \rightarrow S_2 \rightarrow \dots \rightarrow S_n$) and computes the total distance with: $$D_{\text{total}} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$$. Notations: $S_i, S_{i+1}$ are two consecutive toll stations passed by the vehicle, $d(S_i, S_{i+1})$ is the shortest-route distance between them, obtained from the Map Service. Turnaround and duplicate rule: A turnaround $A \rightarrow B \rightarrow A$ still counts both segments ($A$ to $B$ and $B$ to $A$); only consecutive records at the same station ($S_i = S_{i+1}$, e.g. duplicate card scan) have an increment of $0$. The final result is rendered on the UI. | s4 |
 
 ## **3\. Branches and acceptance tests**
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
-| d1 \[retry \< 3\] | Toll history request is sent to VETC | VETC times out or returns an API error and the number of retries done is 0, 1 or 2. | System automatically loops back via merge node m4 to retry the request |
+| d1 \[retry \< 3\] | Toll history request is sent to VETC | VETC times out or returns an API error and the number of retries done is 1, 2 or 3. | System automatically loops back via merge node m4 to retry the request |
 | d1 \[success\] | Toll history request is sent to VETC | VETC API returns valid station passing logs successfully | System parses logs, gets distances from the Map Service, accumulates the minimum travel distance and displays the timeline |
-| d1 \[max retries exceeded\] | Toll history request failed twice previously | VETC API fails or times out on the 3rd attempt | System logs connection timeout, stops retries, displays error popup, and stops at stop2 |
+| d1 \[max retries exceeded\] | Toll history request failed 3 times previously | VETC API fails or times out on the 4th attempt (3rd retry) | System logs connection timeout, stops retries, displays error popup, and stops at stop2 |
 
 ## 
 
