@@ -1,21 +1,35 @@
 ```mermaid
-flowchart LR
+usecase-beta
+
     direction LR
-    Owner(["Car Owner"])
 
+    actor Owner("Car Owner")
 
-    subgraph Overview["Verified Vehicle Report System - Overview"]
-        UC01(["UC-0.01: Create Vehicle Report"])
-        UC02(["UC-0.02: View vehicle identification & status"])
-        UC03(["UC-0.03: View market price"])
-        UC04(["UC-0.04: Request sell & preliminary quote"])
+    systemBoundary Overview["Verified Vehicle Report System - Overview"]
+
+        UC01("UC-0.01: Create Vehicle Report")
+
+        UC02("UC-0.02: View vehicle identification & status")
+
+        UC03("UC-0.03: View market price")
+
+        UC04("UC-0.04: Request sell & preliminary quote")
+
     end
 
+    Owner -- UC01
 
-    Owner --- UC01
-    Owner --- UC02
-    Owner --- UC03
-    Owner --- UC04
+    Owner -- UC02
+
+    Owner -- UC03
+
+    Owner -- UC04
+
+    UC02 ..> : include UC01
+
+    UC03 ..> : include UC01
+
+    UC04 ..> : include UC01
 
 
     UC02 -.->|include| UC01
