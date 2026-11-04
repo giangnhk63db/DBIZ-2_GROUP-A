@@ -69,8 +69,8 @@ swimlane-beta TB
 | a1 | Action | Select view toll history and route distance | FR-01-03-FE |
 | m4 | Merge | Control node merging initial request path and retry loop-back path | N/A (Control Node) |
 | s1 | Action | Send toll data request to VETC System | FR-01-03-BE |
-| v1 | Action | Return station passing logs and toll transaction history | FR-01-03-INT |
-| d1 | Decision | VETC API connection & data valid? | FR-01-03-BE / BR-RET-01 |
+| v1 | Action | Retrieve station passing logs and toll transaction history | FR-01-03-INT |
+| d1 | Decision | VETC data available & API connection? | FR-01-03-BE / BR-RET-01 |
 | s3 | Action | Parse toll station logs and timestamp sequence | FR-01-03-BE |
 | s4 | Action | Apply route algorithm to accumulate standard physical distances between consecutive stations ($S_i \to S_{i+1}$):<br>$D_{total} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$ | FR-01-03-BE / BR-DIST-01 |
 | a2 | Action | See toll history timeline and minimum calculated distance | FR-01-03-FE |
