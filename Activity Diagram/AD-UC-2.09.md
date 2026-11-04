@@ -22,7 +22,7 @@
 ## 
 
 1. **Diagram**
-
+```
 \---
 
 config:
@@ -94,7 +94,7 @@ d3 \--\>\|"\[yes\]"\| s4 \--\> m1
 d3 \--\>\|"\[no\]"\| s3 \--\> m1
 
 m1 \--\> s6 \--\> stop1
-
+```
 **Reading notes**
 
 - The workflow starts when the weekly timer fires and ends in one of two final nodes: the weekly price record is saved, or INSUFFICIENT\_DATA is recorded.  
