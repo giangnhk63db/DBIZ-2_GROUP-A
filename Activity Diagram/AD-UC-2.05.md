@@ -144,13 +144,13 @@ Reading notes:
 
 |Check|Result|By|Date|
 |-|-|-|-|
-|Renders on mermaid.live|OK|Vũ Hương Ly||
-|Every decision has guards on all outgoing flows, no overlap, no gap|PASS(dN, qN, dC, qC, d1)|Vũ Hương Ly|2026-11-04|
-|No action has two incoming flows (merge used instead)|PASS(mN, mC, mjN, mjC used)|Vũ Hương Ly|2026-11-04|
-|Every fork has a matching join|PASS(f1 / j1)|Vũ Hương Ly|2026-11-04|
-|Every system action cites an FR|OK|Vũ Hương Ly|2026-11-04|
+|Renders on mermaid.live|PASS|Vũ Hương Ly||
+|Every decision has guards on all outgoing flows, no overlap, no gap|PASS (dN, qN, dC, qC, d1)|Vũ Hương Ly|2026-11-04|
+|No action has two incoming flows (merge used instead)|PASS (mN, mC, mjN, mjC used)|Vũ Hương Ly|2026-11-04|
+|Every fork has a matching join|PASS (f1 / j1)|Vũ Hương Ly|2026-11-04|
+|Every system action cites an FR|PASS|Vũ Hương Ly|2026-11-04|
 |Every FR of this use case appears in the diagram|3 of 3|Vũ Hương Ly|2026-11-04|
-|Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes|OK|Vũ Hương Ly|2026-11-04|
+|Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes|PASS|Vũ Hương Ly|2026-11-04|
 |Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions|PASSexcept names (open question 2)|Vũ Hương Ly|2026-11-04|
 |AI critic prompt run, findings resolved or logged as open questions|Pending|||
 
