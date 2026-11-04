@@ -30,10 +30,4 @@ usecase-beta
     UC03 ..> : include UC01
 
     UC04 ..> : include UC01
-
-
-    UC02 -.->|include| UC01
-    UC03 -.->|include| UC01
-    UC04 -.->|include| UC01
-
 ```
