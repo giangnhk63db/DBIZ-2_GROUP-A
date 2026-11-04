@@ -71,8 +71,8 @@ swimlane-beta TB
 | a1 | Action | Select view EV battery health status | FR-01-08-FE |
 | m1 | Merge | Control node merging initial request path and retry loop-back path | N/A (Control Node) |
 | s1 | Action | Request charging session telemetry and battery metrics | FR-01-08-BE |
-| e1 | Action | Return charging logs and telemetry data | FR-01-08-INT |
-| d1 | Decision | Charging station data valid & accessible? | FR-01-08-BE / BR-RET-02 |
+| e1 | Action | Retrieve charging logs and data | FR-01-08-INT |
+| d1 | Decision | Charging station data available & API connection? | FR-01-08-BE / BR-RET-02 |
 | s3 | Action | Calculate SoH using charging time ratio from V1 to V2: <br>$\text{SoH} = \frac{\text{Charging time from } V_1 \to V_2 \text{ (current)}}{\text{Charging time from } V_1 \to V_2 \text{ (new battery)}} \times 100\%$ | FR-01-08-BE |
 | a2 | Action | View Battery State of Health (SoH) metrics & reports | FR-01-08-FE |
 | s2 | Action | Max 3 retries exceeded: log error & prepare notification | FR-01-08-BE |
@@ -90,7 +90,7 @@ swimlane-beta TB
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
-| d1 \[retry \< 3\] | Charging data request request sent to charging station | Station returns timeout or inaccessible data on attempt 1, 2, 3 | System automatically loops back via merge node m1 to request data again |
+| d1 \[retry \< 3\] | Charging data request sent to charging station | Station returns timeout or inaccessible data on attempt 1, 2, 3 | System automatically loops back via merge node m1 to request data again |
 | d1 \[success\] | Charging data request sent to charging station | Station returns accessible and valid charging logs successfully | System calculates SoH metrics and renders the battery health |
 | d1 \[max retries exceeded\] | Charging data request failed 3 times previously | Station continues to return connection errors on the 4th attempt | System stops retrying, logs error, triggers error popup, and stops at stop2 |
 
