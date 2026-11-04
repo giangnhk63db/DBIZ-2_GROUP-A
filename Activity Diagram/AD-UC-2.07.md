@@ -18,9 +18,8 @@
 | Author | Nguyễn Hà Phương |
 
 ## 
-
+```
 1. **Diagram:**
-'''
 ---
 config:
 flowchart:
@@ -57,7 +56,7 @@ d3 -->|"[yes]"| s3 --> m2
 d3 -->|"[no]"| m2
 m2 --> s4 --> stop1
 m1 --> s5 --> stop2
-'''
+```
 
 **Reading notes**
 
