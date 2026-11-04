@@ -72,7 +72,7 @@ swimlane-beta TB
 | v1 | Action | Return station passing logs and toll transaction history | FR-01-03-INT |
 | d1 | Decision | VETC API connection & data valid? | FR-01-03-BE / BR-RET-01 |
 | s3 | Action | Parse toll station logs and timestamp sequence | FR-01-03-BE |
-| s4 | Action | Apply route algorithm to accumulate standard physical distances between consecutive stations (${S}_{i}\rightarrow {S}_{i+1}$) :  ${D}_{total}=\sum\limits_{i=1}^{n-1}d({S}_{i},{S}_{i+1})$  | FR-01-03-BE / BR-DIST-01 |
+| s4 | Action | Apply route algorithm to accumulate standard physical distances between consecutive stations ($S_i \to S_{i+1}$):<br>$D_{total} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$ | FR-01-03-BE / BR-DIST-01 |
 | a2 | Action | See toll history timeline and minimum calculated distance | FR-01-03-FE |
 | s2 | Action | Max 3 retries exceeded: log connection timeout & notify user | FR-01-03-BE |
 | error\_view | Action | View error notification popup: “Connection timeout, please try again” | FR-01-03-FE |
@@ -82,9 +82,9 @@ swimlane-beta TB
 **Business rule description**
 
 | Rule ID | Description | Applied Node |
-| :---- | ----- | ----- |
+| :--- | :--- | :--- |
 | BR-RET-01 | VETC Integration Retry Rule: When requesting toll transaction logs from the external VETC Toll System, if a connection timeout or API failure occurs, the TASCO backend system must automatically execute a retry loop up to a maximum of 3 attempts. If all attempts fail, the system logs the timeout error and notifies the user. | d1 |
-| BR-DIST-01  | Minimum Travel Distance Accumulation Rule: The system sorts station passing logs chronologically (S1 \-\> S2 \-\> … \-\> Sn) and computes the total minimum travel distance using the formula  ${D}_{total}=\sum\limits_{i=1}^{n-1}d({S}_{i},{S}_{i+1})$. Notations: ${S}_{i}$ and ${S}_{i+1}$ represent two consecutive toll stations passed by the vehicle in chronological order; $d({S}_{i},{S}_{i+1})$ is the pre-defined shortest physical distance between them fetched from the traffic map database. Deduplication Rule: If consecutive records occur at the same station (${S}_{i}={S}_{i+1}$ due to duplicate card scanning errors) or an immediate turnaround, the distance increment is treated as $0$ to prevent calculation discrepancies. The final accumulated result is then rendered on the UI..  | s4 |
+| BR-DIST-01 | Minimum Travel Distance Accumulation Rule: The system sorts station passing logs chronologically ($S_1 \to S_2 \to \dots \to S_n$) and computes the total minimum travel distance using the formula $D_{total} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$.<br><br> Notations: $S_i$ and $S_{i+1}$ represent two consecutive toll stations passed by the vehicle in chronological order; $d(S_i, S_{i+1})$ is the pre-defined shortest physical distance between them fetched from the traffic map database.<br> Deduplication Rule: If consecutive records occur at the same station ($S_i = S_{i+1}$ due to duplicate card scanning errors) or an immediate turnaround, the distance increment is treated as $0$ to prevent calculation discrepancies. The final accumulated result is then rendered on the UI. | s4 |
 
 ## **3\. Branches and acceptance tests**
 
