@@ -5,8 +5,8 @@
 | AD ID | AD-UC-1.06 |
 | Use case | UC-1.06 Assess Battery Health Condition (SoH Calculation) |
 | Feature | F-01 Vehicle Identification & Status |
-| Primary actor | Car Owner / Fleet Operator |
-| Lanes | Car Owner / Fleet Operator · TASCO Mobility System · Electronic Vehicle Charging Stations |
+| Primary actor | Car Owner |
+| Lanes | Car Owner · TASCO Mobility System · Electronic Vehicle Charging Stations |
 | Inputs (L3-L5) | Context Diagram v1 · Use Case Diagram v1 · Sequence: SD-UC-1.06 · W1 rows (FR-01-08-FE, FR-01-08-BE, FR-01-08-INT) |
 | Trigger | Car owner selects view EV battery health status |
 | Preconditions | Vehicle profile exists in the system and charging session telemetry data is available |
