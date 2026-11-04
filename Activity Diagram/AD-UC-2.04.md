@@ -92,6 +92,13 @@ Reading notes:
 |s9|Action|Save weekly price record|FR-02-06-BE / SEQ S-6.27|
 |s10|Action|Keep previous weekly price and log failure|FR-02-01-BE|
 
+## Business rule description
+
+| Rule ID | Description | Applied Node |
+|---|---|---|
+| BR-MIL-01 | A car's price is calculated only if its minimum verified mileage divided by max(car age in years, 1) reaches the configurable threshold of 2,000 km/year. Otherwise the car gets INSUFFICIENT_DATA. | d3, s4 |
+| BR-COM-01 | A market price is calculated only if at least 30 comparable listings remain after outlier removal and widening up to Level 2. Otherwise the car gets INSUFFICIENT_DATA. | d4, s5 |
+
 ## **3. Branches and acceptance tests**
 
 |Branch|Given|When|Then|
