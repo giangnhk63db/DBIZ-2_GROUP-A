@@ -118,7 +118,7 @@ Reading notes:
 
 |Object|States in this diagram|Full state list (all diagrams)|
 |-|-|-|
-|Weekly price record|API\_FAILED, INSUFFICIENT\_DATA|API\_FAILED, INSUFFICIENT\_DATA, \[success state: not named in W0/W1/SEQ, see open question 3]|
+|Weekly price record|API\_FAILED, INSUFFICIENT\_DATA|API\_FAILED, INSUFFICIENT\_DATA, \[(success status: name to be fixed in the data model)]|
 
 ## **5. Screens touched**
 
@@ -132,8 +132,9 @@ Reading notes:
 |-|-|-|-|
 |1|\[NEEDS CLARIFICATION: what is the status name of a successfully saved weekly price record? Only API\_FAILED and INSUFFICIENT\_DATA are named]|No|Success object not drawn; s9 has no object node|
 |2|\[NEEDS CLARIFICATION: UC-2.04 text says "for every vehicle model"; FR-02-01 says "for every tracked car"]|No|Loop is per tracked car (FR wording); listings are cleaned per the car's model|
-|3|\[NEEDS CLARIFICATION: SEQ diagram 06 names the system "Market Price Service"; the Context Diagram names it "TASCO Mobility"]|No|Lane uses "TASCO Mobility"; SEQ labels to be aligned|
-|4|\[NEEDS CLARIFICATION: no BR IDs exist for the 2,000 km/year threshold and the 30-listing minimum]|No|Rules written in the text only|
+| 3 | [NEEDS CLARIFICATION: what is the status name of a successfully saved weekly price record? Only API_FAILED and INSUFFICIENT_DATA are named] | No | Success object not drawn because this diagram does not branch on it; name to be fixed in the data model |
+|4|\[NEEDS CLARIFICATION: SEQ diagram 06 names the system "Market Price Service"; the Context Diagram names it "TASCO Mobility"]|No|Lane uses "TASCO Mobility"; SEQ labels to be aligned|
+|5|\[NEEDS CLARIFICATION: no BR IDs exist for the 2,000 km/year threshold and the 30-listing minimum]|No|Rules written in the text only|
 
 ## **7. Verification log**
 
