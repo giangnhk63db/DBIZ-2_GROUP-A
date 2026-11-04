@@ -78,3 +78,74 @@ swimlane-beta TB
   d4 -->|"No"| c4 --> j1
   j1 --> s4 --> s5 --> a2 --> stop1
 ```
+**Reading notes:**
+- The workflow strictly prevents duplicate user actions at the UI level (FR-01-09-FE) before initiating any external queries.
+- A fork node (`f1`) is utilized to dispatch three parallel queries to independent government portals to optimize data retrieval time.
+- External portals act as black boxes (Process and return response). The system independently evaluates each response (`d2`, `d3`, `d4`) to determine success or failure.
+- Fault tolerance is integrated by logging individual API failures (`c2`, `c3`, `c4`) without interrupting the overall process.
+- All paths synchronize at the join node (`j1`), allowing the system to aggregate and store the consolidated results (FR-01-13-BE) and display partial results even if some queries fail.
+
+## 2. Node trace
+
+| Node | Kind | Text | Traces to |
+|---|---|---|---|
+| d1 | Decision | Request already in progress? | `FR-01-09-FE` |
+| c1 | Action | Disable duplicate click | `FR-01-09-FE` |
+| f1 | Fork | Dispatch parallel portal queries | `BR-REF-01` |
+| s1 | Action | Query Inspection Portal | `FR-01-10-INT` |
+| s2 | Action | Query Traffic Fine Portal | `FR-01-11-INT` |
+| s3 | Action | Query Secured Transaction | `FR-01-12-INT` |
+| d2 | Decision | Inspection response OK? | `FR-01-10-INT` / `BR-ERR-01` |
+| c2 | Action | Log Inspection error | `FR-01-10-INT` |
+| d3 | Decision | Traffic Fine response OK? | `FR-01-11-INT` / `BR-ERR-01` |
+| c3 | Action | Log Traffic Fine error | `FR-01-11-INT` |
+| d4 | Decision | Mortgage response OK? | `FR-01-12-INT` / `BR-ERR-01` |
+| c4 | Action | Log Mortgage error | `FR-01-12-INT` |
+| j1 | Join | Synchronize parallel query results | N/A (Control Node) |
+| s4 | Action | Aggregate & store results | `FR-01-13-BE` |
+| s5 | Action | Display consolidated card | `FR-01-13-FE` |
+
+## 3. Branches and acceptance tests
+
+| Branch | Given | When | Then |
+|---|---|---|---|
+| `d1 [Yes]` | A legal status refresh request is actively processing | The car owner clicks "Refresh Legal Status" again | System disables the duplicate click and terminates the redundant workflow |
+| `d1 [No]` | No legal status request is currently in progress | The car owner clicks "Refresh Legal Status" | System forks the process and queries the three external portals in parallel |
+| `d2 [Yes]` | The Vehicle Inspection Portal has been queried | The portal returns a valid data response | System routes the successful data to the join node for aggregation |
+| `d2 [No]` | The Vehicle Inspection Portal has been queried | The portal connection times out or returns an error | System logs the inspection error and proceeds to the join node with missing data |
+| `d3 [Yes]` | The Traffic Fine Portal has been queried | The portal returns a valid data response | System routes the successful data to the join node for aggregation |
+| `d3 [No]` | The Traffic Fine Portal has been queried | The portal connection times out or returns an error | System logs the traffic fine error and proceeds to the join node with missing data |
+| `d4 [Yes]` | The Secured Transaction Registry has been queried | The portal returns a valid data response | System routes the successful data to the join node for aggregation |
+| `d4 [No]` | The Secured Transaction Registry has been queried | The portal connection times out or returns an error | System logs the mortgage error and proceeds to the join node with missing data |
+
+## 4. Object states used
+
+| Object | States in this diagram | Full state list (all diagrams) |
+|---|---|---|
+| Consolidated Legal Record | Outdated -> Refreshing -> Aggregated | Empty, Outdated, Refreshing, Aggregated, Partially Aggregated |
+| External Portal Query (Inspection / Fine / Mortgage) | Sent -> Responded / Error | Pending, Sent, Responded, Timeout, Error |
+
+## 5. Screens touched
+
+*(Left empty in Lesson 7)*
+
+## 6. Open questions
+
+| # | Question | Blocking? | Default applied |
+|---|---|---|---|
+| 1 | [NEEDS CLARIFICATION: What is the specific timeout limit for the external portal queries before the system logs an error and proceeds to the join node?] | No | A strict 5-second timeout is applied to each parallel API call to prevent UI freezing. |
+| 2 | [NEEDS CLARIFICATION: How should the UI render the "consolidated card" if one or more portals return an error (partial failure)?] | No | Display successfully retrieved data normally and show a "Data unavailable at the moment" placeholder/badge for the failed sections. |
+
+## 7. Verification log
+
+| Check | Result | By | Date |
+|---|---|---|---|
+| Renders on mermaid.live | Pass | Nguyễn Danh Quang | 2026-11-04 |
+| Every decision has guards on all outgoing flows, no overlap, no gap | Pass | Nguyễn Danh Quang | 2026-11-04 |
+| No action has two incoming flows (merge used instead) | Pass | Nguyễn Danh Quang | 2026-11-04 |
+| Every fork has a matching join | Pass | Nguyễn Danh Quang | 2026-11-04 |
+| Every system action cites an FR | Pass | Nguyễn Danh Quang | 2026-11-04 |
+| Every FR of this use case appears in the diagram | 6 of 6 | Nguyễn Danh Quang | 2026-11-04 |
+| Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes | Pass | Nguyễn Danh Quang | 2026-11-04 |
+| Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions | Pass | Nguyễn Danh Quang | 2026-11-04 |
+| AI critic prompt run, findings resolved or logged as open questions | Pass | Nguyễn Danh Quang | 2026-11-04 |
