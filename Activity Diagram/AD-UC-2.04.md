@@ -118,7 +118,7 @@ Reading notes:
 
 |Object|States in this diagram|Full state list (all diagrams)|
 |-|-|-|
-|Weekly price record|API\_FAILED, INSUFFICIENT\_DATA|API\_FAILED, INSUFFICIENT\_DATA, \[(success status: name to be fixed in the data model)]|
+|Weekly price record|API\_FAILED, INSUFFICIENT\_DATA|API\_FAILED, INSUFFICIENT\_DATA, \[success status: name to be fixed in the data model]|
 
 ## **5. Screens touched**
 
