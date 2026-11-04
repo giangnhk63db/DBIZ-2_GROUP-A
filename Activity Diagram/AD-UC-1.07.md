@@ -17,12 +17,6 @@
 | Version / status | v0.1 - Draft |
 | Author | Nguyễn Danh Quang |
 
-## Business rule description
-
-| Rule ID | Description | Applied Node |
-|---|---|---|
-| `BR-REF-01` | Concurrent Multi-Portal Query Rule: When refreshing the legal status, the system must simultaneously query the three external government portals (Inspection, Traffic Fine, Secured Transaction) in parallel via a fork node to minimize overall latency. | `f1` |
-| `BR-ERR-01` | Partial Data Fault Tolerance Rule: During the parallel legal status check, if any individual external portal query fails or times out, the system must independently log the error, bypass that failed component without crashing, and proceed to aggregate whatever data is successfully retrieved. | `d2`, `d3`, `d4` |
 
 ## 1. Diagram
 
@@ -104,6 +98,12 @@ swimlane-beta TB
 | j1 | Join | Synchronize parallel query results | N/A (Control Node) |
 | s4 | Action | Aggregate & store results | `FR-01-13-BE` |
 | s5 | Action | Display consolidated card | `FR-01-13-FE` |
+## Business rule description
+
+| Rule ID | Description | Applied Node |
+|---|---|---|
+| `BR-REF-01` | Concurrent Multi-Portal Query Rule: When refreshing the legal status, the system must simultaneously query the three external government portals (Inspection, Traffic Fine, Secured Transaction) in parallel via a fork node to minimize overall latency. | `f1` |
+| `BR-ERR-01` | Partial Data Fault Tolerance Rule: During the parallel legal status check, if any individual external portal query fails or times out, the system must independently log the error, bypass that failed component without crashing, and proceed to aggregate whatever data is successfully retrieved. | `d2`, `d3`, `d4` |
 
 ## 3. Branches and acceptance tests
 
