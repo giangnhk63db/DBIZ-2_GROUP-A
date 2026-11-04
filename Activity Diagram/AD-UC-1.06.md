@@ -13,7 +13,7 @@
 | Success end state | Battery State of Health (SoH) metrics and reports are successfully calculated and displayed |
 | Failure end state(s) | Charging station data retrieval fails or exceeds max 3 retries, triggering an error notification |
 | FRs covered | FR-01-08-FE, FR-01-08-BE, FR-01-08-INT |
-| Business rules applied | BR-RET\_02 (Telemetry Data Retry & Fallback Rule) |
+| Business rules applied | BR-RET-02 (Telemetry Data Retry & Fallback Rule) |
 | Version / status | v0.1 · Draft |
 | Author | Đinh Thu Thảo |
 
@@ -84,13 +84,13 @@ swimlane-beta TB
 
 | Rule ID | Description | Applied Node |
 | :---- | :---- | :---- |
-| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 attempts (maximum 4 attempts in total). If all 4 attempts fail, the system halts the retry loop, logs a error, and notifies the user. | d1 |
+| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 retries (maximum 4 attempts in total). If all 4 attempts fail, the system halts the retry loop, logs an error, and notifies the user. | d1 |
 
 ## **3\. Branches and acceptance tests**
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
-| d1 \[retry \< 3\] | Charging data request sent to charging station | Station returns timeout or inaccessible data on attempt 1, 2, 3 | System automatically loops back via merge node m1 to request data again |
+| d1 \[retry \< 3\] | Charging data request sent to charging station | Station returns timeout or inaccessible data on attempt 1, 2 | System automatically loops back via merge node m1 to request data again |
 | d1 \[success\] | Charging data request sent to charging station | Station returns accessible and valid charging logs successfully | System calculates SoH metrics and renders the battery health |
 | d1 \[max retries exceeded\] | Charging data request failed 3 times previously | Station continues to return connection errors on the 4th attempt | System stops retrying, logs error, triggers error popup, and stops at stop2 |
 
