@@ -1,0 +1,26 @@
+  
+sequenceDiagram  
+    autonumber  
+    actor CO as Car Owner  
+    participant SYS as TASCO Mobility System  
+    participant CS as Carpla Service  
+    participant EIP as Electronic Invoice Portal
+
+    Note over CO,CS: UC-1.04 \- View Maintenance & Repair History in Carpla Service  
+    CO-\>\>SYS: Open maintenance history  
+    SYS-\>\>CS: Fetch official service and repair records  
+    CS--\>\>SYS: Return records  
+    SYS--\>\>CO: Display consolidated maintenance timeline
+
+    Note over CO,EIP: UC-1.05 \- Upload External Maintenance & Repair Invoices  
+    CO-\>\>SYS: Upload invoice file **(**PDF/XML/Image**)**  
+    SYS-\>\>SYS: Extract data via OCR or file parsing  
+    SYS-\>\>EIP: Cross-check tax code, invoice number, total amount  
+    EIP--\>\>SYS: Authenticity result  
+    alt Invoice valid  
+        SYS-\>\>SYS: Update maintenance history  
+        SYS--\>\>CO: Show updated timeline  
+    else Invoice invalid  
+        SYS--\>\>CO: Reject invoice and show error  
+    end
+
