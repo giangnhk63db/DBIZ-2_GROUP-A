@@ -151,7 +151,7 @@ Reading notes:
 |Every system action cites an FR|PASS|Vũ Hương Ly|2026-11-04|
 |Every FR of this use case appears in the diagram|3 of 3|Vũ Hương Ly|2026-11-04|
 |Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes|PASS|Vũ Hương Ly|2026-11-04|
-|Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions|PASSexcept names (open question 2)|Vũ Hương Ly|2026-11-04|
+|Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions|PASS except names (open question 2)|Vũ Hương Ly|2026-11-04|
 |AI critic prompt run, findings resolved or logged as open questions|Pending|||
 
 
