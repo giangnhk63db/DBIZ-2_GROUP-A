@@ -19,43 +19,29 @@
 
 1. ## **Code**
 
+```mermaid
 swimlane-beta TB
-
- subgraph CO\["Car Owner"\]
-
+ subgraph CO["Car Owner"]
 start@{ shape: sm-circ }
-
-a1**(**"submit sale request (AD-UC-3.01**)**")
-
+a1("submit sale request (AD-UC-3.01)")
 end
-
-subgraph TMS\["Tasco Mobility System"\]
-
-s1**(**"Query unpaid fines (FR-03-02-BE**)**")
-
-s2**(**"Return Unpaid fines and insert into report (FR-03-02-BE**)**")
-
-s3**(**"Insert \#quot;no data\#quot; in report (FR-03-02-BE**)**")
-
+subgraph TMS["Tasco Mobility System"]
+s1("Query unpaid fines (FR-03-02-BE)")
+s2("Return Unpaid fines and insert into report (FR-03-02-BE)")
+s3("Insert #quot;no data#quot; in report (FR-03-02-BE)")
 stop1@{ shape: fr-circ }
-
 stop2@{ shape: fr-circ }
-
 end
-
-subgraph TFLP\["Traffic Fine Lookup Portal"\]
-
-v1**(**"Lookup unpaid fines (FR-01-11-INT**)**")
-
-d1{"Unpaid fines status data available and API connection? (FR-03-02-BE**)**"}
-
+subgraph TFLP["Traffic Fine Lookup Portal"]
+v1("Lookup unpaid fines (FR-01-11-INT)")
+d1{"Unpaid fines status data available and API connection? (FR-03-02-BE)"}
 end
+start --> a1 --> s1 --> v1 --> d1
+d1 -->|"Have data"| s2 --> stop1
+d1 -->|"No data or API fail"| s3 --> stop2
 
-start \--\> a1 \--\> s1 \--\> v1 \--\> d1
+```
 
-d1 \--\>\|"Have data"\| s2 \--\> stop1
-
-d1 \--\>\|"No data or API fail"\| s3 \--\> stop2
 
 2. ## **Node trace**
 
