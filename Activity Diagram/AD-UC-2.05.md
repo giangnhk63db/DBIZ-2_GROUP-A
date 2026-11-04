@@ -13,7 +13,7 @@
 |Success end state|Listings of both marketplaces are stored with source and sync time; the valid source set of the week contains both|
 |Failure end state(s)|Only one marketplace synced: its listings are kept and the sync is flagged partial. No marketplace synced: API\_FAILED result is returned to UC-2.04|
 |FRs covered|`FR-02-02-INT1`, `FR-02-02-INT2`, `FR-02-02-BE2`|
-|Business rules applied|Rules used: 3 retries, 6 hours apart; only make and model sent to the marketplaces|
+|Business rules applied|BR-RET-01, BR-PRI-01|
 |Version / status|v0.3 · Review|
 |Author|Vũ Hương Ly|
 
@@ -103,6 +103,13 @@ Reading notes:
 |d1|Decision|Which marketplaces synced? (valid source set of the week)|FR-02-02-INT2 / SEQ S-6.09|
 |s6|Action|Return API\_FAILED result (no valid marketplace)|FR-02-02-INT2 / SEQ S-6.10|
 |s7|Action|Flag partial sync status (only one marketplace valid)|FR-02-02-INT1, FR-02-02-INT2|
+
+## Business rule description
+
+| Rule ID | Description | Applied Node |
+|---|---|---|
+| BR-RET-01 | When a marketplace sync fails, the system retries up to 3 times, 6 hours apart. After the 3rd retry fails, it stops retrying that marketplace and logs an ERROR with the HTTP status. | qN, wN, eN, qC, wC, eC |
+| BR-PRI-01 | Requests to the marketplaces contain only the vehicle make and model. VIN, license plate and owner information are never sent. | rN, rC |
 
 ## **3. Branches and acceptance tests**
 
