@@ -13,7 +13,7 @@
 | Success end state | Toll station history is successfully retrieved, parsed, distance calculated, and displayed on UI |
 | Failure end state(s) | Connection timeout or API failure exceeds max 3 retries, leading to an error notification |
 | FRs covered | FR-01-03-FE, FR-01-03-BE, FR-01-03-INT |
-| Business rules applied | BR-RET\_01 (VETC Integration Retry Rule) |
+| Business rules applied | BR-RET-01 (VETC Integration Retry Rule) |
 | Version / status | v0.1 · Draft |
 | Author | Đinh Thu Thảo |
 
@@ -58,7 +58,7 @@ swimlane-beta TB
 **Reading notes:**
 
 * Request & VETC Integration: The car owner selects to view toll history, triggering the TASCO system to request station passing logs from the VETC system.  
-* Validation & Retry Loop: The system checks if the connection and data are valid; if an API failure occurs with fewer than 3 retries, it retries via merge node m4.  
+* Validation & Retry Loop: The system checks if the connection and data are valid; if an API failure occurs with fewer than 3 attempts, it retries via merge node m4.  
 * Success & Distance Calculation: Valid logs are parsed and processed through a routing algorithm to compute the minimum travel distance for display on the UI.   
 * Error Handling: If maximum retries are exceeded, a timeout error notification is displayed on UI and terminates at a dedicated end node stop2.
 
@@ -90,7 +90,7 @@ swimlane-beta TB
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
-| d1 \[retry \< 3\] | Toll history request is sent to VETC | VETC times out or returns an API error and the number of retries done is 1, 2 or 3. | System automatically loops back via merge node m4 to retry the request |
+| d1 \[retry \< 3\] | Toll history request is sent to VETC | VETC times out or returns an API error and the number of retries done is 1, 2 | System automatically loops back via merge node m4 to retry the request |
 | d1 \[success\] | Toll history request is sent to VETC | VETC API returns valid station passing logs successfully | System parses logs, gets distances from the Map Service, accumulates the minimum travel distance and displays the timeline |
 | d1 \[max retries exceeded\] | Toll history request failed 3 times previously | VETC API fails or times out on the 4th attempt (3rd retry) | System logs connection timeout, stops retries, displays error popup, and stops at stop2 |
 
