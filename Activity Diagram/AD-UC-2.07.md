@@ -58,6 +58,7 @@ d3 -->|"[no]"| m2
 m2 --> s4 --> stop1
 m1 --> s5 --> stop2
 '''
+
 **Reading notes**
 
 - The checks are applied in sequence: recency/removal first, required-field and price validity second, and cross-marketplace duplicate handling last.  
