@@ -91,7 +91,7 @@ swimlane-beta TB
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
 | d1 \[retry \< 3\] | Toll history request is sent to VETC | VETC API connection times out or returns error on attempt 1 or 2 | System automatically loops back via merge node m4 to retry the request |
-| d1 \[valid / success\] | Toll history request is sent to VETC | VETC API returns valid station passing logs successfully | System parses logs, calculates minimum travel distance, passes through m3, and displays timeline |
+| d1 \[success\] | Toll history request is sent to VETC | VETC API returns valid station passing logs successfully | System parses logs, calculates minimum travel distance, passes through m3, and displays timeline |
 | d1 \[max retries exceeded\] | Toll history request failed twice previously | VETC API fails or times out on the 3rd attempt | System logs connection timeout, stops retries, displays error popup, and stops at stop2 |
 
 ## 
