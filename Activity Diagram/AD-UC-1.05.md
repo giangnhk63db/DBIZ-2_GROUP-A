@@ -35,7 +35,6 @@ swimlane-beta TB
     stop1@{ shape: fr-circ }
   end
   subgraph SYS["TASCO Mobility System"]
-    m1{" "}
     d1{"File format or size valid?"}
     s1("Reject invalid file and show error (FR-01-05-FE)")
     s2("Store uploaded file (FR-01-05-BE)")
@@ -53,8 +52,7 @@ swimlane-beta TB
     e1("Return authenticity result (FR-01-07-INT)")
   end
 
-
-  start --> a1 --> a2 --> m1 --> d1
+  start --> a1 --> a2 --> d1
   d1 -->|"[no]"| s1 --> m4
   d1 -->|"[yes]"| s2 --> s3 --> d2
   d2 -->|"[no]"| s4 --> m3
@@ -64,7 +62,6 @@ swimlane-beta TB
   d3 -->|"[no]"| s7 --> m2
   m2 --> m4
   m4 --> a3 --> stop1
-
 ```
 
 **Reading notes:**
@@ -82,7 +79,6 @@ swimlane-beta TB
 | :---- | :---- | :---- | :---- |
 | a1 | Action | Open maintenance history and select upload invoice | FR-01-05-FE  |
 | a2 | Action | Upload invoice file PDF, XML, or image | FR-01-05-FE  |
-| m1 | Merge | Control node merging initial submission paths | N/A (Control Node)  |
 | d1 | Decision | File format or size valid? | FR-01-05-FE / BR-FILE-01  |
 | s1 | Action | Reject invalid file and show error | FR-01-05-FE  |
 | s2 | Action | Store uploaded file | FR-01-05-BE  |
@@ -106,7 +102,7 @@ swimlane-beta TB
 | Rule ID | Description | Applied Node |
 | ----- | ----- | :---: |
 | BR-FILE-01 | File Format and Size Rule: The system only accepts uploaded files in .pdf, .xml, or image formats (.jpg, .png), with a file size adhering to the system limit (e.g., $\leq$ 10MB). Invalid files are rejected immediately at the validation step. | d1 |
-| BR-OCR-01 | Automated OCR Data Extraction Rule: The OCR/Parsing engine must successfully extract mandatory data fields (seller tax code, invoice number, total amount). If the data is illegible or unreadable, the system must flag the file for manual verification. | d2 |
+| BR-OCR-01 | Automated OCR Data Extraction Rule: The OCR/Parsing engine must extract mandatory data fields (seller tax code, invoice number, total amount). If the data is illegible or unreadable, the file is flagged for manual verification: the mandatory fields are confirmed or corrected by hand, then the process continues with the Portal verification. Manual correction does not bypass BR-INV-01: the Portal still decides whether the invoice is valid. | d2 |
 | BR-INV-01 | Invoice Authenticity Cross-Check Rule: Extracted invoice data must be sent to the Electronic Invoice Portal for verification. An invoice is considered valid only if the tax code exists, details match, and the invoice status is not cancelled or replaced on the tax system. | d3 |
 
 ## **3\. Branches and acceptance tests**
