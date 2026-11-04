@@ -19,53 +19,34 @@
 
 1. ## **Code**
 
+```mermaid
 swimlane-beta TB
-
-  subgraph CO\["Car Owner"\]
-
+  subgraph CO["Car Owner"]
       start@{ shape: sm-circ }
-
-      a1**(**"Submit Sale request (AD-UC-3.01**)**")
-
+      a1("Submit Sale request (AD-UC-3.01)")
   end
-
-  subgraph TMS\["Tasco Mobility System"\]
-
-      s1**(**"Query mortgage status (FR-03-02-BE**)**")
-
-      s2**(**"Return mortgage status \#quot;No mortgage\#quot; and indicate no outstanding mortgage in report (FR-03-02-BE**)**")
-
-      s3**(**"Return mortgage status \#quot;Mortgaged\#quot; and attach a red flag with mortgage details to the report (FR-03-02-BE**)**")
-
-      s4**(**"Insert \#quot;No data\#quot; in report (FR-03-02-BE**)**")
-
-      d2{"Is the vehicle mortgaged?  (FR-03-02-BE**)**"}
-
+  subgraph TMS["Tasco Mobility System"]
+      s1("Query mortgage status (FR-03-02-BE)")
+      s2("Return mortgage status #quot;No mortgage#quot; and indicate no outstanding mortgage in report (FR-03-02-BE)")
+      s3("Return mortgage status #quot;Mortgaged#quot; and attach a red flag with mortgage details to the report (FR-03-02-BE)")
+      s4("Insert #quot;No data#quot; in report (FR-03-02-BE)")
+      d2{"Is the vehicle mortgaged?  (FR-03-02-BE)"}
       stop1@{ shape: fr-circ }
-
       stop2@{ shape: fr-circ }
-
       stop3@{ shape: fr-circ }
-
   end
-
-  subgraph STRP\["Secured Transaction Registry Portal"\]
-
-      v1**(**"Look up mortgage status (FR-01-12-INT**)**")
-
-      d1{"Mortgage status data available and API connection?  (FR-03-02-BE**)**"}
-
+  subgraph STRP["Secured Transaction Registry Portal"]
+      v1("Look up mortgage status (FR-01-12-INT)")
+      d1{"Mortgage status data available and API connection?  (FR-03-02-BE)"}
   end
+  start --> a1 --> s1 --> v1 --> d1
+  d1 -->|"Have data"| d2
+  d1 -->|"No data or API fail"| s4 --> stop3
+  d2 -->|"Not mortgaged"| s2 --> stop1
+  d2 -->|"Mortgaged"| s3 --> stop2
 
-  start \--\> a1 \--\> s1 \--\> v1 \--\> d1
+```
 
-  d1 \--\>\|"Have data"\| d2
-
-  d1 \--\>\|"No data or API fail"\| s4 \--\> stop3
-
-  d2 \--\>\|"Not mortgaged"\| s2 \--\> stop1
-
-  d2 \--\>\|"Mortgaged"\| s3 \--\> stop2
 
 2. ## **Node trace**
 
