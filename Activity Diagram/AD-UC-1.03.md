@@ -83,15 +83,15 @@ swimlane-beta TB
 
 | Rule ID | Description | Applied Node |
 | :--- | :--- | :--- |
-| BR-RET-01 | VETC Integration Retry Rule: When requesting toll transaction logs from the external VETC Toll System, if a connection timeout or API failure occurs, the TASCO backend system must automatically execute a retry loop up to a maximum of 3 attempts. If all attempts fail, the system logs the timeout error and notifies the user. | d1 |
-| BR-DIST-01 | Minimum Travel Distance Accumulation Rule: The system sorts station passing logs chronologically ($S_1 \to S_2 \to \dots \to S_n$) and computes the total minimum travel distance using the formula $D_{total} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$.<br><br> Notations: $S_i$ and $S_{i+1}$ represent two consecutive toll stations passed by the vehicle in chronological order; $d(S_i, S_{i+1})$ is the pre-defined shortest physical distance between them fetched from the traffic map database.<br> Deduplication Rule: If consecutive records occur at the same station ($S_i = S_{i+1}$ due to duplicate card scanning errors) or an immediate turnaround, the distance increment is treated as $0$ to prevent calculation discrepancies. The final accumulated result is then rendered on the UI. | s4 |
+| BR-RET-01 | VETC Integration Retry Rule: When requesting toll transaction logs from the external VETC Toll System, if a connection timeout or API failure occurs, the TASCO backend must automatically retry, up to 3 retries after the initial request (maximum 4 attempts in total). If the 3rd retry also fails, the system stops retrying, logs the timeout error and notifies the user. | d1 |
+| BR-DIST-01 | **Minimum Travel Distance Accumulation Rule:** The system sorts station passing logs chronologically ($S_1 \rightarrow S_2 \rightarrow \dots \rightarrow S_n$) and computes the total distance with: $$D_{\text{total}} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$$. Notations: $S_i, S_{i+1}$ are two consecutive toll stations passed by the vehicle, $d(S_i, S_{i+1})$ is the shortest-route distance between them, obtained from the Map Service. Turnaround and duplicate rule: A turnaround $A \rightarrow B \rightarrow A$ still counts both segments ($A$ to $B$ and $B$ to $A$); only consecutive records at the same station ($S_i = S_{i+1}$, e.g. duplicate card scan) have an increment of $0$. The final result is rendered on the UI. | s4 |
 
 ## **3\. Branches and acceptance tests**
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
-| d1 \[retry \< 3\] | Toll history request is sent to VETC | VETC API connection times out or returns error on attempt 1 or 2 | System automatically loops back via merge node m4 to retry the request |
-| d1 \[success\] | Toll history request is sent to VETC | VETC API returns valid station passing logs successfully | System parses logs, calculates minimum travel distance, passes through m4, and displays timeline |
+| d1 \[retry \< 3\] | Toll history request is sent to VETC | VETC times out or returns an API error and the number of retries done is 0, 1 or 2. | System automatically loops back via merge node m4 to retry the request |
+| d1 \[success\] | Toll history request is sent to VETC | VETC API returns valid station passing logs successfully | System parses logs, gets distances from the Map Service, accumulates the minimum travel distance and displays the timeline |
 | d1 \[max retries exceeded\] | Toll history request failed twice previously | VETC API fails or times out on the 3rd attempt | System logs connection timeout, stops retries, displays error popup, and stops at stop2 |
 
 ## 
