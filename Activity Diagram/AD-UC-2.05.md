@@ -104,11 +104,12 @@ Reading notes:
 |s6|Action|Return API\_FAILED result (no valid marketplace)|FR-02-02-INT2 / SEQ S-6.10|
 |s7|Action|Flag partial sync status (only one marketplace valid)|FR-02-02-INT1, FR-02-02-INT2|
 
-## Note
+### Note
 N: Nextgen Việt Nam
+
 C: Chợ Tốt
 
-## Business rule description
+### Business rule description
 
 | Rule ID | Description | Applied Node |
 |---|---|---|
