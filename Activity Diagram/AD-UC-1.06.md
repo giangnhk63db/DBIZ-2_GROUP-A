@@ -84,7 +84,7 @@ swimlane-beta TB
 
 | Rule ID | Description | Applied Node |
 | :---- | :---- | :---- |
-| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 attempts (maximum 4 attempts in total). If all 3 attempts fail, the system halts the retry loop, logs a error, and notifies the user. | d1 |
+| BR-RET-02 | Telemetry Data Retry & Fallback Rule: When requesting charging session data and battery metrics from the charging station, if the data is inaccessible, invalid, or connection timeouts occur, the system must automatically execute a retry mechanism up to a maximum of 3 attempts (maximum 4 attempts in total). If all 4 attempts fail, the system halts the retry loop, logs a error, and notifies the user. | d1 |
 
 ## **3\. Branches and acceptance tests**
 
