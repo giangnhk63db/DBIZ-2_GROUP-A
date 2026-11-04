@@ -1,0 +1,2 @@
+This is folder including all sequence diagrams
+
