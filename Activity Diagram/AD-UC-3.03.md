@@ -19,45 +19,29 @@
 
 1. ## **Code**
 
+```mermaid
 swimlane-beta TB
-
-subgraph CO\["Car Owner"\]
-
+subgraph CO["Car Owner"]
 start@{ shape: sm-circ }
-
-a1**(**"Submit sale request (AD-UC-3.01**)**")
-
+a1("Submit sale request (AD-UC-3.01)")
 end
-
-subgraph TMS\["Tasco Mobility System"\]
-
-s1**(**"Query Inspection status (FR-03-02-BE**)**")
-
-s2**(**"Return Inspection status and insert in report (FR-03-02-BE**)**")
-
-s3**(**"Insert \#quot;No data\#quot; in report (FR-03-02-BE**)**")
-
-s4**(**"Block submit sale request and show error (FR-03-02-BE**)**")
-
+subgraph TMS["Tasco Mobility System"]
+s1("Query Inspection status (FR-03-02-BE)")
+s2("Return Inspection status and insert in report (FR-03-02-BE)")
+s3("Insert #quot;No data#quot; in report (FR-03-02-BE)")
+s4("Block submit sale request and show error (FR-03-02-BE)")
 stop1@{ shape: fr-circ }
-
 stop2@{ shape: fr-circ }
-
 end
-
-subgraph VIP\["Vehicle Inspection Portal"\]
-
-v1**(**"Look up inspection status (FR-01-10-INT**)**")
-
-d1{"Inspection status data available and API connection? (FR-03-02-BE**)**"}
-
+subgraph VIP["Vehicle Inspection Portal"]
+v1("Look up inspection status (FR-01-10-INT)")
+d1{"Inspection status data available and API connection? (FR-03-02-BE)"}
 end
+start --> a1 --> s1 --> v1 --> d1
+d1 -->|"Have data"| s2 --> stop1
+d1 -->|"No Data or API fail"| s3 --> stop2
 
-start \--\> a1 \--\> s1 \--\> v1 \--\> d1
-
-d1 \--\>\|"Have data"\| s2 \--\> stop1
-
-d1 \--\>\|"No Data or API fail"\| s3 \--\> stop2
+```
 
 2. ## **Node trace**
 
