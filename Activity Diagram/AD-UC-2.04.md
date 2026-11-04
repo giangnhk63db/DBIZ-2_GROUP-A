@@ -13,7 +13,7 @@
 |Success end state|Every tracked car has a weekly price record for this week: a price with a confidence level, or INSUFFICIENT\_DATA, or its previous price kept when the calculation failed|
 |Failure end state(s)|No marketplace synced: API\_FAILED recorded, failure alert sent, no car priced this week|
 |FRs covered|`FR-02-01-BE`. Cited from included UCs: `FR-02-02-INT1`, `FR-02-02-INT2`, `FR-02-03-BE`, `FR-02-04-BE`, `FR-02-05-BE`, `FR-02-06-BE`|
-|Business rules applied|Rules used: 2,000 km/year threshold (configurable); at least 30 comparable listings|
+|Business rules applied|BR-MIL-01, BR-COM-01|
 |Version / status|v0.3 · Review|
 |Author|Vũ Hương Ly|
 
