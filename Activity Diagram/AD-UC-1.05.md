@@ -80,24 +80,24 @@ swimlane-beta TB
 
 | Node | Kind | Text | Traces to |
 | :---- | :---- | :---- | :---- |
-| a1 | Action | Open maintenance history and select upload invoice | FR-01-05-FE (S-2.05)  |
-| a2 | Action | Upload invoice file PDF, XML, or image | FR-01-05-FE (S-2.05)  |
+| a1 | Action | Open maintenance history and select upload invoice | FR-01-05-FE  |
+| a2 | Action | Upload invoice file PDF, XML, or image | FR-01-05-FE  |
 | m1 | Merge | Control node merging initial submission paths | N/A (Control Node)  |
-| d1 | Decision | File format or size valid? | FR-01-05-FE (BR-FILE-01 / BR-01)  |
-| s1 | Action | Reject invalid file and show error | FR-01-05-FE (S-2.05)  |
-| s2 | Action | Store uploaded file | FR-01-05-BE (S-2.06)  |
-| s3 | Action | Extract invoice data via OCR or parsing | FR-01-06-BE (S-2.06)  |
-| d2 | Decision | Parsing successful? | FR-01-06-BE (BR-OCR-01 / BR-01)  |
-| s4 | Action | Flag file for manual verification | FR-01-06-BE (S-2.06)  |
+| d1 | Decision | File format or size valid? | FR-01-05-FE / BR-FILE-01  |
+| s1 | Action | Reject invalid file and show error | FR-01-05-FE  |
+| s2 | Action | Store uploaded file | FR-01-05-BE  |
+| s3 | Action | Extract invoice data via OCR or parsing | FR-01-06-BE  |
+| d2 | Decision | Parsing successful? | FR-01-06-BE / BR-OCR-01  |
+| s4 | Action | Flag file for manual verification | FR-01-06-BE  |
 | m3 | Merge | Merge path for OCR review requirement | N/A (Control Node)  |
-| s5 | Action | Verify invoice authenticity with Electronic Invoice Portal | FR-01-07-INT (S-2.07, S-2.08)  |
-| e1 | Action | Return authenticity result | FR-01-07-INT (S-2.08)  |
-| d3 | Decision | Invoice valid? | FR-01-07-BE (BR-INV-01 / BR-01, S-2.09)  |
-| s6 | Action | Merge validated external invoice into vehicle history | FR-01-07-BE (S-2.09, S-2.10)  |
-| s7 | Action | Reject invoice and show error message | FR-01-07-BE (S-2.11)  |
+| s5 | Action | Verify invoice authenticity with Electronic Invoice Portal | FR-01-07-INT  |
+| e1 | Action | Return authenticity result | FR-01-07-INT  |
+| d3 | Decision | Invoice valid? | FR-01-07-BE / R-INV-01  |
+| s6 | Action | Merge validated external invoice into vehicle history | FR-01-07-BE  |
+| s7 | Action | Reject invoice and show error message | FR-01-07-BE  |
 | m2 | Merge | Merge paths for valid timeline update or rejection notice | N/A (Control Node)  |
 | m4 | Merge | Merge all final success and error notification flows | N/A (Control Node)  |
-| a3 | Action | See updated maintenance timeline or error message | FR-01-05-FE (S-2.10, S-2.11)  |
+| a3 | Action | See updated maintenance timeline or error message | FR-01-05-FE  |
 
 ## 
 
