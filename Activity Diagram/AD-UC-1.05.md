@@ -25,44 +25,45 @@
 
 ```mermaid
 
-swimlane-beta TB  
-  subgraph CAR\["Car Owner"\]  
-    start@{ shape: sm-circ }  
-    a1**(**"Open maintenance history and select upload invoice (FR-01-05-FE**)**")  
-    a2**(**"Upload invoice file PDF**,** XML**,** or image (FR-01-05-FE**)**")  
-    m4{" "}  
-    a3**(**"See updated maintenance timeline or error message (FR-01-05-FE**)**")  
-    stop1@{ shape: fr-circ }  
-  end  
-  subgraph SYS\["TASCO Mobility System"\]  
-    m1{" "}  
-    d1{"File format or size valid?"}  
-    s1**(**"Reject invalid file and show error (FR-01-05-FE**)**")  
-    s2**(**"Store uploaded file (FR-01-05-BE**)**")  
-    s3**(**"Extract invoice data via OCR or parsing (FR-01-06-BE**)**")  
-    d2{"Parsing successful?"}  
-    s4**(**"Flag file for manual verification (FR-01-06-BE**)**")  
-    m3{" "}  
-    s5**(**"Verify invoice authenticity with Electronic Invoice Portal (FR-01-07-INT**)**")  
-    d3{"Invoice valid?"}  
-    s6**(**"Merge validated external invoice into vehicle history (FR-01-07-BE**)**")  
-    s7**(**"Reject invoice and show error message (FR-01-07-BE**)**")  
-    m2{" "}  
-  end  
-  subgraph PORTAL\["Electronic Invoice Portal"\]  
-    e1**(**"Return authenticity result (FR-01-07-INT**)**")  
+swimlane-beta TB
+  subgraph CAR["Car Owner"]
+    start@{ shape: sm-circ }
+    a1("Open maintenance history and select upload invoice (FR-01-05-FE)")
+    a2("Upload invoice file PDF, XML, or image (FR-01-05-FE)")
+    m4{" "}
+    a3("See updated maintenance timeline or error message (FR-01-05-FE)")
+    stop1@{ shape: fr-circ }
+  end
+  subgraph SYS["TASCO Mobility System"]
+    m1{" "}
+    d1{"File format or size valid?"}
+    s1("Reject invalid file and show error (FR-01-05-FE)")
+    s2("Store uploaded file (FR-01-05-BE)")
+    s3("Extract invoice data via OCR or parsing (FR-01-06-BE)")
+    d2{"Parsing successful?"}
+    s4("Flag file for manual verification (FR-01-06-BE)")
+    m3{" "}
+    s5("Verify invoice authenticity with Electronic Invoice Portal (FR-01-07-INT)")
+    d3{"Invoice valid?"}
+    s6("Merge validated external invoice into vehicle history (FR-01-07-BE)")
+    s7("Reject invoice and show error message (FR-01-07-BE)")
+    m2{" "}
+  end
+  subgraph PORTAL["Electronic Invoice Portal"]
+    e1("Return authenticity result (FR-01-07-INT)")
   end
 
-  start \--\> a1 \--\> a2 \--\> m1 \--\> d1  
-  d1 \--\>\|"\[no\]"\| s1 \--\> m4  
-  d1 \--\>\|"\[yes\]"\| s2 \--\> s3 \--\> d2  
-  d2 \--\>\|"\[no\]"\| s4 \--\> m3  
-  d2 \--\>\|"\[yes\]"\| m3  
-  m3 \--\> s5 \--\> e1 \--\> d3  
-  d3 \--\>\|"\[yes\]"\| s6 \--\> m2  
-  d3 \--\>\|"\[no\]"\| s7 \--\> m2  
-  m2 \--\> m4  
-  m4 \--\> a3 \--\> stop1
+
+  start --> a1 --> a2 --> m1 --> d1
+  d1 -->|"[no]"| s1 --> m4
+  d1 -->|"[yes]"| s2 --> s3 --> d2
+  d2 -->|"[no]"| s4 --> m3
+  d2 -->|"[yes]"| m3
+  m3 --> s5 --> e1 --> d3
+  d3 -->|"[yes]"| s6 --> m2
+  d3 -->|"[no]"| s7 --> m2
+  m2 --> m4
+  m4 --> a3 --> stop1
 
 ```
 
