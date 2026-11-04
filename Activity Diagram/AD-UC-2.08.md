@@ -20,7 +20,7 @@
 ## 
 
 1. **Diagram:**
-
+```
 \---  
 config:  
  flowchart:  
@@ -56,7 +56,7 @@ d2 \--\>\|"\[no\]"\| s4 \--\> d3
 d3 \--\>\|"\[yes\]"\| m1  
 d3 \--\>\|"\[no\]"\| s6 \--\> stop2  
 m1 \--\> s5 \--\> stop1
-
+```
 **Reading notes**
 
 - The system applies the expansion levels in order and stops at the first level that leaves at least 30 listings after IQR outlier removal.  
