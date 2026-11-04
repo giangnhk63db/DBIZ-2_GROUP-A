@@ -11,9 +11,9 @@
 | Trigger | Car owner selects upload external maintenance and repair invoice |
 | Preconditions | Vehicle profile exists in the system and car owner is authenticated |
 | Success end state | External invoice file is successfully validated, parsed, cross-checked, and merged into the vehicle maintenance history timeline |
-| Failure end state(s) | Invoice file is rejected due to invalid format/size, OCR extraction failure, or authentication mismatch with the Electronic Invoice Portal |
+| Failure end state(s) | Invoice file is rejected due to invalid format/size or authentication mismatch with the Electronic Invoice Portal |
 | FRs covered | FR-01-05-FE, FR-01-05-BE, FR-01-06-BE, FR-01-07-INT, FR-01-07-BE |
-| Business rules applied | BR-01 (Mandatory electronic invoice authentication via General Department of Taxation portal) |
+| Business rules applied | BR-FILE-01, BR-OCR-01, BR-INV-01 |
 | Version / status | v0.1 · Draft |
 | Author | Đinh Thu Thảo |
 
