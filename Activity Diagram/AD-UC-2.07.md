@@ -18,8 +18,9 @@
 | Author | Nguyễn Hà Phương |
 
 ## 
-```
+
 1. **Diagram:**
+```mermaid
 ---
 config:
 flowchart:
