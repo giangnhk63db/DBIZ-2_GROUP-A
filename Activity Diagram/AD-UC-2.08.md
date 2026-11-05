@@ -23,33 +23,33 @@
    
 ```mermaid
 ---  
-config:  
- flowchart:  
-   nodeSpacing: 80  
-   rankSpacing: 90  
-   curve: linear  
----  
-flowchart TB  
+config:
+ flowchart:
+   nodeSpacing: 80
+   rankSpacing: 90
+   curve: linear
+---
+flowchart TB
 subgraph TIMER["Weekly Timer"]
-  start@{ shape: f-circ }  
-  t1@{ shape: hourglass, label: "Every week" }  
-end  
-subgraph SYS["TASCO Mobility System"]  
-  direction TB  
-  s1("Select Level 0 listings: year +-1, mileage +-20% (FR-02-05-BE)")  
-  s2("Remove price outliers by IQR (FR-02-05-BE)")  
-  d1{"At least 30 listings?"}  
-  s3("Expand to Level 1 (year +-2), select and remove outliers (FR-02-05-BE)")  
-  d2{"At least 30 listings?"}  
-  s4("Expand to Level 2 (mileage +-40%), select and remove outliers (FR-02-05-BE)")  
-  d3{"At least 30 listings?"}  
-  m1{" "}  
-  s5("Pass comparable listings and level to price calculation (FR-02-05-BE)")  
-  s6("Record INSUFFICIENT_DATA and stop (FR-02-04-BE, FR-02-05-BE,FR-02-06-BE)")  
-  stop1@{ shape: fr-circ }  
-  stop2@{ shape: fr-circ }  
-end  
-start --> t1 --> s1 --> s2 --> d1 
+  start@{ shape: f-circ }
+  t1@{ shape: hourglass, label: "Every week" } 
+end
+subgraph SYS["TASCO Mobility System"]
+  direction TB
+  s1("Select Level 0 listings: year +-1, mileage +-20% (FR-02-05-BE)")
+  s2("Remove price outliers by IQR (FR-02-05-BE)")
+  d1{"At least 30 listings?"}
+  s3("Expand to Level 1 (year +-2), select and remove outliers (FR-02-05-BE)")
+  d2{"At least 30 listings?"}
+  s4("Expand to Level 2 (mileage +-40%), select and remove outliers (FR-02-05-BE)")
+  d3{"At least 30 listings?"}
+  m1{" "}
+  s5("Pass comparable listings and level to price calculation (FR-02-05-BE)")
+  s6("Record INSUFFICIENT_DATA and stop (FR-02-04-BE, FR-02-05-BE,FR-02-06-BE)") 
+  stop1@{ shape: fr-circ }
+  stop2@{ shape: fr-circ }
+end
+start --> t1 --> s1 --> s2 --> d1
 d1 -->|"[yes]"| m1
 d1 -->|"[no]"| s3 --> d2
 d2 -->|"[yes]"| m1
