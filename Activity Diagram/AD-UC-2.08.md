@@ -20,7 +20,7 @@
 ## 
 
 1. **Diagram:**
-```
+```mermaid
 \---  
 config:  
  flowchart:  
