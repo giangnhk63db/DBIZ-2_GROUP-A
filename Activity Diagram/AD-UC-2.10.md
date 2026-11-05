@@ -18,9 +18,9 @@
 | Author | Nguyễn Hà Phương |
 
 ## 
-```
-1. **Diagram:**
 
+1. **Diagram:**
+```mermaid
 \---  
 config:  
  flowchart:  
@@ -29,43 +29,43 @@ config:
    curve: linear  
 \---  
 flowchart TB  
-subgraph OWNER\["Car Owner"\]  
-  start@{ shape: f-circ }  
-  a1**(**"Add a new vehicle"**)**  
-  a2**(**"View market price and 12-week trend chart"**)**  
-  stop1@{ shape: fr-circ }  
-end  
-subgraph SYS\["TASCO Mobility System"\]  
-  direction TB  
+subgraph OWNER["Car Owner"] 
+  start@{ shape: f-circ } 
+  a1("Add a new vehicle")
+  a2("View market price and 12-week trend chart")
+  stop1@{ shape: fr-circ }
+end
+subgraph SYS["TASCO Mobility System"]
+  direction TB
   d1{"Car model already in the listing store?"}  
-  s1**(**"Display Calculating Price (FR-02-09-FE**)**")  
-  s2**(**"Sync 180-day listing history (UC-2.06**,** FR-02-07-INT**)**")  
+  s1("Display Calculating Price (FR-02-09-FE)")  
+  s2("Sync 180-day listing history (UC-2.06, FR-02-07-INT)")  
   m2{" "}  
-  s3**(**"Check verified mileage at the checkpoint (UC-2.03**,** FR-02-08-INT**)**")  
+  s3("Check verified mileage at the checkpoint (UC-2.03, FR-02-08-INT)")  
   d2{"Mileage available and plausible?"}  
-  s4**(**"Clean listings active at the checkpoint (FR-02-03-BE,FR-02-08-BE**)**")  
-  s5**(**"Select comparable vehicles (FR-02-05-BE, FR-02-08-BE**)**")  
+  s4("Clean listings active at the checkpoint (FR-02-03-BE,FR-02-08-BE)")  
+  s5("Select comparable vehicles (FR-02-05-BE, FR-02-08-BE)")  
   d3{"Sufficient sample size?"}  
-  s6**(**"Calculate price and confidence (FR-02-06-BE, FR-02-04-BE, FR-02-08-BE**)**")  
-  s7**(**"Save price record with back-calculation flag (FR-02-08-BE,FR-02-06-BE,FR-02-04-BE**)**")  
+  s6("Calculate price and confidence (FR-02-06-BE, FR-02-04-BE, FR-02-08-BE)")  
+  s7("Save price record with back-calculation flag (FR-02-08-BE,FR-02-06-BE,FR-02-04-BE)")  
   m4{" "}  
-  s8**(**"Record INSUFFICIENT\_DATA with back-calculation flag (FR-02-08-INT**,**  FR-02-08-BE, FR-02-06-BE, FR-02-04-BE**)")**  
+  s8("Record INSUFFICIENT_DATA with back-calculation flag (FR-02-08-INT,  FR-02-08-BE, FR-02-06-BE, FR-02-04-BE)")  
   m3{" "}  
   d4{"Another of the 12 weekly checkpoints left?"}  
-  s9**(**"Display market price and 12-week trend chart (FR-02-09-FE**,** FR-02-10-FE**)**")  
+  s9("Display market price and 12-week trend chart (FR-02-09-FE, FR-02-10-FE)")  
 end  
-start \--\> a1 \--\> d1  
-d1 \--\>\|"\[no\]"\| s1 \--\> s2 \--\> m2  
-d1 \--\>\|"\[yes\]"\| m2  
-m2 \--\> s3 \--\> d2  
-d2 \--\>\|"\[yes\]"\| s4 \--\> s5 \--\> d3  
-d2 \--\>\|"\[no\]"\| m4  
-d3 \--\>\|"\[yes\]"\| s6 \--\> s7 \--\> m3  
-d3 \--\>\|"\[no\]"\| m4  
-m4 \--\> s8 \--\> m3  
-m3 \--\> d4  
-d4 \--\>\|"\[yes\]"\| m2  
-d4 \--\>\|"\[no\]"\| s9 \--\> a2 \--\> stop1
+start --> a1 --> d1  
+d1 -->|"[no]"| s1 --> s2 --> m2  
+d1 -->|"[yes]"| m2  
+m2 --> s3 --> d2  
+d2 -->|"[yes]"| s4 --> s5 --> d3  
+d2 -->|"[no]"| m4  
+d3 -->|"[yes]"| s6 --> s7 --> m3  
+d3 -->|"[no]"| m4  
+m4 --> s8 --> m3  
+m3 --> d4  
+d4 -->|"[yes]"| m2  
+d4 -->|"[no]"| s9 --> a2 --> stop1
 ```
 **Reading notes**
 
