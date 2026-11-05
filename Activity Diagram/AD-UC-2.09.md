@@ -22,8 +22,8 @@
 ## 
 
 1. **Diagram**
-```
-\---
+```mermaid
+---
 
 config:
 
@@ -35,11 +35,11 @@ config:
 
    curve: linear
 
-\---
+---
 
 flowchart TB
 
-subgraph TIMER\["Weekly Timer"\]
+subgraph TIMER["Weekly Timer"]
 
   start@{ shape: f-circ }
 
@@ -47,31 +47,31 @@ subgraph TIMER\["Weekly Timer"\]
 
 end
 
-subgraph SYS\["TASCO Mobility System"\]
+subgraph SYS["TASCO Mobility System"]
 
   direction TB
 
   d1{"At least 30 listings?"}
 
-  s1**(**"Calculate median and P25-P75 (FR-02-06-BE**)**")
+  s1("Calculate median and P25-P75 (FR-02-06-BE)")
 
-  s2**(**"Round to nearest million VND (FR-02-06-BE**)**")
+  s2("Round to nearest million VND (FR-02-06-BE)")
 
-  d2{"Level 2 criteria used? **(**mileage \+-40%**)**"}
+  d2{"Level 2 criteria used? (mileage +-40%)"}
 
-  d3{"Level 1 criteria used **(**year \+-2**)** or one marketplace missing?"}
+  d3{"Level 1 criteria used (year +-2) or one marketplace missing?"}
 
-  s5**(**"Assign Low (FR-02-04-BE**)**")
+  s5("Assign Low (FR-02-04-BE)")
 
-  s4**(**"Assign Medium (FR-02-04-BE**)**")
+  s4("Assign Medium (FR-02-04-BE)")
 
-  s3**(**"Assign High (FR-02-04-BE**)**")
+  s3("Assign High (FR-02-04-BE)")
 
   m1{" "}
 
-  s6**(**"Save weekly price record (FR-02-06-BE**,** FR-02-04-BE**)**")
+  s6("Save weekly price record (FR-02-06-BE, FR-02-04-BE)")
 
-  s7**(**"Record INSUFFICIENT\_DATA**,** no price (FR-02-06-BE**,** FR-02-04-BE**)**")
+  s7("Record INSUFFICIENT_DATA, no price (FR-02-06-BE,FR-02-04-BE)")
 
   stop1@{ shape: fr-circ }
 
@@ -79,21 +79,21 @@ subgraph SYS\["TASCO Mobility System"\]
 
 end
 
-start \--\> t1 \--\> d1
+start --> t1 --> d1
 
-d1 \--\>\|"\[yes\]"\| s1 \--\> s2 \--\> d2
+d1 -->|"[yes]"| s1 --> s2 --> d2
 
-d1 \--\>\|"\[no\]"\| s7 \--\> stop2
+d1 -->|"[no]"| s7 --> stop2
 
-d2 \--\>\|"\[yes\]"\| s5 \--\> m1
+d2 -->|"[yes]"| s5 --> m1
 
-d2 \--\>\|"\[no\]"\| d3
+d2 -->|"[no]"| d3
 
-d3 \--\>\|"\[yes\]"\| s4 \--\> m1
+d3 -->|"[yes]"| s4 --> m1
 
-d3 \--\>\|"\[no\]"\| s3 \--\> m1
+d3 -->|"[no]"| s3 --> m1
 
-m1 \--\> s6 \--\> stop1
+m1 --> s6 --> stop1
 ```
 **Reading notes**
 
