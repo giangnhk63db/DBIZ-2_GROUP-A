@@ -21,13 +21,13 @@
 
 1. **Diagram:**
 ```mermaid
-\---  
+---  
 config:  
  flowchart:  
    nodeSpacing: 80  
    rankSpacing: 90  
    curve: linear  
-\---  
+---  
 flowchart TB  
 subgraph OWNER["Car Owner"] 
   start@{ shape: f-circ } 
