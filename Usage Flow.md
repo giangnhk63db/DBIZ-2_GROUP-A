@@ -1,6 +1,6 @@
 # Usage Flow: TASCO Verified Vehicle Report System
 
-## 1.  Car Owner: create the verified vehicle report and view vehicle identification & condition 
+## 1.  Car Owner: Create the verified vehicle report and view vehicle identification & condition 
 
 | Field | Value |
 | ----- | ----- |
@@ -34,7 +34,7 @@ flowchart LR
 | 5 | UC-1.05: Upload External Maintenance & Repair Invoices | AD-UC-1.05.md | S-F01-05  |
 | 6 | UC-1.06: View Battery State of Health (SoH) | AD-UC-1.06.md | S-F01-02, S-F01-06  |
 
-## 2. Car Owner:  view and refresh the legal status 
+## 2. Car Owner:  View and refresh the legal status 
 
 ```mermaid
 flowchart LR
