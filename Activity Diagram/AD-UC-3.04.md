@@ -66,7 +66,7 @@ d1 -->|"No data or API fail"| s3 --> stop2
 | Object | States in this diagram | Full state list (all diagrams) |
 | ----- | ----- | ----- |
 | Unpaid fines | Have data, No data | Have data, No data |
-| Sale request submission | Created | Created, Sending, Sent |
+
 
 5. ## **Screen touched**
 
