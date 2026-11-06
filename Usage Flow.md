@@ -104,7 +104,7 @@ flowchart LR
 | 1 | UC-3.01: Submit Sale Request | AD-UC-3.01.md | S-F03-01  |
 | 2 | UC-3.09: View Preliminary Quote | not needed | S-F03-03   |
 
-5. Carpla Staff: Process sale request and send quote
+## 5. Carpla Staff: Process sale request and send quote
 
 ``` mermaid 
 flowchart LR
@@ -119,7 +119,7 @@ flowchart LR
 | 1 | UC-3.07: Review Verified Report | not needed | S-F03-02  |
 | 2 | UC-3.08: Send Preliminary Quote to Car Owner | not needed | S-F03-02  |
 
-Use cases without a flow
+## Use cases without a flow
 
 | Use case | Started by | Described in |
 | ----- | ----- | ----- |
