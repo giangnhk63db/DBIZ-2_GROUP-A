@@ -66,7 +66,7 @@ d1 -->|"No Data or API fail"| s3 --> stop2
 | Object | States in this diagram | Full state list (all diagrams) |
 | ----- | ----- | ----- |
 | Inspection status | Have data, No data | Have data, No data |
-| Sale request submission | Allowed, Blocked | Allowed, Blocked |
+
 
 ## 
 
