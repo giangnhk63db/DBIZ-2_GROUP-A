@@ -142,7 +142,7 @@ C: Chợ Tốt - Carousell Group
 
 |Actor action|Screen ID|
 |-|-|
-|||
+|(none: system-initiated, no actor)||
 
 ## **6. Open questions**
 
