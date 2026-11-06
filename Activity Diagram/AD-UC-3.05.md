@@ -76,7 +76,7 @@ swimlane-beta TB
 | ----- | ----- | ----- |
 | Mortgage status | No mortgage, Mortgaged, No data | No mortgage, Mortgaged, No data |
 | Report | Red flag attached, No outstanding mortgage indicated, No data inserted | Red flag attached, No outstanding mortgage indicated, No data inserted |
-| Sale request submission | Created | Created, Sending, Sent |
+
 
 5. ## **Screen touched**
 
