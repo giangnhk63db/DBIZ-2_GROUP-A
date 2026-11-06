@@ -54,14 +54,14 @@ d1 -->|"No Data or API fail"| s3 --> stop2
 | s2 | Action | Return Inspection status and insert in report | FR-03-02-BE |
 | s3 | Action | Insert “No data” in report | FR-03-02-BE |
 
-1. ## **Branches and Acceptance tests**
+3. ## **Branches and Acceptance tests**
 
 | Branch | Given | When | Then |
 | ----- | ----- | ----- | ----- |
 | d1 \[Have data\] | Inspection status query is sent to the Vehicle Inspection Portal (v1) | Vehicle Inspection Portal returns the inspection status successfully  | System returns the inspection status and insert into report (s2) and stops at stop1 |
 | d1 \[No Data\] | Inspection status query is sent to the Vehicle Inspection Portal (v1) | Vehicle Inspection Portal answers but has no record for the vehicle or connection times out | System inserts “No data” in the report (s3) and stops at stop2 |
 
-2. ## **Object states used**
+4. ## **Object states used**
 
 | Object | States in this diagram | Full state list (all diagrams) |
 | ----- | ----- | ----- |
@@ -70,9 +70,9 @@ d1 -->|"No Data or API fail"| s3 --> stop2
 
 ## 
 
-3. ## **Screen touched**
+5. ## **Screen touched**
 
-4. ## **Open question**
+6. ## **Open question**
 
 | \# | Question | Blocking? | Default applied |
 | ----- | ----- | ----- | ----- |
@@ -85,7 +85,7 @@ d1 -->|"No Data or API fail"| s3 --> stop2
 | 7 | \[NEEDS CLARIFICATION: The \[No data\] guard has no counterpart in sequence Figure 16, which only has the alt 'Any API gateway fails / All checks succeed'. Add a branch to the sequence?\] | No | Add an alt for 'portal answers without a record' to the sequence |
 | 8 | \[NEEDS CLARIFICATION: Lane name of our system: the Context Diagram calls it 'Verified Vehicle Report' (module of the Tasco Mobility app); this diagram and sequence Figure 16 call it 'Tasco Mobility System'. Which name is the source of truth?\] | No | Rename node in the Context diagram. Use Tasco Mobility system name. |
 
-5. ## **Verification**
+7. ## **Verification**
 
 | Check | Result | By | Date |
 | ----- | ----- | ----- | ----- |
