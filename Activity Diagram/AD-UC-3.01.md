@@ -67,7 +67,9 @@ d1 -->|"No"| s4 --> stop2
 | Sale request submission | Created | Created, Sending, Sent |
 
 5. ## **Screen touched**
-
+| **Actor action** | **Screen ID** |
+|---|---|
+| When the car owner clicks the fixed “Submit sale request” button at the bottom of the Verified Vehicle Report (S-F01-02). The selling form is pre-filled with information from the verified report and updated legal status. The owner only needs to enter the current mileage, desired selling price, and phone number, then click Submit. After submission, the screen displays a success confirmation. | S-F03-01 |
 6. ## **Open question**
 
 | \# | Question | Blocking? | Default applied |
