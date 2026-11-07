@@ -2,7 +2,7 @@
 
 1. **Car owner**  
 ```mermaid
-  ---
+---
 config:
   layout: elk
   elk:
@@ -68,7 +68,7 @@ flowchart LR
  ```    
 2. **Carpla staff**  
 ```mermaid  
- ---
+---
 config:
   layout: elk
   flowchart:
