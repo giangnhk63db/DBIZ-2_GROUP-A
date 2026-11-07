@@ -3,7 +3,7 @@
 | Field | Value |
 | ----- | ----- |
 | Product | TASCO Verified Vehicle Report System |
-| Version | v0.2 |
+| Version | v0.3|Review|
 | Date | 2026-11-05 |
 | Sources | W0 Table 1 (use case inventory); Use Case Diagram; Activity Diagram Index |
 
