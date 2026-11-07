@@ -127,8 +127,6 @@ swimlane-beta TB
 
 ## 5. Screens touched
 
-*(Left empty in Lesson 7)*
-
 ## 6. Open questions
 
 | # | Question | Blocking? | Default applied |
