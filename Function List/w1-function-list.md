@@ -1,6 +1,4 @@
-# W1 Function List: Vehicle Passport (TASCO Mobility)
-
-> Converted from the W1_FunctionList sheet of `Fuction_List.xlsx` (DBIZ 2, Team A). L2 = a business behaviour the client signs off, with its EARS criterion and function-point type. L3 = one work item in one layer (FE = front end, BE = back end, INT = integration), sized S = 4 h, M = 8 h, L = 16 h. Initial priority is set here.
+# W1 Function List: 
 
 ## L2 functions
 
