@@ -14,7 +14,7 @@
 | Failure end state(s) | Charging station data retrieval fails or exceeds max 3 retries, triggering an error notification |
 | FRs covered | FR-01-08-FE, FR-01-08-BE, FR-01-08-INT |
 | Business rules applied | BR-RET-02 (Telemetry Data Retry & Fallback Rule) |
-| Version / status | v0.1 · Draft |
+| Version / status | v0.3 · Reviewed |
 | Author | Đinh Thu Thảo |
 
 ## 
