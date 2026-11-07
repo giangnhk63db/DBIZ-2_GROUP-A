@@ -1,7 +1,5 @@
 # W5 Baseline and handover: Vehicle Passport (TASCO Mobility)
 
-The baseline every later step refers to.
-
 ## 1. Three scenarios
 
 | Scenario | Person-hours | Cost (VND) | Role in the sensitivity analysis |
