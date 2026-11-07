@@ -1,13 +1,14 @@
 # Usage Flow: TASCO Verified Vehicle Report System
 
-## 1.  Car Owner: Create the verified vehicle report and view vehicle identification & condition 
-
 | Field | Value |
 | ----- | ----- |
 | Product | TASCO Verified Vehicle Report System |
-| Version | v0.1 |
+| Version | v0.2 |
 | Date | 2026-11-05 |
 | Sources | W0 Table 1 (use case inventory); Use Case Diagram; Activity Diagram Index |
+
+## 1.  Car Owner: Create the verified vehicle report and view vehicle identification & condition 
+
 
 ```mermaid
 flowchart LR
@@ -58,13 +59,6 @@ flowchart LR
 
 ## 3. Car owner: Track market price and trends
 
-| Field | Value |
-| ----- | ----- |
-| Product | TASCO Verified Vehicle Report System |
-| Version | v0.1 |
-| Date | 2026-11-05 |
-| Sources | W0 Table 1 (use case inventory); Use Case Diagram; Activity Diagram Index |
-
 ```mermaid
 flowchart LR
 A(["Wants to know or stop tracking the car's market price"]) --> Choice{"Choose action"}
@@ -83,13 +77,6 @@ U211 --> Z2(["Tracking stopped"])
 | 3 | UC-2.11: Stop Market Price Tracking | not needed | No screen  |
 
 ## 4. Car Owner: Sell  the car to Carpla and request preliminary quote 
-
-| Field | Value |
-| ----- | ----- |
-| Product | TASCO Verified Vehicle Report System |
-| Version | v0.1 |
-| Date | 2026-11-05 |
-| Sources | W0 Table 1 (use case inventory); Use Case Diagram; Activity Diagram Index |
 
 ```mermaid
 flowchart LR
