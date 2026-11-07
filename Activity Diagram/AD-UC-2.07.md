@@ -14,7 +14,7 @@
 | Failure end state(s) | A listing that is too old, removed, incomplete, has an invalid price, or is marked “Negotiable” is excluded from pricing |
 | FRs covered | FR-02-03 |
 | Business rules applied | UC-2.07 rule: retain listings published within the previous 90 days and not removed; mandatory fields must be present; price must be above zero and must not be “Negotiable”; cross-marketplace duplicates are identified by the same brand, model and manufacturing year, with mileage difference of at most 1,000 km; retain the most recently published duplicate |
-| Version / status | v0.1 · Draft |
+| Version / status | v0.3 · Reviewed |
 | Author | Nguyễn Hà Phương |
 
 ## 
@@ -101,6 +101,9 @@ m1 --> s5 --> stop2
 | Listing Price / Mileage | Original marketplace value; normalized to VND / km | Not specified in the supplied material |
 
 ## **5\. Screens touched**
+| **Actor action** | **Screen ID** |
+|---|---|
+| Not applicable.  | - |
 
 ## **6\. Open questions**
 
