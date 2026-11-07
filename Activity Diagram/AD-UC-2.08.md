@@ -103,8 +103,7 @@ m1 --> s5 --> stop1
 
 ## **5\. Screens touched**
 | **Actor action** | **Screen ID** |
-|---|---|
-| Not applicable. | - |
+N/A
 
 ## **6\. Open questions**
 
