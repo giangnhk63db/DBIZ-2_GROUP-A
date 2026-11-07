@@ -109,7 +109,9 @@ swimlane-beta TB
 
 | Actor action | Screen ID |
 | :---- | :---- |
-|  |  |
+| Select view EV battery health status (a1) | S-F01-02 → S-F01-05 |
+| View Battery State of Health (SoH) metrics & reports (a2) | S-F01-05 |
+| View error notification popup: 'Cannot connect to station' (error_view) | S-F01-05 (Error notification (BE) popup) |
 
 ## 
 
