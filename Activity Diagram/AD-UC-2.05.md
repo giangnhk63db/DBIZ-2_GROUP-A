@@ -139,10 +139,7 @@ C: Chợ Tốt - Carousell Group
 |No object node in this diagram (API\_FAILED is returned here and recorded in AD-UC-2.04)|||
 
 ## **5. Screens touched**
-
-|Actor action|Screen ID|
-|-|-|
-|N/A||
+N/A
 
 ## **6. Open questions**
 
