@@ -124,8 +124,8 @@ d4 -->|"[no]"| s9 --> a2 --> stop1
 ## **5\. Screens touched**
 | **Actor action** | **Screen ID** |
 |---|---|
-| When the car owner adds a new vehicle for the first time, the owner clicks “Create Verified Vehicle Report” and enters the vehicle's 17-character VIN. After the VIN is accepted, the system creates the vehicle profile. | `S-F01-01` |
-| After adding the vehicle, the car owner accesses the “Market Price & 12-Week Trend” screen by clicking “View trend” in the “Market data” section of the Vehicle Profile. While the system synchronizes 180-day listing history and processes the 12 weekly checkpoints, the screen displays the “Calculating Price” message. Once the back-calculation is completed, the screen displays the latest market price, its confidence level, and the 12-week trend chart. | `S-F02-01` |
+| The car owner adds a new vehicle for the first time by clicking “Create Verified Vehicle Report” and entering the vehicle's 17-character VIN. | `S-F01-01` |
+| After adding the vehicle, the car owner accesses the “Market Price & 12-Week Trend” screen by clicking “View trend” in the “Market data” section of the Vehicle Profile to view the vehicle's latest market price, confidence level, and 12-week trend chart. | `S-F02-01` |
 ## **6\. Open questions**
 
 | \# | Question | Blocking? | Default applied |
