@@ -79,6 +79,7 @@ swimlane-beta TB
 
 
 5. ## **Screen touched**
+N/A
 
 6. ## **Open question**
 
