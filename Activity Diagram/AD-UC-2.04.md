@@ -124,7 +124,7 @@ Reading notes:
 
 |Actor action|Screen ID|
 |-|-|
-|(none: system-initiated, no actor)||
+|N/A||
 
 ## **6. Open questions**
 
