@@ -1,6 +1,4 @@
-# W0 Scope: Vehicle Passport (TASCO Mobility)
-
-> Converted from the W0_Scope sheet of `Fuction_List.xlsx` (DBIZ 2, Team A). Block W0: establish scope and split into features.
+# W0 Scope:
 
 ## Table 1. Use case inventory
 
