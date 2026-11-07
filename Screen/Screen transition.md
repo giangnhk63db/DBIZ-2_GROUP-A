@@ -66,25 +66,25 @@
  ```    
 3. **Carpla staff**  
 ```mermaid  
-   \---  
+   ---  
    config:  
     layout: elk  
     flowchart:  
       nodeSpacing: 110  
       rankSpacing: 200  
       padding: 40  
-   \---  
+   ---  
    flowchart LR  
-    entry\_staff(\["Entry: Receives a new\<br\>vehicle sale request"\])  
-    S03\_02\["S-F03-02\<br\>Sale Request Review & Quote"\]  
-    exit\_staff(\["Exit: Quote sent\<br\>to Car Owner"\])  
+    entry_staff(["Entry: Receives a new<br>vehicle sale request"])  
+    S03_02["S-F03-02<br>Sale Request Review & Quote"]  
+    exit_staff(["Exit: Quote sent<br>to Car Owner"])  
      
-    entry\_staff \--\>\|"Opens the sale request"\| S03\_02  
-    S03\_02 \--\>\|"Enters suggested quote range\<br\>and sends it"\| exit\_staff  
-    S03\_02 \-.\-\>\|"back"\| exit\_staff  
+    entry_staff -->|"Opens the sale request"| S03_02  
+    S03_02 -->|"Enters suggested quote range<br>and sends it"| exit_staff  
+    S03_02 -.->|"back"| exit_staff  
      
-    classDef screen fill:\#f2c9c9,stroke:\#8b1a10,stroke-width:2px,color:\#000;  
-    classDef entryNode fill:\#fdf0b8,stroke:\#c9a400,stroke-width:2px,color:\#000;  
-    class S03\_02 screen;  
-    class entry\_staff,exit\_staff entryNode;  
+    classDef screen fill:#f2c9c9,stroke:#8b1a10,stroke-width:2px,color:#000;  
+    classDef entryNode fill:#fdf0b8,stroke:#c9a400,stroke-width:2px,color:#000;  
+    class S03_02 screen;  
+    class entry_staff,exit_staff entryNode;  
 ```   
