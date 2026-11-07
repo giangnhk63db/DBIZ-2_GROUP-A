@@ -14,7 +14,7 @@
 | Failure end state(s) | Fewer than 30 comparable listings remain after Level 2; the system records INSUFFICIENT\_DATA and stops without passing a comparable sample for price calculation |
 | FRs covered | FR-02-05 (selection and comparison level); FR-02-04 and FR-02-06 are referenced for the insufficient-data outcome in the supplied trace |
 | Business rules applied | UC-2.08 rules: Level 0 uses the same brand/model, manufacturing year within ±1 and mileage within ±20%; remove price outliers using IQR; if fewer than 30 remain, expand to Level 1 (year ±2); if still fewer than 30, expand to Level 2 (mileage ±40%); if fewer than 30 remain after Level 2, record INSUFFICIENT\_DATA |
-| Version / status | v0.1 · Draft |
+| Version / status | v0.3 · Reviewed |
 | Author | Nguyễn Hà Phương |
 
 ## 
@@ -102,6 +102,9 @@ m1 --> s5 --> stop1
 | Comparable Sample | At least 30 listings; fewer than 30 listings | Minimum threshold is 30; a complete sample-status catalogue is not supplied |
 
 ## **5\. Screens touched**
+| **Actor action** | **Screen ID** |
+|---|---|
+| Not applicable. | - |
 
 ## **6\. Open questions**
 
