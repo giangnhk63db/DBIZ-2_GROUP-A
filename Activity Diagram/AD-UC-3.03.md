@@ -70,7 +70,8 @@ d1 -->|"No Data or API fail"| s3 --> stop2
 
 ## 
 
-5. ## **Screen touched**
+5. ## **Screen touched** 
+N/A
 
 6. ## **Open question**
 
