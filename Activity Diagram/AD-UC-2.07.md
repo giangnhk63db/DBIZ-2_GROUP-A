@@ -101,7 +101,6 @@ m1 --> s5 --> stop2
 | Listing Price / Mileage | Original marketplace value; normalized to VND / km | Not specified in the supplied material |
 
 ## **5\. Screens touched**
-| **Actor action** | **Screen ID** |
 N/A
 
 ## **6\. Open questions**
