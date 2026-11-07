@@ -66,25 +66,26 @@
  ```    
 2. **Carpla staff**  
 ```mermaid  
-   ---  
-   config:  
-    layout: elk  
-    flowchart:  
-      nodeSpacing: 110  
-      rankSpacing: 200  
-      padding: 40  
-   ---  
-   flowchart LR  
-    entry_staff(["Entry: Receives a new<br>vehicle sale request"])  
-    S03_02["S-F03-02<br>Sale Request Review & Quote"]  
-    exit_staff(["Exit: Quote sent<br>to Car Owner"])  
-     
-    entry_staff -->|"Opens the sale request"| S03_02  
-    S03_02 -->|"Enters suggested quote range<br>and sends it"| exit_staff  
-    S03_02 -.->|"back"| exit_staff  
-     
-    classDef screen fill:#f2c9c9,stroke:#8b1a10,stroke-width:2px,color:#000;  
-    classDef entryNode fill:#fdf0b8,stroke:#c9a400,stroke-width:2px,color:#000;  
-    class S03_02 screen;  
-    class entry_staff,exit_staff entryNode;  
+ ---
+config:
+  layout: elk
+  flowchart:
+    nodeSpacing: 110
+    rankSpacing: 220
+    padding: 40
+---
+flowchart LR
+  entry_staff(["Entry: Carpla CRM receives sale request<br>with the verified vehicle report"])
+  S03_02["S-F03-02<br>Sale Request Review & Quote"]
+  exit_staff(["Exit: Carpla CRM"])
+
+  entry_staff -->|"opens the sale request<br>(owner-declared info + verified vehicle report)"| S03_02
+  S03_02 -->|"enters suggested quote range<br>and sends it to car owner"| exit_staff
+  S03_02 -.->|"back"| exit_staff
+
+  classDef screen fill:#f2c9c9,stroke:#8b1a10,stroke-width:2px,color:#000;
+  classDef entryNode fill:#fdf0b8,stroke:#c9a400,stroke-width:2px,color:#000;
+  class S03_02 screen;
+  class entry_staff,exit_staff entryNode;
+  
 ```   
