@@ -100,8 +100,6 @@ swimlane-beta TB
 | :---- | :---- |
 | `a1` Select Create Verified Vehicle Report | `S-F00-01` |
 | `a2` Enter 17-character VIN | `S-F01-01` |
-| `a3` View validation error | `S-F01-01` |
-| `a4` Receive profile created confirmation | `S-F01-01` |
 
 ## **6\. Open questions**
 
