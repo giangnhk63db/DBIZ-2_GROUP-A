@@ -1,6 +1,5 @@
-# W2 Costing and roll-up: Vehicle Passport (TASCO Mobility)
-
-> Converted from the W2_Costing and W2_Rollup sheets of `Fuction_List.xlsx` (DBIZ 2, Team A). Fully derived from the W1 function list (`w1-function-list.md`), the effective priorities in the W4_Prioritization sheet (no priority changes are recorded there yet, so they equal the initial priorities) and the class Parameters:
+# W2 Costing and roll-up: 
+Fully derived from the W1 function list (`w1-function-list.md`), the effective priorities in the W4_Prioritization sheet (no priority changes are recorded there yet, so they equal the initial priorities) and the class Parameters:
 
 - Person-hours = base hours x AI leverage factor + base hours x verification factor.
 - AI leverage: FE 0.35, BE 0.7, INT 1.0. Verification factor: 0.15 when the EARS criterion is precise, 0.4 when it is vague.
