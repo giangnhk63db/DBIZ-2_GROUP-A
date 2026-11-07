@@ -14,7 +14,7 @@
 | Failure end state(s) | One or more external portals timeout or fail; the system logs the errors, aggregates the available partial data, and displays it with specific error indicators |
 | FRs covered | `FR-01-09-FE`, `FR-01-10-INT`, `FR-01-11-INT`, `FR-01-12-INT`, `FR-01-13-BE`, `FR-01-13-FE` |
 | Business rules applied | `BR-REF-01`, `BR-ERR-01` |
-| Version / status | v0.1 - Draft |
+| Version / status | v0.3 - Review |
 | Author | Nguyễn Danh Quang |
 
 
@@ -126,7 +126,10 @@ swimlane-beta TB
 | External Portal Query (Inspection / Fine / Mortgage) | Sent -> Responded / Error | Pending, Sent, Responded, Timeout, Error |
 
 ## 5. Screens touched
-
+| Actor action | Screen ID |
+| :---- | :---- |
+| `a1` Click Refresh Legal Status | `S-F01-02` |
+| `a2` View consolidated legal status | `S-F01-02` |
 ## 6. Open questions
 
 | # | Question | Blocking? | Default applied |
