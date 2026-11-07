@@ -14,7 +14,7 @@
 | Failure end state(s) | VIN initialization is rejected due to invalid character format/length, or non-existent VIN in the database, returning the user to the input state |
 | FRs covered | `FR-01-01-FE`, `FR-01-01-BE` |
 | Business rules applied | `BR-VFVR-01` |
-| Version / status | v0.1 - Draft |
+| Version / status | v0.3 - Review |
 | Author | Nguyễn Danh Quang |
 
 ## 1. Diagram
@@ -98,7 +98,10 @@ swimlane-beta TB
 
 | Actor action | Screen ID |
 | :---- | :---- |
-|  |  |
+| `a1` Select Create Verified Vehicle Report | `S-F00-01` |
+| `a2` Enter 17-character VIN | `S-F01-01` |
+| `a3` View validation error | `S-F01-01` |
+| `a4` Receive profile created confirmation | `S-F01-01` |
 
 ## **6\. Open questions**
 
