@@ -14,7 +14,7 @@
 | Failure end state(s) | For a checkpoint, mileage is missing or implausible, or fewer than 30 comparable listings remain; the system records INSUFFICIENT\_DATA with the back-calculation flag and continues to the next checkpoint. The supplied flow does not define a separate terminal failure that prevents the chart from being displayed |
 | FRs covered | FR-02-07, FR-02-08, FR-02-06, FR-02-04, FR-02-09, FR-02-10, FR-02-11 |
 | Business rules applied | UC-2.10 / Figure 14: a first-time vehicle model triggers a 180-day listing-history sync; each of the 12 weekly checkpoints uses verified mileage, listing cleaning, comparable-listing selection and price/confidence calculation; each generated price record is flagged as back-calculated; insufficient checkpoints are recorded as INSUFFICIENT\_DATA with the back-calculation flag |
-| Version / status | v0.1 · Draft |
+| Version / status | v0.3 · Reviewed |
 | Author | Nguyễn Hà Phương |
 
 ## 
@@ -122,6 +122,10 @@ d4 -->|"[no]"| s9 --> a2 --> stop1
 | 12-Week Back-calculation | Checkpoint pending; checkpoint processed; all 12 checkpoints processed | Not specified in the supplied material |
 
 ## **5\. Screens touched**
+| **Actor action** | **Screen ID** |
+|---|---|
+| When the car owner adds a new vehicle for the first time, the system checks whether the vehicle's model already exists in the listing store. If the model is not available, the system displays the “Calculating Price” message while synchronizing 180-day listing history. | S-F01-01 |
+| After the system completes the back-calculation of the 12 weekly checkpoints, the car owner views the vehicle's market price and 12-week trend chart. The screen displays the latest market price and its confidence level, together with the 12-week trend chart. | S-F02-01 |
 
 ## **6\. Open questions**
 
