@@ -1,7 +1,5 @@
 # W6 Cash flow and investment decision: Vehicle Passport (TASCO Mobility)
 
-> Converted from the Capital Budgeting sheet of `Fuction_List.xlsx` (DBIZ 2, Team A). The initial investment is the Base scenario (Must + Should) cost from the W5 handover.
-
 ## 1. Assumptions
 
 | Assumption | Value |
