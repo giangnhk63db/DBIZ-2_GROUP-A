@@ -109,6 +109,10 @@ swimlane-beta TB
 
 | Actor action | Screen ID |
 | :---- | :---- |
+| Select view toll history and route distance (a1) | S-F01-02 → S-F01-03 |
+| See toll history timeline and minimum calculated distance (a2) | S-F01-03 |
+| View error notification popup: “Connection timeout, please try again” (error_view) | S-F01-03 (Error notification (BE) popup) || Actor action | Screen ID |
+| :---- | :---- |
 |  |  |
 
 ## 
