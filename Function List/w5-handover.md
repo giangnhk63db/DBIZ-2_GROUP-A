@@ -1,6 +1,6 @@
 # W5 Baseline and handover: Vehicle Passport (TASCO Mobility)
 
-> Converted from the W5_Handover sheet of `Fuction_List.xlsx` (DBIZ 2, Team A). The baseline every later step refers to.
+The baseline every later step refers to.
 
 ## 1. Three scenarios
 
