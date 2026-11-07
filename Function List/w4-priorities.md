@@ -1,4 +1,4 @@
-# W4 Priorities: Vehicle Passport (TASCO Mobility)
+# W4 Priorities: 
 Cut by lowering priority, never by lowering effort. Every change names its rule.
 
 | Rule | MoSCoW meaning | Test question |
