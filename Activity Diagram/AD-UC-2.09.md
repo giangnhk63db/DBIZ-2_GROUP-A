@@ -140,7 +140,6 @@ m1 --> s6 --> stop1
 | Comparison Level | Level 0; Level 1; Level 2 (set by UC-2.08 and read here) | Level 0; Level 1; Level 2 |
 
 ## **5\. Screens touched**
-| **Actor action** | **Screen ID** |
 N/A
 
 ## **6\. Open questions**
