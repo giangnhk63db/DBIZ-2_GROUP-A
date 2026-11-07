@@ -16,7 +16,7 @@
 | Failure end state(s) | INSUFFICIENT\_DATA is recorded because fewer than 30 comparable listings remain; no price is calculated and no confidence level is assigned |
 | FRs covered | FR-02-06, FR-02-04 |
 | Business rules applied | BR-2.09-1 (at least 30 comparable listings are needed to calculate a price) · BR-2.09-2 (price values are rounded to the nearest million VND) · BR-2.09-3 (High \= Level 0 and all valid sources available; Medium \= Level 1 or one marketplace missing that week; Low \= Level 2\) |
-| Version / status | v0.1 · Draft |
+| Version / status | v0.3 · Reviewed |
 | Author | Nguyễn Hà Phương |
 
 ## 
@@ -140,6 +140,9 @@ m1 --> s6 --> stop1
 | Comparison Level | Level 0; Level 1; Level 2 (set by UC-2.08 and read here) | Level 0; Level 1; Level 2 |
 
 ## **5\. Screens touched**
+| **Actor action** | **Screen ID** |
+|---|---|
+| Not applicable. | — |
 
 ## **6\. Open questions**
 
