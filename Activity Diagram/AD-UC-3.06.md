@@ -91,6 +91,7 @@ d2 -->|"Forward failed and 3 retries made"| s5 --> s6 --> stop2
 | Market price  | No data, Have data | No data, Have data |
 
 5. ## **Screen touched**
+N/A
 
 6. ## **Open question**
 
