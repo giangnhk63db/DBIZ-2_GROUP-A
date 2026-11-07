@@ -14,7 +14,7 @@
 | Failure end state(s) | Invoice file is rejected due to invalid format/size or authentication mismatch with the Electronic Invoice Portal |
 | FRs covered | FR-01-05-FE, FR-01-05-BE, FR-01-06-BE, FR-01-07-INT, FR-01-07-BE |
 | Business rules applied | BR-FILE-01, BR-OCR-01, BR-INV-01 |
-| Version / status | v0.1 · Draft |
+| Version / status | v0.3 · Reviewed |
 | Author | Đinh Thu Thảo |
 
 ## 
