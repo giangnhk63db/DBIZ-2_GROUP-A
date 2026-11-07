@@ -14,7 +14,7 @@
 | Failure end state(s) | Connection timeout or API failure exceeds max 3 retries, leading to an error notification |
 | FRs covered | FR-01-03-FE, FR-01-03-BE, FR-01-03-INT |
 | Business rules applied | BR-RET-01 (VETC Integration Retry Rule) |
-| Version / status | v0.3 · Review |
+| Version / status | v0.3 · Reviewed |
 | Author | Đinh Thu Thảo |
 
 ## 
