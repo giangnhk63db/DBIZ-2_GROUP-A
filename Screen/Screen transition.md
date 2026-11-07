@@ -1,4 +1,4 @@
-**Screen transition**
+**Screen Transition**
 
 1. **Car owner**  
 ```mermaid
@@ -64,7 +64,7 @@
     class S00_01,S01_01,S01_02,S01_03,S01_05,S01_06,S02_01,S03_01,S03_03 screen;  
     class entry,entry_quote entryNode;  
  ```    
-3. **Carpla staff**  
+2. **Carpla staff**  
 ```mermaid  
    ---  
    config:  
