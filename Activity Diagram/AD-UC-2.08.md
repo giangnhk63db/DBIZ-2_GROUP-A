@@ -102,7 +102,6 @@ m1 --> s5 --> stop1
 | Comparable Sample | At least 30 listings; fewer than 30 listings | Minimum threshold is 30; a complete sample-status catalogue is not supplied |
 
 ## **5\. Screens touched**
-| **Actor action** | **Screen ID** |
 N/A
 
 ## **6\. Open questions**
