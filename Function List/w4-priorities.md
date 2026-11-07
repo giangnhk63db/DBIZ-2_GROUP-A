@@ -1,6 +1,5 @@
 # W4 Priorities: Vehicle Passport (TASCO Mobility)
-
-> Converted from the W4_Prioritization sheet of `Fuction_List.xlsx` (DBIZ 2, Team A). Cut by lowering priority, never by lowering effort. Every change names its rule.
+Cut by lowering priority, never by lowering effort. Every change names its rule.
 
 | Rule | MoSCoW meaning | Test question |
 |---|---|---|
