@@ -121,10 +121,7 @@ Reading notes:
 |Weekly price record|API\_FAILED, INSUFFICIENT\_DATA|API\_FAILED, INSUFFICIENT\_DATA, \[success state: name to be fixed in the data model]|
 
 ## **5. Screens touched**
-
-|Actor action|Screen ID|
-|-|-|
-|N/A||
+N/A
 
 ## **6. Open questions**
 
