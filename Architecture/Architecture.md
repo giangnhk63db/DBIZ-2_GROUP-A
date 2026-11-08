@@ -45,6 +45,60 @@ The system requirements are divided into subordinate functions.
 | Send notifications (failure alerts, request status) | SyR07, SyR10 |
 
 ## **3\. Physical design**
+```mermaid
+flowchart TB
+  subgraph PRES["Presentation layer"]
+    APP["TASCO Mobility app: Verified Vehicle Report screens"]
+    STAFFWEB["Staff web: data source monitoring screens"]
+  end
+  subgraph BUS["Business layer"]
+    VEH["Vehicle service"]
+    CONN["Data collection service"]
+    RPT["Report service"]
+    MKT["Market price service"]
+    SALE["Sale request service"]
+    MON["Data source monitoring service"]
+    SCH["Scheduler"]
+    NOTI["Notification adapter"]
+  end
+  subgraph DATA["Data access layer"]
+    DB[("Verified Vehicle Report database")]
+  end
+
+  APP --> VEH
+  APP --> RPT
+  APP --> MKT
+  APP --> SALE
+  STAFFWEB --> MON
+  VEH --> DB
+  CONN --> DB
+  RPT --> DB
+  MKT --> DB
+  SALE --> DB
+  MON --> DB
+  SCH --> CONN
+  SCH --> MKT
+  MON --> NOTI
+  SALE --> NOTI
+
+  ACC["TASCO Mobility account service"]
+  VETC["VETC"]
+  CSV["Carpla Service"]
+  EVS["EV charging stations"]
+  GOV["Government portals"]
+  LIST["Used car marketplace data APIs"]
+  CRM["Carpla CRM"]
+  MAIL["Notification channel"]
+
+  APP -.-> ACC
+  CONN -.-> VETC
+  CONN -.-> CSV
+  CONN -.-> EVS
+  CONN -.-> GOV
+  MKT -.-> LIST
+  SALE -.-> CRM
+  NOTI -.-> MAIL
+  ```
 
 | Function | Element | Layer |
 | ----- | ----- | ----- |
