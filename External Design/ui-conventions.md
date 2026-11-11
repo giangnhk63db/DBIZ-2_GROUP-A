@@ -16,7 +16,7 @@
 |Date|dd/MM/yyyy|16/10/2026|
 |Time|24-hour, HH:mm|09:00|
 |Currency|Dot as thousands separator, suffix " ₫", no decimals|850.000.000 ₫|
-|Price range (preliminary quote)|Low – high, unit written once at the end|820.000.000 – 860.000.000 ₫|
+|Price range (preliminary quote)|Low - high, unit written once at the end|820.000.000 – 860.000.000 ₫|
 |Mileage|Dot as thousands separator, suffix " km"|45.230 km|
 |Percent (SoH, confidence level)|Whole number, no space, % sign|92%|
 |Phone|Entered as 10 digits starting with 0; displayed in groups 4-3-3|0901 234 567|
