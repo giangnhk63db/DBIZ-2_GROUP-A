@@ -13,7 +13,7 @@ reads next semester. The mockup image stays an image; everything around it is te
 | Actor | Car Owner |
 | Priority | Must |
 | Feature | `F-01 Vehicle Identification & Status` |
-| Activity diagrams | `AD-UC-1.05` (UC-1.04 has no activity diagram: it is a single fetch-and-display step) |
+| Activity diagrams | `AD-UC-1.05` |
 | Mockup image | `img/S-F01-04.png` (modal: `img/S-F01-04-upload-modal.png`) |
 | Status | Draft |
 
@@ -156,18 +156,15 @@ Upload invoice modal (bottom sheet opened from this screen):
 |---|---|---|---|
 | 1 | [NEEDS CLARIFICATION: the invoice summary shows Garage name and invoice date, but FR-01-06 only lists seller tax code, invoice number and total amount. Which fields should the summary show?] | No | Open |
 | 2 | [NEEDS CLARIFICATION: the mockup covers only the invalid format or size error. There is no state or wording for a portal rejection (BR-INV-01) and none for "flagged for manual verification" (BR-OCR-01 requires the owner to confirm or correct the mandatory fields by hand).] | Yes | Open |
-| 3 | [NEEDS CLARIFICATION: BR-FILE-01 gives "≤ 10 MB" only as an example. Confirm the final size limit, and whether "image" means only JPG and PNG.] | No | Open |
-| 4 | [NEEDS CLARIFICATION: the Screen List says the Success notification is a popup; the mockup uses an in-sheet summary plus a toast. Which one is final?] | No | Open |
-| 5 | [NEEDS CLARIFICATION: the Screen List says the BE error appears "after the maximum retries", but BR-RET-02 defines retries only for charging stations. What is the retry rule for Carpla Service?] | No | Open |
-| 6 | [NEEDS CLARIFICATION: what happens when the owner closes the modal while the invoice is processing: cancel, or continue in the background?] | No | Open |
-| 7 | [NEEDS CLARIFICATION: the screen is Must, but FR-01-05 is Should and FR-01-06 and FR-01-07 are Could. If the upload is cut, should the screen ship read-only without UploadInvoiceButton?] | No | Open |
-| 8 | [NEEDS CLARIFICATION: the Screen List and Screen Transition say S-F01-02 opens this screen from "View all". The S-F01-02 design now uses a chevron on the "Bảo dưỡng/sửa chữa" card. Update both documents.] | No | Open |
+| 3 | [NEEDS CLARIFICATION: what happens when the owner closes the modal while the invoice is processing: cancel, or continue in the background?] | No | Open |
+| 4 | [NEEDS CLARIFICATION: the screen is Must, but FR-01-05 is Should and FR-01-06 and FR-01-07 are Could. If the upload is cut, should the screen ship read-only without UploadInvoiceButton?] | No | Open |
+| 5 | [NEEDS CLARIFICATION: the Screen List and Screen Transition say S-F01-02 opens this screen from "View all". The S-F01-02 design now uses a chevron on the "Bảo dưỡng/sửa chữa" card. Update both documents.] | No | Open |
 
 ---
 
 ## Completion checklist
 
-- [ ] The mockup is a separate cropped image file, named with the Screen ID. (Export `S-F01-04.png` and `S-F01-04-upload-modal.png` from Figma.)
+- [x] The mockup is a separate cropped image file, named with the Screen ID. (Export `S-F01-04.png` and `S-F01-04-upload-modal.png` from Figma.)
 - [x] Every visible element in the mockup appears in the element inventory.
 - [x] Every input element has a validation rule or an explicit "none".
 - [x] All five states are filled in, or marked "not applicable" with a reason.
