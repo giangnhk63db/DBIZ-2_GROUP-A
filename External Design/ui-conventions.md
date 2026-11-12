@@ -256,7 +256,7 @@ The ring is 2 px thick with a 2 px offset [Proposed]; WCAG 2.2 AA requires 3:1 a
 |---|---|---|---|---|
 | #6B7280 disabled text | #E4E6EB disabled fill | 3.87:1 | none | Exempt (inactive component, WCAG 1.4.3). Shown for reference only |
 
-#### F. Seat Tile border (lecturer requirement)
+#### F. Seat Tile border 
 
 `color-border-seat-tile` = #848E97, unchanged.
 
