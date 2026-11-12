@@ -13,8 +13,8 @@ reads next semester. The mockup image stays an image; everything around it is te
 | Actor | Car Owner |
 | Priority | Must |
 | Feature | `F-01 Vehicle Identification & Status` |
-| Activity diagrams | `AD-UC-1.05` (UC-1.04 has no activity diagram: it is a single fetch-and-display step) |
-| Mockup image | `img/S-F01-04.png` (modal: `img/S-F01-04-upload-modal.png`) |
+| Activity diagrams | `AD-UC-1.05` |
+| Mockup image |  |
 | Status | Draft |
 
 ## 1. Purpose
