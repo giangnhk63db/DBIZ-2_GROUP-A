@@ -28,7 +28,7 @@ The project delivers a Verified Vehicle Report that gives car owners a clearer v
 - Reduce manual data entry for owners by reusing vehicle data that already exists in the ecosystem to pre-fill the quote form.  
 - Cut the back-and-forth between staff and owners before a preliminary quote, so the owner is not contacted repeatedly or asked to resend information that is already available.
 
-Measures agreed with the client are in [the CVCA](https://github.com/chienact-code/dbiz2-labdesk-example/blob/main/docs/context/cvca.md) (stakeholder requirements) and, in money terms, in [W6 cash flow](https://github.com/chienact-code/dbiz2-labdesk-example/blob/main/docs/function-list/w6-cash-flow.md).
+Measures agreed with the client are in [the CVCA](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/b97524e0b4e917c04f3b9b0d181db5fec1e721fa/Context/CVCA%20After.md) (stakeholder requirements) and, in money terms, in [W6 cash flow](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/b97524e0b4e917c04f3b9b0d181db5fec1e721fa/Function%20List/w6-cash-flow.md).
 
 ## **Team and roles**
 
