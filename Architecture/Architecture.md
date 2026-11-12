@@ -73,105 +73,59 @@
 
 **3\. Physical design**
 
+``` mermaid
 flowchart TB
+  subgraph P["Presentation layer"]
+    direction LR
+    APP["TASCO Mobility app (Verified Vehicle Report): Car Owner screens"]
+    STAFF["Carpla CRM (Carpla staff screens entering preliminary price): Carpla staff screens"]
+  end
+  subgraph B["Business layer"]
+    direction LR
+    VR["Vehicle report service"]
+    INV["Invoice service"]
+    LEG["Legal status update service"]
+    MP["Market price service"]
+    SELL["Sell request service"]
+    SCH["Scheduler"]
+    NOT["Notification service"]
+  end
+  subgraph D["Data access layer"]
+    direction LR
+    DB[("Vehicle Report database")]
+  end
+  subgraph X["External systems and Tasco group systems"]
+    direction LR
+    VETC["VETC"]
+    CS["Carpla Service"]
+    EVC["EV charging stations"]
+    INSP["Vehicle Inspection Portal"]
+    FINE["Traffic Fine Lookup Portal"]
+    REG["Secured Transaction Registry Portal"]
+    EINV["Electronic Invoice Lookup Portal"]
+    NEXT["Nextgen Việt Nam"]
+    CHO["Chợ Tốt"]
+  end
+  P --> B
+  B --> D
+  SCH --> MP
+  INV --> VR
+  VR --> LEG
+  SELL --> LEG
+  SELL --> NOT
+  SELL --> VR
+  SELL --> MP
+  VR -.-> VETC
+  VR -.-> CS
+  VR -.-> EVC
+  INV -.-> EINV
+  LEG -.-> INSP
+  LEG -.-> FINE
+  LEG -.-> REG
+  MP -.-> NEXT
+  MP -.-> CHO
+```
 
- subgraph P\["Presentation layer"\]
-
-   direction LR
-
-   APP\["TASCO Mobility app **(**Verified Vehicle Report**)**: Car Owner screens"\]
-
-   STAFF\["Carpla CRM **(**Carpla staff screens entering preliminary price**)**: Carpla staff screens"\]
-
- end
-
- subgraph B\["Business layer"\]
-
-   direction LR
-
-   VR\["Vehicle report service"\]
-
-   INV\["Invoice service"\]
-
-   LEG\["Legal status update service"\]
-
-   MP\["Market price service"\]
-
-   SELL\["Sell request service"\]
-
-   SCH\["Scheduler"\]
-
-   NOT\["Notification service"\]
-
- end
-
- subgraph D\["Data access layer"\]
-
-   direction LR
-
-   DB\[**(**"Vehicle Report database"**)**\]
-
- end
-
- subgraph X\["External systems and Tasco group systems"\]
-
-   direction LR
-
-   VETC\["VETC"\]
-
-   CS\["Carpla Service"\]
-
-   EVC\["EV charging stations"\]
-
-   INSP\["Vehicle Inspection Portal"\]
-
-   FINE\["Traffic Fine Lookup Portal"\]
-
-   REG\["Secured Transaction Registry Portal"\]
-
-   EINV\["Electronic Invoice Lookup Portal"\]
-
-   NEXT\["Nextgen Việt Nam"\]
-
-   CHO\["Chợ Tốt"\]
-
- end
-
- P \--\> B
-
- B \--\> D
-
- SCH \--\> MP
-
- INV \--\> VR
-
- VR \--\> LEG
-
- SELL \--\> LEG
-
- SELL \--\> NOT
-
- SELL \--\> VR
-
- SELL \--\> MP
-
- VR \-.\-\> VETC
-
- VR \-.\-\> CS
-
- VR \-.\-\> EVC
-
- INV \-.\-\> EINV
-
- LEG \-.\-\> INSP
-
- LEG \-.\-\> FINE
-
- LEG \-.\-\> REG
-
- MP \-.\-\> NEXT
-
- MP \-.\-\> CHO
 
 Solid arrows run from layer to layer; dotted arrows go to external systems. Inside the business layer, the Scheduler starts the Market price service every week, the Invoice service merges valid invoices into the vehicle record, and the Sell request service asks the Legal status service to re-check and sends messages through the Notification service. Each service calls its own external systems directly.
 
