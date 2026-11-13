@@ -64,7 +64,7 @@ All message text shown to the user is in Vietnamese.
 
 ## 6\. Carpla Staff screen (S-F03-02, web, Carpla CRM)
 
-Platform: desktop web browser inside Carpla CRM. Sections 1, 2 and 4 apply as written (Vietnamese, professional tone, "bạn", same formats and message patterns). This section only adds what differs on web.
+Platform: desktop web browser. Sections 1, 2 and 4 apply as written (Vietnamese, professional tone, "bạn", same formats and message patterns). This section only adds what differs on web.
 
 ### 6.1 Layout and components
 
