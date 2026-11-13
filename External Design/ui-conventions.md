@@ -76,7 +76,6 @@ Platform: desktop web browser inside Carpla CRM. Sections 1, 2 and 4 apply as wr
 |Quote form|Staff enters the suggested quote range|Two Text inputs side by side: "Giá thấp nhất" and "Giá cao nhất"; digits auto-formatted with dots while typing; suffix "₫" shown inside the field; label above, FE error below|
 |Primary button|Send the quote|"Gửi báo giá"; one per screen; placed at the bottom right of the Quote form|
 |Secondary button|Leave without sending|"Quay lại"|
-|Modal|Confirm before sending the quote to the car owner (single action)|Title "Gửi báo giá sơ bộ cho chủ xe?"; buttons "Gửi báo giá" (Primary) and "Hủy" (Secondary)|
 
 ### 6.2 Messages
 
