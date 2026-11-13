@@ -4,6 +4,7 @@
 
 * Interface language: Vietnamese only (no English version). All text the user sees on screen is written in Vietnamese. Proper names stay as they are: VIN, VETC, Carpla Service, SoH.
 * Address the user as: "bạn".
+* Tone: professional. Polite, neutral and concise; no slang, no emoji, no exclamation marks, no softening particles such as "nhé".
 * Button labels are verbs that say what happens: verb + object, never a generic "OK" or "Xác nhận".
 
   * Buttons: "Tạo báo cáo xe", "Tải hóa đơn lên", "Gửi yêu cầu bán xe", "Làm mới", "Thử lại", "Đóng".
@@ -15,9 +16,9 @@
 |-|-|-|
 |Date|dd/MM/yyyy|16/10/2026|
 |Time|24-hour, HH:mm|09:00|
-|Currency|Dot as thousands separator, suffix " ₫", no decimals|850.000.000 ₫|
-|Price range (preliminary quote)|Low - high, unit written once at the end|820.000.000 – 860.000.000 ₫|
-|Mileage|Dot as thousands separator, suffix " km"|45.230 km|
+|Currency|Dot as thousands separator, no decimals; one space between the number and the suffix "₫"|850.000.000 ₫|
+|Price range (preliminary quote)|Low – high; one space before and after the en dash; unit written once at the end, with one space before it|820.000.000 – 860.000.000 ₫|
+|Mileage|Dot as thousands separator; one space between the number and "km"|45.230 km|
 |Percent (SoH, confidence level)|Whole number, no space, % sign|92%|
 |Phone|Entered as 10 digits starting with 0; displayed in groups 4-3-3|0901 234 567|
 |VIN|17 uppercase letters and digits, no I, O, Q; displayed without spaces|RLHJC6101PY000123|
@@ -28,16 +29,16 @@
 
 |Component|When to use|Notes|
 |-|-|-|
-|Top bar|Top of every screen except Home|Back arrow on the left, screen name in the centre|
-|Primary button|The one main action of a screen|One per screen; full width; "Gửi yêu cầu bán xe" is fixed at the bottom of S-F01-02|
-|Secondary button|Alternative actions (for example "Đóng", "Hủy")|Outline style, no fill|
-|Text input|VIN, current mileage, desired price, phone number|Label above, error message below (inline); matching keyboard (numeric for mileage, price, phone)|
+|Top bar|Top of every screen except Home|Back arrow on the left, screen name in the centre. Screen name is in Vietnamese, sentence case: capitalise only the first letter of the first word, plus abbreviations and proper names (VIN, SoH, VETC, Carpla); all other words lowercase. One line; truncated with "…" if too long. Examples: "Tạo báo cáo xe", "Hồ sơ xe", "Lịch sử bảo dưỡng", "Sức khỏe pin (SoH)"|
+|Primary button|The one main action of a screen|One per screen; spans the full width of the screen (edge to edge inside the side margins), filled with the brand colour; "Gửi yêu cầu bán xe" is fixed at the bottom of S-F01-02|
+|Secondary button|Alternative actions (for example "Đóng", "Hủy")|Outline style: border and text only, transparent background (no fill)|
+|Text input|VIN, current mileage, desired price, phone number|Label above, FE error message below (inline); the inline error is only for errors caught by FE validation, BE errors use a popup (section 4); matching keyboard (numeric for mileage, price, phone)|
 |Section card|Each block of the Vehicle Profile (identification, mileage, maintenance, battery, legal status, market data)|Block title plus a link on the right: "Xem chi tiết" / "Xem tất cả" / "Xem xu hướng"|
 |List item|One row of information (a vehicle on Home, a vehicle spec)|The whole row is tappable if it opens another screen|
 |Timeline item|Toll history, maintenance and repair history|Newest on top; date dd/MM/yyyy at the start of the row|
 |Status badge|Legal status (inspection, unpaid traffic fines, mortgage), sale request status|Always icon + text, never colour alone|
 |Line chart|12-week price trend|Axis labels shown; latest week's value also written as text|
-|Banner|Non-blocking information: mileage unverified, price being calculated, waiting for Carpla|Sits inside the screen, never covers content|
+|Banner|Non-blocking information: mileage unverified, price being calculated, waiting for Carpla|Sits inside the screen, never covers content; info style with icon + text; no buttons|
 |Modal|Upload invoice; system error notification; success notification|Never for navigation; always has a close button|
 
 ## 4\. Messages
@@ -46,12 +47,12 @@ All message text shown to the user is in Vietnamese.
 
 |Situation|Pattern|Example|
 |-|-|-|
-|Validation error (FE)|Shown inline, right below the field. What is wrong + how to fix. No request is sent to the server.|"VIN cần đủ 17 ký tự gồm chữ và số (không dùng I, O, Q). Bạn kiểm tra lại nhé." / "Số điện thoại cần đủ 10 chữ số, bắt đầu bằng 0. Bạn nhập lại nhé."|
-|System error (BE)|Shown as a popup after the maximum retries. What happened + what the user can do now. Buttons "Thử lại" and "Đóng".|"Hệ thống chưa lấy được dữ liệu từ VETC. Bạn bấm Thử lại, hoặc đóng và quay lại sau."|
-|Empty state|Why it is empty + the next action.|Home: "Bạn chưa có xe nào. Bấm 'Tạo báo cáo xe' để thêm xe bằng số VIN." / Maintenance: "Chưa có lịch sử bảo dưỡng tại Carpla Service. Bạn có thể tải hóa đơn bảo dưỡng ở nơi khác lên."|
-|Success|Shown as a popup with a "Đóng" button. What was done.|"Đã gửi yêu cầu bán xe. Carpla sẽ báo giá sơ bộ cho bạn." / "Đã tải hóa đơn lên. Lịch sử bảo dưỡng đã được cập nhật."|
-|Unavailable data (not an error)|Banner: which data is missing + why.|"Chưa xác minh được số km vì không có bản ghi qua trạm thu phí." / "Chưa đủ dữ liệu sạc để tính sức khỏe pin."|
-|Waiting / loading|Banner: what the system is doing + what the user should do.|"Đang tính giá thị trường cho xe của bạn. Bạn quay lại sau nhé." / "Yêu cầu đã gửi. Đang chờ Carpla báo giá sơ bộ."|
+|Validation error (FE)|**Inline**, right below the field. What is wrong + how to fix, ending with "Vui lòng ...". No request is sent to the server.|"VIN cần đủ 17 ký tự gồm chữ và số (không dùng I, O, Q). Vui lòng kiểm tra lại." / "Số điện thoại cần đủ 10 chữ số, bắt đầu bằng 0. Vui lòng nhập lại."|
+|System error (BE)|**Popup** after the maximum retries. What happened + what the user can do now. Buttons "Thử lại" and "Đóng".|"Hệ thống chưa lấy được dữ liệu từ VETC. Vui lòng bấm Thử lại, hoặc đóng và quay lại sau."|
+|Empty state|**On the screen**, in the place where the list would be. Why it is empty + the next action.|Home: "Bạn chưa có xe nào. Bấm 'Tạo báo cáo xe' để thêm xe bằng số VIN." / Maintenance: "Chưa có lịch sử bảo dưỡng tại Carpla Service. Bạn có thể tải hóa đơn bảo dưỡng ở nơi khác lên."|
+|Success|**Popup** with a "Đóng" button. What was done.|"Đã gửi yêu cầu bán xe. Carpla sẽ báo giá sơ bộ cho bạn." / "Đã tải hóa đơn lên. Lịch sử bảo dưỡng đã được cập nhật."|
+|Unavailable data (not an error)|**Banner**, not a popup. The screen opens normally; the banner sits at the top of the affected section or screen content. The missing value shows "—" in place of the data. The banner has no button and stays until the data exists. Reason for no popup: nothing failed and the user has nothing to retry.|S-F01-03: "Chưa xác minh được số km vì không có bản ghi qua trạm thu phí." / S-F01-06: "Chưa đủ dữ liệu sạc để tính sức khỏe pin."|
+|Waiting / loading|**Banner**, not a popup. Shown in the area that will hold the result, with a loading icon; the result area shows "—" until ready. The banner disappears once the data is available.|S-F02-01: "Đang tính giá thị trường cho xe của bạn. Vui lòng quay lại sau." / S-F03-03: "Yêu cầu đã gửi. Đang chờ Carpla báo giá sơ bộ." (together with the Status badge "Chờ Carpla báo giá")|
 
 ## 5\. Accessibility minimums
 
@@ -61,11 +62,44 @@ All message text shown to the user is in Vietnamese.
 * Smallest supported screen width: 360px, single column, vertical scroll only; no horizontal scroll.
 * Body text at least 14 px; the layout must not break when the user enlarges the system font size.
 
-## 6. Design tokens
+## 6\. Carpla Staff screen (S-F03-02, web, Carpla CRM)
+
+Platform: desktop web browser inside Carpla CRM. Sections 1, 2 and 4 apply as written (Vietnamese, professional tone, "bạn", same formats and message patterns). This section only adds what differs on web.
+
+### 6.1 Layout and components
+
+|Component|When to use|Notes|
+|-|-|-|
+|Page header|Top of the screen|Link "Quay lại" on the left (returns to Carpla CRM), screen title "Xem xét yêu cầu bán xe và báo giá" on the left below it; sentence case as in the Top bar rule|
+|Info panel|Read-only report: owner-declared information (current mileage, desired price, phone number) and the verified vehicle report (identification, mileage, battery health, legal status, market price)|Label on the left, value on the right; a value that is not verified shows "Chưa xác minh" with a Status badge (icon + text)|
+|Data table|Maintenance and repair history, including external invoices uploaded by the car owner|Columns: Ngày, Nội dung, Nguồn (Carpla Service / Hóa đơn bên ngoài); newest on top; the invoice file opens in a new tab through a link in the row|
+|Quote form|Staff enters the suggested quote range|Two Text inputs side by side: "Giá thấp nhất" and "Giá cao nhất"; digits auto-formatted with dots while typing; suffix "₫" shown inside the field; label above, FE error below|
+|Primary button|Send the quote|"Gửi báo giá"; one per screen; placed at the bottom right of the Quote form|
+|Secondary button|Leave without sending|"Quay lại"|
+|Modal|Confirm before sending the quote to the car owner (single action)|Title "Gửi báo giá sơ bộ cho chủ xe?"; buttons "Gửi báo giá" (Primary) and "Hủy" (Secondary)|
+
+### 6.2 Messages
+
+|Situation|Pattern|Example|
+|-|-|-|
+|Validation error (FE)|**Inline** below the field, same pattern as section 4|"Vui lòng nhập giá thấp nhất." / "Giá thấp nhất không được lớn hơn giá cao nhất. Vui lòng nhập lại."|
+|System error (BE)|**Popup** with "Thử lại" and "Đóng", same pattern as section 4|"Hệ thống chưa gửi được báo giá. Vui lòng bấm Thử lại, hoặc đóng và quay lại sau."|
+|Empty state|**In the Data table area**, why empty + what it means|"Chủ xe chưa tải hóa đơn bảo dưỡng bên ngoài."|
+|Success|**Popup** with a "Đóng" button|"Đã gửi báo giá sơ bộ cho chủ xe."|
+|Unavailable data|**Banner** at the top of the Info panel, plus "Chưa xác minh" on the affected value|"Số km chưa được xác minh vì không có bản ghi qua trạm thu phí."|
+
+### 6.3 Accessibility minimums (web)
+
+* Sections 5 rules on contrast (4.5:1) and colour-alone (1.4.1) apply.
+* Clickable targets at least 24 by 24 CSS pixels (WCAG 2.2, 2.5.8).
+* Smallest supported screen width: 1280px; content may scroll vertically only.
+* Everything works with the keyboard alone (Tab order follows reading order, Enter sends the focused form) and the focused element always has a visible outline (WCAG 2.2, 2.1.1 and 2.4.7).
+
+## 7. Design tokens
 
 **Direction:** TASCO Corporate - Modern Mobility (professional, modern, minimal, consistent, accessible). Screens take colours, fonts, spacing, corners and frame width only from this section. Component names come from section 3. All sizes are CSS px.
 
-### 6.1 Colour tokens
+### 7.1 Colour tokens
 
 #### A. Brand colours
 
@@ -114,7 +148,7 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 
 **Token usage audit.** Every defined token has an assigned purpose. `color-border-seat-tile` is the only reserved token without an assigned TASCO component because Seat Tile is not defined in Section 3. No additional accent colours are used. Rules: no gradients, no shadows, and no unlisted colours. Any new colour must be defined in this section before use.
 
-### 6.2 Typography
+### 7.2 Typography
 
 | Role | Token | Size / Line height (CSS px) | Weight | Colour | Used for |
 |---|---|---|---|---|---|
@@ -132,7 +166,7 @@ The values above are CSS px. At build time they may be written as rem (1 rem = 1
 
 The smallest size is 14 px, in line with section 5.
 
-### 6.3 Spacing and touch target
+### 7.3 Spacing and touch target
 
 Base unit 4 px. Only these values are used.
 
@@ -161,7 +195,7 @@ Not tappable, no rule: Status badge, Timeline item, Line chart, Banner. Section 
 
 **Card separation.** Because `color-border-default` on `color-bg-main` is only 1.32:1 and shadows are not allowed, Section cards are separated by the `space-5` (24 px) gap and the white `color-bg-surface` fill, not by the outline alone. To be confirmed against the Screen Spec.
 
-### 6.4 Border radius
+### 7.4 Border radius
 
 | Token | Value (CSS px) | Components |
 |---|---|---|
@@ -171,7 +205,7 @@ Not tappable, no rule: Status badge, Timeline item, Line chart, Banner. Section 
 
 No Seat Tile radius is defined because Seat Tile is not part of the TASCO component inventory in Section 3.
 
-### 6.5 Frame width
+### 7.5 Frame width
 
 | Item | Value |
 |---|---|
@@ -180,7 +214,7 @@ No Seat Tile radius is defined because Seat Tile is not part of the TASCO compon
 | Layout | Single column, vertical scroll only, no horizontal scroll |
 | Minimum supported screen width | 360 px |
 
-### 6.6 WCAG 2.2 AA contrast checks
+### 7.6 WCAG 2.2 AA contrast checks
 
 Ratios are computed with the WCAG relative-luminance formula, not estimated by eye. Thresholds: normal text 4.5:1; large text, UI components and graphical objects 3:1. No HEX was changed to obtain a result.
 
