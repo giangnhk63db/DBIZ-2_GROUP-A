@@ -63,38 +63,59 @@ All message text shown to the user is in Vietnamese.
 - Smallest supported screen width: 360px, single column, vertical scroll only; no horizontal scroll.
 - Body text at least 14 px; the layout must not break when the user enlarges the system font size.
 
-  ## 6. Design tokens
+  # 6. Design tokens
 
-**Direction:** TASCO Corporate - Modern Mobility (professional, modern, minimal, consistent, accessible). Screens take colours, fonts, spacing, corners and frame width only from this section. Component names come from section 3. All sizes are CSS px.
+## 6.1 Colour tokens
 
-### 6.1 Colour tokens
+In the tables below, read each row as: token name, its HEX value, what it is used for, and which section 3 components use it.
 
-#### A. Brand colours
+### Token naming convention
+
+Colour token names follow the pattern `[category]-[role/purpose]-[state/variant]`, so the meaning of a token can be read from its name without looking at the HEX value. The `[state/variant]` part is written only when it is needed. If a token name does not have `[state/variant]`, it is the default form of that role.
+
+| Part | Meaning | Examples |
+| --- | --- | --- |
+| color | Fixed first word: this is a colour token | all colour tokens |
+| Category / function | What the colour is for: brand, bg, text, border, success, warning, error, info, hover, pressed, disabled, focus | `brand` in color-brand-primary; `text` in color-text-primary |
+| Role | The specific role within the category: primary, secondary, tint, main, surface, default, input | `primary` in color-brand-primary; `main` in color-bg-main; `input` in color-border-input |
+| State / variant (optional) | A state or variant of the role: bg (background behind the text), soft, text | `bg` in color-success-bg; `text` in color-disabled-text; `soft` in color-hover-soft |
+
+Examples: `color-brand-primary` is the primary brand colour; `color-bg-main` is the main page background; `color-text-primary` is the main text colour; `color-border-input` is the border of an input field; `color-success-bg` is the background behind success content; `color-hover` is the hover colour; `color-disabled-text` is the text colour of a disabled control.
+
+### Colour categories
+
+Colours are divided into four categories so that each colour has one clear job and a new colour can be placed without ambiguity:
+
+- **A. Brand colours:** colours that represent the visual identity of this system's design direction, used for primary visual emphasis.
+- **B. Neutral colours:** background, text and border colours that form the structural foundation of the interface.
+- **C. Semantic colours:** colours whose meaning comes from the state or information they communicate: success, loading, warning, empty, error and information.
+- **D. Interactive colours:** colours that show interaction states: hover, pressed, disabled and focus.
+
+### A. Brand colours
 
 | Token | HEX | Intended usage | Components |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | color-brand-primary | #253264 | TASCO identity colour; main action and key emphasis | Primary button fill, Top bar title and back arrow, Line chart line, Section card title |
-| color-brand-secondary | #3F5099 | Lighter navy for links and secondary emphasis. Links are always underlined (see 6.6 G) | "Xem chi tiết" / "Xem tất cả" / "Xem xu hướng" links, Secondary button outline and text |
+| color-brand-secondary | #3F5099 | Lighter navy for links and secondary emphasis. Links are always underlined (see 6.6 F) | "Xem chi tiết" / "Xem tất cả" / "Xem xu hướng" links, Secondary button outline and text |
 | color-brand-tint | #E8EBF5 | Very light navy for soft backgrounds | Banner (information), Status badge (information) |
 
-#### B. Neutral colours
+### B. Neutral colours
 
 | Token | HEX | Intended usage | Components |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | color-bg-main | #F6F7F9 | Page background | All screens |
 | color-bg-surface | #FFFFFF | Card and overlay background | Section card, List item, Text input, Modal, Top bar |
 | color-text-primary | #161B2E | Main text | Body text, headings, input values |
 | color-text-secondary | #4A5266 | Supporting text | Labels, hints, dates in Timeline item, chart axis labels |
 | color-border-default | #D5D9E0 | Decorative lines only. Never the only way to recognise a control. | Divider between List items, Section card outline |
 | color-border-input | #848E97 | Functional border of a control the user must recognise (3:1, WCAG 1.4.11) | Text input border |
-| color-border-seat-tile | #848E97 | Seat Tile border, as required by the lecturer | None. TASCO has no Seat Tile in section 3 (Q1); not assigned to any other component |
 
-#### C. Semantic colours
+### C. Semantic colours
 
 Each status is shown with icon + text (section 5), never colour alone. Icons use the same colour as the text.
 
 | Token | HEX | Intended usage | Components |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | color-success | #1B7A43 | Success text and icon | Success modal, Status badge (inspection valid, sale request completed) |
 | color-success-bg | #E7F4EC | Background behind success text | Status badge |
 | color-warning | #8A5300 | Warning text and icon | Status badge (unpaid traffic fine, mortgage), Banner (mileage unverified) |
@@ -103,10 +124,10 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 | color-error-bg | #FDECEA | Background behind error text | System error Modal |
 | color-info | No new HEX: text and icon `color-brand-primary` (#253264) on background `color-brand-tint` (#E8EBF5) | Neutral information | Banner (price being calculated, waiting for Carpla), Status badge (information) |
 
-#### D. Interactive colours
+### D. Interactive colours
 
 | Token | HEX | Intended usage | Components |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | color-hover | #1C2650 | Darker navy when a pointer hovers (only when opened with a mouse; touch has no hover) | Primary button |
 | color-pressed | #141C3B | Darker navy while pressed | Primary button |
 | color-hover-soft | #F3F5FA | Hover and pressed fill for non-filled items | Secondary button, List item |
@@ -114,12 +135,18 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 | color-disabled-text | #6B7280 | Text of a disabled control (exempt from contrast rules). A disabled Secondary button has no outline: its outline is removed and only the fill and text above remain | Primary button, Secondary button |
 | color-focus | #2F5BEA | Focus ring, 2 px thick, drawn with a 2 px offset so it never touches the control's own fill | All keyboard-focusable interactive elements defined in Section 3 |
 
-**Token usage audit.** Every defined token has an assigned purpose. `color-border-seat-tile` is the only reserved token without an assigned TASCO component because Seat Tile is not defined in Section 3. No additional accent colours are used. Rules: no gradients, no shadows, and no unlisted colours. Any new colour must be defined in this section before use.
+### Token usage audit
 
-### 6.2 Typography
+- Every defined token has an assigned purpose and maps to a component, UI role or interaction state in this document.
+- No additional accent colours are used. Rules: no gradients, no shadows, and no unlisted colours.
+- Any new colour must be defined in this section before use.
+
+## 6.2 Typography
+
+Typography defines how text looks: size, line height and weight for each kind of text, so that titles, headings, body text, labels, buttons and supporting text have a clear visual hierarchy and look the same on every screen. Read each row as: the role of the text, its token, its size and line height, weight and colour, and where it is used.
 
 | Role | Token | Size / Line height (CSS px) | Weight | Colour | Used for |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Page title | type-title | 24 / 32 | 700 | color-text-primary | Screen name in Top bar |
 | Section heading | type-heading | 18 / 26 | 600 | color-text-primary | Section card title |
 | Body text | type-body | 16 / 24 | 400 | color-text-primary | Information rows, messages, banners |
@@ -128,18 +155,18 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 | Supporting text | type-support | 14 / 20 | 400 | color-text-secondary | Dates, hints, chart axis labels |
 | Form input | type-input | 16 / 24 | 400 | color-text-primary | Text input value |
 
-**Font family:** Be Vietnam Pro, with Roboto, "Segoe UI", system-ui, sans-serif as fallback fonts. Be Vietnam Pro is the project's standard UI typeface, selected for its support of Vietnamese diacritics and consistent readability across interface elements. This specification does not identify it as TASCO's official corporate brand font.
-
-The values above are CSS px. At build time they may be written as rem (1 rem = 16 px) so the layout survives a larger system font (section 5); this changes how the value is written, not the design value.
+Font family: Be Vietnam Pro, with Roboto, "Segoe UI", system-ui, sans-serif as fallback fonts. Be Vietnam Pro is the project's standard UI typeface, selected for its support of Vietnamese diacritics and consistent readability across interface elements. The values above are CSS px. At build time they may be written as rem (1 rem = 16 px) so the layout survives a larger system font (section 5); this changes how the value is written, not the design value.
 
 The smallest size is 14 px, in line with section 5.
 
-### 6.3 Spacing and touch target
+## 6.3 Spacing and touch target
+
+Spacing defines the gaps and padding between elements, giving the interface a regular rhythm and keeping content from looking crowded. The touch target is the minimum tappable area of a control; on a phone, small targets are hard to tap accurately, so this rule keeps every interactive element large enough to use. The first table lists the allowed spacing values; the second table states the tap-area rule for each tappable component.
 
 Base unit 4 px. Only these values are used.
 
 | Token | Value (CSS px) | Usage | Components |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | space-1 | 4 | Icon to text gap | Status badge, Timeline item |
 | space-2 | 8 | Gap inside a component; label to input | Text input, List item, Banner |
 | space-3 | 12 | Padding between rows | List item, Timeline item |
@@ -147,10 +174,10 @@ Base unit 4 px. Only these values are used.
 | space-5 | 24 | Gap between Section cards | Vehicle Profile blocks |
 | space-6 | 32 | Gap above the primary button | Primary button area |
 
-**Touch target.** `size-tap-min` = 44 × 44 CSS px for every element the user can tap. [Proposed] This is stricter than section 5, which sets 24 × 24 as the minimum (WCAG 2.5.8) and 44 px high for primary buttons and the "Xem chi tiết" / "Xem tất cả" links; section 5 is unchanged and this rule is consistent with it. The target is the tappable area, not the visible shape: a small icon keeps its drawn size and gets padding or an invisible hit area up to 44 × 44. Icon drawing size is set in the Screen Spec, not here.
+**Touch target.** `size-tap-min` = 44 × 44 CSS px for every element the user can tap. *[Proposed]* This is stricter than section 5, which sets 24 × 24 as the minimum (WCAG 2.5.8) and 44 px high for primary buttons and the "Xem chi tiết" / "Xem tất cả" links; section 5 is unchanged and this rule is consistent with it. The target is the tappable area, not the visible shape: a small icon keeps its drawn size and gets padding or an invisible hit area up to 44 × 44. Icon drawing size is set in the Screen Spec, not here.
 
 | Component (section 3) | Tappable element | Rule |
-|---|---|---|
+| --- | --- | --- |
 | Top bar | Back arrow | Hit area 44 × 44 |
 | Primary button | Whole button | Height at least 44, full width |
 | Secondary button | Whole button | Height at least 44 |
@@ -163,33 +190,37 @@ Not tappable, no rule: Status badge, Timeline item, Line chart, Banner. Section 
 
 **Card separation.** Because `color-border-default` on `color-bg-main` is only 1.32:1 and shadows are not allowed, Section cards are separated by the `space-5` (24 px) gap and the white `color-bg-surface` fill, not by the outline alone. To be confirmed against the Screen Spec.
 
-### 6.4 Border radius
+## 6.4 Border radius
+
+Border radius defines how rounded the corners of a component are. Using a small set of fixed radius values gives buttons, inputs, cards, banners, badges and modals a consistent shape across screens. Read each row as: the radius token, its value in CSS px, and the components that use it.
 
 | Token | Value (CSS px) | Components |
-|---|---|---|
+| --- | --- | --- |
 | radius-sm | 4 | Status badge |
 | radius-md | 8 | Primary button, Secondary button, Text input, Banner |
 | radius-lg | 12 | Section card, Modal |
 
-No Seat Tile radius is defined because Seat Tile is not part of the TASCO component inventory in Section 3.
+## 6.5 Frame width
 
-### 6.5 Frame width
+Frame width is the screen width used when drawing the screen images and writing the specifications. Fixing it, together with the orientation and layout rules, ensures that all screens are designed for the same phone size and that nothing needs horizontal scrolling. Read each row as a layout constraint that every screen image must follow.
 
 | Item | Value |
-|---|---|
+| --- | --- |
 | Frame width of screen images for S-F01-02 (all five state images and the numbered image) | 360 px |
 | Orientation | Portrait |
 | Layout | Single column, vertical scroll only, no horizontal scroll |
 | Minimum supported screen width | 360 px |
 
-### 6.6 WCAG 2.2 AA contrast checks
+## 6.6 WCAG 2.2 AA contrast checks
+
+Contrast is the difference in brightness between two colours, such as text and its background; WCAG 2.2 AA is the accessibility standard that sets the minimum contrast so that text and controls remain readable for people with low vision. These checks measure the colour pairs used in this system instead of relying on visual judgement alone. In each table, the ratio is the measured contrast, "Required" is the minimum for that kind of element, and "Result" shows whether the pair passes.
 
 Ratios are computed with the WCAG relative-luminance formula, not estimated by eye. Thresholds: normal text 4.5:1; large text, UI components and graphical objects 3:1. No HEX was changed to obtain a result.
 
-#### A. Text
+### A. Text
 
 | Foreground | Background | Ratio | Required | Result |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | #161B2E text primary | #F6F7F9 main background | 15.92:1 | 4.5:1 | PASS |
 | #161B2E text primary | #FFFFFF surface | 17.07:1 | 4.5:1 | PASS |
 | #161B2E text primary | #F3F5FA hover-soft | 15.65:1 | 4.5:1 | PASS |
@@ -215,34 +246,34 @@ Ratios are computed with the WCAG relative-luminance formula, not estimated by e
 | #B42318 error | #FFFFFF | 6.57:1 | 4.5:1 | PASS |
 | #B42318 error | #F6F7F9 main background | 6.13:1 | 4.5:1 | PASS |
 
-#### B. Decorative borders
+### B. Decorative borders
 
 Not subject to 1.4.11, because no control depends on them.
 
 | Foreground | Background | Ratio | Required | Result |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | #D5D9E0 divider / card outline | #FFFFFF | 1.42:1 | none | Not applicable (decorative). Content stays readable without the line |
-| #D5D9E0 divider / card outline | #F6F7F9 main background | 1.32:1 | none | Not applicable (decorative). Cards stay separated by the `space-5` gap and the white fill (see 6.3) |
+| #D5D9E0 divider / card outline | #F6F7F9 main background | 1.32:1 | none | Not applicable (decorative). Cards stay separated by the space-5 gap and the white fill (see 6.3) |
 
-#### C. Interactive control borders and graphical objects (WCAG 1.4.11, 3:1)
+### C. Interactive control borders and graphical objects (WCAG 1.4.11, 3:1)
 
 | Foreground | Background | Ratio | Required | Result |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | #848E97 input border | #FFFFFF surface | 3.33:1 | 3:1 | PASS |
 | #848E97 input border | #F6F7F9 main background | 3.11:1 | 3:1 | PASS |
 | #848E97 input border | #F3F5FA hover-soft | 3.06:1 | 3:1 | PASS |
-| #848E97 input border | #E8EBF5 brand tint | 2.80:1 | 3:1 | FAIL. Rule: a Text input must not sit directly on color-brand-tint (for example inside an information Banner) |
+| #848E97 input border | #E8EBF5 brand tint | 2.80:1 | 3:1 | **FAIL.** Rule: a Text input must not sit directly on color-brand-tint (for example inside an information Banner) |
 | #3F5099 secondary button outline | #FFFFFF | 7.45:1 | 3:1 | PASS |
 | #3F5099 secondary button outline | #F6F7F9 | 6.95:1 | 3:1 | PASS |
 | #3F5099 secondary button outline | #F3F5FA hover-soft (hover and pressed) | 6.83:1 | 3:1 | PASS |
 | #253264 chart line | #FFFFFF | 12.22:1 | 3:1 | PASS |
 
-#### D. Focus indicator
+### D. Focus indicator
 
-The ring is 2 px thick with a 2 px offset [Proposed]; WCAG 2.2 AA requires 3:1 against adjacent colours (1.4.11) but sets no thickness (the thickness criterion 2.4.13 is AAA). Because of the offset, both sides of the ring show the surface behind the control, so the ring is checked against every surface a focusable control can sit on, not only white.
+The ring is 2 px thick with a 2 px offset *[Proposed]*; WCAG 2.2 AA requires 3:1 against adjacent colours (1.4.11) but sets no thickness (the thickness criterion 2.4.13 is AAA). Because of the offset, both sides of the ring show the surface behind the control, so the ring is checked against every surface a focusable control can sit on, not only white.
 
 | Foreground | Background (adjacent surface) | Ratio | Required | Result |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | #2F5BEA focus ring | #FFFFFF surface | 5.52:1 | 3:1 | PASS |
 | #2F5BEA focus ring | #F6F7F9 main background | 5.15:1 | 3:1 | PASS |
 | #2F5BEA focus ring | #F3F5FA hover-soft | 5.06:1 | 3:1 | PASS |
@@ -252,26 +283,14 @@ The ring is 2 px thick with a 2 px offset [Proposed]; WCAG 2.2 AA requires 3:1 a
 | #2F5BEA focus ring | #FDECEA error-bg | 4.83:1 | 3:1 | PASS |
 | #2F5BEA focus ring | #253264 navy fill, if the ring touched it | 2.21:1 | 3:1 | Not applicable by design. The offset is mandatory: the ring must never touch a navy fill, because it would fall to 2.21:1 |
 
-#### E. Disabled controls
+### E. Disabled controls
 
 | Foreground | Background | Ratio | Required | Result |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | #6B7280 disabled text | #E4E6EB disabled fill | 3.87:1 | none | Exempt (inactive component, WCAG 1.4.3). Shown for reference only |
 
-#### F. Seat Tile border 
-
-`color-border-seat-tile` = #848E97, unchanged.
-
-| Foreground | Background | Ratio | Required | Result |
-|---|---|---|---|---|
-| #848E97 seat tile border | #FFFFFF | 3.33:1 | 3:1 | PASS |
-| #848E97 seat tile border | #F6F7F9 | 3.11:1 | 3:1 | PASS |
-| #848E97 seat tile border | #E8EBF5 brand tint | 2.80:1 | 3:1 | FAIL |
-
-**Rule:** the reserved `color-border-seat-tile` token must not be applied to `color-brand-tint` because the measured contrast is below 3:1. If a Seat Tile component is added in a future revision, use a white or #F6F7F9 adjacent surface with this border, or revise the border colour and recheck contrast before implementation. The token is currently reserved and must not be assigned to another component.
-
-#### G. Link distinction (WCAG 1.4.1)
+### F. Link distinction (WCAG 1.4.1)
 
 | Foreground | Compared with | Ratio | Required | Result |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | #3F5099 link | #161B2E body text | 2.29:1 | 3:1 (only when colour is the sole cue) | Colour alone is not enough. Links "Xem chi tiết" / "Xem tất cả" / "Xem xu hướng" are always underlined |
