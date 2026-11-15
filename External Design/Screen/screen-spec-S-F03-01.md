@@ -21,12 +21,16 @@
 **The user leaves this screen when:** the car owner goes back to S-F01-02 with the Back arrow of the Top bar, or closes the success popup after the sale request has been sent.
 
 ## **2\. Mockup**
+![S-F03-01](img/S-F03-01-default.png)
 
 Each number is the \# of the element inventory in section 3\. Elements 23 (banner) appear only in the loading state; elements 24 to 27 (popup) appear only in the Backend and API error and success states. All colours, fonts and corners come from the design tokens in [ui-conventions-car-owner](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/856166f4d066a07c84b66f96b604380801b82088/External%20Design/ui-conventions-car-owner.md)
 
-| Default screen numbered | Empty screen numbered |
-| ----- | ----- |
-|  |  |
+##
+
+| Default, numbered |
+| ----- |
+| ![S-F03-01-default-number](img/img-numbered/S-F03-01-default-numbered.png) |
+
 
 ## 
 
@@ -157,7 +161,7 @@ This screen is a form, so there is no Empty state.
 | 2 | \[NEEDS CLARIFICATION: after the success popup is closed, which screen does the car owner see? The Figma file also contains S-F03-03: is it the next screen?\] | No | Open. Default: return to S-F01-02 |
 | 3 | \[NEEDS CLARIFICATION: the rule says "digits only", but the hints and examples use dots (45.500, 850.000.000) and the phone example has spaces (0901 234 567\) while the rule says "no space between". Does the textbox add the dots while typing, and is the phone example meant to be 0901234567?\] | No | Open. Default: the user types digits only, the textbox shows the dots for mileage and price |
 | 4 | \[NEEDS CLARIFICATION: when is FE validation triggered (on leaving the field, on typing, or on tap of Submit)? The button is inactive while errors are shown, so empty fields need to be checked before the first tap.\] | No | Open. Default: on leaving the field  |
-| 5 | \[NEEDS CLARIFICATION: what do the legal badges (9, 10, 11\) show when a portal returns "No data" (FR-03-02)? The mockup only defines "—" for loading.\] | No | Open |
+| 5 | \[NEEDS CLARIFICATION: what do the legal badges (9, 10, 11\) show when a portal returns "No data" (FR-03-02)? The mockup only defines "—" for loading.\] | No | Open. Default: the car owner’s screen never displays “No data” value. Badges 9, 10, 11 show “—” only while re-checking; after that they return to the last retrieved value in the car owner screen. “No data” is only attached to the vehicle report package sent to Tasco staff. |
 
   ## **Completion checklist**
 
