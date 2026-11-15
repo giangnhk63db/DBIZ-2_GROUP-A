@@ -28,7 +28,7 @@
 
 |Default, numbered|Error, numbered|
 |-|-|
-|![S-F02-01-default-numbered](img-numbered/S-F02-01-default-numbered.png)|![S-F02-01-error-numbered](img-numbered/S-F02-01-error-numbered.png)|
+|![S-F02-01-default-number](img-numbered/S-F02-01-default-numbered.png)|![S-F02-01-error-number](img-numbered/S-F02-01-error-numbered.png)|
 
 |State|Image|
 |-|-|
