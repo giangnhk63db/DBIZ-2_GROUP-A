@@ -7,9 +7,9 @@
 |Actor|Car Owner|
 |Priority|Must|
 |Feature|F-02 Market Price|
-|Activity diagrams|AD-UC-2.10: action a2 "View market price and 12-week trend chart", system actions s1 "Display Calculating Price" and s9 "Display market price and 12-week trend chart". UC-2.01 and UC-2.02 have no activity diagram (simple use cases; their behaviour is the EARS criterion of FR-02-10 and FR-02-11)|
+|Activity diagrams|AD-UC-2.10: action "View market price and 12-week trend chart", system actions "Display Calculating Price" and "Display market price and 12-week trend chart". UC-2.01 and UC-2.02 have no activity diagram (simple use cases; their behaviour is the EARS criterion of FR-02-10 and FR-02-11)|
 |Linked requirements|FR-02-10 View market price (Must), FR-02-11 View 12-week price trend chart (Should), see section 7|
-|Mockup images|`img/S-F02-01.png` (default), `img/S-F02-01-numbered.png`, `img/S-F02-01-error-numbered.png`, four state images (section 2)|
+|Mockup images|`img/S-F02-01-default.png`, `img/S-F02-01-default-numbered.png`, `img/S-F02-01-error-numbered.png`, four state images (section 2)|
 |Frame width|360px |
 |Figma frame|not used |
 |Status|Draft|
@@ -22,13 +22,13 @@
 
 ## 2\. Mockup
 
-!\[S-F02-01](External Design/Screen/img/S-F02-01-default.png)
+![S-F02-01](img/S-F02-01-default.png)
 
 **Numbered:** each number is the # of the element inventory in section 3. Elements 15 and 16 appear only in the loading and empty states, so they are described in section 3 but not numbered on the two images below. Elements 17 to 20 (popup) appear only in the error and success states, so they are numbered on the error image.
 
 |Default, numbered|Error, numbered|
 |-|-|
-|!External Design/Screen/img/S-F02-01-default-numbered.png|!External Design/Screen/img/S-F02-01-error-numbered.png|
+|![S-F02-01-default-numbered](img/S-F02-01-default-numbered.png)|![S-F02-01-error-numbered](img/S-F02-01-error-numbered.png)|
 
 |State|Image|
 |-|-|
@@ -44,11 +44,6 @@ All colours, fonts and corners come from the design tokens in
 ## 3\. Element inventory
 
 This screen is read-only: it has no Input, Date time, Upload or Security element, so no textbox or textarea.
-
-**Category** (what the element does for the user): Selection (choose, buttons), Display (shown only), Input (typed in), Date time (pick a date or time), Upload (upload a file), Security (password, PIN, OTP), Feedback (result of an action, status and inline messages), Dialogue (popup).
-
-**Type** (how it is drawn): text that is only shown is written "Read-only text"; text the user types is "Textbox" (one line) or "Textarea" (several lines).
-
 
 |#|Element|Category|Type|Content / data source|Required|Validation|
 |-|-|-|-|-|-|-|
@@ -132,11 +127,11 @@ Note: in the Function List the L3 IDs from FR-02-09-FE onward do not carry the n
 
 |#|Question|Blocking?|Status|
 |-|-|-|-|
-|3|\[NEEDS CLARIFICATION: FR-02-11 says "No historical data available" when fewer than 12 weekly prices exist, but the Empty mockup shows no price and a different text ("Chưa có dữ liệu giá thị trường cho xe này..."). Need a mockup or text for the case: latest price exists, chart replaced by a message (SR-009).]|No|Open. Default: reuse element 16 in the chart card.|
-|5|\[NEEDS CLARIFICATION: the source trace of FR-02-10 lists only UC-2.01 and FR-02-11 only UC-2.02, but AD-UC-2.10 (s1) shows "Calculating Price" through FR-02-09-FE (L2 FR-02-10), and the Screen List also serves UC-2.10. Add UC-2.10 to FR-02-10 in the Function List.]|No|Open|
-|6|\[NEEDS CLARIFICATION: AD-UC-2.10 open question 5 is still open: when some weeks are INSUFFICIENT\_DATA, does the chart show gaps or is the chart replaced by the message of FR-02-11 ("fewer than 12 weekly prices")? This spec follows FR-02-11 (SR-009).]|No|Open. Default: as FR-02-11.|
-|7|\[NEEDS CLARIFICATION: field names in section 3 (`market\_price.\*`, `market\_price\_history.\*`, `vehicle.\*`) are proposed. Confirm them with the data dictionary.]|No|Open|
-|8|\[NEEDS CLARIFICATION: after "Thử lại" succeeds, does the screen show the success popup or go straight to the default state?]|No|Open. Default: straight to default.|
+|1|\[NEEDS CLARIFICATION: FR-02-11 says "No historical data available" when fewer than 12 weekly prices exist, but the Empty mockup shows no price and a different text ("Chưa có dữ liệu giá thị trường cho xe này..."). Need a mockup or text for the case: latest price exists, chart replaced by a message (SR-009).]|No|Open. Default: reuse element 16 in the chart card.|
+|2|\[NEEDS CLARIFICATION: the source trace of FR-02-10 lists only UC-2.01 and FR-02-11 only UC-2.02, but AD-UC-2.10 (s1) shows "Calculating Price" through FR-02-09-FE (L2 FR-02-10), and the Screen List also serves UC-2.10. Add UC-2.10 to FR-02-10 in the Function List.]|No|Open|
+|3|\[NEEDS CLARIFICATION: AD-UC-2.10 open question 5 is still open: when some weeks are INSUFFICIENT\_DATA, does the chart show gaps or is the chart replaced by the message of FR-02-11 ("fewer than 12 weekly prices")? This spec follows FR-02-11 (SR-009).]|No|Open. Default: as FR-02-11.|
+|4|\[NEEDS CLARIFICATION: field names in section 3 (`market\_price.\*`, `market\_price\_history.\*`, `vehicle.\*`) are proposed. Confirm them with the data dictionary.]|No|Open|
+|5|\[NEEDS CLARIFICATION: after "Thử lại" succeeds, does the screen show the success popup or go straight to the default state?]|No|Open. Default: straight to default.|
 
 \---
 
