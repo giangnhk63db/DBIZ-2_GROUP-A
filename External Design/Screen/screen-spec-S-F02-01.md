@@ -12,7 +12,7 @@
 |Mockup images|`img/S-F02-01-default.png`, `img/S-F02-01-default-numbered.png`, `img/S-F02-01-error-numbered.png`, four state images (section 2)|
 |Frame width|360px |
 |Figma frame|not used |
-|Status|Draft|
+|Status|Reviewed|
 
 ## 1\. Purpose
 
@@ -68,6 +68,8 @@ This screen is read-only: it has no Input, Date time, Upload or Security element
 |19|Retry|Selection|Primary button in the Modal|static: "Thử lại"; error popup only|No|none|
 |20|Close|Selection|Button in the Modal|static: "Đóng"; primary style in the success popup, secondary style in the error popup|No|none|
 
+**Note**: `market\_price.\`, `market\_price\_history.\`, `vehicle.\` are the fields sourced from tables in the data source. Information about the tables in the data source and the Entity-Relationship Diagram (ERD) will be finalized in DBiz 3.
+
 ## 4\. States
 
 |State|What the user sees|Trigger|
@@ -88,7 +90,6 @@ This screen is read-only: it has no Input, Date time, Upload or Security element
 |4|Close (20)|tap (error or success popup)|Closes the popup. After an error the screen keeps "—" in place of data; after a success the price and the chart stay visible|stays|
 |5|Close popup (18)|tap (error or success popup)|Same as Close (20)|stays|
 |6|Price trend chart (12)|none|The chart is not interactive|stays|
-|7|Screen (on open)|tap "Xem xu hướng" on S-F01-02 (AD-UC-2.10, a2)|Reads the latest weekly price, confidence level and the 12 weekly prices, then shows the Default, Empty, Loading or Error state (AD-UC-2.10, s1 and s9)|S-F02-01|
 
 ## 6\. Screen-level rules
 
