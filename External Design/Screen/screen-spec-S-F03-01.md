@@ -23,26 +23,9 @@
 ## **2\. Mockup**
 ![S-F03-01](img/S-F03-01-default.png)
 
-Each number is the \# of the element inventory in section 3\. Elements 23 (banner) appear only in the loading state; elements 24 to 27 (popup) appear only in the Backend and API error and success states. All colours, fonts and corners come from the design tokens in [ui-conventions-car-owner](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/856166f4d066a07c84b66f96b604380801b82088/External%20Design/ui-conventions-car-owner.md)
-
-##
-
-| Default, numbered |
-| ----- |
-| ![S-F03-01-default-number](img/img-numbered/S-F03-01-default-numbered.png) |
-
-
-## 
-
-| Loading screen numbered | Error validate FE screen numbered |
-| ----- | ----- |
-|  |  |
-
-## 
-
-| Error API screen numbered | Success screen numbered |
-| ----- | ----- |
-|  |  |
+| Default, numbered | Loading, numbered | Error validate FE, numbered | Error API, numbered | Success, numbered |
+| ----- | ----- | ----- | ----- | ----- |
+| ![S-F03-01-default-number](img/img-numbered/S-F03-01-default-numbered.png) | ![S-F03-01-loading-number](img/img-numbered/S-F03-01-loading-numbered.png) | ![S-F03-01-error-validate-FE-number](img/img-numbered/S-F03-01-error-validate-FE-numbered.png) | ![S-F03-01-error-API-number](img/img-numbered/S-F03-01-error-API-numbered.png) | ![S-F03-01-success-number](img/img-numbered/S-F03-01-success-numbered.png) |
 
 | State | Image |
 | ----- | ----- |
@@ -51,6 +34,8 @@ Each number is the \# of the element inventory in section 3\. Elements 23 (banne
 | Error (validateFE) | `img/S-F03-01-error-validate-FE.png` |
 | Error API | `img/S-F03-01-error-API.png` |
 | Success | `img/S-F03-01-success.png` |
+
+Each number is the \# of the element inventory in section 3\. Elements 23 (banner) appear only in the loading state; elements 24 to 27 (popup) appear only in the Backend and API error and success states. All colours, fonts and corners come from the design tokens in [ui-conventions-car-owner](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/856166f4d066a07c84b66f96b604380801b82088/External%20Design/ui-conventions-car-owner.md)
 
 ## **3\. Element inventory**
 
