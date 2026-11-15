@@ -22,7 +22,7 @@
 
 ## 2\. Mockup
 
-!\[S-F02-01](External Design/Screen/img/S-F02-01-default.png)
+![S-F02-01](External Design/Screen/img/S-F02-01-default.png)
 
 **Numbered:** each number is the # of the element inventory in section 3. Elements 15 and 16 appear only in the loading and empty states, so they are described in section 3 but not numbered on the two images below. Elements 17 to 20 (popup) appear only in the error and success states, so they are numbered on the error image.
 
