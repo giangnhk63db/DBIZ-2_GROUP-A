@@ -112,7 +112,6 @@ This screen is read-only: it has no Input, Date time, Upload or Security element
 |FR-02-11 View 12-week price trend chart|Displays the 12-week line chart; shows the empty message when fewer than 12 weekly prices exist|FR-02-10-FE (chart), FR-02-10-BE (read the latest 12 weeks)|
 |FR-02-05, FR-02-06 (background, no UI)|Produce the confidence level and the price that this screen reads|not part of this screen|
 
-Note: in the Function List the L3 IDs from FR-02-09-FE onward do not carry the number of their L2 function (for example FR-02-09-FE belongs to L2 FR-02-10). The L3 IDs above are the ones the Screen List uses for this screen. See open question 1.
 
 ## 8\. Responsive and accessibility notes
 
