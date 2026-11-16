@@ -13,7 +13,7 @@
 | Linked requirements | FR-03-06 View preliminary quote (Should), see section 7 |
 | Mockup images | img/S-F03-03-default.png, img/img-numbered/S-F03-03-default-numbered.png, four state images (section 2\) |
 | Frame width | 360px |
-| Figma frame | [Verified Vehicle Report \- S-F03-01, S-F03-03 (5 states)](https://www.figma.com/design/C0hM92cku1UhbITMOXxvgD/Verified-Vehicle-Report---S-F03-01--S-F03-03--5-states-?node-id=28-314&t=wpsxsdbmviJiQl5m-0), node-id 28-314 |
+| Figma frame | [Verified Vehicle Report \- S-F03-03 (5 states)](https://www.figma.com/design/C0hM92cku1UhbITMOXxvgD/Verified-Vehicle-Report---S-F03-01--S-F03-03--5-states-?node-id=28-314&t=wpsxsdbmviJiQl5m-0), node-id 28-314 |
 | Status | Reviewed |
 
 **Shown when:** the car owner taps the fixed bottom button "Xem yêu cầu bán xe" of S-F01-02 (this button replaces "Gửi yêu cầu bán xe" once a sale request exists), or closes the success popup of S-F03-01 right after sending the request. The screen shows the vehicle, the request that the car owner sent and the preliminary quote from Carpla, or a waiting message when the quote has not been sent yet.
