@@ -26,7 +26,7 @@
 
 **Numbered:** each number is the # of the element inventory in section 3. Elements 15 and 16 appear only in the loading and empty states, so they are described in section 3 but not numbered on the two images below. Elements 17 to 20 (popup) appear only in the error and success states, so they are numbered on the error image.
 
-|Default, numbered|Error, numbered|Empty, numbered|Loading, numbered|Success, numbered|
+|Default, numbered|Error API, numbered|Empty, numbered|Loading, numbered|Success, numbered|
 |-|-|-|-|-|
 |![S-F02-01-default-number](img/img-numbered/S-F02-01-default-numbered.png)|![S-F02-01-error-number](img/img-numbered/S-F02-01-error-numbered.png)|![S-F02-01-empty-number](img/img-numbered/S-F02-01-empty-numbered.png)|![S-F02-01-loading-number](img/img-numbered/S-F02-01-loading-numbered.png)|![S-F02-01-success-number](img/img-numbered/S-F02-01-success-numbered.png)|
 
