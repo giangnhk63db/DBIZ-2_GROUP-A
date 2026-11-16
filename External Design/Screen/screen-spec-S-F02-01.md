@@ -26,9 +26,9 @@
 
 **Numbered:** each number is the # of the element inventory in section 3. Elements 15 and 16 appear only in the loading and empty states, so they are described in section 3 but not numbered on the two images below. Elements 17 to 20 (popup) appear only in the error and success states, so they are numbered on the error image.
 
-|Default, numbered|Error, numbered|
-|-|-|
-|![S-F02-01-default-number](img/img-numbered/S-F02-01-default-numbered.png)|![S-F02-01-error-number](img/img-numbered/S-F02-01-error-numbered.png)|
+|Default, numbered|Error, numbered|Empty, numbered|Loading, numbered|Success, numbered|
+|-|-|-|-|-|
+|![S-F02-01-default-number](img/img-numbered/S-F02-01-default-numbered.png)|![S-F02-01-error-number](img/img-numbered/S-F02-01-error-numbered.png)|![S-F02-01-empty-number](img/img-numbered/S-F02-01-empty-numbered.png)|![S-F02-01-loading-number](img/img-numbered/S-F02-01-loading-numbered.png)|![S-F02-01-success-number](img/img-numbered/S-F02-01-success-numbered.png)|
 
 |State|Image|
 |-|-|
@@ -67,6 +67,7 @@ This screen is read-only: it has no Input, Date time, Upload or Security element
 |18|Close popup|Selection|Icon button (X) in the Modal|static|No|none|
 |19|Retry|Selection|Primary button in the Modal|static: "Thử lại"; error popup only|No|none|
 |20|Close|Selection|Button in the Modal|static: "Đóng"; primary style in the success popup, secondary style in the error popup|No|none|
+|21|Chart placeholder	|Display|Read-only text|static: “—”; sits in the chart card in place of the chart (11, 12); visible only in the loading state|No|none|
 
 **Note**: `market\_price.\`, `market\_price\_history.\`, `vehicle.\` are the fields sourced from tables in the data source. Information about the tables in the data source and the Entity-Relationship Diagram (ERD) will be finalized in DBiz 3.
 
