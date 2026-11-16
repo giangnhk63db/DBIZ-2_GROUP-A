@@ -41,57 +41,41 @@ or to the valuation.
 
 ```mermaid
 flowchart LR
-   CO["Car Owner"]
-   BUYER["Used Car Buyer"]
-   subgraph TASCO["TASCO CORPORATION"]
-       direction TB
-       VETC["VETC"]
-       CS["Carpla Service"]
-       MOB(["TASCO MOBILITY"])
-   end
-   INV["Electronic Invoice Lookup Portal"]
-   FINE["Traffic Fine Lookup Portal"]
-   REG["Secured Transaction Registry Portal"]
-   INSP["Vehicle Inspection Portal"]
-   EV["Electric Vehicle Charging Stations"]
-   NEXT["Nextgen Việt Nam"]
-   CHO["Chợ Tốt - Carousell Group"]
-   CO -->|"Used car"| MOB
-   VETC -->|"Identification data & toll passage history"| MOB
-   CS -->|"Maintenance & Repair History"| MOB
-   MOB -->|"Verified vehicle report, market price, automatically filled selling form, more accurate preliminary quote"| CO
-   MOB -->|"$"| CO
-   MOB -->|"Used car"| BUYER
-   INV -->|"Authenticity result"| MOB
-   CO -->|"Create verified vehicle report & Sell request"| MOB
-   MOB -->|"$"| INV
-   EV -->|"Charging session data"| MOB
-   FINE -->|"Traffic fine status"| MOB
-   MOB -->|"$"| FINE
-   MOB -->|"$"| REG
-   REG -->|"Mortgage status"| MOB
-   BUYER -->|"$"| MOB
-   INSP -->|"Inspection status"| MOB
-   MOB -->|"$"| INSP
-   MOB -->|"$"| EV
-   NEXT -->|"Used car listing data"| MOB
-   CHO -->|"Used car listing data"| MOB
-   MOB -->|"$"| NEXT
-   MOB -->|"$"| CHO
-   classDef ext fill:#f5f5f5,stroke:#666666,color:#333333;
-   classDef tasco fill:#fff2cc,stroke:#d6b656,color:#000000;
-   classDef main fill:#ffe6cc,stroke:#d79b00,stroke-width:4px,color:#000000;
-   classDef gov fill:#f8cecc,stroke:#b85450,color:#000000;
-   classDef partner fill:#f5f5f5,stroke:#36393d,color:#000000;
-   class CO,BUYER ext;
-   class VETC,CS tasco;
-   class MOB main;
-   class INV,FINE,REG,INSP gov;
-   class EV,NEXT,CHO partner;
-   style TASCO fill:none,stroke:#000000,stroke-dasharray:8 8
-   %% Xanh = thong tin: 0,5 | Do = tien: 4,8,11,12,14,16,17,20,21 | con lai = san pham (den)
-   linkStyle 0,5 stroke:#0433ff,stroke-width:2px,color:#0433ff
-   linkStyle 4,8,11,12,14,16,17,20,21 stroke:#ff2600,stroke-width:2px,color:#ff2600
+  CO["Car Owner"]
+  BUYER["Used Car Buyer"]
+  VETC["VETC<br>(TASCO group)"]
+  CS["Carpla Service<br>(TASCO group)"]
+  INV["Electronic Invoice<br>Lookup Portal"]
+  FINE["Traffic Fine<br>Lookup Portal"]
+  REG["Secured Transaction<br>Registry Portal"]
+  INSP["Vehicle Inspection<br>Portal"]
+  EV["Electric Vehicle<br>Charging Stations"]
+  NEXT["Nextgen Việt Nam"]
+  CHO["Chợ Tốt -<br>Carousell Group"]
+  MOB(["TASCO MOBILITY<br>(new system)"])
+
+  CO -->|"goods: used car"| MOB
+  MOB -->|"goods: used car"| BUYER
+  BUYER -->|"$ payment for the car"| MOB
+  MOB -->|"$ payment for the car"| CO
+  CO -->|"i: request to create a verified<br>vehicle report, sale request"| MOB
+  MOB -->|"i: verified vehicle report, market price,<br>automatically filled selling form,<br>more accurate preliminary quote"| CO
+  VETC -->|"i: identification data,<br>toll passage history"| MOB
+  CS -->|"i: maintenance and repair history"| MOB
+  EV -->|"i: charging session data"| MOB
+  NEXT -->|"i: used car listing data"| MOB
+  CHO -->|"i: used car listing data"| MOB
+  INV -->|"i: invoice authenticity result"| MOB
+  FINE -->|"i: traffic fine status"| MOB
+  REG -->|"i: mortgage status"| MOB
+  INSP -->|"i: inspection status"| MOB
+  MOB -->|"$ fee"| INV
+  MOB -->|"$ fee"| FINE
+  MOB -->|"$ fee"| REG
+  MOB -->|"$ fee"| INSP
+  MOB -->|"$ fee"| EV
+  MOB -->|"$ fee"| NEXT
+  MOB -->|"$ fee"| CHO
 ```
 
 With Verified Vehicle Report integrated in Tasco mobility app, the system collects identification data and toll passage history from VETC, maintenance and repair history from Carpla Service, and status data from the lookup portals and the listing partners. It gives the car owner a verified vehicle report, the market price, an automatically filled selling form and a more accurate preliminary quote.
