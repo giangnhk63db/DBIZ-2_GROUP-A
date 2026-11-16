@@ -116,3 +116,48 @@ flowchart LR
 ```
 
 Used-car listings = brand, model, manufacturing year, mileage, price, posting date, listing status, removal date.
+
+# Context Diagram: TASCO Mobility System
+
+```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 70, "rankSpacing": 150, "padding": 20, "htmlLabels": true}}}%%
+flowchart LR
+  VETC["VETC"]
+  CSV["Carpla Service"]
+  EVC["EV charging stations"]
+  NGV["Nextgen Việt Nam"]
+  CTO["Chợ Tốt"]
+
+  TMS(("TASCO Mobility<br/>System"))
+
+  OWN["Car Owner"]
+  STF["Carpla Staff"]
+  EINV["Electronic invoice portal"]
+  FINE["Traffic fine lookup portal"]
+  STR["Secured transaction<br/>registry portal"]
+  INSP["Vehicle inspection portal"]
+
+  VETC -->|"identification data,<br/>toll passage history"| TMS
+  CSV -->|"maintenance and<br/>repair history"| TMS
+  EVC -->|"charging session data"| TMS
+  NGV -->|"used-car listings"| TMS
+  CTO -->|"used-car listings"| TMS
+
+  OWN -->|"VIN, refresh request,<br/>external invoice (optional)"| TMS
+  OWN -->|"sell request: mileage,<br/>phone number, desired price"| TMS
+  TMS -->|"verified vehicle report,<br/>market price and 12-week chart,<br/>preliminary quote,<br/>pre-filled quote form"| OWN
+
+  STF -->|"preliminary quote"| TMS
+  TMS -->|"sell request,<br/>verified vehicle report,<br/>market price"| STF
+
+  TMS -->|"seller tax code, invoice symbol,<br/>invoice number, total amount"| EINV
+  EINV -->|"invoice authenticity result"| TMS
+  TMS -->|"license plate"| FINE
+  FINE -->|"traffic fine status"| TMS
+  TMS -->|"VIN"| STR
+  STR -->|"mortgage status: credit institution,<br/>loan amount, active or released"| TMS
+  TMS -->|"license plate, VIN"| INSP
+  INSP -->|"inspection status"| TMS
+```
+
+Used-car listings = brand, model, manufacturing year, mileage, price, posting date, listing status, removal date.
