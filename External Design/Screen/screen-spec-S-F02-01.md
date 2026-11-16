@@ -35,7 +35,7 @@
 |Default|`img/S-F02-01-default.png`|
 |Empty|`img/S-F02-01-empty.png`|
 |Loading|`img/S-F02-01-loading.png`|
-|Error|`img/S-F02-01-error.png` (system error popup, FR-02-10 / FR-02-11)|
+|Error (API)|`img/S-F02-01-error.png` (system error popup, FR-02-10 / FR-02-11)|
 |Success|`img/S-F02-01-success.png`|
 
 All colours, fonts and corners come from the design tokens in
