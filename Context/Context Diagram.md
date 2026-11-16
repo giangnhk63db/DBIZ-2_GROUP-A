@@ -74,7 +74,7 @@ flowchart TB
    style PARTNER fill:none,stroke:#555,stroke-dasharray:5 5
    ```
 
-``` mermaid
+
 # Context Diagram: TASCO Mobility System
 
 ```mermaid
