@@ -6,9 +6,9 @@ designed, to find the problems and opportunities.
 
 | Field | Value |
 |---|---|
-| Project | Vehicle Passport (TASCO MOBILITY) |
-| Version | v1.0 |
-| Next | [Context Diagram](context-diagram.md) |
+| Project | Verified Vehicle Report (TASCO MOBILITY) |
+| Version | v8.0 - Reviewed |
+| Next | [Context Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/54dfee8446b27095bd1a4cd3b07deadc3627deb5/Context/Context%20Diagram.md) |
 
 ## 1. Value chain (with the old system)
 
