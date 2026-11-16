@@ -18,7 +18,7 @@
 
 **Shown when:** the car owner taps the fixed bottom button "Submit sale request" of S-F01-02 to sell the car.  The screen shows the verified vehicle data and the legal status automatically updated, and collects the current mileage, the desired price and the phone number to create the sale request.
 
-**The user leaves this screen when:** the car owner goes back to S-F01-02 with the Back arrow of the Top bar, or closes the success popup after the sale request has been sent.
+**The user leaves this screen when:** the car owner goes back to S-F01-02 with the Back arrow of the Top bar, or closes the success popup after the sale request has been sent, which takes the car owner to S-F03-03.
 
 ## **2\. Mockup**
 ![S-F03-01](img/S-F03-01-default.png)
@@ -86,7 +86,7 @@ This screen is a form, so there is no Empty state.
 | Loading | Banner (23) at the top of the content. The legal badges (9, 10, 11\) show "—". The button (22) shows "Đang gửi yêu cầu…" and cannot be tapped again. The banner disappears when the request is sent. | The car owner taps "Gửi yêu cầu bán xe", FE validation passes and re-checks the legal status (FR-03-02).  |
 | Error validate FE | Inline error text (25, 26 or 27, red) under each invalid field, replacing its hint. The button (22) is inactive. Nothing is sent to the server. | An input does not pass the rule of element 14, 17 or 20 (empty or wrong format) |
 | Error API | Error popup (24 with warning icon, 28, 29, 30\) with title "Chưa gửi được yêu cầu", buttons "Thử lại" and "Đóng" (and X).  | The system could not create or send the sale request after the maximum retries to send to Tasco staff CRM web. |
-| Success  | Success popup (24 with check icon, 28, 30\) with title "Đã gửi yêu cầu", the message and button "Đóng" (and X). The content behind it cannot be used. | The sale request is created and forwarded to Carpla staff  (FR-03-03). A data field that has no record or API does not respond is attached as "No data" and does not cause an error (FR-03-02) |
+| Success  | Success popup (24 with check icon, 28, 30\) with title "Đã gửi yêu cầu", the message and button "Đóng" (and X). The content behind it cannot be used. | The sale request is created and forwarded to Tasco staff  (FR-03-03). A data field that has no record or API does not respond is attached as "No data" and does not cause an error (FR-03-02) |
 
 ## **5\. Interactions and navigation**
 
@@ -143,7 +143,7 @@ This screen is a form, so there is no Empty state.
 | \# | Question | Blocking? | Status |
 | ----- | ----- | ----- | ----- |
 | 1 | \[NEEDS CLARIFICATION: FR-03-01 has only the L3 item FR-03-01-FE. The BE work item that creates the sale request is missing from the Function List.\] | No | Open. Default. no new BE item. FR-03-01 has only FR-03-01-FE because opening the form from S-F01-02 needs no BE of its own, and submitting is handled by the chain FR-03-02-BE and FR-03-03-BE. Confirm that storing the `sale_request` (current mileage, desired price, phone number) is part of FR-03-03-BE. |
-| 2 | \[NEEDS CLARIFICATION: after the success popup is closed, which screen does the car owner see? The Figma file also contains S-F03-03: is it the next screen?\] | No | Open. Default: return to S-F01-02 |
+| 2 | \[NEEDS CLARIFICATION: after the success popup is closed, which screen does the car owner see? The Figma file also contains S-F03-03: is it the next screen?\] | No | Open. Default: closing the success popup goes to S-F03-03. Later the owner comes back through the button of S-F01-02, which changes to “Xem yêu cầu bán xe” once a request exists. |
 | 3 | \[NEEDS CLARIFICATION: the rule says "digits only", but the hints and examples use dots (45.500, 850.000.000) and the phone example has spaces (0901 234 567\) while the rule says "no space between". Does the textbox add the dots while typing, and is the phone example meant to be 0901234567?\] | No | Open. Default: the user types digits only, the textbox shows the dots for mileage and price |
 | 4 | \[NEEDS CLARIFICATION: when is FE validation triggered (on leaving the field, on typing, or on tap of Submit)? The button is inactive while errors are shown, so empty fields need to be checked before the first tap.\] | No | Open. Default: on leaving the field  |
 | 5 | \[NEEDS CLARIFICATION: what do the legal badges (9, 10, 11\) show when a portal returns "No data" (FR-03-02)? The mockup only defines "—" for loading.\] | No | Open. Default: the car owner’s screen never displays “No data” value. Badges 9, 10, 11 show “—” only while re-checking; after that they return to the last retrieved value in the car owner screen. “No data” is only attached to the vehicle report package sent to Tasco staff. |
