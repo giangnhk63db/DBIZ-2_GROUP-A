@@ -73,3 +73,46 @@ flowchart TB
    style TASCO fill:none,stroke:#555,stroke-dasharray:5 5
    style PARTNER fill:none,stroke:#555,stroke-dasharray:5 5
    ```
+
+```
+# Context Diagram: TASCO Mobility System
+
+```mermaid
+flowchart LR
+  OWN["Car Owner"]
+  STF["Carpla Staff"]
+  VETC["VETC"]
+  CSV["Carpla Service"]
+  EVC["EV charging stations"]
+  NGV["Nextgen Việt Nam"]
+  CTO["Chợ Tốt"]
+  EINV["Electronic invoice portal"]
+  FINE["Traffic fine lookup portal"]
+  STR["Secured transaction registry portal"]
+  INSP["Vehicle inspection portal"]
+  TMS(("TASCO Mobility System"))
+
+  OWN -->|"VIN, refresh request, external invoice (optional)"| TMS
+  OWN -->|"sell request: mileage, phone number, desired price"| TMS
+  TMS -->|"verified vehicle report, market price and 12-week chart, preliminary quote, pre-filled quote form"| OWN
+
+  STF -->|"preliminary quote"| TMS
+  TMS -->|"sell request, verified vehicle report and market price"| STF
+
+  VETC -->|"identification data, toll passage history"| TMS
+  CSV -->|"maintenance and repair history"| TMS
+  EVC -->|"charging session data"| TMS
+  NGV -->|"used-car listings"| TMS
+  CTO -->|"used-car listings"| TMS
+
+  TMS -->|"seller tax code, invoice symbol, invoice number, total amount"| EINV
+  EINV -->|"invoice authenticity result"| TMS
+  TMS -->|"license plate"| FINE
+  FINE -->|"traffic fine status"| TMS
+  TMS -->|"VIN"| STR
+  STR -->|"mortgage status: credit institution, loan amount, active or released"| TMS
+  TMS -->|"license plate, VIN"| INSP
+  INSP -->|"inspection status"| TMS
+```
+
+Used-car listings = brand, model, manufacturing year, mileage, price, posting date, listing status, removal date.
