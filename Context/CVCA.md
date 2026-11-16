@@ -43,8 +43,8 @@ flowchart LR
    linkStyle 4,5 stroke:#ff2600,stroke-width:2px,color:#ff2600
 ```
 
-Today (before Vehicle Passport) the car owner manually inputs a subjective vehicle condition
-report to CARPLA and gets an inaccurate, subjective valuation. VETC, Carpla Service, Tasco
+In the old system value chain, the car owner manually inputs a subjective vehicle condition
+report to CARPLA and gets an inaccurate and subjective valuation. VETC, Carpla Service, Tasco
 Insurance and Tasco Land are part of TASCO CORPORATION, but no data flows from them to the car owner
 or to the valuation.
 
@@ -105,10 +105,7 @@ flowchart LR
    linkStyle 4,8,11,12,14,16,17,20,21 stroke:#ff2600,stroke-width:2px,color:#ff2600
 ```
 
-With TASCO MOBILITY, the system collects identification data and toll passage history from VETC,
-maintenance and repair history from Carpla Service, and status data from the lookup portals and
-the listing partners. It gives the car owner a verified vehicle report, the market price, an
-automatically filled selling form and a more accurate preliminary quote.
+With Verified Vehicle Report integrated in Tasco mobility app, the system collects identification data and toll passage history from VETC, maintenance and repair history from Carpla Service, and status data from the lookup portals and the listing partners. It gives the car owner a verified vehicle report, the market price, an automatically filled selling form and a more accurate preliminary quote.
 
 ## 3. Problems and opportunities
 
