@@ -12,35 +12,24 @@ designed, to find the problems and opportunities.
 
 ## 1. Value chain (with the old system)
 
+Edge labels say what flows: `$` money, `i:` information, `goods:` or `service:` goods or services.
+
 ```mermaid
 flowchart LR
-   CO["Car Owner"]
-   BUYER["Used Car Buyer"]
-   subgraph TASCO["TASCO CORPORATION"]
-       direction TB
-       VETC["VETC"]
-       CS["Carpla Service"]
-       INS["Tasco Insurance"]
-       LAND["Tasco Land"]
-       CARPLA["CARPLA"]
-   end
-   CO -->|"Used car"| CARPLA
-   CARPLA --> CO
-   CO -->|"Manually input subjective vehicle condition report<br/>Inaccurate subjective valuation"| CARPLA
-   CARPLA -->|"Used car"| BUYER
-   BUYER -->|"$"| CARPLA
-   CARPLA -->|"$"| CO
-   classDef ext fill:#f5f5f5,stroke:#666666,color:#333333;
-   classDef tasco fill:#fff2cc,stroke:#d6b656,color:#000000;
-   classDef main fill:#fff2cc,stroke:#d6b656,stroke-width:4px,color:#000000;
-   class CO,BUYER ext;
-   class VETC,CS,INS,LAND tasco;
-   class CARPLA main;
-   style TASCO fill:none,stroke:#000000,stroke-dasharray:8 8
-   %% Xanh = thong tin: 0,3 | Den = san pham: 1,2 | Do = tien: 4,5
-   linkStyle 0,3 stroke:#0433ff,stroke-width:2px,color:#0433ff
-   linkStyle 1,2 stroke:#000000,stroke-width:2px
-   linkStyle 4,5 stroke:#ff2600,stroke-width:2px,color:#ff2600
+  CO["Car Owner"]
+  BUYER["Used Car Buyer"]
+  CARPLA(["CARPLA<br>(current process)"])
+  VETC["VETC<br>(TASCO group)"]
+  CS["Carpla Service<br>(TASCO group)"]
+  INS["Tasco Insurance<br>(TASCO group)"]
+  LAND["Tasco Land<br>(TASCO group)"]
+
+  CO -->|"goods: used car"| CARPLA
+  CO -->|"i: vehicle condition report<br>(manual, subjective)"| CARPLA
+  CARPLA -->|"i: valuation<br>(subjective, inaccurate)"| CO
+  CARPLA -->|"goods: used car"| BUYER
+  BUYER -->|"$ payment for the car"| CARPLA
+  CARPLA -->|"$ payment for the car"| CO
 ```
 
 In the old system value chain, the car owner manually inputs a subjective vehicle condition
@@ -111,11 +100,11 @@ With Verified Vehicle Report integrated in Tasco mobility app, the system collec
 
 | # | Stakeholder | Problem or opportunity |
 |---|---|---|
-| P-1 | Car Owner | The owner has to input the vehicle condition by hand, so the report is subjective. |
+| P-1 | Car Owner | The owner has to input the vehicle condition by hand although these data is almost available in Tasco subsidiaries and partners |
 | P-2 | Car Owner | The valuation is subjective and inaccurate, so the owner cannot trust the price. |
 | P-3 | Car Owner | No market data reaches the owner, so the owner does not know the market price of the car or its trend. |
-| P-4 | Car Owner | The legal status of the car (inspection, unpaid fines, mortgage) is not checked before the sale. |
-| P-5 | TASCO group (VETC, Carpla Service) | Data that the group already holds (toll passage history, maintenance and repair history) does not reach the valuation. |
+| P-4 | Car Owner | Car Owner has to to open many apps and webs to check all their car information and status. No unified data app exists for them to monitor car. |
+| P-5 | Tasco Corporations (VETC, Carpla Service) | Data that the group already holds (toll passage history, maintenance and repair history) does not reach the valuation. |
 
 ## 4. Stakeholder requirements
 
