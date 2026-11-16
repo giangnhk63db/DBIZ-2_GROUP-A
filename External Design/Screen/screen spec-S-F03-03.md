@@ -22,11 +22,13 @@
 
 **2\. Mockup**
 
+![S-F03-03](img/S-F03-03-default.png)
+
 **Numbered:** each number is the \# of the element inventory in section 3\. Elements 16 to 19 (popup) appear only in the error and success states. The numbers are the same in all states: element 3 and element 14 change their content by state, and the elements that do not appear in a state are not numbered on its image.
 
-| Default, numbered | Loading, numbered | Error API, numbered | Success, numbered |
-| :---- | :---- | :---- | :---- |
-|  |  |  |  |
+Default, numbered | Loading, numbered | Error API, numbered | Success, numbered |
+| ----- | ----- | ----- | ----- |
+| ![S-F03-03-default-number](img/img-numbered/S-F03-03-default-numbered.png) | ![S-F03-03-loading-number](img/img-numbered/S-F03-03-loading-numbered.png) | ![S-F03-03-error-API-number](img/img-numbered/S-F03-03-error-API-numbered.png) | ![S-F03-03-success-number](img/img-numbered/S-F03-03-success-numbered.png) |
 
 | State | Image |
 | :---- | :---- |
