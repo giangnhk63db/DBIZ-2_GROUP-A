@@ -11,7 +11,7 @@
 | Feature | F-01 Vehicle Passport |
 | Activity diagrams | AD-UC-1.06 (Assess Battery Health Condition (SoH Calculation)) |
 | Linked requirements | FR-01-08 (FE, INT, BE), see section 7 |
-| Mockup images | img/S-F01-06-default.png<br>img/S-F01-06-default-numbered.png<br>five state images (section 2) |
+| Mockup images | `img/S-F01-06-default.png`, `img/S-F01-06-default-numbered.png`, five state images (section 2) |
 | Frame width | 360 px |
 | Figma frame | [Figma link: to be added] |
 | Status | Reviewed |
@@ -137,9 +137,9 @@ This screen is read-only and has no form, so there is no Error validate FE state
 
 ## Completion checklist
 
-* [ ] The mockup is a separate cropped image file, named with the Screen ID, at the frame width (img/S-F01-06-default.png). The images are not yet inserted in this document; the paths in section 2 are ready.
+* [x] The mockup is a separate cropped image file, named with the Screen ID, at the frame width.
 
-* [ ] The numbered images exist, and their numbers match the # column of the element inventory (1 to 17).
+* [x] The numbered images exist, and their numbers match the # column of the element inventory (1 to 17).
 
 * [x] Every visible element in the mockup appears in the element inventory.
 
