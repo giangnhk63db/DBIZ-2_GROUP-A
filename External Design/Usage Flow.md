@@ -3,7 +3,7 @@
 | Field | Value |
 | ----- | ----- |
 | Product | TASCO Verified Vehicle Report System |
-| Version | v0.1|
+| Version | v2|
 | Date | 2026-11-05 |
 | Sources | W0 Table 1 (use case inventory); Use Case Diagram; Activity Diagram Index |
 
@@ -91,20 +91,7 @@ flowchart LR
 | 1 | UC-3.01: Submit Sale Request | AD-UC-3.01.md | S-F03-01  |
 | 2 | UC-3.09: View Preliminary Quote | not needed | S-F03-03   |
 
-## 5. Carpla Staff: Process sale request and send quote
 
-``` mermaid 
-flowchart LR
-  A(["Receives a new vehicle sale request"]) --> U307["UC-3.07: Review Verified Report"]
-  U307 --> U308["UC-3.08: Send Preliminary Quote to Car Owner"]
-  U308 --> Z(["Quote sent to Car Owner"])
-```
-
-
-| Step | Use case | Activity diagram | Screens (fill in after Block 2\) |
-| ----- | ----- | ----- | ----- |
-| 1 | UC-3.07: Review Verified Report | not needed | S-F03-02  |
-| 2 | UC-3.08: Send Preliminary Quote to Car Owner | not needed | S-F03-02  |
 
 ## Use cases without a flow
 
