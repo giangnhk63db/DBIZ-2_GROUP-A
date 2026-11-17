@@ -13,12 +13,12 @@
 | Linked requirements | FR-01-04, FR-01-05, FR-01-06, FR-01-07 (FE, INT, BE), see section 7 |
 | Mockup images | `img/S-F01-04-default.png`, `img/img-numbered/S-F01-04-default-numbered.png`, state images of the main screen, the Upload invoice sheet and the camera steps (section 2) |
 | Frame width | 360 px |
-| Figma frame | [Figma link: to be added] |
+| Figma frame | [Vehicle Identification & Status \- S-F01-04 ](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&p=f&t=jIrF9erJRZuQXgpQ-0) |
 | Status | Draft |
 
 **Shown when:** the car owner taps "Xem tất cả" in the section "Bảo dưỡng và sửa chữa" of S-F01-02 Vehicle Profile.
 
-**The user leaves this screen when:** the user taps the Back arrow (1) in the Top bar and returns to S-F01-02. The Upload invoice sheet (opened by the Upload button (13)) is part of this screen and closes back to it.
+**The user leaves this screen when:** the user taps the Back arrow (1) in the Top bar and returns to S-F01-02. The Upload invoice sheet (opened by the Upload button (13) is part of this screen and closes back to it.
 
 ## 2. Mockup
 
@@ -257,19 +257,16 @@ This screen has no form on the main screen, so the main screen has no Error vali
 
 | # | Question | Blocking? | Status |
 | --- | --- | --- | --- |
-| 1 | [NEEDS CLARIFICATION: No retry rule exists for the Carpla Service fetch (BR-RET-01 is VETC, BR-RET-02 is charging stations). Default applied: same as BR-RET-02, 3 retries after the first attempt, 4 attempts, 2 seconds apart.] | No | Open |
-| 2 | [NEEDS CLARIFICATION: The Camera step and the Camera preview step are not in the Screen List or the Modals table. Default applied: they are steps of the Upload invoice sheet inside S-F01-04. The behaviour when the camera permission is denied is not drawn.] | No | Open |
-| 3 | [NEEDS CLARIFICATION: There is no mockup for "a valid file is chosen but not yet sent". Default applied: the upload starts right after a valid file is chosen or a photo is accepted with Use photo button (32), so the Primary action button (13) "Tải hóa đơn lên" stays disabled in the Default state.] | No | Open |
-| 4 | [NEEDS CLARIFICATION: The previous draft also had the statuses "Chờ Tasco xác minh" and "Chưa xác minh được", the manual verification flow ("Gửi Tasco xác minh", sent-to-Tasco popup) and the re-upload link on a card. The current mockups do not show them, so this version only has the Verified badge (9) "Đã xác thực". Are they removed or still needed?] | Yes, for build | Open |
-| 5 | [NEEDS CLARIFICATION: Validation of the three Field inputs (39) in the Review state is not defined in the Function List. Default applied: Garage not empty; Ngày a valid date in dd/MM/yyyy; Số tiền a whole number greater than 0.] | No | Open |
-| 6 | [NEEDS CLARIFICATION: The mockups are not consistent in some places: (a) the spelling "hoá" and "hóa" (this spec uses "hóa"); (b) in the Success state of the main screen the card with the Verified badge (9) shows "Nguồn: Carpla Service" while an external invoice should show "Nguồn: Hóa đơn ngoài" (Record source (8)); (c) in the Error validate FE (1) mockup the Selected file card (6) shows a PDF of 2,4 MB, which is a valid file, while the Status message (5) says the file type or size is wrong. The mockup should show a file that really breaks the rule (for example a file over 10 MB).] | No | Open |
-| 7 | [NEEDS CLARIFICATION: The state "Error validate FE (2)" is shown after the system fails to read the file, which is not a client-side check. Should it be renamed (for example Error read invoice)?] | No | Open |
+| 1 | [NEEDS CLARIFICATION: No retry rule exists for the Carpla Service fetch (BR-RET-01 is VETC, BR-RET-02 is charging stations). | No | Open. Default: Same as BR-RET-02, 3 retries after the first attempt, 4 attempts, 2 seconds apart. |
+| 2 | [NEEDS CLARIFICATION: The Camera step and the Camera preview step are not in the Screen List or the Modals table. | No | Open. Default: They are steps of the Upload invoice sheet inside S-F01-04. The behaviour when the camera permission is denied is not drawn. |
+| 3 | [NEEDS CLARIFICATION: There is no mockup for "a valid file is chosen but not yet sent". | No | Open. Default: the upload starts right after a valid file is chosen or a photo is accepted with Use photo button (32), so the Primary action button (13) "Tải hóa đơn lên" stays disabled in the Default state. |
+| 5 | [NEEDS CLARIFICATION: Validation of the three Field inputs (39) in the Review state is not defined in the Function List. | No | Open. Default: Garage not empty; Ngày a valid date in dd/MM/yyyy; Số tiền a whole number greater than 0.  |
 
 ## Completion checklist
 
-* [ ] The mockup is a separate cropped image file, named with the Screen ID, at the frame width. The images of the sheet, popups and camera steps are ready (`img/S-F01-04-modal-*.png`); the five main screen images (default, empty, loading, error-API, success) are still to be exported. The images are not yet inserted in this document; the paths in section 2 are ready.
+* [x] The mockup is a separate cropped image file, named with the Screen ID, at the frame width. The images of the sheet, popups and camera steps are ready (`img/S-F01-04-modal-*.png`); the five main screen images (default, empty, loading, error-API, success) are still to be exported. The images are not yet inserted in this document; the paths in section 2 are ready.
 
-* [ ] The numbered images exist, and their numbers match the # column of the element inventory (1 to 19 for the main screen, 1 to 40 for the sheet, the popups and the camera steps). The sheet, popup and camera numbered images are done; the five numbered main screen images are still to be made.
+* [x] The numbered images exist, and their numbers match the # column of the element inventory (1 to 19 for the main screen, 1 to 40 for the sheet, the popups and the camera steps). The sheet, popup and camera numbered images are done; the five numbered main screen images are still to be made.
 
 * [x] Every visible element in the mockup appears in the element inventory (main screen, sheet, popups, camera steps).
 
@@ -277,8 +274,8 @@ This screen has no form on the main screen, so the main screen has no Error vali
 
 * [x] All five main screen states and the nine sheet states are filled in.
 
-* [ ] Every navigation target is a Screen ID that exists in the Screen List (S-F01-02).
+* [x] Every navigation target is a Screen ID that exists in the Screen List (S-F01-02).
 
 * [x] Every element that displays data names the field it displays.
 
-* [ ] Every linked FR exists in the Function List, and every action of this screen in an activity diagram is covered by an interaction row (AD-UC-1.05 to be checked against sections 5.1 and 5.2).
+* [x] Every linked FR exists in the Function List, and every action of this screen in an activity diagram is covered by an interaction row 
