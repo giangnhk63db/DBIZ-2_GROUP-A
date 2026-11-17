@@ -1,6 +1,6 @@
 # LIST OF FLOWS IN CONTEXT DIAGRAM
 
-| CTX: flow-STT | Direction | From | To | Flow label |
+| CTX: flow-No. | Direction | From | To | Flow label |
 |---|---|---|---|---|
 | CTX: flow-01 | Owner → System | Car Owner | TASCO Mobility | Sell request (mileage, phone number, desired price) |
 | CTX: flow-02 | Owner → System | Car Owner | TASCO Mobility | VIN |
