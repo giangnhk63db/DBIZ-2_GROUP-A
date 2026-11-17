@@ -1,4 +1,4 @@
-**AD-UC-2.05 Sync Listings from Partner Marketplaces**
+## AD-UC-2.05 Sync Listings from Partner Marketplaces
 
 |Field|Value|
 |-|-|
