@@ -21,7 +21,7 @@ flowchart LR
 
 
 
-| Step | Use case | Activity diagram | Screens (fill in after Block 2\\) |
+| Step | Use case | Activity diagram | Screens (fill in after Block 2) |
 | ----- | ----- | ----- | ----- |
 | 1 | UC-3.07: Review Verified Report | not needed | S-F03-02  |
 | 2 | UC-3.08: Send Preliminary Quote to Car Owner | not needed | S-F03-02  |
