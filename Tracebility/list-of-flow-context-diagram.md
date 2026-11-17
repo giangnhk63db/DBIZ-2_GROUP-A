@@ -1,7 +1,5 @@
 # LIST OF FLOWS IN CONTEXT DIAGRAM
 
-> Cách đặt tên chuẩn CTX: flow - STT
-
 | CTX: flow-STT | Chiều | Từ | Đến | Nhãn flow |
 |---|---|---|---|---|
 | CTX: flow-01 | Owner → System | Car Owner | TASCO Mobility | Sell request (mileage, phone number, desired price) |
