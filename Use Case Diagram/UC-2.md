@@ -60,4 +60,4 @@ usecase-beta
 ```
 
 The full use case inventory, with features and login rules, is W0 Table 1 in
-[w0-scope.md](../function%20list/w0-scope.md).
+[w0-scope.md](../Function%20list/w0-scope.md).
