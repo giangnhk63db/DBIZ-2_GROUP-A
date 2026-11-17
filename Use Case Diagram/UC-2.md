@@ -1,4 +1,4 @@
-# Use Case Diagram: LabDesk
+# Use Case Diagram: Market Price
 
 | Field | Value |
 |---|---|
