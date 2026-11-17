@@ -1,7 +1,5 @@
 # LIST OF MESSAGES TRONG SEQUENCE DIAGRAM
 
-SEQ: S-X.Y   x = số diagram, y = số thứ tự trong diagram đó
-
 | SEQ: S-X.Y | Số - Tên sequence diagram | Message | Từ | Đến | Ghi chú |
 |---|---|---|---|---|---|
 | SEQ: S-1.01 | 01 - Vehicle Report | Select Create Verified Vehicle Report | Car Owner | TASCO Mobility System |  |
