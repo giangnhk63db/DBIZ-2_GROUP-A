@@ -8,12 +8,12 @@
 | Screen name | Battery Health (SoH) (Vietnamese UI title in Top bar: "Sức khỏe pin (SoH)") |
 | Actor | Car Owner (owner of an electric vehicle) |
 | Priority | Could |
-| Feature | F-01 Vehicle Passport |
+| Feature | F-01 Vehicle Identification & Status |
 | Activity diagrams | AD-UC-1.06 (Assess Battery Health Condition (SoH Calculation)) |
 | Linked requirements | FR-01-08 (FE, INT, BE), see section 7 |
 | Mockup images | `img/S-F01-06-default.png`, `img/S-F01-06-default-numbered.png`, five state images (section 2) |
 | Frame width | 360 px |
-| Figma frame | [Figma link: to be added] |
+| Figma frame | [Vehicle Identification & Status\- S-F01-06 (5 states)](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&t=jIrF9erJRZuQXgpQ-1) |
 | Status | Reviewed |
 
 **Shown when:** the car owner of an electric vehicle taps "Xem chi tiết" in the section "Sức khỏe pin" of S-F01-02 Vehicle Profile.
