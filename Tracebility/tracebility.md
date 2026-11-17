@@ -1,7 +1,5 @@
 # Traceability: Context → Use Case → Sequence Diagram
 
-> Quy ước ID: Use case `UC-X.Y`, Sequence `SEQ: S-X.Y`
-
 | Sequence Diagram | CTX: flow-ID | USE CASE DIAGRAM | SEQUENCE DIAGRAM | Ghi chú |
 |---|---|---|---|---|
 | 01 - Vehicle Report | flow-02 | UC-1.01 | S-1.01 → S-1.04 |  |
