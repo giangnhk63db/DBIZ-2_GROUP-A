@@ -79,4 +79,25 @@ flowchart TB
    style TASCO fill:none,stroke:#555,stroke-dasharray:5 5
    style PARTNER fill:none,stroke:#555,stroke-dasharray:5 5
    ```
+## Data crossing the boundary
 
+| Data group | Kept by | Reaches TASCO Mobility System from |
+|---|---|---|
+| Vehicle identification and toll passage history | VETC (read only) | VETC |
+| Maintenance and repair history | Carpla Service (read only) | Carpla Service |
+| Charging session data | EV charging stations (read only) | EV charging stations |
+| Used-car listings | TASCO Mobility System (cached copy) | Nextgen Việt Nam, Chợ Tốt |
+| Vehicle lookup and refresh requests, external invoice | TASCO Mobility System | Car Owner |
+| Sell requests | TASCO Mobility System | Car Owner |
+| Preliminary quotes | TASCO Mobility System | Carpla Staff |
+| Invoice authenticity result | Electronic invoice portal (read only) | Electronic invoice portal |
+| Traffic fine status | Traffic fine lookup portal (read only) | Traffic fine lookup portal |
+| Mortgage status | Secured transaction registry portal (read only) | Secured transaction registry portal |
+| Inspection status | Vehicle inspection portal (read only) | Vehicle inspection portal |
+
+## Change log
+
+| Version | When | Change | Why |
+|---|---|---|---|
+| v1 | W0 | First version | |
+| v2 | ... | Added the 12-week price chart to the output flow to Car Owner | ...... |
