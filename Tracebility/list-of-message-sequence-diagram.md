@@ -1,6 +1,6 @@
 # LIST OF MESSAGES TRONG SEQUENCE DIAGRAM
 
-> CÁCH ĐẶT TÊN CHUẨN: SEQ: S-X.Y   x = số diagram, y = số thứ tự trong diagram đó
+SEQ: S-X.Y   x = số diagram, y = số thứ tự trong diagram đó
 
 | SEQ: S-X.Y | Số - Tên sequence diagram | Message | Từ | Đến | Ghi chú |
 |---|---|---|---|---|---|
