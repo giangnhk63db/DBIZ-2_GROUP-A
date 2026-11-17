@@ -1,6 +1,6 @@
 # Traceability: Context → Use Case → Sequence Diagram
 
-| Sequence Diagram | CTX: flow-ID | USE CASE DIAGRAM | SEQUENCE DIAGRAM | Ghi chú |
+| Sequence Diagram | CTX: flow-ID | USE CASE DIAGRAM | SEQUENCE DIAGRAM | Note |
 |---|---|---|---|---|
 | 01 - Vehicle Report | flow-02 | UC-1.01 | S-1.01 → S-1.04 |  |
 | 01 - Vehicle Report | flow-12, flow-05 | UC-1.02 | S-1.05 → S-1.08 |  |
