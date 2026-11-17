@@ -1,7 +1,5 @@
 # LIST OF USE CASES TRONG USE CASE DIAGRAM
 
-> Cách đặt tên chuẩn: UC-x.y   x = số diagram, y = số thứ tự trong diagram đó.
-
 | UC-ID | Diagram | Tên Use Case | Actor chính | Actor phụ | Quan hệ include/extend | Ghi chú |
 |---|---|---|---|---|---|---|
 | UC-1.01 | 01 - Vehicle Identification and Status | Enter VIN to initialize Report | Car Owner | - |  |  |
