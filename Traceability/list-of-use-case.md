@@ -1,6 +1,6 @@
 # LIST OF USE CASES TRONG USE CASE DIAGRAM
 
-| UC-ID | Diagram | Tên Use Case | Actor chính | Actor phụ | Quan hệ include/extend | Note |
+| UC-ID | Diagram | Use Case Name | Primary Actor | Secondary Actor | include/extend | Note |
 |---|---|---|---|---|---|---|
 | UC-1.01 | 01 - Vehicle Identification and Status | Enter VIN to initialize Report | Car Owner | - |  |  |
 | UC-1.02 | 01 - Vehicle Identification and Status | View Vehicle Identification | Car Owner | VETC |  |  |
