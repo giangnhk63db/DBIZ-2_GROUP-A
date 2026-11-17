@@ -1,6 +1,6 @@
 # LIST OF MESSAGES TRONG SEQUENCE DIAGRAM
 
-| SEQ: S-X.Y | Số - Tên sequence diagram | Message | Từ | Đến | Note |
+| SEQ: S-X.Y | No. - Name | Message |From | To | Note |
 |---|---|---|---|---|---|
 | SEQ: S-1.01 | 01 - Vehicle Report | Select Create Verified Vehicle Report | Car Owner | TASCO Mobility System |  |
 | SEQ: S-1.02 | 01 - Vehicle Report | Enter 17-character VIN | Car Owner | TASCO Mobility System |  |
