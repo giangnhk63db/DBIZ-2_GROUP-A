@@ -1,3 +1,11 @@
+# Use Case Diagram: LabDesk
+
+| Field | Value |
+|---|---|
+| Version | v2 |
+| Actors | Car owner, Weekly timer, Nextgen VN, Chợ Tốt, VETC |
+
+
 ```mermaid
 usecase-beta
     direction LR
@@ -51,3 +59,5 @@ usecase-beta
 
 ```
 
+The full use case inventory, with features and login rules, is W0 Table 1 in
+[w0-scope.md](../function%20list/w0-scope.md).
