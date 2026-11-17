@@ -9,12 +9,12 @@
 | Actor | Car Owner (owner of an electric vehicle) |
 | Priority | Could |
 | Feature | F-01 Vehicle Passport |
-| Activity diagrams | AD-UC-1.06 |
+| Activity diagrams | AD-UC-1.06 (Assess Battery Health Condition (SoH Calculation)) |
 | Linked requirements | FR-01-08 (FE, INT, BE), see section 7 |
-| Mockup images | `img/S-F01-06-default.png`<br>`img/img-numbered/S-F01-06-default-numbered.png`<br>five state images (section 2) |
-| Frame width | 360 px (frame 360 x 720 px, portrait, single column), per ui-conventions-car-owner §6.5 |
+| Mockup images | img/S-F01-06-default.png<br>img/S-F01-06-default-numbered.png<br>five state images (section 2) |
+| Frame width | 360 px |
 | Figma frame | [Figma link: to be added] |
-| Status | Draft |
+| Status | Reviewed |
 
 **Shown when:** the car owner of an electric vehicle taps "Xem chi tiết" in the section "Sức khỏe pin" of S-F01-02 Vehicle Profile.
 
