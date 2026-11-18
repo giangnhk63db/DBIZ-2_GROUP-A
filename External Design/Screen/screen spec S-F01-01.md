@@ -34,7 +34,7 @@
 
 | Error (VIN Not Found), numbered | Error (API), numbered | Success, numbered |
 | :---: | :---: | :---: |
-| ![S-F01-01-Error-VIN Not Found-numbered](img/img-numbered/S-F01-01-Error-VIN Not Found-numbered.png) | ![S-F01-01-Error-API-numbered](img/img-numbered/S-F01-01-Error-API-numbered.png) | ![S-F01-01-Success-numbered](img/img-numbered/S-F01-01-Success-numbered.png) |
+| ![S-F01-01-Error- VIN Not Found-numbered](img/img-numbered/S-F01-01-Error- VIN Not Found-numbered.png) | ![S-F01-01-Error-API-numbered](img/img-numbered/S-F01-01-Error-API-numbered.png) | ![S-F01-01-Success-numbered](img/img-numbered/S-F01-01-Success-numbered.png) |
 
 | State | Image |
 | :--- | :--- |
