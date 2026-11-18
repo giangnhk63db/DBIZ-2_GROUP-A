@@ -46,22 +46,22 @@ Result popups of the sheet and camera steps (numbers of section 3.2):
 | --- | --- | --- | --- |
 | ![S-F01-04-modal-error-validate-BE-numbered](img/img-numbered/S-F01-04-modal-error-validate-BE-numbered.png) | ![S-F01-04-modal-success-numbered](img/img-numbered/S-F01-04-modal-success-numbered.png) | ![S-F01-04-modal-camera-numbered](img/img-numbered/S-F01-04-modal-camera-numbered.png) | ![S-F01-04-modal-camerapreview-numbered](img/img-numbered/S-F01-04-modal-camerapreview-numbered.png) |
 
-| Group | State | Image | Numbered image |
-| --- | --- | --- | --- |
-| Main screen | Default | `img/S-F01-04-default.png` | `img/img-numbered/S-F01-04-default-numbered.png` |
-| Main screen | Empty | `img/S-F01-04-empty.png` | `img/img-numbered/S-F01-04-empty-numbered.png` |
-| Main screen | Loading | `img/S-F01-04-loading.png` | `img/img-numbered/S-F01-04-loading-numbered.png` |
-| Main screen | Error API | `img/S-F01-04-error-API.png` | `img/img-numbered/S-F01-04-error-API-numbered.png` |
-| Main screen | Success | `img/S-F01-04-success.png` | `img/img-numbered/S-F01-04-success-numbered.png` |
-| Upload invoice sheet | Default | `img/S-F01-04-modal-default.png` | `img/img-numbered/S-F01-04-modal-default-numbered.png` |
-| Upload invoice sheet | Loading | `img/S-F01-04-modal-loading.png` | `img/img-numbered/S-F01-04-modal-loading-numbered.png` |
-| Upload invoice sheet | Error validate FE (1) | `img/S-F01-04-modal-error-validate-FE-1.png` | `img/img-numbered/S-F01-04-modal-error-validate-FE-1-numbered.png` |
-| Upload invoice sheet | Error validate FE (2) | `img/S-F01-04-modal-error-validate-FE-2.png` | `img/img-numbered/S-F01-04-modal-error-validate-FE-2-numbered.png` |
-| Upload invoice sheet | Review | `img/S-F01-04-modal-review.png` | `img/img-numbered/S-F01-04-modal-review-numbered.png` |
-| Upload invoice sheet | Error validate BE (popup) | `img/S-F01-04-modal-error-validate-BE.png` | `img/img-numbered/S-F01-04-modal-error-validate-BE-numbered.png` |
-| Upload invoice sheet | Success (popup) | `img/S-F01-04-modal-success.png` | `img/img-numbered/S-F01-04-modal-success-numbered.png` |
-| Camera steps | Camera | `img/S-F01-04-modal-camera.png` | `img/img-numbered/S-F01-04-modal-camera-numbered.png` |
-| Camera steps | Camera preview | `img/S-F01-04-modal-camerapreview.png` | `img/img-numbered/S-F01-04-modal-camerapreview-numbered.png` |
+| Group | State | Image | 
+| --- | --- | --- |
+| Main screen | Default | `img/S-F01-04-default.png` | 
+| Main screen | Empty | `img/S-F01-04-empty.png` | 
+| Main screen | Loading | `img/S-F01-04-loading.png` | 
+| Main screen | Error API | `img/S-F01-04-error-API.png` | 
+| Main screen | Success | `img/S-F01-04-success.png` | 
+| Upload invoice sheet | Default | `img/S-F01-04-modal-default.png` | 
+| Upload invoice sheet | Loading | `img/S-F01-04-modal-loading.png` | 
+| Upload invoice sheet | Error validate FE (1) | `img/S-F01-04-modal-error-validate-FE-1.png` | 
+| Upload invoice sheet | Error validate FE (2) | `img/S-F01-04-modal-error-validate-FE-2.png` | 
+| Upload invoice sheet | Review | `img/S-F01-04-modal-review.png` | 
+| Upload invoice sheet | Error validate BE (popup) | `img/S-F01-04-modal-error-validate-BE.png` | 
+| Upload invoice sheet | Success (popup) | `img/S-F01-04-modal-success.png` | 
+| Camera steps | Camera | `img/S-F01-04-modal-camera.png` | 
+| Camera steps | Camera preview | `img/S-F01-04-modal-camerapreview.png` | `
 
 Each number is the # of the element inventory in section 3. The main screen and the Upload invoice sheet are separate mockups, so their numbers are two different sequences: the main screen uses 1 to 19 (section 3.1); the Upload invoice sheet, its popups and the camera steps use 1 to 40 (section 3.2). Always read a number together with the element name, for example Upload button (13) on the main screen and Primary action button (13) in the sheet.
 
