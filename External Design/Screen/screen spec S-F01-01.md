@@ -30,11 +30,11 @@
 
 | Default, numbered | Loading, numbered | Error (Format), numbered |
 | :---: | :---: | :---: |
-| ![S-F01-01-default-numbered](img/img-numbered/S-F01-01-default-numbered.png) | ![S-F01-01-loading-numbered](img/img-numbered/S-F01-01-loading-numbered.png) | ![S-F01-01-error-validate-be-numbered](img/img-numbered/S-F01-01-error-validate-be-numbered.png) |
+| ![S-F01-01-Default-numbered](img/img-numbered/S-F01-01-Default-numbered.png) | ![S-F01-01-Loading-numbered](img/img-numbered/S-F01-01-Loading-numbered.png) | ![S-F01-01-Error-Validate BE-numbered](img/img-numbered/S-F01-01-Error-Validate BE-numbered.png) |
 
 | Error (VIN Not Found), numbered | Error (API), numbered | Success, numbered |
 | :---: | :---: | :---: |
-| ![S-F01-01-error-vin-not-found-numbered](img/img-numbered/S-F01-01-error-vin-not-found-numbered.png) | ![S-F01-01-error-api-numbered](img/img-numbered/S-F01-01-error-api-numbered.png) | ![S-F01-01-success-numbered](img/img-numbered/S-F01-01-success-numbered.png) |
+| ![S-F01-01-Error-VIN Not Found-numbered](img/img-numbered/S-F01-01-Error-VIN Not Found-numbered.png) | ![S-F01-01-Error-API-numbered](img/img-numbered/S-F01-01-Error-API-numbered.png) | ![S-F01-01-Success-numbered](img/img-numbered/S-F01-01-Success-numbered.png) |
 
 | State | Image |
 | :--- | :--- |
