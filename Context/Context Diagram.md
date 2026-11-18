@@ -100,4 +100,4 @@ flowchart TB
 | Version | When | Change | Why |
 |---|---|---|---|
 | v1 | W0 | First version | |
-| v2 | ... | Added the 12-week price chart to the output flow to Car Owner | ...... |
+| v2 | Lesson 6 | Added the 12-week price chart to the output flow to Car Owner | Extended F-02 Market Price so the owner sees the price trend over 12 weeks, not only the current price, and can choose when to sell |
