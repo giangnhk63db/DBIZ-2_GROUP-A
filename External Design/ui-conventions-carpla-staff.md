@@ -28,16 +28,17 @@ Scope: the screens of Carpla CRM used by Carpla staff, designed for a desktop we
 
 | Component | When to use | Notes |
 |---|---|---|
-| Page header | Top of the screen | Link "Quay lại" on the left (returns to the previous page of Carpla CRM), screen title "Xem xét yêu cầu bán xe và báo giá" on the left below it. Screen title is in Vietnamese, sentence case: capitalise only the first letter of the first word, plus abbreviations and proper names (VIN, SoH, VETC, Carpla); all other words lowercase |
-| Info panel | Read-only report: owner-declared information (current mileage, desired price, phone number) and the verified vehicle report (identification, mileage, battery health, legal status, market price) | Label on the left, value on the right; a value that is not verified shows "Chưa xác minh" with a Status badge (icon + text) |
+| Page header | Top of the screen | Link "Quay lại" on the left (returns to the previous page of Carpla CRM), screen title "Xem xét yêu cầu bán xe và báo giá sơ bộ" on the left below it. Screen title is in Vietnamese, sentence case: capitalise only the first letter of the first word, plus abbreviations and proper names (VIN, SoH, VETC, Carpla); all other words lowercase |
+| Info panel | Read-only report: owner-declared information (current mileage, desired price, phone number) and the verified vehicle report (three blocks including block identification (VIN, model, color); block status (mileage, battery health, legal status), block market price | Label on the left, value on the right; a value that is not verified shows "Chưa xác minh" with a Status badge (icon + text) |
 | Data table | Maintenance and repair history, including external invoices uploaded by the car owner | Columns: Ngày, Nội dung, Nguồn (Carpla Service / Hóa đơn bên ngoài); newest on top; the invoice file opens in a new tab through a link in the row |
-| Status badge | Verification status of a value, legal status (inspection, unpaid traffic fines, mortgage) | Always icon + text, never colour alone |
+| Status badge | Verification status of a value, legal status (inspection, unpaid traffic fines, mortgage) | Always icon + text, never colour alone. Include details right below icon + text. Fines and mortgage: a successful lookup that finds nothing shows a success badge ("Không có phạt nguội", "Không thế chấp"). Inspection shows "Còn hiệu lực" or "Hết hạn". A lookup that could not be done shows "Chưa xác minh".|
 | Text input | Quote range: "Giá thấp nhất" and "Giá cao nhất" | Label above, FE error message below (inline); the inline error is only for errors caught by FE validation, BE errors use a popup (section 4); digits auto-formatted with dots while typing; suffix "₫" shown inside the field |
 | Quote form | Staff enters the suggested quote range | Two Text inputs side by side: "Giá thấp nhất" and "Giá cao nhất" |
 | Primary button | Send the quote | "Gửi báo giá"; one per screen; spans the width of its container, filled with the brand colour; placed at the bottom right of the Quote form |
 | Secondary button | Leave without sending; alternative actions | "Quay lại"; outline style: border and text only, transparent background (no fill) |
 | Banner | Non-blocking information: a value in the report is not verified | Sits inside the screen, never covers content; info style with icon + text; no buttons |
 | Modal | System error notification; success notification | Never for navigation; always has a close button |
+| Loading placeholder | While the data of the screen is loading, shown in place of the values of the Info panels and the rows of the Data table | Grey bars, 20 px high, full width of the panel, fill `color-disabled-bg`, corner `radius-sm`, stacked with a `space-5` gap; no animation; panel titles stay visible; the Quote form stays visible and its Primary button is disabled until loading ends; no buttons |
 
 ## 4. Messages
 
@@ -47,9 +48,10 @@ All message text shown to the user is in Vietnamese.
 |---|---|---|
 | Validation error (FE) | **Inline**, right below the field. What is wrong + how to fix, ending with "Vui lòng ...". No request is sent to the server. | "Vui lòng nhập giá thấp nhất." / "Giá thấp nhất không được lớn hơn giá cao nhất. Vui lòng nhập lại." |
 | System error (BE) | **Popup** after the maximum retries. What happened + what the user can do now. Buttons "Thử lại" and "Đóng". | "Hệ thống chưa gửi được báo giá. Vui lòng bấm Thử lại, hoặc đóng và quay lại sau." |
-| Empty state | **In the Data table area**, in the place where the rows would be. Why it is empty + what it means. | "Chủ xe chưa tải hóa đơn bảo dưỡng bên ngoài." |
+| Empty state | **In the Data table area**, in the place where the rows would be. Why it is empty + what it means. | "Chưa có lịch sử bảo dưỡng và sửa chữa của xe này." |
 | Success | **Popup** with a "Đóng" button. What was done. | "Đã gửi báo giá sơ bộ cho chủ xe." |
 | Unavailable data (not an error) | **Banner**, not a popup. The screen opens normally; the banner sits at the top of the Info panel, and the affected value shows "Chưa xác minh". The banner has no button and stays until the data exists. Reason for no popup: nothing failed and the user has nothing to retry. | "Số km chưa được xác minh vì không có bản ghi qua trạm thu phí." |
+| Loading | **Loading placeholder** in the place of the data, plus one line under the screen title. The screen opens normally; nothing failed, so there is no popup. When loading ends the placeholders are replaced by the data. If loading still fails after the maximum retries, use the System error ( Error validate BE) pattern. | "Đang tải thông tin yêu cầu bán xe." |
 
 ## 5. Accessibility minimums
 
@@ -118,7 +120,7 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 
 | Token | HEX | Intended usage | Components |
 |---|---|---|---|
-| color-success | #1B7A43 | Success text and icon | Success Modal, Status badge (inspection valid) |
+| color-success | #1B7A43 | Success text and icon | Success Modal, Status badge (inspection valid, no unpaid traffic fine, no mortgage) |
 | color-success-bg | #E7F4EC | Background behind success text | Status badge |
 | color-warning | #8A5300 | Warning text and icon | Status badge ("Chưa xác minh", unpaid traffic fine, mortgage) |
 | color-warning-bg | #FFF3DC | Background behind warning text | Status badge |
@@ -133,7 +135,7 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 | color-hover | #1C2650 | Darker navy when the mouse pointer is over the control | Primary button |
 | color-pressed | #141C3B | Darker navy while pressed | Primary button |
 | color-hover-soft | #F3F5FA | Hover and pressed fill for non-filled controls | Secondary button |
-| color-disabled-bg | #E4E6EB | Fill of a disabled control | Primary button, Secondary button |
+| color-disabled-bg | #E4E6EB | Fill of a disabled control and fill of a Loading placeholder | Primary button, Secondary button, Loading placeholder |
 | color-disabled-text | #6B7280 | Text of a disabled control (exempt from contrast rules). A disabled Secondary button has no outline: its outline is removed and only the fill and text above remain | Primary button, Secondary button |
 | color-focus | #2F5BEA | Focus ring, 2 px thick, drawn with a 2 px offset so it never touches the control's own fill | All keyboard-focusable interactive elements defined in Section 3 |
 
@@ -194,7 +196,7 @@ Border radius defines how rounded the corners of a component are. Using a small 
 
 | Token | Value (CSS px) | Components |
 |---|---|---|
-| radius-sm | 4 | Status badge |
+| radius-sm | 4 | Status badge, Loading placeholder |
 | radius-md | 8 | Primary button, Secondary button, Text input, Banner |
 | radius-lg | 12 | Info panel, Data table, Modal |
 
