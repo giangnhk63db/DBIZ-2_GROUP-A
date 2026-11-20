@@ -69,6 +69,11 @@ flowchart LR
   FINE -->|"i: traffic fine status"| MOB
   REG -->|"i: mortgage status"| MOB
   INSP -->|"i: inspection status"| MOB
+   MOB -->|"i: verified vehicle report and sale request"| STAFF
+  STAFF -->|"i: preliminary quote"| MOB
+  CO -->|"i: external invoice upload"| MOB
+  MOB -->|"i: invoice data scanned by OCR"| CO
+  CO -->|"i: invoice data checked and edited by owner"| MOB
   MOB -->|"$ fee"| INV
   MOB -->|"$ fee"| FINE
   MOB -->|"$ fee"| REG
@@ -78,7 +83,7 @@ flowchart LR
   MOB -->|"$ fee"| CHO
 ```
 
-With Verified Vehicle Report integrated in Tasco mobility app, the system collects identification data and toll passage history from VETC, maintenance and repair history from Carpla Service and invoice uploaded, and legal status data (inspection, unpaid traffic fines and mortgage) from the lookup portals and the listing partners. It gives the car owner a verified vehicle report, the market price for reference, an automatically filled selling form and especially a more accurate preliminary quote.
+With Verified Vehicle Report integrated in Tasco mobility app, the system collects identification data and toll passage history from VETC, maintenance and repair history from Carpla Service and invoice uploaded, and legal status data (inspection, unpaid traffic fines and mortgage) from the lookup portals and the listing partners. When the car owner uploads external maintenance invoices; the system scans them with OCR , and the car owner checks and edits the scanned data before the invoice is verified through the Electronic Invoice Lookup Portal. When the car owner submits a sale request, the system sends the sale request and the verified vehicle report to Carpla staff, who review them and send back a preliminary quote, which the system shows to the car owner. The Verified Vehicle Report system gives the car owner a verified vehicle report, the market price for reference, an automatically filled selling form and especially a more accurate preliminary quote.
 
 ## 3. Problems and opportunities
 
