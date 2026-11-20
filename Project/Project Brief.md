@@ -34,11 +34,11 @@ Measures agreed with the client are in [the CVCA](https://github.com/giangnhk63d
 
 | Member | Role | Owns |
 | ----- | ----- | ----- |
-| Nguyễn Hương Giang | Integrator, Project manager, Feature owner | Merges every file; keeps names consistent Assign tasks, review and comment for all tasks;  F-03 Submit Sale Request and Preliminary Quote; function list; Project brief; Architecture; README  |
-| Vũ Hương Ly | Feature owner | F-02 Market Price (idea, use case, sequence, activity diagram, draw screen, screen specs), ui conventions; usage flow |
-| Nguyễn Hà Phương | Feature owner | F-02 Market Price (activity diagram, draw screen, screen specs); ui conventions; screen transition |
-| Đinh Thu Thảo | Feature owner | F-01 Vehicle Identification and Status (activity diagram, draw screen, screen specs); function list  |
-| Nguyễn Danh Quang | Feature owner | F-01 Vehicle Identification and Status (use case, activity diagram, draw screen, screen specs); usage flow |
+| Nguyễn Hương Giang | Integrator, Project manager, Feature owner | Merges every file<br>Keeps names consistent<br>Assign tasks and deadlines<br>Review, check and comment for tasks of members<br>F-03 Submit Sale Request and Preliminary Quote<br>Screen list<br>Project brief<br>Architecture<br>README<br>Function list  |
+| Vũ Hương Ly | Feature owner | F-02 Market Price (idea, use case, sequence, activity diagram, draw screen, screen specs)<br>Ui conventions<br>Usage flow<br>Traceability |
+| Nguyễn Hà Phương | Feature owner | F-02 Market Price (activity diagram, draw screen, screen specs)<br>Ui conventions<br>Screen transition<br>Cost |
+| Đinh Thu Thảo | Feature owner | F-01 Vehicle Identification and Status (activity diagram, draw screen, screen specs)<br>Screen list<br>Function list  |
+| Nguyễn Danh Quang | Feature owner | F-01 Vehicle Identification and Status (use case, activity diagram, draw screen, screen specs)<br>usage flow<br>Capital |
 
 ## **Milestones in DBIZ2**
 
