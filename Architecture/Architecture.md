@@ -3,7 +3,7 @@
 | Field | Value |
 | ----- | ----- |
 | Version | V3 Reviewed |
-| Inputs | [CVCA](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/fda9db825dd05ce06fdd37a9ec5f7e91539dfd4b/Context/CVCA.md) [Context Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Context/Context%20Diagram.md) [Use Case Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/tree/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Use%20Case%20Diagram) |
+| Inputs | [CVCA](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/fda9db825dd05ce06fdd37a9ec5f7e91539dfd4b/Context/CVCA.md), [Context Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Context/Context%20Diagram.md), [Use Case Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/tree/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Use%20Case%20Diagram) |
 
 **1\. System requirements**
 
@@ -123,8 +123,7 @@ flowchart TB
   MP -.-> CHO
 ```
 
-
-Solid arrows run from layer to layer; dotted arrows go to external systems. Inside the business layer, the Scheduler starts the Market price service every week, the Invoice service merges valid invoices into the vehicle record, and the Sell request service asks the Legal status service to re-check and sends messages through the Notification service. Each service calls its own external systems directly.
+Solid arrows run from layer to layer; dotted arrows go to external systems. Inside the business layer, the Scheduler starts the Market price service every week, the Invoice service merges valid invoices into the vehicle record, and the Sell request service asks the Legal status service to re-check and uses the Notification service to notify the the Carpla staff about the sell request. Each service calls its own external systems directly.
 
 | Function | Element | Layer |
 | ----- | ----- | ----- |
@@ -135,7 +134,7 @@ Solid arrows run from layer to layer; dotted arrows go to external systems. Insi
 | Upload and keep external invoice files | Invoice service, Vehicle Report database | Business, Data access |
 | Extract data from invoices | Invoice service | Business |
 | Verify invoice authenticity and merge valid invoices into the history | Invoice service, calls Electronic Invoice Lookup Portal, merges through Vehicle report service | Business, external |
-| Refresh legal status from the three portals | Vehicle report service starts the refresh, Legal status update service calls Vehicle Inspection Portal, Traffic Fine Lookup Portal and Secured Transaction Registry Portal | Business, external |
+| Refresh legal status including inspection, unpaid traffic fines, mortgage from the three lookup portals | Vehicle report service starts the refresh, Legal status update service calls Vehicle Inspection Portal, Traffic Fine Lookup Portal and Secured Transaction Registry Portal | Business, external |
 | Synchronize listings every week | Market price service, calls Nextgen Việt Nam and Chợ Tốt | Business, external |
 | Select comparable listings and clean invalid listings | Market price service | Business |
 | Calculate the weekly market price and confidence level | Market price service | Business |
@@ -158,7 +157,7 @@ Solid arrows run from layer to layer; dotted arrows go to external systems. Insi
 | ADR-001 | Build the feature inside the existing TASCO Mobility app, no separate app | Accepted |
 | ADR-002 | Add a scheduler for the weekly listing synchronization and price calculation | Accepted |
 | ADR-003 | Carpla staff review the sell request and enter the preliminary quote in Carpla’s existing CRM (Customer Relationship Management), no new staff website in this system | Accepted |
-| ADR-004 | Each service calls its own external systems directly, with no shared connector | Proposed |
+| ADR-004 | Each service calls its own external systems directly, with no shared connector | Accepted |
 | ADR-005 | Keep invoice files in the Vehicle Report database | Accepted |
 | ADR-006 | Put the legal status check in its own service, used by both the Vehicle report service and the Sell request service | Accepted |
 
