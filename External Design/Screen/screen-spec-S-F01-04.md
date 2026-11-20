@@ -14,7 +14,7 @@
 | Mockup images | `img/S-F01-04-default.png`, `img/img-numbered/S-F01-04-default-numbered.png`, state images of the main screen, the Upload invoice sheet and the camera steps (section 2) |
 | Frame width | 360 px |
 | Figma frame | [Vehicle Identification & Status \- S-F01-04 ](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&p=f&t=jIrF9erJRZuQXgpQ-0) |
-| Status | Draft |
+| Status | Reviewed |
 
 **Shown when:** the car owner taps "Xem tất cả" in the section "Bảo dưỡng và sửa chữa" of S-F01-02 Vehicle Profile.
 
@@ -36,13 +36,13 @@ Main screen (numbers of section 3.1):
 
 Upload invoice sheet (numbers of section 3.2):
 
-| Sheet Default, numbered | Sheet Loading, numbered | Sheet Error validate FE (1), numbered | Sheet Error validate FE (2), numbered | Sheet Review, numbered |
+| Upload Invoice Sheet Default, numbered | Upload Invoice Sheet Loading, numbered | Upload Invoice Sheet Error validate FE (1), numbered | Upload Invoice Sheet Error validate FE (2), numbered | Review Invoice Sheet, numbered |
 | --- | --- | --- | --- | --- |
 | ![S-F01-04-modal-default-numbered](img/img-numbered/S-F01-04-modal-default-numbered.png) | ![S-F01-04-modal-loading-numbered](img/img-numbered/S-F01-04-modal-loading-numbered.png) | ![S-F01-04-modal-error-validate-FE-1-numbered](img/img-numbered/S-F01-04-modal-error-validate-FE-1-numbered.png) | ![S-F01-04-modal-error-validate-FE-2-numbered](img/img-numbered/S-F01-04-modal-error-validate-FE-2-numbered.png) | ![S-F01-04-modal-review-numbered](img/img-numbered/S-F01-04-modal-review-numbered.png) |
 
 Result popups of the sheet and camera steps (numbers of section 3.2):
 
-| Sheet Error validate BE (popup), numbered | Sheet Success (popup), numbered | Camera, numbered | Camera preview, numbered |
+|Upload Invoice Sheet Error validate BE, numbered | Upload Invoice Sheet Success, numbered | Camera, numbered | Camera preview, numbered |
 | --- | --- | --- | --- |
 | ![S-F01-04-modal-error-validate-BE-numbered](img/img-numbered/S-F01-04-modal-error-validate-BE-numbered.png) | ![S-F01-04-modal-success-numbered](img/img-numbered/S-F01-04-modal-success-numbered.png) | ![S-F01-04-modal-camera-numbered](img/img-numbered/S-F01-04-modal-camera-numbered.png) | ![S-F01-04-modal-camerapreview-numbered](img/img-numbered/S-F01-04-modal-camerapreview-numbered.png) |
 
