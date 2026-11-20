@@ -207,7 +207,7 @@ This screen has no form on the main screen, so the main screen has no Error vali
 | 12 | Retake button (31) | tap | Discards the photo and returns to the Camera step | stays (camera step) |
 | 13 | Use photo button (32) | tap | Uses the photo as the selected file, returns to the sheet and checks it like a chosen file (see open question 3) | stays (sheet) |
 | 14 | Secondary action button (36) | tap | **Error validate FE (2):** opens the file picker; the previous file is replaced.<br>**Review:** discards the read result and opens the Camera step | stays (sheet or camera step) |
-| 15 | Field input (39) | edit | The owner corrects Garage, Ngày or Số tiền; the value is checked as in the column "Validation" | stays (sheet) |
+| 15 | Field input (39) | edit | The owner corrects Garage, Ngày or Số tiền if the information is read uncorrect; the value is checked as in the column "Validation" | stays (sheet) |
 
 ## 6. Screen-level rules
 
