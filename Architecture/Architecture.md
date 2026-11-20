@@ -3,46 +3,43 @@
 | Field | Value |
 | ----- | ----- |
 | Version | V3 Reviewed |
-| Inputs | [CVCA Before](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Context/CVCA%20Before.md) [CVCA After](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Context/CVCA%20After.md) [Context Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Context/Context%20Diagram.md) [Use Case Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/tree/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Use%20Case%20Diagram) |
+| Inputs | [CVCA](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/fda9db825dd05ce06fdd37a9ec5f7e91539dfd4b/Context/CVCA.md) [Context Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Context/Context%20Diagram.md) [Use Case Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/tree/459cd34ceac5aa22e3f0283c2a89749fac32c8b6/Use%20Case%20Diagram) |
 
 **1\. System requirements**
 
-| ID | Stakeholder | Stakeholder requirement | CVCA flow |
-| ----- | ----- | ----- | ----- |
-| StR-01 | Car Owner | The Car Owner wants to create a verified vehicle report for their car and send a sell request. | “Create verified vehicle report & Sell request” |
-| StR-02 | Car Owner | The Car Owner wants the report to contain trustworthy data about the car: identification, toll passage history, maintenance and repair history, battery condition and legal status. | VETC, Carpla Service, charging stations, portals → TASCO MOBILITY |
-| StR-03 | Car Owner | The Car Owner wants to add maintenance and repair invoices from outside the Tasco system to the vehicle record. | “External invoice”  |
-| StR-04 | Car Owner | The Car Owner wants to know a market price reference for their car. | Nextgen Việt Nam, Chợ Tốt → TASCO MOBILITY; “market price” → Car Owner |
-| StR-05 | Car Owner | The Car Owner wants the selling form to be filled in automatically. | “Automatically filled selling form” |
-| StR-06 | Car Owner | The Car Owner wants a more accurate preliminary quote. | “More accurate preliminary quote” |
-| StR-07 | TASCO MOBILITY | TASCO MOBILITY wants the mileage declared by the Car Owner to be consistent with the toll passage data from VETC. | VETC → TASCO MOBILITY |
+| ID | Stakeholder | Stakeholder requirement | Problem | CVCA flow |
+| ----- | ----- | ----- | ----- | ----- |
+| StR-01 | Car Owner | Car owners shall be able to get a unified verified vehicle report app to manage all their car information. | P-1, P-2 | VETC, Carpla Service, EV charging stations, 3 lookup portals → Tasco Mobility; Car Owner → Tasco Mobility "request to create a verified vehicle report"; Tasco Mobility → Car Owner "unified verified vehicle report" |
+| StR-02 | Car Owner | Car owners shall be able to see the market price of their car and its trend. | P-3 | Nextgen Việt Nam, Chợ Tốt → Tasco Mobility; Tasco Mobility → Car Owner "market price" |
+| StR-03 | Car Owner | Car owners shall be able to send a sale request with most information already filled in from the report. | P-4 | Car Owner → Tasco Mobility "sale request"; Tasco Mobility → Car Owner "automatically filled selling form" |
+| StR-04 | Car Owner | Car owners shall be able to receive a more accurate preliminary quote for their sale request. | P-5 | Tasco Mobility → Car Owner "more accurate preliminary quote" |
 
 | ID | System requirement | From |
 | ----- | ----- | ----- |
 | SyR-01 | The system shall let a Car Owner create a vehicle record by entering the 17-character VIN. | StR-01 |
-| SyR-02 | The system shall retrieve the identification data of the vehicle from VETC and show it to the Car Owner. | StR-02 |
-| SyR-03 | The system shall retrieve the toll passage history from VETC and show the verified minimum mileage. | StR-02 |
-| SyR-04 | The system shall retrieve the maintenance and repair history from Carpla Service and show it to the Car Owner. | StR-02 |
-| SyR-05 | The system shall retrieve charging session data and show the battery condition, for electric vehicles only. | StR-02 |
-| SyR-06 | The system shall let a Car Owner upload external maintenance and repair invoices. | StR-03 |
-| SyR-07 | The system shall extract the key data from each uploaded invoice. | StR-03 |
-| SyR-08 | The system shall check the authenticity of each invoice through the Electronic Invoice Lookup Portal and add only valid invoices to the maintenance history. | StR-02, StR-03 |
-| SyR-09 | The system shall let a Car Owner refresh the legal status of the vehicle. | StR-02 |
-| SyR-10 | The system shall retrieve the inspection status from the Vehicle Inspection Portal. | StR-02 |
-| SyR-11 | The system shall retrieve the traffic fine status from the Traffic Fine Lookup Portal. | StR-02 |
-| SyR-12 | The system shall retrieve the mortgage status from the Secured Transaction Registry Portal. | StR-02 |
-| SyR-13 | The system shall synchronize used car price listings from Nextgen Việt Nam and Chợ Tốt every week. | StR-04 |
-| SyR-14 | The system shall select comparable listings and remove invalid listings before pricing. | StR-04 |
-| SyR-15 | The system shall calculate the weekly market price range and a confidence level for each tracked car. | StR-04 |
-| SyR-16 | The system shall show the Car Owner the latest market price, its confidence level and the 12-week price trend. | StR-04 |
-| SyR-17 | The system shall let a Car Owner stop tracking the market price of a car. | StR-04 |
-| SyR-18 | The system shall build the 12-week price history when a car model is tracked for the first time. | StR-04 |
-| SyR-19 | The system shall block a sell request when the declared mileage is more than 20% below the minimum mileage from VETC, until the owner declares the mileage again. | StR-07 |
-| SyR-20 | The system shall fill the selling form automatically from the vehicle record. | StR-05 |
-| SyR-21 | The system shall let a Car Owner submit a sell request, re-check the legal status, and make the verified report and the latest market price available to Carpla staff. | StR-01, StR-05 |
-| SyR-22 | The system shall let Carpla staff review the sell request with its verified report and market price. | StR-06 |
-| SyR-23 | The system shall let Carpla staff send a preliminary quote for a sell request. | StR-06 |
-| SyR-24 | The system shall show the preliminary quote to the Car Owner. | StR-06 |
+| SyR-02 | The system shall retrieve the identification data of the vehicle from VETC and show it to the Car Owner. | StR-01 |
+| SyR-03 | The system shall retrieve the toll passage history from VETC, calculate the verified minimum mileage and show it to Car Owner. | StR-01 |
+| SyR-04 | The system shall retrieve the maintenance and repair history from Carpla Service and show it to the Car Owner. | StR-01 |
+| SyR-05 | The system shall retrieve charging session data and show the battery state of health to car owner, for electric vehicles only. | StR-01 |
+| SyR-06 | The system shall let a Car Owner upload external maintenance and repair invoices. | StR-01 |
+| SyR-07 | The system shall extract the key data field from each uploaded invoice. | StR-01 |
+| SyR-08 | The system shall check the authenticity of each invoice through the Electronic Invoice Lookup Portal and add only valid invoices to the maintenance history. | StR-01 |
+| SyR-09 | The system shall let a Car Owner refresh the legal status of the vehicle. | StR-01 |
+| SyR-10 | The system shall retrieve the inspection status from the Vehicle Inspection Portal. | StR-01 |
+| SyR-11 | The system shall retrieve the traffic fine status from the Traffic Fine Lookup Portal. | StR-01 |
+| SyR-12 | The system shall retrieve the mortgage status from the Secured Transaction Registry Portal. | StR-01 |
+| SyR-13 | The system shall synchronize used car price listings from Nextgen Việt Nam and Chợ Tốt every week. | StR-02 |
+| SyR-14 | The system shall select comparable listings and remove invalid listings before pricing. | StR-02 |
+| SyR-15 | The system shall calculate the weekly market price range and a confidence level for each tracked car. | StR-02 |
+| SyR-16 | The system shall show the Car Owner the latest market price, its confidence level and the 12-week price trend. | StR-02 |
+| SyR-17 | The system shall let a Car Owner stop tracking the market price of a car. | StR-02 |
+| SyR-18 | The system shall build the 12-week price history when a car model is tracked for the first time. | StR-02 |
+| SyR-19 | The system shall block a sell request when the declared mileage is more than 20% below the minimum mileage from VETC, until the owner declares the mileage again. | StR-04 |
+| SyR-20 | The system shall fill the selling form automatically from the vehicle record. | StR-03 |
+| SyR-21 | The system shall let a Car Owner submit a sell request, re-check the legal status, and make the verified report and the latest market price available to Carpla staff. | StR-03, StR-04 |
+| SyR-22 | The system shall let Carpla staff review the sell request with its verified report and market price. | StR-04 |
+| SyR-23 | The system shall let Carpla staff send a preliminary quote for a sell request. | StR-04 |
+| SyR-24 | The system shall show the preliminary quote to the Car Owner. | StR-04 |
 
 **2\. Functional design**
 
@@ -55,7 +52,7 @@
 | Upload and keep external invoice files | SyR-06 |
 | Extract data from invoices | SyR-07 |
 | Verify invoice authenticity and merge valid invoices into the history | SyR-08 |
-| Refresh legal status from the three portals | SyR-09, SyR-10, SyR-11, SyR-12 |
+| Refresh legal status (inspection, unpaid traffic fines, mortgage status) from the three lookup portals | SyR-09, SyR-10, SyR-11, SyR-12 |
 | Synchronize listings every week | SyR-13 |
 | Select comparable listings and clean invalid listings | SyR-14 |
 | Calculate the weekly market price and confidence level | SyR-15 |
