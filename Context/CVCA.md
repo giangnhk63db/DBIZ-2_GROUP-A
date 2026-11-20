@@ -25,7 +25,7 @@ flowchart LR
   LAND["Tasco Land<br>(TASCO group)"]
 
   CO -->|"goods: used car"| CARPLA
-  CO -->|"i: vehicle condition report<br>(manual, subjective)"| CARPLA
+  CO -->|"i: vehicle condition report<br>"| CARPLA
   CARPLA -->|"i: valuation<br>(subjective, inaccurate)"| CO
   CARPLA -->|"goods: used car"| BUYER
   BUYER -->|"$ payment for the car"| CARPLA
@@ -34,7 +34,7 @@ flowchart LR
 
 In the old system value chain, the car owner manually inputs a subjective vehicle condition
 report to CARPLA and gets an inaccurate and subjective valuation. VETC, Carpla Service, Tasco
-Insurance and Tasco Land are part of TASCO CORPORATION, but no data flows from them to the car owner
+Insurance and Tasco Land are part of Tasco Corporations, but no data flows from them to the car owner
 or to the valuation.
 
 ## 2. Value chain (with the new system)
@@ -59,7 +59,7 @@ flowchart LR
   BUYER -->|"$ payment for the car"| MOB
   MOB -->|"$ payment for the car"| CO
   CO -->|"i: request to create a verified<br>vehicle report, sale request"| MOB
-  MOB -->|"i: verified vehicle report, market price,<br>automatically filled selling form,<br>more accurate preliminary quote"| CO
+  MOB -->|"i: unified verified vehicle report, market price,<br>automatically filled selling form,<br>more accurate preliminary quote"| CO
   VETC -->|"i: identification data,<br>toll passage history"| MOB
   CS -->|"i: maintenance and repair history"| MOB
   EV -->|"i: charging session data"| MOB
@@ -78,17 +78,17 @@ flowchart LR
   MOB -->|"$ fee"| CHO
 ```
 
-With Verified Vehicle Report integrated in Tasco mobility app, the system collects identification data and toll passage history from VETC, maintenance and repair history from Carpla Service, and status data from the lookup portals and the listing partners. It gives the car owner a verified vehicle report, the market price, an automatically filled selling form and a more accurate preliminary quote.
+With Verified Vehicle Report integrated in Tasco mobility app, the system collects identification data and toll passage history from VETC, maintenance and repair history from Carpla Service and invoice uploaded, and legal status data (inspection, unpaid traffic fines and mortgage) from the lookup portals and the listing partners. It gives the car owner a verified vehicle report, the market price for reference, an automatically filled selling form and especially a more accurate preliminary quote.
 
 ## 3. Problems and opportunities
 
 | # | Stakeholder | Problem or opportunity |
 |---|---|---|
-| P-1 | Car Owner | The owner has to input the vehicle condition by hand although these data is almost available in Tasco subsidiaries and partners |
-| P-2 | Car Owner | The valuation is subjective and inaccurate, so the owner cannot trust the price. |
-| P-3 | Car Owner | No market data reaches the owner, so the owner does not know the market price of the car or its trend. |
-| P-4 | Car Owner | Car Owner has to to open many apps and webs to check all their car information and status. No unified data app exists for them to monitor car. |
-| P-5 | Tasco Corporations (VETC, Carpla Service) | Data that the group already holds (toll passage history, maintenance and repair history) does not reach the valuation. |
+| P-1 | Car Owner | Car Owner has to open many apps and webs to manage all their car information and status. No unified data app exists for them to monitor car. |
+| P-2 | Tasco Corporations (VETC, Carpla Service) | Data that the group already holds (toll passage history, maintenance and repair history) is not taken full advantage to improve user experiment and make profits |
+| P-3 | Car Owner | No market data reaches the owner, so the owner does not know the market price of the car or its trend. The car owners often have to ask some car dealers to estimate price for reference before they want to sell their car. |
+| P-4 | Car Owner | The owner has to input the vehicle information by hand to submit sale request although these data is almost available in Tasco subsidiaries and partners. This manually input so many fields of information discourages the car owner from the next steps to sell their car |
+| P-5 | Car Owner | The preliminary quote is currently subjective and inaccurate. In the fact cases, after the car directly inspected, the price is quoted much higher than the initial preliminary quote, making car user frustrated and cannot trust the preliminary quote |
 
 ## 4. Stakeholder requirements
 
@@ -97,9 +97,7 @@ StR means Stakeholder Requirement. They become system requirements in the archit
 
 | ID | Stakeholder requirement | From |
 |---|---|---|
-| StR-01 | Car owners shall be able to get a verified vehicle report without filling in the vehicle condition by hand. | P-1, P-5 |
+| StR-01 | Car owners shall be able to get a unified verified vehicle report app to manage all their car information. | P-1, P-2 |
 | StR-02 | Car owners shall be able to see the market price of their car and its trend. | P-3 |
-| StR-03 | Car owners shall be able to see the legal status of the car (inspection, unpaid fines, mortgage) before selling. | P-4 |
-| StR-04 | Car owners shall be able to send a sale request with the information already filled in from the report. | P-1 |
-| StR-05 | Car owners shall be able to receive a more accurate preliminary quote for their sale request. | P-2 |
-| StR-06 | Carpla staff shall be able to see the verified report and the market price of a sale request before sending a quote. | P-2, P-3 |
+| StR-03 | Car owners shall be able to send a sale request with most information already filled in from the report. | P-4|
+| StR-05 | Car owners shall be able to receive a more accurate preliminary quote for their sale request. | P-5 |
