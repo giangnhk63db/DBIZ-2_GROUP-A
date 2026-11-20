@@ -14,7 +14,7 @@
 | Failure end state(s) | Invoice file is rejected due to invalid format/size or authentication mismatch with the Electronic Invoice Portal |
 | FRs covered | FR-01-05-FE, FR-01-05-BE, FR-01-06-BE, FR-01-07-INT, FR-01-07-BE |
 | Business rules applied | BR-FILE-01, BR-OCR-01, BR-INV-01 |
-| Version / status | v0.3 · Reviewed |
+| Version / status | v0.4 · Reviewed |
 | Author | Đinh Thu Thảo |
 
 ## 
@@ -31,6 +31,7 @@ swimlane-beta TB
     a1("Open maintenance history and select upload invoice (FR-01-05-FE)")
     m1{" "}
     a2("Upload invoice file PDF, XML, or image (FR-01-05-FE)")
+    a_edit("Review and edit extracted invoice info if needed, then confirm (FR-01-05-FE)")
     m4{" "}
     a3("See updated maintenance timeline or error message (FR-01-05-FE)")
     stop1@{ shape: fr-circ }
@@ -41,36 +42,36 @@ swimlane-beta TB
     s2("Store uploaded file (FR-01-05-BE)")
     s3("Extract invoice data via OCR or parsing (FR-01-06-BE)")
     d2{"Parsing successful?"}
-    s5("Verify invoice authenticity with Electronic Invoice Portal (FR-01-07-INT)")
+    s_ocr("Reject unreadable file and show OCR error (FR-01-06-BE)")
+    s4("Display extracted data on edit/confirmation screen (FR-01-06-BE)")
+    s5("Send invoice info via API to verify with Electronic Invoice Portal (FR-01-07-INT)")
     d3{"Invoice valid?"}
     s6("Merge validated external invoice into vehicle history (FR-01-07-BE)")
     s7("Reject invoice and show error message (FR-01-07-BE)")
-    m2{" "}
   end
   subgraph PORTAL["Electronic Invoice Portal"]
-    e1("Return authenticity result (FR-01-07-INT)")
+    e1("Verify invoice and return authenticity result (FR-01-07-INT)")
   end
 
   start --> a1 --> m1 --> a2 --> d1
   d1 -->|"[no]"| s1 --> m4
   d1 -->|"[yes]"| s2 --> s3 --> d2
-  d2 -->|"[no]"| m1
-  d2 -->|"[yes]"| s5
+  d2 -->|"[no]"| s_ocr --> m4
+  d2 -->|"[yes]"| s4 --> a_edit --> s5
   s5 --> e1 --> d3
-  d3 -->|"[yes]"| s6 --> m2
-  d3 -->|"[no]"| s7 --> m2
-  m2 --> m4
+  d3 -->|"[yes]"| s6 --> m4
+  d3 -->|"[no]"| s7 --> m4
   m4 --> a3 --> stop1
 ```
 
 **Reading notes:**
 
-- File Upload & Validation: The car owner uploads an external invoice file (PDF/XML/Image), and the system validates its format and size before storing it.  
-- OCR & Parsing: The system extracts key invoice details via automated OCR or parsing. If parsing fails, the user can re-upload the file to try the process again.  
-- Authentication Check: The system verifies the invoice authenticity directly with the Electronic Invoice Portal.  
-- Result & Timeline Update: If the invoice is valid, it is merged into the vehicle's maintenance history and the updated timeline is displayed; if invalid (or rejected due to invalid file format/size), an error message is shown.
+- File Upload & Validation: The car owner uploads an external invoice file (PDF, XML, or image), and the system validates its format and size before storing it; if invalid, the file is rejected with an error.
+- OCR Extraction & User Review: The system extracts key invoice details via OCR or parsing. If parsing fails, the unreadable file is rejected with an OCR error; otherwise, the extracted data is displayed for the car owner to review, edit if needed, and confirm.
+- Authentication Check: After user confirmation, the system sends the invoice information via API to the Electronic Invoice Portal to verify authenticity.
+- Result & Timeline Update: If the invoice is valid, it is merged into the vehicle's maintenance history and the updated timeline is displayed; if invalid (or rejected earlier), an error message is shown.
 
-## **2. Node trace**
+## 2. Node trace
 
 | Node | Kind | Text | Traces to |
 | :---- | :---- | :---- | :---- |
@@ -78,54 +79,56 @@ swimlane-beta TB
 | m1 | Merge | Merge path for initial upload and re-upload attempts | N/A (Control Node) |
 | a2 | Action | Upload invoice file PDF, XML, or image | FR-01-05-FE |
 | d1 | Decision | File format or size valid? | FR-01-05-FE / BR-FILE-01 |
-| s1 | Action | Reject invalid file and show error | FR-01-05-FE |
+| s1 | Action | Reject invalid file and show error | FR-01-05-FE / BR-FILE-01 |
 | s2 | Action | Store uploaded file | FR-01-05-BE |
-| s3 | Action | Extract invoice data via OCR or parsing | FR-01-06-BE |
+| s3 | Action | Extract invoice data via OCR or parsing | FR-01-06-BE / BR-OCR-01 |
 | d2 | Decision | Parsing successful? | FR-01-06-BE / BR-OCR-01 |
-| s5 | Action | Verify invoice authenticity with Electronic Invoice Portal | FR-01-07-INT |
-| e1 | Action | Return authenticity result | FR-01-07-INT |
+| s_ocr | Action | Reject unreadable file and show OCR error | FR-01-06-BE / BR-OCR-01 |
+| s4 | Action | Display extracted data on edit/confirmation screen | FR-01-06-BE / BR-OCR-01 |
+| a_edit | Action | Review and edit extracted invoice info if needed, then confirm | FR-01-05-FE / BR-OCR-01 |
+| s5 | Action | Send invoice info via API to verify with Electronic Invoice Portal | FR-01-07-INT |
+| e1 | Action | Verify invoice and return authenticity result | FR-01-07-INT |
 | d3 | Decision | Invoice valid? | FR-01-07-BE / BR-INV-01 |
-| s6 | Action | Merge validated external invoice into vehicle history | FR-01-07-BE |
-| s7 | Action | Reject invoice and show error message | FR-01-07-BE |
-| m2 | Merge | Merge paths for valid timeline update or rejection notice | N/A (Control Node) |
+| s6 | Action | Merge validated external invoice into vehicle history | FR-01-07-BE / BR-INV-01 |
+| s7 | Action | Reject invoice and show error message | FR-01-07-BE / BR-INV-01 |
 | m4 | Merge | Merge all final success and error notification flows | N/A (Control Node) |
 | a3 | Action | See updated maintenance timeline or error message | FR-01-05-FE |
-
 ## 
 
 **Business rule description**
 
 | Rule ID | Description | Applied Node |
 | ----- | ----- | :---: |
-| BR-FILE-01 | File Format and Size Rule: The system only accepts uploaded files in .pdf, .xml, or image formats (.jpg, .png), with a file size adhering to the system limit (e.g., $\leq$ 10MB). Invalid files are rejected immediately at the validation step. | d1 |
-| BR-OCR-01 | Automated OCR Data Extraction Rule: The OCR/Parsing engine must extract mandatory data fields (seller tax code, invoice number, total amount). If the data is illegible or unreadable, the file is flagged for manual verification: the mandatory fields are confirmed or corrected by hand, then the process continues with the Portal verification. Manual correction does not bypass BR-INV-01: the Portal still decides whether the invoice is valid. | d2 |
-| BR-INV-01 | Invoice Authenticity Cross-Check Rule: Extracted invoice data must be sent to the Electronic Invoice Portal for verification. An invoice is considered valid only if the tax code exists, details match, and the invoice status is not cancelled or replaced on the tax system. | d3 |
+| BR-FILE-01 | File Format and Size Rule: The system only accepts uploaded files in .pdf, .xml, or image formats (.jpg, .png), with a file size adhering to the system limit (e.g., <= 10MB). Invalid files are rejected immediately at the validation step. | d1 |
+| BR-OCR-01 | Automated OCR Data Extraction & Review Rule: The OCR/Parsing engine extracts key invoice data (seller tax code, invoice number, total amount, date). If parsing fails or the file is unreadable, the system rejects the file and displays an OCR error. Otherwise, extracted data is shown on an edit/confirmation screen so the car owner can review and edit if needed before confirming. User edits do not bypass BR-INV-01: the Portal still decides whether the invoice is valid. | d2, s_ocr, s4, a_edit |
+| BR-INV-01 | Invoice Authenticity Cross-Check Rule: After confirmation, invoice data is sent via API to the Electronic Invoice Portal for verification. An invoice is considered valid only if the tax code exists, details match, and the invoice status is not cancelled or replaced on the tax system. | d3 |
 
-## **3. Branches and acceptance tests**
+## 3. Branches and acceptance tests
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
-| d1 [no] | Vehicle maintenance screen is open | Car owner uploads an unsupported file format (.exe, .txt) or oversized file | System rejects the file immediately and displays a format/size error message |
-| d1 [yes] | Vehicle maintenance screen is open | Car owner uploads a valid PDF, XML, or image file under size limit | System successfully accepts and stores the uploaded file |
-| d2 [no] | File is stored successfully | OCR processing or XML parsing fails due to blurred scan or corrupt structure | System prompts an error and allows the car owner to re-upload or retake the invoice image |
-| d2 [yes] | File is stored successfully | OCR or XML parsing successfully extracts tax code, invoice number, and total amount | System proceeds to query the Electronic Invoice Portal |
-| d3 [yes] | Invoice metadata extracted successfully | Electronic Invoice Portal confirms tax code and invoice details are authentic and valid | System merges the external invoice into the vehicle maintenance history timeline and displays success |
-| d3 [no] | Invoice metadata extracted successfully | Electronic Invoice Portal returns invalid, fake, or unmatched status | System rejects the invoice, prevents merging, and displays an authentication error message |
+| d1 [no] | Vehicle maintenance screen is open | Car owner uploads an unsupported file format (.exe, .txt) or oversized file | System rejects the file immediately and displays an error message |
+| d1 [yes] | Vehicle maintenance screen is open | Car owner uploads a valid PDF, XML, or image file under size limit | System accepts and stores the uploaded file, then runs OCR/parsing |
+| d2 [no] | File is stored successfully | OCR processing or XML parsing fails due to blurred scan or corrupt structure | System rejects the unreadable file and displays an OCR error message |
+| d2 [yes] | File is stored successfully | OCR or XML parsing succeeds | System displays extracted data on the edit/confirmation screen for the car owner to review, edit if needed, and confirm |
+| d3 [yes] | Car owner confirms invoice data and API request is sent | Electronic Invoice Portal confirms invoice authenticity and returns valid status | System merges the validated external invoice into the vehicle maintenance history and displays the updated timeline |
+| d3 [no] | Car owner confirms invoice data and API request is sent | Electronic Invoice Portal returns invalid, fake, or unmatched status | System rejects the invoice, prevents merging, and displays an error message |
 
-## **4. Object states used**
+## 4. Object states used
 
 | Object | States in this diagram | Full state list (all diagrams) |
 | :---- | :---- | :---- |
 | Invoice File | Uploaded -> Stored -> Parsed -> Verified / Rejected | Uploaded, Stored, Parsed, Verified, Archived, Rejected |
 | Maintenance Timeline | Consolidated -> Pending Update -> Updated | Initial, Pending Update, Updated, Synced |
 
-## **5. Screens touched**
+## 5. Screens touched
 
 | Actor action | Screen ID |
 | :---- | :---- |
-| Open maintenance history and select upload invoice (a1) | S-F01-02 → S-F01-04 (Upload invoice modal) |
+| Open maintenance history and select upload invoice (a1) | S-F01-02 -> S-F01-04 (Upload invoice modal) |
 | Upload invoice file PDF, XML, or image (a2) | S-F01-04 (Upload invoice modal) |
-| See updated maintenance timeline or error message (a3) | S-F01-04 |
+| Review and edit extracted invoice info if needed, then confirm (a_edit) | S-F01-04 (Invoice review & confirmation view) |
+| See updated maintenance timeline or error message (a3) | S-F01-04 / S-F01-02 |
 ## 
 
 ## **6\. Open questions**
