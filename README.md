@@ -117,14 +117,15 @@ There are two actors with screens, so two files each for usage flow and UI conve
 
 | ID | Pattern | Example | Defined in |
 |---|---|---|---|
-| Stakeholder requirement | `StR-nn` | StR-01 | CVCA, Architecture section 1 |
+| Stakeholder requirement | `StR-nn` | StR-01 | CVCA section 4, Architecture section 1 |
 | System requirement | `SyR-nn` | SyR-01 | Architecture section 1 |
 | Decision | `ADR-nnn` | ADR-004 | `docs/Architecture/adr/` |
 | Context flow | `CTX: flow-nn` | flow-02 | `list-of-flow-context-diagram.md` |
-| Use case | `UC-f.nn` (f = feature number) | UC-1.05 | W0 Table 1 |
+| Use case | `UC-f.nn` (f = feature number) | UC-1.05 | List of Use cases in Traceability, W0 Table 1 |
 | Feature | `F-nn` (`F-00` = platform and access) | F-01 | W0 Table 2 |
+| Business rule | `BR-nn` | BR-01 | W0 Business Rule |
 | Function (L2) | `FR-<feature>-<nn>`, with a suffix for a work item: `-FE` front end, `-BE` back end, `-INT` integration | FR-01-02-INT | W1 |
-| Sequence diagram | `S-nn` (file) and `S-X.YY` (message) | S-01, S-1.03 | `docs/Sequence Diagram/` |
+| Sequence diagram | `S-nn` (file) and `S-X.YY` (message) | S-01, S-1.03 | List of messages sequence diagram in Traceability |
 | Activity diagram | `AD-UC-<f.nn>` | AD-UC-1.05 | `docs/Activity Diagram/` |
 | Screen | `S-F<feature>-<nn>` (`S-F00-nn` = shared) | S-F01-02 | Screen List |
 
