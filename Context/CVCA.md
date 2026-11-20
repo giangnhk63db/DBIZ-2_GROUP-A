@@ -53,7 +53,7 @@ flowchart LR
   NEXT["Nextgen Việt Nam"]
   CHO["Chợ Tốt -<br>Carousell Group"]
   MOB(["TASCO MOBILITY<br>(new system)"])
-  STAFF ["Carpla Staff"]
+  STAFF["Carpla Staff"]
 
   CO -->|"goods: used car"| MOB
   MOB -->|"goods: used car"| BUYER
