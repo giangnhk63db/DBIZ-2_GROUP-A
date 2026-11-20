@@ -89,11 +89,11 @@ There are two actors with screens, so two files each for usage flow and UI conve
 | Product name, client, team, roles, milestones, problems, goals | `docs/Project/Project Brief.md` | every file |
 | Stakeholders, value flows, stakeholder requirements `StR-nn` | `docs/Context/CVCA.md` | Architecture |
 | System boundary and external entities | `docs/Context/Context Diagram.md` | Use case diagrams, AD lanes |
-| Context flows `CTX: flow-nn` | `docs/Traceability/list-of-flow-context-diagram.md` | Traceability, SD |
+| List of all context flows in context diagram `CTX: flow-nn` | `docs/Traceability/list-of-flow-context-diagram.md` | Traceability, SD |
 | Actors and use cases (diagrams) | `docs/Use Case Diagram/` | W0, AD, usage flows |
-| Use case list with secondary actors and include/extend | `docs/Traceability/list-of-use-case.md` | Use case diagrams, W0 |
+| List of all use cases `UC-X.YY` inside use case diagrams| `docs/Traceability/list-of-use-case.md` | Use case diagrams, W0 |
 | How the system's parts talk for one use case | `docs/Sequence Diagram/S-nn.md` | W1 source trace, AD |
-| Messages `S-X.YY` inside sequence diagrams | `docs/Traceability/list-of-message-sequence-diagram.md` | Traceability |
+| List of all messages `S-X.YY` inside sequence diagrams | `docs/Traceability/list-of-message-sequence-diagram.md` | Traceability |
 | Context flow to use case to sequence message mapping | `docs/Traceability/traceability.md` | review, tests |
 | System requirements `SyR-nn` (from `StR-nn`), functional and physical design | `docs/Architecture/Architecture.md`, section 1 | ADRs, W1 |
 | Technical decisions `ADR-nnn` | `docs/Architecture/adr/` | W1, Architecture |
