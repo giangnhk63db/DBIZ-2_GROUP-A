@@ -18,7 +18,7 @@
 
 **Shown when:** the car owner taps "Xem tất cả" in the section "Bảo dưỡng và sửa chữa" of S-F01-02 Vehicle Profile.
 
-**The user leaves this screen when:** the user taps the Back arrow (1) in the Top bar and returns to S-F01-02. The Upload invoice sheet (opened by the Upload button (13) is part of this screen and closes back to it.
+**The user leaves this screen when:** the user taps the Back arrow (1) in the Top bar and returns to S-F01-02. The Upload invoice sheet opened by the Upload button (13) is part of this screen and closes back to it.
 
 ## 2. Mockup
 
