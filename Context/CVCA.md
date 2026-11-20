@@ -100,4 +100,4 @@ StR means Stakeholder Requirement. They become system requirements in the archit
 | StR-01 | Car owners shall be able to get a unified verified vehicle report app to manage all their car information. | P-1, P-2 |
 | StR-02 | Car owners shall be able to see the market price of their car and its trend. | P-3 |
 | StR-03 | Car owners shall be able to send a sale request with most information already filled in from the report. | P-4|
-| StR-05 | Car owners shall be able to receive a more accurate preliminary quote for their sale request. | P-5 |
+| StR-04 | Car owners shall be able to receive a more accurate preliminary quote for their sale request. | P-5 |
