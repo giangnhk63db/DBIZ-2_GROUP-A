@@ -24,7 +24,7 @@ The project delivers a Verified Vehicle Report that gives car owners a clearer v
 
 - Provide a feature that integrates all information for car owners to track their vehicles, so owners can follow their vehicle’s data in one place instead of looking it up across separate sources.  
 - Provide a clear market price for owners to reference, so they do not have to ask several different parties to look up the price of their car.  
-- Let Carpla staff verify owner-submitted information quickly and accurately, so a preliminary quote no longer depends only on what the owner claims.  
+- Provide Carpla staff with a verified vehicle report to preliminary quote the car, so a preliminary quote no longer depends only on what the owner claims and becomes more accurate.  
 - Reduce manual data entry for owners by reusing vehicle data that already exists in the ecosystem to pre-fill the quote form.  
 - Cut the back-and-forth between staff and owners before a preliminary quote, so the owner is not contacted repeatedly or asked to resend information that is already available.
 
@@ -34,11 +34,11 @@ Measures agreed with the client are in [the CVCA](https://github.com/giangnhk63d
 
 | Member | Role | Owns |
 | ----- | ----- | ----- |
-| Nguyễn Hương Giang | Integrator, Project manager, Feature owner | F-00 Platform and Access; merges every file; keeps names consistent Assign tasks, review and comment for all tasks  F-03 Submit Sale Request and Preliminary Quote |
-| Vũ Hương Ly | Feature owner | F-02 Market Price (idea, use case, sequence, activity diagram)  |
-| Nguyễn Hà Phương | Feature owner | F-02 Market Price (activity diagram) |
-| Đinh Thu Thảo | Feature owner | F-01 Vehicle Identification and Status (function list, activity diagram)  |
-| Nguyễn Danh Quang | Feature owner | F-01 Vehicle Identification and Status (use case, activity diagram) |
+| Nguyễn Hương Giang | Integrator, Project manager, Feature owner | Merges every file; keeps names consistent Assign tasks, review and comment for all tasks;  F-03 Submit Sale Request and Preliminary Quote; function list; Project brief; Architecture; README  |
+| Vũ Hương Ly | Feature owner | F-02 Market Price (idea, use case, sequence, activity diagram, draw screen, screen specs), ui conventions; usage flow |
+| Nguyễn Hà Phương | Feature owner | F-02 Market Price (activity diagram, draw screen, screen specs); ui conventions; screen transition |
+| Đinh Thu Thảo | Feature owner | F-01 Vehicle Identification and Status (activity diagram, draw screen, screen specs); function list  |
+| Nguyễn Danh Quang | Feature owner | F-01 Vehicle Identification and Status (use case, activity diagram, draw screen, screen specs); usage flow |
 
 ## **Milestones in DBIZ2**
 
