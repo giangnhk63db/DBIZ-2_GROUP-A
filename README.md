@@ -1,7 +1,7 @@
 # Verified Vehicle Report: design package (DBIZ2 - Group A)
 
 > DBIZ2 Digital Business Project II, VJCBI College, Foreign Trade University.
-> Client: Tasco Corporations. Team: Group A, five members.
+> Client: Tasco Corporations. Group A, five members.
 
 **Verified Vehicle Report** is a feature inside the TASCO Mobility app. A car owner creates a vehicle
 profile from the VIN and sees one verified record of the car: identification, verified minimum
