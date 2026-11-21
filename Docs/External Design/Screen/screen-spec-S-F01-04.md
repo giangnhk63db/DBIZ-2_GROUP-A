@@ -1,18 +1,18 @@
-# Screen Spec: S-F01-04 Maintenance & Repair History
+# Screen Spec: S-F01-05 Maintenance & Repair History
 
 
 | Field | Value |
 | --- | --- |
-| Screen ID | S-F01-04 |
+| Screen ID | S-F01-05 |
 | Screen name | Maintenance & Repair History (Vietnamese UI title in Top bar: "Bảo dưỡng và sửa chữa"). Includes the Upload invoice sheet (bottom sheet), its result popups and the camera steps |
 | Actor | Car Owner |
 | Priority | Must |
 | Feature | F-01 Vehicle Identification & Status |
 | Activity diagrams | AD-UC-1.05 |
 | Linked requirements | FR-01-04, FR-01-05, FR-01-06, FR-01-07 (FE, INT, BE), see section 7 |
-| Mockup images | `img/S-F01-04-default.png`, `img/img-numbered/S-F01-04-default-numbered.png`, state images of the main screen, the Upload invoice sheet and the camera steps (section 2) |
+| Mockup images | `img/S-F01-05-default.png`, `img/img-numbered/S-F01-05-default-numbered.png`, state images of the main screen, the Upload invoice sheet and the camera steps (section 2) |
 | Frame width | 360 px |
-| Figma frame | [Vehicle Identification & Status \- S-F01-04 ](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&p=f&t=jIrF9erJRZuQXgpQ-0) |
+| Figma frame | [Vehicle Identification & Status \- S-F01-05 ](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&p=f&t=jIrF9erJRZuQXgpQ-0) |
 | Status | Reviewed |
 
 ## 1. Purpose
@@ -25,7 +25,7 @@
 
 Default screen, without numbers:
 
-![S-F01-04](img/S-F01-04-default.png)
+![S-F01-05](img/S-F01-05-default.png)
 
 Screens with numbered elements, one per state.
 
@@ -33,36 +33,36 @@ Main screen (numbers of section 3.1):
 
 | Default, numbered | Empty, numbered | Loading, numbered | Error API, numbered | Success, numbered |
 | --- | --- | --- | --- | --- |
-| ![S-F01-04-default-numbered](img/img-numbered/S-F01-04-default-numbered.png) | ![S-F01-04-empty-numbered](img/img-numbered/S-F01-04-empty-numbered.png) | ![S-F01-04-loading-numbered](img/img-numbered/S-F01-04-loading-numbered.png) | ![S-F01-04-error-API-numbered](img/img-numbered/S-F01-04-error-API-numbered.png) | ![S-F01-04-success-numbered](img/img-numbered/S-F01-04-success-numbered.png) |
+| ![S-F01-05-default-numbered](img/img-numbered/S-F01-05-default-numbered.png) | ![S-F01-05-empty-numbered](img/img-numbered/S-F01-05-empty-numbered.png) | ![S-F01-05-loading-numbered](img/img-numbered/S-F01-05-loading-numbered.png) | ![S-F01-05-error-API-numbered](img/img-numbered/S-F01-05-error-API-numbered.png) | ![S-F01-05-success-numbered](img/img-numbered/S-F01-05-success-numbered.png) |
 
 Upload invoice sheet (numbers of section 3.2):
 
 | Upload Invoice Sheet Default, numbered | Upload Invoice Sheet Loading, numbered | Upload Invoice Sheet Error validate FE (1), numbered | Upload Invoice Sheet Error validate FE (2), numbered | Review Invoice Sheet, numbered |
 | --- | --- | --- | --- | --- |
-| ![S-F01-04-modal-default-numbered](img/img-numbered/S-F01-04-modal-default-numbered.png) | ![S-F01-04-modal-loading-numbered](img/img-numbered/S-F01-04-modal-loading-numbered.png) | ![S-F01-04-modal-error-validate-FE-1-numbered](img/img-numbered/S-F01-04-modal-error-validate-FE-1-numbered.png) | ![S-F01-04-modal-error-validate-FE-2-numbered](img/img-numbered/S-F01-04-modal-error-validate-FE-2-numbered.png) | ![S-F01-04-modal-review-numbered](img/img-numbered/S-F01-04-modal-review-numbered.png) |
+| ![S-F01-05-modal-default-numbered](img/img-numbered/S-F01-05-modal-default-numbered.png) | ![S-F01-05-modal-loading-numbered](img/img-numbered/S-F01-05-modal-loading-numbered.png) | ![S-F01-05-modal-error-validate-FE-1-numbered](img/img-numbered/S-F01-05-modal-error-validate-FE-1-numbered.png) | ![S-F01-05-modal-error-validate-FE-2-numbered](img/img-numbered/S-F01-05-modal-error-validate-FE-2-numbered.png) | ![S-F01-05-modal-review-numbered](img/img-numbered/S-F01-05-modal-review-numbered.png) |
 
 Result popups of the sheet and camera steps (numbers of section 3.2):
 
 | Upload Invoice Sheet Error validate BE, numbered | Upload Invoice Sheet Success, numbered | Camera, numbered | Camera preview, numbered |
 | --- | --- | --- | --- |
-| ![S-F01-04-modal-error-validate-BE-numbered](img/img-numbered/S-F01-04-modal-error-validate-BE-numbered.png) | ![S-F01-04-modal-success-numbered](img/img-numbered/S-F01-04-modal-success-numbered.png) | ![S-F01-04-modal-camera-numbered](img/img-numbered/S-F01-04-modal-camera-numbered.png) | ![S-F01-04-modal-camerapreview-numbered](img/img-numbered/S-F01-04-modal-camerapreview-numbered.png) |
+| ![S-F01-05-modal-error-validate-BE-numbered](img/img-numbered/S-F01-05-modal-error-validate-BE-numbered.png) | ![S-F01-05-modal-success-numbered](img/img-numbered/S-F01-05-modal-success-numbered.png) | ![S-F01-05-modal-camera-numbered](img/img-numbered/S-F01-05-modal-camera-numbered.png) | ![S-F01-05-modal-camerapreview-numbered](img/img-numbered/S-F01-05-modal-camerapreview-numbered.png) |
 
 | Group | State | Image |
 | --- | --- | --- |
-| Main screen | Default | `img/S-F01-04-default.png` |
-| Main screen | Empty | `img/S-F01-04-empty.png` |
-| Main screen | Loading | `img/S-F01-04-loading.png` |
-| Main screen | Error API | `img/S-F01-04-error-API.png` |
-| Main screen | Success | `img/S-F01-04-success.png` |
-| Upload invoice sheet | Default | `img/S-F01-04-modal-default.png` |
-| Upload invoice sheet | Loading | `img/S-F01-04-modal-loading.png` |
-| Upload invoice sheet | Error validate FE (1) | `img/S-F01-04-modal-error-validate-FE-1.png` |
-| Upload invoice sheet | Error validate FE (2) | `img/S-F01-04-modal-error-validate-FE-2.png` |
-| Upload invoice sheet | Review | `img/S-F01-04-modal-review.png` |
-| Upload invoice sheet | Error validate BE (popup) | `img/S-F01-04-modal-error-validate-BE.png` |
-| Upload invoice sheet | Success (popup) | `img/S-F01-04-modal-success.png` |
-| Camera steps | Camera | `img/S-F01-04-modal-camera.png` |
-| Camera steps | Camera preview | `img/S-F01-04-modal-camerapreview.png` |
+| Main screen | Default | `img/S-F01-05-default.png` |
+| Main screen | Empty | `img/S-F01-05-empty.png` |
+| Main screen | Loading | `img/S-F01-05-loading.png` |
+| Main screen | Error API | `img/S-F01-05-error-API.png` |
+| Main screen | Success | `img/S-F01-05-success.png` |
+| Upload invoice sheet | Default | `img/S-F01-05-modal-default.png` |
+| Upload invoice sheet | Loading | `img/S-F01-05-modal-loading.png` |
+| Upload invoice sheet | Error validate FE (1) | `img/S-F01-05-modal-error-validate-FE-1.png` |
+| Upload invoice sheet | Error validate FE (2) | `img/S-F01-05-modal-error-validate-FE-2.png` |
+| Upload invoice sheet | Review | `img/S-F01-05-modal-review.png` |
+| Upload invoice sheet | Error validate BE (popup) | `img/S-F01-05-modal-error-validate-BE.png` |
+| Upload invoice sheet | Success (popup) | `img/S-F01-05-modal-success.png` |
+| Camera steps | Camera | `img/S-F01-05-modal-camera.png` |
+| Camera steps | Camera preview | `img/S-F01-05-modal-camerapreview.png` |
 
 Each number is the # of the element inventory in section 3. The main screen and the Upload invoice sheet are separate mockups, so their numbers are two different sequences: the main screen uses 1 to 19 elements (section 3.1); the Upload invoice sheet, its popups and the camera steps use 1 to 41 elements (section 3.2). Always read a number together with the element name, for example Upload button (13) on the main screen and Primary action button (13) in the sheet.
 
@@ -270,7 +270,7 @@ This screen has no form on the main screen, so the main screen has no Error vali
 | # | Question | Blocking? | Status |
 | --- | --- | --- | --- |
 | 1 | [NEEDS CLARIFICATION: No retry rule exists for the Carpla Service fetch (BR-RET-01 is VETC, BR-RET-02 is charging stations).] | No | Open. Default: Same as BR-RET-02, 3 retries after the first attempt, 4 attempts, 2 seconds apart. |
-| 2 | [NEEDS CLARIFICATION: The Camera step and the Camera preview step are not in the Screen List or the Modals table.] | No | Open. Default: They are steps of the Upload invoice sheet inside S-F01-04. The behaviour when the camera permission is denied is not drawn. |
+| 2 | [NEEDS CLARIFICATION: The Camera step and the Camera preview step are not in the Screen List or the Modals table.] | No | Open. Default: They are steps of the Upload invoice sheet inside S-F01-05. The behaviour when the camera permission is denied is not drawn. |
 | 3 | [NEEDS CLARIFICATION: There is no mockup for "a valid file is chosen but not yet sent".] | No | Open. Default: The upload starts right after a valid file is chosen or a photo is accepted with Use photo button (32), so the Primary action button (13) "Tải hóa đơn lên" stays disabled in the Default state. |
 | 4 | [NEEDS CLARIFICATION: Validation of the four Field inputs (39) in the Review state (Mã số thuế, Số hóa đơn, Số tiền, Ngày) is not defined in the Function List.] | No | Open. Default: Mã số thuế not empty, 10 or 13 digits; Số hóa đơn not empty, digits only; Số tiền a whole number greater than 0; Ngày a valid date in dd/MM/yyyy. |
 | 5 | [NEED CLARIFICATION: In the earlier numbered images, the numbers 22 and 23 were used for two different elements in the two popups.] | No | Open. Default: The numbered images were updated: Close is 23 in both popups and Choose other file is 41 in the Error validate BE popup. Every number now means one element. |
