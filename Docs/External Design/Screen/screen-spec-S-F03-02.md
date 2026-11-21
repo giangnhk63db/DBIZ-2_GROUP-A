@@ -9,11 +9,11 @@
 | Actor | Carpla Staff |
 | Priority | Must |
 | Feature | F-03 Sale Request |
-| Activity diagrams | none for this screen: UC-3.07 has no activity diagram (Activity Index: "Review"). AD-UC-3.06 (package and forward to Carpla CRM) is the system step that makes a request appear in this list |
+| Activity diagrams | none for this screen: UC-3.07 has no activity diagram (Activity Index: "Review"). AD-UC-3.06 package and forward to Carpla CRM is the system step that makes a request appear in this list |
 | Linked requirements | FR-03-04 Review verified report (Must), see section 7 |
 | Mockup images | img/S-F03-02-default.png, img/img-numbered/S-F03-02-default-numbered.png, and three other state images (section 2) |
 | Frame width | 1280px |
-| Figma frame | [Verified Vehicle Report \- S-F03-02](https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-3), node-id 30-3 |
+| Figma frame | [Verified Vehicle Report \- S-F03-02](https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-3)|
 | Status | Reviewed |
 
 **Shown when:** Carpla staff open the sale request list in the Carpla CRM menu. The screen shows every sale request sent by car owners, newest on top, with its status, so that the staff can pick one to review and quote.
@@ -48,12 +48,12 @@ The screen is read-only: it has no Input, Upload, Date time or Security element,
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | 1 | Back | Selection | Page header link (underlined text) | static: "Quay lại" | Yes | none |
 | 2 | Title | Display | Page header title (read-only text) | static: "Danh sách yêu cầu bán xe" | Yes | none |
-| 3 | Sale request table | Display | Data table (container, white fill) | one row per sale request sent by car owners (FR-03-04-BE); newest on top; contains the header row (4) and the rows (5 to 11). In the loading state the rows are replaced by element 13, in the empty state by element 14, in the error API state the table shows only the header row (4) | Yes | none |
+| 3 | Sale request table | Display | Data table (container, white fill) | one row per sale request sent by car owners (FR-03-04-BE); newest on top; contains the header row (4) and the rows (5 to 11).<br>In the loading state the rows are replaced by element 13, in the empty state by element 14.<br> In the error API state the table shows only the header row (4) | Yes | none |
 | 4 | Column headings | Display | Header row, 7 read-only labels | static: "Ngày gửi", "Chủ xe", "Số khung (VIN)", "Mẫu xe", "Giá mong muốn", "Trạng thái", "Thao tác". Shown in every state | Yes | none |
 | 5 | Submitted date | Display | Read-only text (table cell) | sale\_request.created\_at; format dd/MM/yyyy HH:mm, for example "21/11/2026 08:15". The list is sorted by this value, newest on top | Yes | none |
 | 6 | Car owner | Display | Read-only text (table cell) | sale\_request.owner\_name, from the car owner account (see section 9, question 2); example "Nguyễn Văn An". A long name wraps onto a second line and the row grows. Shows "–" if the name is missing | Yes | none |
 | 7 | VIN | Display | Read-only text (table cell) | vehicle.vin (FR-01-01); 17 uppercase letters and digits, no I, O, Q, no spaces, for example "RLHJC6101PY000123" | Yes | none |
-| 8 | Vehicle model | Display | Read-only text (table cell) | vehicle.make, vehicle.model, vehicle.variant, for example "VinFast VF 8 Plus". A long name wraps onto a second line. Shows "–" if the model is missing | Yes | none |
+| 8 | Vehicle model | Display | Read-only text (table cell) | vehicle.make, vehicle.model, vehicle.variant, for example "VinFast VF 8 Plus". A long name wraps onto a second line.<br>Shows "–" if the model is missing | Yes | none |
 | 9 | Desired price | Display | Read-only text (table cell) | sale\_request.desired\_price; format 850.000.000 ₫ | Yes | none |
 | 10 | Request status | Display | Status badge (icon + text) | sale\_request.status, derived from the quote (FR-03-05). The mockup displays one of two cases: "Chờ báo giá" with a warning icon (no quote sent yet); "Đã gửi báo giá" with a check icon (a quote has been stored and sent to the car owner) | Yes | none |
 | 11 | Row action | Selection | Link (underlined text, table cell) | static, depends on element 10: "Xem xét" when the status is "Chờ báo giá"; "Xem" when the status is "Đã gửi báo giá". Opens the request in S-F03-03 | Yes | none |
@@ -72,32 +72,21 @@ This screen has no input and no action that creates or saves data, so two states
 
 | State | What the user sees | Trigger |
 | ----- | ----- | ----- |
-| Default | Title (2), table (3) with the header row (4) and at least one row (5 to 11). Rows are sorted by the submitted date, newest on top. Each row shows one status (10) and the matching link (11). No loading line, no popup | The staff open the list and the system returns at least one sale request (FR-03-04-BE) |
-| Loading | Loading line (12) under the title; table (3) with the header row (4) and the loading placeholder (13) in place of the rows. No popup. The Back link (1) stays usable | The staff open the screen, return from S-F03-03, or tap "Thử lại" (17); the list is being read |
+| Default | Title (2), table (3) with the header row (4) and at least one row (5 to 11). Rows are sorted by the submitted date, newest on top. Each row shows one status (10) and the matching link (11). No loading line, no popup | The staff open the list of sale request from Carpla CRM web and the system returns at least one sale request (FR-03-04-BE) |
+| Loading | Loading line (12) under the title; table (3) with the header row (4) and the loading placeholder (13) in place of the rows. No popup. The Back link (1) stays usable | The staff open the screen, return from S-F03-03, or tap "Thử lại" (Element 17); the list is being read |
 | Empty | Table (3) with the header row (4) and the empty message (14) in place of the rows. This is not an error: no popup | The system answers successfully and there is no sale request yet |
 | Error API | Error popup (15, 16, 17) over the screen; behind it the table (3) shows only the header row (4). The controls behind the popup cannot be used | The system could not read the list after the maximum retries (see section 9, question 5) |
 
-**Data cases inside the Default state** (no separate image; every case is covered by the elements above):
-
-| Case | What the screen shows |
-| ----- | ----- |
-| Request waiting for a quote | Badge "Chờ báo giá" (10, warning icon) and link "Xem xét" (11) |
-| Quote already sent | Badge "Đã gửi báo giá" (10, check icon) and link "Xem" (11) |
-| Both kinds in the same list | Mixed in one list, always ordered by the submitted date (5), not grouped by status |
-| One row only | The table shows one row; same layout, no empty message |
-| Many rows | The table grows and the page scrolls vertically; no pagination, no horizontal scroll (section 9, question 6) |
-| A text field is missing (owner name or model) | The cell shows "–" (6, 8); the row is still shown and still openable (section 9, question 9) |
-| A long owner name or model | The text wraps inside its cell, the row grows; the other columns keep their width |
-| Package incomplete (FR-03-04) | Not shown in the list; the missing parts are shown in S-F03-03 after the staff open the request |
+**Note:** If this sale request list has two many rows, the table grows and the page scrolls vertically; no pagination, no horizontal scroll.
 
 ## **5\. Interactions and navigation**
 
 | \# | Element | User action | System response | Goes to screen |
 | ----- | ----- | ----- | ----- | ----- |
-| 1 | Screen | open (from the Carpla CRM menu, or return from S-F03-03) | Shows the loading state, reads the list, then shows Default, Empty or Error API. When the staff come back from S-F03-03, the list is read again so the statuses are up to date | stays |
-| 2 | Back (1) | tap or press Enter | Leaves the list | previous page of Carpla CRM |
-| 3 | Row action (11), status "Chờ báo giá" ("Xem xét") | tap or press Enter | Opens this request with the packaged verified report and the quote form | S-F03-03 |
-| 4 | Row action (11), status "Đã gửi báo giá" ("Xem") | tap or press Enter | Opens this request to view the report and the quote already sent; read-only behaviour is to confirm (section 9, question 4) | S-F03-03 |
+| 1 | Screen | open (from the Carpla CRM menu) | Shows the loading state, reads the list, then shows Default, Empty or Error API. When the staff come back from Carpla CRM menu, the list is read again so the statuses are up to date | stays |
+| 2 | Back (1) | tap or press Enter | Leaves the list | Back to Carpla CRM menu |
+| 3 | Row action (11), status "Xem xét" | tap or press Enter | Opens this request with the packaged verified report and the quote form | S-F03-03 (quoted default) |
+| 4 | Row action (11), status "Đã gửi báo giá" ("Xem") | tap or press Enter | Opens this request to view the report and the quote already sent; read-only behaviour is to confirm (section 9, question 4) | S-F03-03 (unquoted default) |
 | 5 | Retry (17) | tap (error popup) | Closes the popup, shows the loading state and reads the list again | stays (loading, then Default, Empty or Error API) |
 | 6 | Close (16) | tap (error popup) | Closes the popup. The screen keeps the header row only; the staff can leave with Back (1) or reopen the screen to try again | stays |
 
@@ -123,7 +112,6 @@ This screen has no input and no action that creates or saves data, so two states
 | FR ID (L2) | What this screen does for it | L3 work items (IDs as written in the Function List) |
 | ----- | ----- | ----- |
 | FR-03-04 Review verified report | The list is the entry point: it shows the sale requests so that the staff can open one to review its packaged report (S-F03-03). The list itself has no L3 item, see section 9, question 1 | FR-03-04-FE: display the screen that receives the sale request. FR-03-04-BE: API read of the package (the list read is to add or confirm) |
-| FR-03-03 Package and forward report and market price to Carpla staff | Source of the requests shown in the list: a request appears here once it is packaged and forwarded | FR-03-03-BE (not part of this screen) |
 | FR-03-05 Send preliminary quote to car owner | Source of the status (10): "Đã gửi báo giá" after the quote is stored | FR-03-05-FE, FR-03-05-BE (not part of this screen) |
 | FR-01-01 (VIN) and the vehicle identification fields | Source of the values of elements 7 and 8 | FR-01-01-FE, FR-01-01-BE (not part of this screen) |
 
@@ -141,17 +129,15 @@ This screen has no input and no action that creates or saves data, so two states
 
 | \# | Question | Blocking? | Status |
 | ----- | ----- | ----- | ----- |
-| 1 | \[NEEDS CLARIFICATION: FR-03-04 says "WHEN Carpla staff open a sale request ... display the packaged verified report", which describes the detail screen S-F03-03. No FR or L3 item describes reading the LIST of requests. The Screen List assigns this screen to FR-03-04-FE and FR-03-04-BE.\] | No | Open. Default: FR-03-04-FE covers the list display and FR-03-04-BE covers a list read; if the team wants a clean trace, add the L3 item "FR-03-04-BE: API read the list of sale requests with status". |
-| 2 | \[NEEDS CLARIFICATION: where does the car owner name (element 6) come from? FR-03-04-BE lists mileage, phone number, desired price, verified report and market data, not the owner name.\] | No | Open. Default: the name is read from the car owner account in the Tasco Mobility system and added to the package. Confirm, or replace the column by the phone number (the team decided not to add a phone column). |
-| 3 | \[RESOLVED: the Figma frames and the image files of the list were named S-F03-03, and those of the review screen S-F03-02, while the Screen List gives S-F03-02 to the list and S-F03-03 to the detail.\] | No | Resolved. The image files are now named `S-F03-02-*.png` (list) and `S-F03-03-*.png` (detail), and both specs use these names. Remaining action: rename the Figma pages and frames to the same IDs (the Figma file is still called "Verified Vehicle Report - S-F03-02"). |
-| 4 | \[NEEDS CLARIFICATION: when the staff open a request with status "Đã gửi báo giá", does S-F03-03 show the quote read-only, or can the staff send a new quote?\] | No | Open. Default: S-F03-03 shows the quote already sent, read-only. S-F03-03 needs a matching state. |
-| 5 | \[NEEDS CLARIFICATION: how many retries before the error popup, and how long between them, when reading the list? AD-UC-3.06 uses 3 retries and a 5-second wait for forwarding.\] | No | Open. Default: same as AD-UC-3.06 (3 retries, 5 seconds). |
-| 6 | \[NEEDS CLARIFICATION: no search, filter or pagination is drawn, because ui-conventions defines no component for them and the screen scrolls vertically only. Is this enough for the expected number of requests?\] | No | Open. Default: not in this release. If needed, add the component to ui-conventions first. |
-| 7 | \[NEEDS CLARIFICATION: is the whole row clickable, or only the link in the last column?\] | No | Open. Default: only the link (11). |
-| 8 | \[NEEDS CLARIFICATION: are there other request statuses, for example a request whose forwarding failed (UC-3.06), withdrawn by the car owner, or expired?\] | No | Open. Default: only two statuses. A request whose forwarding failed never reaches the list. |
-| 9 | \[NEEDS CLARIFICATION: ui-conventions defines no display for a missing plain value (owner name, model). Only "Chưa xác minh" exists for verification values.\] | No | Open. Default: "–". Add this rule to ui-conventions section 3 or 4. |
-| 10 | \[NEEDS CLARIFICATION: the Status badge in ui-conventions is defined for verification and legal status only. Here it is used for the request status, with the warning style for "Chờ báo giá" and the success style for "Đã gửi báo giá".\] | No | Open. Default: keep; extend the Status badge row in ui-conventions. |
-| 11 | \[NEEDS CLARIFICATION: when a new request arrives while the list is open, does the list refresh by itself? The notification service tells the staff about a new request.\] | No | Open. Default: the list is read when the screen opens; there is no automatic refresh. |
+| 1 | \[NEEDS CLARIFICATION: FR-03-04 says "WHEN Carpla staff open a sale request ... display the packaged verified report", which describes the detail screen S-F03-03. No FR or L3 item describes reading the LIST of requests. The Screen List assigns this screen to FR-03-04-FE and FR-03-04-BE.\] | No | Open. Default: FR-03-04-FE covers the list display and FR-03-04-BE covers a list read; to be more clear and specific, we decide to add the L3 item "FR-03-04-BE: API read the list of sale requests with status". |
+| 2 | \[NEEDS CLARIFICATION: where does the car owner name (element 6) come from? FR-03-04-BE lists mileage, phone number, desired price, verified report and market data, not the owner name.\] | No | Open. Default: the name is read from the car owner account in the Tasco Mobility system (already have when the owner register Tasco Mobility account) and added to the package. |
+| 3 | \[NEEDS CLARIFICATION: when the staff open a request with status "Đã gửi báo giá", does S-F03-03 show the quote read-only, or can the staff send a new quote?\] | No | Open. Default: S-F03-03 shows the quote already sent, read-only. S-F03-03 needs a matching state. Add state quoted default to defaults states, change name default state to unquoted default state  |
+| 4 | \[NEEDS CLARIFICATION: how many retries before the error popup, and how long between them, when reading the list? AD-UC-3.06 uses 3 retries and a 5-second wait for forwarding.\] | No | Open. Default: same as AD-UC-3.06 (3 retries, 5 seconds). |
+| 5 | \[NEEDS CLARIFICATION: no search, filter or pagination is drawn, because ui-conventions defines no component for them and the screen scrolls vertically only. Is this enough for the expected number of requests?\] | No | Open. Default: add the component to ui-conventions. |
+| 6 | \[NEEDS CLARIFICATION: is the whole row clickable, or only the link in the last column?\] | No | Open. Default: only the link (element 11). |
+| 7 | \[NEEDS CLARIFICATION: are there other request statuses, for example a request whose forwarding failed (UC-3.06), withdrawn by the car owner, or expired?\] | No | Open. Default: only two statuses. A request whose forwarding failed never reaches the list. In the case of forwarding failed, the request cannot be sent and appears in the sale request list |
+| 8 | \[NEEDS CLARIFICATION: the Status badge in ui-conventions is defined for verification and legal status only. Here it is used for the request status, with the warning style for "Chờ báo giá" and the success style for "Đã gửi báo giá".\] | No | Open. Default: keep; extend the Status badge row in ui-conventions. |
+| 9 | \[NEEDS CLARIFICATION: when a new request arrives while the list is open, does the list refresh by itself? The notification service tells the staff about a new request.\] | No | Open. Default: the list is read when the screen opens; there is no automatic refresh. |
 
 ## **Completion checklist**
 
