@@ -11,7 +11,7 @@
 | Feature | F-03 Sale Request |
 | Activity diagrams | AD-UC-3.09: view preliminary quote  |
 | Linked requirements | FR-03-06 View preliminary quote (Should), see section 7 |
-| Mockup images | img/S-F03-03-default.png, img/img-numbered/S-F03-03-default-numbered.png, four state images (section 2\) |
+| Mockup images | img/S-F03-04-default.png, img/img-numbered/S-F03-04-default-numbered.png, four state images (section 2\) |
 | Frame width | 360px |
 | Figma frame | [Verified Vehicle Report \- S-F03-03](https://www.figma.com/design/C0hM92cku1UhbITMOXxvgD/Verified-Vehicle-Report---S-F03-01--S-F03-03--5-states-?node-id=28-314&t=wpsxsdbmviJiQl5m-0), node-id 28-314 |
 | Status | Reviewed |
@@ -22,7 +22,7 @@
 
 **2\. Mockup**
 
-![S-F03-03](img/S-F03-03-default.png)
+![S-F03-04](img/S-F03-04-default.png)
 
 **Numbered:** each number is the \# of the element inventory in section 3\. Elements 16 to 19 (popup) appear only in the error and success states. The numbers are the same in all states: element 3 and element 14 change their content by state, and the elements that do not appear in a state are not numbered on its image.
 
