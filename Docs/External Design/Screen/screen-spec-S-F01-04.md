@@ -1,6 +1,5 @@
 # Screen Spec: S-F01-04 Maintenance & Repair History
 
-## 1. Purpose
 
 | Field | Value |
 | --- | --- |
@@ -15,6 +14,8 @@
 | Frame width | 360 px |
 | Figma frame | [Vehicle Identification & Status \- S-F01-04 ](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&p=f&t=jIrF9erJRZuQXgpQ-0) |
 | Status | Reviewed |
+
+## 1. Purpose
 
 **Shown when:** the car owner taps "Xem tất cả" in the section "Bảo dưỡng và sửa chữa" of S-F01-02 Vehicle Profile.
 
