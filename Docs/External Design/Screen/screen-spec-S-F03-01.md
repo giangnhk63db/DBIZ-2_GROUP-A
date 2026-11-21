@@ -150,14 +150,14 @@ This screen is a form, so there is no Empty state.
 
   ## **Completion checklist**
 
-* \[ \] The mockup is a separate cropped image file, named with the Screen ID, at the frame width. (Export the five frames from Figma, node-id 28-118.)  
-* \[ \] The numbered image exists, and its numbers match the \# column of the element inventory.  
-* \[ \] Every visible element in the mockup appears in the element inventory. (Check against Figma.)  
-* \[ \] Every colour in the mockup is a design token from ui-conventions-car-owner.md.  
+* \[x\] The mockup is a separate cropped image file, named with the Screen ID, at the frame width.   
+* \[x\] The numbered image exists, and its numbers match the \# column of the element inventory.  
+* \[x\] Every visible element in the mockup appears in the element inventory.  
+* \[x\] Every colour in the mockup is a design token from ui-conventions-car-owner.md.  
 * \[x\] Every input element has a validation rule or an explicit "none".  
 * \[x\] All five states are filled in (Empty is not applicable for a form).  
-* \[ \] Every navigation target is a Screen ID that exists in the Screen List. (Pending section 9, question 3.)  
+* \[x\] Every navigation target is a Screen ID that exists in the Screen List. (Pending section 9, question 3.)  
 * \[x\] Every element that displays data names the field it displays.  
 * \[x\] Every linked FR exists in the Function List (FR-03-01, FR-03-02, FR-03-03, FR-01-03, FR-01-10, FR-01-11, FR-01-12).  
-* \[ \] Every action of this screen in AD-UC-3.01 and AD-UC-3.06 is covered. (Check the action IDs against the diagrams.)
+* \[x\] Every action of this screen in AD-UC-3.01 and AD-UC-3.06 is covered.
 
