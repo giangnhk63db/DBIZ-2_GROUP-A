@@ -18,7 +18,7 @@ from these files.
 
 **This README is written for two readers.** People can start at section 8 (reading order). AI agents
 read sections 1 to 7 before any task and follow them. Abbreviations and project terms are explained
-in [GLOSSARY.md](GLOSSARY.md); read it once, and look terms up there instead of guessing.
+in [Glossary.md](Glossary.md); read it once, and look terms up there instead of guessing.
 
 ## At a glance
 
@@ -56,7 +56,7 @@ in [GLOSSARY.md](GLOSSARY.md); read it once, and look terms up there instead of 
    in the UI conventions file of the matching actor (section 3). The Element names in the element
    inventory of a Screen Spec are the component names; the numbers on `*-numbered.png` match its
    `#` column.
-8. **Use the project's words.** Terms and abbreviations are defined in [GLOSSARY.md](GLOSSARY.md).
+8. **Use the project's words.** Terms and abbreviations are defined in [Glossary.md](Glossary.md).
    Do not introduce a synonym for a defined term. When a new term or abbreviation enters any file,
    add it to the glossary in the same change.
 9. **Do not edit history.** Accepted ADRs are not rewritten: a new ADR supersedes an old one.
@@ -113,7 +113,7 @@ Two actors have screens, so there are two usage-flow files and two UI-convention
 | Fact | Owning file | Cited by |
 |---|---|---|
 | Product name, client, team, roles, milestones, problems, goals | `Docs/Project/Project Brief.md` | every file |
-| Abbreviations and project terms | `GLOSSARY.md` | every file |
+| Abbreviations and project terms | `Glossary.md` | every file |
 | Stakeholders, value flows, problems `P-n`, stakeholder requirements `StR-nn` | `Docs/Context/CVCA.md` | Architecture |
 | System boundary and external entities | `Docs/Context/Context Diagram.md` | Use case diagrams, AD lanes |
 | List of all context flows `CTX: flow-nn` | `Docs/Traceability/list-of-flow-context-diagram.md` | Traceability, sequence diagrams |
@@ -172,7 +172,7 @@ CTX flow -> UC -> SD message      (kept in Docs/Traceability/traceability.md)
 
 ## 5. How to do common tasks
 
-**Before any task:** read this README, `GLOSSARY.md`, `Project Brief.md`, then the owning files of
+**Before any task:** read this README, `Glossary.md`, `Project Brief.md`, then the owning files of
 the facts the task touches (section 3).
 
 **Change or add a function.** Edit W1 (ID, EARS criterion, source trace), then W4 (effective
@@ -196,7 +196,7 @@ depend on it.
 actions it covers, the UI conventions file of that actor. Build every state in the Screen Spec.
 The acceptance tests are the EARS criteria of the FRs and the branches in the AD.
 
-**Add a term or abbreviation.** Add one row to `GLOSSARY.md` in the right group: what it stands
+**Add a term or abbreviation.** Add one row to `Glossary.md` in the right group: what it stands
 for, what it means in this project, and where it is used. If two meanings collide, add a row to
 the look-alike table too.
 
@@ -275,7 +275,7 @@ Carpla that the CRM can receive the report package and return the quote.
 
 | Step | Lesson | File | What it shows |
 |---|---|---|---|
-| 0 | | [GLOSSARY.md](GLOSSARY.md) | Every abbreviation and project term, in one place |
+| 0 | | [Glossary.md](Glossảy.md) | Every abbreviation and project term, in one place |
 | 1 | L1-L2 | [Project Brief.md](Docs/Project/Project%20Brief.md) | Client, problems, goals, team roles, milestones |
 | 2 | L3 | [CVCA.md](Docs/Context/CVCA.md) | Stakeholders, value flows, problems, stakeholder requirements |
 | 3 | L3 | [Context Diagram.md](Docs/Context/Context%20Diagram.md), [list-of-flow-context-diagram.md](Docs/Traceability/list-of-flow-context-diagram.md) | The system as a black box, the entities around it, every flow |
