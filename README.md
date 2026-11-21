@@ -76,7 +76,7 @@ URL-encode paths. The lesson number is the DBIZ2 lesson in which the folder was 
 
 ```text
 README.md                          this file
-GLOSSARY.md                        abbreviations and project terms
+Glossary.md                        abbreviations and project terms
 Docs/
   Project/                         Lessons 1-2   Project Brief.md, AI Log.md
   Context/                         Lesson 3      CVCA.md, Context Diagram.md
