@@ -27,14 +27,15 @@
 | ----- | ----- | ----- | ----- |
 | ![S-F03-02-default-number](img/img-numbered/S-F03-02-default-numbered.png) | ![S-F03-02-loading-number](img/img-numbered/S-F03-02-loading-numbered.png) | ![S-F03-02-empty-number](img/img-numbered/S-F03-02-empty-numbered.png) | ![S-F03-02-error-API-number](img/img-numbered/S-F03-02-error-API-numbered.png) |
 
-| State | Image | Figma node-id (plain / numbered) |
-| ----- | ----- | ----- |
-| Default | `img/S-F03-02-default.png` | 30-3 / 34-2 |
-| Loading | `img/S-F03-02-loading.png` | 30-175 / 34-196 |
-| Empty | `img/S-F03-02-empty.png` | 30-203 / 34-236 |
-| Error API | `img/S-F03-02-error-API.png` | 30-225 / 34-268 |
+| State | Image |
+| ----- | ----- |
+| Default | `img/S-F03-02-default.png` |
+| Loading | `img/S-F03-02-loading.png` |
+| Empty | `img/S-F03-02-empty.png` |
+| Error API | `img/S-F03-02-error-API.png` |
 
-Each number is the \# of the element inventory in section 3. In the default state the numbers 5 to 11 are placed on the first data row and stand for the whole column. Elements 12 and 13 appear only in the loading state, element 14 only in the empty state, elements 15 to 17 only in the error API state. All colours, fonts, spacing and corners come from the design tokens in ui-conventions-carpla-staff.md.
+Each number is the \# of the element inventory in section 3. In the default state the numbers 5 to 11 are placed on the first data row and stand for the whole column. Elements 12 and 13 appear only in the loading state, element 14 only in the empty state, elements 15 to 17 only in the error API state. All colours, fonts, spacing and corners come from the design tokens in [ui-conventions-carpla-staff.md](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/b91522a0ff39535015962b6ecd409a884e8f22a9/Docs/External%20Design/ui-conventions-carpla-staff.md).
+.
 
 ## **3\. Element inventory**
 
