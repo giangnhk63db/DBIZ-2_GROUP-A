@@ -12,7 +12,7 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 - When a new term or abbreviation enters any file, add one row here in the same change.
 - Section 9 lists look-alikes that cause mistakes. Read it once.
 
-**Contents:** 1 Course and project · 2 Organisations, partners, systems · 3 Vehicle and domain ·
+**Contents:** The terms used in this project is clarified in this file and divided into 10 groups to explain<br>1 Course and project · 2 Organisations, partners, systems · 3 Vehicle and domain ·
 4 Market price · 5 Invoices · 6 Analysis and design method · 7 Requirements, rules and IDs ·
 8 Screens and UI · 9 Look-alikes · 10 Diagram aliases · 11 Estimation and finance ·
 12 Vietnamese interface terms
@@ -97,7 +97,7 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | Pre-filled form / automatically filled selling form | The sale request form filled from the vehicle record; the owner only adds mileage, desired price and phone number | StR-03, SyR-20 |
 | Vehicle Passport | Name of feature F-01 | W0 Table 2 |
 
-## 4. Market price (feature F-02)
+## 4. Market price 
 
 | Term | Stands for / meaning | Where used |
 |---|---|---|
@@ -125,7 +125,7 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | 180-day listing history | Listing history fetched once per car model, the first time it is signed up (UC-2.06). `<<extend>>` of UC-2.10 | UC-2.06, AI Log #1 |
 | First sign-up | A car model that is not yet in the listing store | FR-02-07 |
 
-## 5. Invoices (UC-1.05)
+## 5. Invoices 
 
 | Term | Stands for / meaning | Where used |
 |---|---|---|
@@ -243,7 +243,7 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | "—" (long dash) | Placeholder shown in place of a value that is loading, empty or unavailable | Ui-conventions |
 | Price range format | `820.000.000 – 860.000.000 ₫`: en dash, unit once at the end | Ui-conventions section 2 |
 
-## 9. Look-alikes (read once)
+## 9. Look-alikes
 
 | Looks like | Is | And is different from |
 |---|---|---|
@@ -297,7 +297,7 @@ because the diagrams were drawn by different people; the meaning is the same.
 | `REG`, `STR` | Secured Transaction Registry Portal |
 | `EIP`, `EINV`, `INV` (CVCA) | Electronic Invoice Lookup Portal |
 
-## 11. Estimation and finance (W0 to W6)
+## 11. Estimation and finance 
 
 | Term | Stands for / meaning | Where used |
 |---|---|---|
