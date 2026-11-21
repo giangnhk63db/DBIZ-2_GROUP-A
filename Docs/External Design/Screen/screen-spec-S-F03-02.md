@@ -4,7 +4,7 @@
 
 | Field | Value |
 | ----- | ----- |
-| Screen ID | S-F03-02 |
+| Screen ID | S-F03-03 |
 | Screen name | Sale Request List (Vietnamese UI title in Page header: "Danh sách yêu cầu bán xe") |
 | Actor | Carpla Staff |
 | Priority | Must |
@@ -21,18 +21,18 @@
 **The user leaves this screen when:** the staff click the link "Xem xét" or "Xem" of a row, which opens that request in S-F03-03, or click "Quay lại" (1), which returns to the previous page of Carpla CRM.
 
 ## **2\. Mockup**
-![S-F03-02](img/S-F03-02-default.png)
+![S-F03-03](img/S-F03-03-default.png)
 
 | Default, numbered | Loading, numbered | Empty, numbered | Error API, numbered |
 | ----- | ----- | ----- | ----- |
-| ![S-F03-02-default-number](img/img-numbered/S-F03-02-default-numbered.png) | ![S-F03-02-loading-number](img/img-numbered/S-F03-02-loading-numbered.png) | ![S-F03-02-empty-number](img/img-numbered/S-F03-02-empty-numbered.png) | ![S-F03-02-error-API-number](img/img-numbered/S-F03-02-error-API-numbered.png) |
+| ![S-F03-03-default-number](img/img-numbered/S-F03-03-default-numbered.png) | ![S-F03-03-loading-number](img/img-numbered/S-F03-02-loading-numbered.png) | ![S-F03-03-empty-number](img/img-numbered/S-F03-03-empty-numbered.png) | ![S-F03-03-error-API-number](img/img-numbered/S-F03-03-error-API-numbered.png) |
 
 | State | Image |
 | ----- | ----- |
-| Default | `img/S-F03-02-Default.png` |
-| Loading | `img/S-F03-02-Loading.png` |
-| Empty | `img/S-F03-02-Empty.png` |
-| Error API | `img/S-F03-02-Error.png` |
+| Default | `img/S-F03-03-Default.png` |
+| Loading | `img/S-F03-03-Loading.png` |
+| Empty | `img/S-F03-03-Empty.png` |
+| Error API | `img/S-F03-03-Error.png` |
 
 Each number is the \# of the element inventory in section 3. In the default state the numbers 5 to 11 are placed on the first data row and stand for the whole column. Elements 12 and 13 appear only in the loading state, element 14 only in the empty state, elements 15 to 17 only in the error API state. All colours, fonts, spacing and corners come from the design tokens in [ui-conventions-carpla-staff.md](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/b91522a0ff39535015962b6ecd409a884e8f22a9/Docs/External%20Design/ui-conventions-carpla-staff.md).
 .
