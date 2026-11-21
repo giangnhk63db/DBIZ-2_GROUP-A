@@ -13,10 +13,10 @@
 | Linked requirements | FR-03-04 Review verified report (Must), see section 7 |
 | Mockup images | img/S-F03-02-default.png, img/img-numbered/S-F03-02-default-numbered.png, and four state images (section 2) |
 | Frame width | 1280px |
-| Figma frame | [Verified Vehicle Report \- S-F03-02](https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-3), node-id 30-3 (Default). The frames are currently named "S-F03-03 ..." in Figma, see section 9, question 3 |
-| Status | Draft |
+| Figma frame | [Verified Vehicle Report \- S-F03-02](https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-3)|
+| Status | Reviewed |
 
-**Shown when:** Carpla staff open the sale request list in the Carpla CRM menu, or return to it from S-F03-03. The screen shows every sale request sent by car owners, newest on top, with its status, so that the staff can pick one to review and quote.
+**Shown when:** Carpla staff open the sale request list in the Carpla CRM menu. The screen shows every sale request sent by car owners, newest on top, with its status, so that the staff can pick one to review and quote.
 
 **The user leaves this screen when:** the staff click the link "Xem xét" or "Xem" of a row, which opens that request in S-F03-03, or click "Quay lại" (1), which returns to the previous page of Carpla CRM.
 
