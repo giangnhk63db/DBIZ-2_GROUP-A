@@ -57,7 +57,7 @@ flowchart LR
   S03_01 -.->|"back"| S01_02
   S03_01 -->|"enters current mileage, desired price,<br>phone number, clicks Submit<br>[sale request saved]"| S01_02
 
-  entry_quote -->|"[quote sent]"| S03_03
+  entry_quote -->|"[quote sent]"| S03_04
   S03_04 -.->|"back<br>(after Submit)"| S01_02
   S03_04 -.->|"back<br>(from notification)"| S00_01
 
