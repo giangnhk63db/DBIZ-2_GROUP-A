@@ -62,7 +62,7 @@ flowchart LR
 
   classDef screen fill:#f2c9c9,stroke:#8b1a10,stroke-width:2px,color:#000;
   classDef entryNode fill:#fdf0b8,stroke:#c9a400,stroke-width:2px,color:#000;
-  class S00_01,S01_01,S01_02,S01_03,S01_05,S01_06,S02_01,S03_01,S03_03 screen;
+  class S00_01,S01_01,S01_02,S01_03,S01_05,S01_06,S02_01,S03_01,S03_04 screen;
   class entry,entry_quote entryNode;
  ```    
 2. **Carpla staff**  
