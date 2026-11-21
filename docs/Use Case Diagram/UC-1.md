@@ -1,7 +1,13 @@
+# Use Case Diagram: Vehicle Identification & Status
+
+| Field | Value |
+|---|---|
+| Version | v2 |
+| Actors | Car Owner, VETC, Carpla Service, Electronic Invoice Portal, Electric Vehicle Charging Stations, Vehicle Inspection Portal, Traffic Fine Lookup Portal, Secured Transaction Registry Portal |
+
 ```mermaid
 usecase-beta
     direction LR
-
 
     actor CarOwner("Car Owner")
     actor VETC("VETC")
@@ -11,7 +17,6 @@ usecase-beta
     actor InspectionPortal("Vehicle Inspection Portal")
     actor TrafficFinePortal("Traffic Fine Lookup Portal")
     actor SecuredRegistry("Secured Transaction Registry Portal")
-
 
     systemBoundary VehicleIDStatus["Verified Vehicle Report System - Vehicle Identification & Status"]
         UC01("UC-1.01: Enter VIN to initialize Report")
@@ -26,7 +31,6 @@ usecase-beta
         UC10("UC-1.10: View Mortgage Status")
     end
 
-
     CarOwner -- UC01
     CarOwner -- UC02
     CarOwner -- UC03
@@ -38,7 +42,6 @@ usecase-beta
     CarOwner -- UC09
     CarOwner -- UC10
 
-
     UC02 -- VETC
     UC03 -- VETC
     UC04 -- CarplaService
@@ -48,9 +51,15 @@ usecase-beta
     UC07 -- TrafficFinePortal
     UC07 -- SecuredRegistry
 
+    UC05 ..> : extend UC04
+    UC08 ..> : include UC07
+    UC09 ..> : include UC07
+    UC10 ..> : include UC07
 
     UC05 ..> : extend UC04
     UC08 ..> : include UC07
     UC09 ..> : include UC07
     UC10 ..> : include UC07
 ```
+The full use case inventory, with features and login rules, is W0 Table 1 in
+[w0-scope.md](../Functionlist/w0-scope.md).
