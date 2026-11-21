@@ -277,7 +277,7 @@ This screen has no form on the main screen, so the main screen has no Error vali
 
 ## Completion checklist
 
-* [x] The mockup is a separate cropped image file, named with the Screen ID, at the frame width. The images of the sheet, popups and camera steps are in `img/S-F01-04-modal-*.png`; the main screen images follow the same naming and are linked in section 2.
+* [x] The mockup is a separate cropped image file, named with the Screen ID, at the frame width. 
 
 * [x] The numbered images exist, and their numbers match the # column of the element inventory (1 to 19 for the main screen, 1 to 41 for the sheet, the popups and the camera steps). Every number means one element; elements at the same position with a different content keep one number, and section 3 says which content applies in which state.
 
