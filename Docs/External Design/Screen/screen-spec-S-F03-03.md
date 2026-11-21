@@ -13,10 +13,10 @@
 | Linked requirements | FR-03-04 Review verified report (Must), FR-03-05 Send preliminary quote to car owner (Should), see section 7 |
 | Mockup images | img/S-F03-03-default.png, img/img-numbered/S-F03-03-default-numbered.png, and five state images (section 2). The mockups are drawn, but the files are still named with the old numbering, see section 9, question 1 |
 | Frame width | 1280px |
-| Figma frame | \[to fill: link and node-ids of the six frames\] |
-| Status | Draft |
+| Figma frame | [Verified Vehicle Report \- S-F03-02]([https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-3](https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-2&p=f&t=unESPwF6JkExFeQo-0)) |
+| Status | Reviewed |
 
-**Shown when:** Carpla staff select a sale request in the list S-F03-02. The screen shows the package that the system built for the request: what the car owner declared (name, phone number, current mileage, desired price) and the verified vehicle report (identification, status, legal status, market price, maintenance and repair history). Below the report, the staff enter a suggested quote range and send it to the car owner.
+**Shown when:** Carpla staff select a sale request in the list of sale request in screen S-F03-02. The screen shows the package that the system built for the request: what the car owner declared (name, phone number, current mileage, desired price) and the verified vehicle report (identification, status, legal status, market price, maintenance and repair history). Below the report, the staff enter a preliminary quote range and send it to the car owner.
 
 **The user leaves this screen when:** the staff click "Quay lại" (1 or 36), which returns to S-F03-02, or close the success popup after the quote has been sent, which also returns to S-F03-02 (section 9, question 3).
 
