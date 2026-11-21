@@ -12,10 +12,10 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 - When a new term or abbreviation enters any file, add one row here in the same change.
 - Section 9 lists look-alikes that cause mistakes. Read it once.
 
-**Contents:** The terms used in this project is clarified in this file and divided into 10 groups to explain<br>1 Course and project · 2 Organisations, partners, systems · 3 Vehicle and domain ·
+**Contents:** The terms used in this project is clarified in this file and divided into 11 groups to explain<br>1 Course and project · 2 Organisations, partners, systems · 3 Vehicle and domain ·
 4 Market price · 5 Invoices · 6 Analysis and design method · 7 Requirements, rules and IDs ·
-8 Screens and UI · 9 Look-alikes · 10 Diagram aliases · 11 Estimation and finance ·
-12 Vietnamese interface terms
+8 Screens and UI · 9 Look-alikes · 10 Estimation and finance ·
+11 Vietnamese interface terms
 
 ---
 
@@ -265,39 +265,7 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | TASCO / Tasco | The same company | Use `TASCO` in system names, `Tasco` in prose |
 | Report / Passport | Verified Vehicle Report (product) and Vehicle Passport (feature F-01) | The title of `CVCA.md` still says "Verified Vehicle Passport" |
 
-## 10. Diagram aliases
-
-Short names used as participant or node IDs in Mermaid diagrams. Several names exist for one thing
-because the diagrams were drawn by different people; the meaning is the same.
-
-| Alias | Meaning |
-|---|---|
-| `CO`, `OWNER`, `Owner` | Car Owner |
-| `STAFF` | Carpla staff |
-| `BUYER` | Used Car Buyer |
-| `SYS`, `TMS`, `MOB`, `P` | TASCO Mobility System (the system under design) |
-| `APP` | TASCO Mobility app, Car Owner screens |
-| `VR` | Vehicle report service |
-| `INV` (Architecture) | Invoice service |
-| `LEG` | Legal status update service |
-| `MP` | Market price service |
-| `SELL` | Sell request service |
-| `SCH` | Scheduler |
-| `NOT` | Notification service |
-| `DB` | Vehicle Report database |
-| `PDB` | Weekly Price DB (weekly price records) |
-| `LDB` | Listing Store (synced listings) |
-| `VETC` | VETC |
-| `CS`, `CARPLA_SV` | Carpla Service |
-| `EVC`, `EVCS`, `EV` | EV charging stations |
-| `NG`, `NEXT`, `NEXTGEN` | Nextgen VN |
-| `CT`, `CHO`, `CHOTOT` | Chợ Tốt |
-| `VIP`, `INSP` | Vehicle Inspection Portal |
-| `TFP`, `FINE` | Traffic Fine Lookup Portal |
-| `REG`, `STR` | Secured Transaction Registry Portal |
-| `EIP`, `EINV`, `INV` (CVCA) | Electronic Invoice Lookup Portal |
-
-## 11. Estimation and finance 
+## 10. Estimation and finance 
 
 | Term | Stands for / meaning | Where used |
 |---|---|---|
@@ -330,7 +298,7 @@ because the diagrams were drawn by different people; the meaning is the same.
 | Payback period | Time until cumulative net cash flow turns positive | W6 |
 | Market penetration rate | Share of maximum revenue capacity reached each year | W6 |
 
-## 12. Vietnamese interface terms
+## 11. Vietnamese interface terms
 
 The Car Owner interface is Vietnamese only (`Ui-conventions-car-owner.md`). Terms that appear in
 the design documents:
