@@ -4,7 +4,7 @@
 
 | Field | Value |
 | ----- | ----- |
-| Screen ID | S-F03-03 |
+| Screen ID | S-F03-04 |
 | Screen name | Sale Request Detail & Preliminary Quote (Vietnamese UI title in Top bar: "Báo giá sơ bộ") |
 | Actor | Car Owner |
 | Priority | Should |
