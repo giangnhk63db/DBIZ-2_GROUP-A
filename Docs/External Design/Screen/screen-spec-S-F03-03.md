@@ -23,9 +23,18 @@
 ## **2\. Mockup**
 ![S-F03-03](img/S-F03-03-default.png)
 
-| Default, numbered | Loading, numbered | Empty, numbered | Error validate FE, numbered | Error API, numbered | Success, numbered |
-| ----- | ----- | ----- | ----- | ----- | ----- |
-| ![S-F03-03-default-number](img/img-numbered/S-F03-03-default-numbered.png) | ![S-F03-03-loading-number](img/img-numbered/S-F03-03-loading-numbered.png) | ![S-F03-03-empty-number](img/img-numbered/S-F03-03-empty-numbered.png) | ![S-F03-03-error-validate-FE-number](img/img-numbered/S-F03-03-error-validate-FE-numbered.png) | ![S-F03-03-error-API-number](img/img-numbered/S-F03-03-error-API-numbered.png) | ![S-F03-03-success-number](img/img-numbered/S-F03-03-success-numbered.png) |
+| Default, numbered | Loading, numbered |
+| ----- | ----- |
+| ![S-F03-03-default-number](img/img-numbered/S-F03-03-default-numbered.png) | ![S-F03-03-loading-number](img/img-numbered/S-F03-03-loading-numbered.png) |
+
+| Empty, numbered | Error validate FE, numbered |
+| ----- | ----- |
+| ![S-F03-03-empty-number](img/img-numbered/S-F03-03-empty-numbered.png) | ![S-F03-03-error-validate-FE-number](img/img-numbered/S-F03-03-error-validate-FE-numbered.png) |
+
+| Error API, numbered | Success, numbered |
+| ----- | ----- |
+| ![S-F03-03-error-API-number](img/img-numbered/S-F03-03-error-API-numbered.png) | ![S-F03-03-success-number](img/img-numbered/S-F03-03-success-numbered.png) |
+
 
 | State | Image |
 | ----- | ----- |
