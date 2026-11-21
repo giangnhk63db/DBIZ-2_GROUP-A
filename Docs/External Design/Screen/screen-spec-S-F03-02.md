@@ -23,9 +23,13 @@
 ## **2\. Mockup**
 ![S-F03-03](img/S-F03-03-default.png)
 
-| Default, numbered | Loading, numbered | Empty, numbered | Error API, numbered |
-| ----- | ----- | ----- | ----- |
-| ![S-F03-03-default-number](img/img-numbered/S-F03-03-default-numbered.png) | ![S-F03-03-loading-number](img/img-numbered/S-F03-02-loading-numbered.png) | ![S-F03-03-empty-number](img/img-numbered/S-F03-03-empty-numbered.png) | ![S-F03-03-error-API-number](img/img-numbered/S-F03-03-error-API-numbered.png) |
+| Default, numbered | Loading, numbered |
+| ----- | ----- |
+| ![S-F03-03-default-number](img/img-numbered/S-F03-03-default-numbered.png) | ![S-F03-03-loading-number](img/img-numbered/S-F03-02-loading-numbered.png) | 
+
+| Empty, numbered | Error API, numbered |
+ ----- | ----- |
+| ![S-F03-03-empty-number](img/img-numbered/S-F03-03-empty-numbered.png) | ![S-F03-03-error-API-number](img/img-numbered/S-F03-03-error-API-numbered.png) |
 
 | State | Image |
 | ----- | ----- |
