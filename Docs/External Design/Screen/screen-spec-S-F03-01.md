@@ -13,7 +13,7 @@
 | Linked requirements | FR-03-01 Submit sale request (Must), FR-03-02 Re-check legal status before forwarding (Should), see section 7 |
 | Mockup images | img/S-F03-01-default.png, img/S-F03-01-default-numbered.png, img/S-F03-01-error-validate-fe-numbered.png, five state images (section 2\) |
 | Frame width | 360px |
-| Figma frame | [Verified Vehicle Report \- S-F03-01](https://www.figma.com/design/C0hM92cku1UhbITMOXxvgD/Verified-Vehicle-Report---S-F03-01--S-F03-03--5-states-?node-id=28-118&t=aMNUfKIg1lxemCVq-0), node-id 28-118 |
+| Figma frame | [Verified Vehicle Report \- S-F03-01](https://www.figma.com/design/C0hM92cku1UhbITMOXxvgD/Verified-Vehicle-Report---S-F03-01--S-F03-03--5-states-?node-id=28-118&t=aMNUfKIg1lxemCVq-0), page S-F03-01 |
 | Status | Reviewed |
 
 **Shown when:** the car owner taps the fixed bottom button "Submit sale request" of S-F01-02 to sell the car.  The screen shows the verified vehicle data and the legal status automatically updated, and collects the current mileage, the desired price and the phone number to create the sale request.
