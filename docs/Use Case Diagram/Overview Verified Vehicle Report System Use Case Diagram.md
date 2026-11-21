@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Version | v1 |
+| Version | v2 |
 | Actors | Car owner |
 
 ```mermaid
