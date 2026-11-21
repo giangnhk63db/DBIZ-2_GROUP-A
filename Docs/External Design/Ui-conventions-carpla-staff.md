@@ -1,6 +1,6 @@
 # UI Conventions: Carpla CRM (Carpla Staff, web)
 
-Scope: the screens of Carpla CRM used by Carpla staff, designed for a desktop web browser. Currently this is the screen S-F03-02 (Sale Request Review & Quote), where staff review a sale request that comes from the TASCO Verified Vehicle Report System and send the preliminary quote. The Car Owner screens of the TASCO Verified Vehicle Report System (mobile) have their own file: ui-conventions-car-owner.md.
+Scope: the screens of Carpla CRM used by Carpla staff, designed for a desktop web browser. Currently these are S-F03-02 (Sale Request List), where staff pick a sale request, and S-F03-03 (Sale Request Detail & Preliminary Quote), where staff review the request that comes from the TASCO Verified Vehicle Report System and send the preliminary quote. The Car Owner screens of the TASCO Verified Vehicle Report System (mobile) have their own file: ui-conventions-car-owner.md.
 
 ## 1. Language and tone
 
@@ -9,6 +9,8 @@ Scope: the screens of Carpla CRM used by Carpla staff, designed for a desktop we
 - Tone: professional. Polite, neutral and concise; no slang, no emoji, no exclamation marks, no softening particles such as "nhé".
 - Button labels are verbs that say what happens: verb + object, never a generic "OK" or "Xác nhận".
   - Buttons: "Gửi báo giá", "Quay lại", "Thử lại", "Đóng".
+  - Links: "Quay lại", "Xem xét", "Xem", "Xem hóa đơn". A link that repeats in every row of a table is kept short; its accessible name adds the owner, VIN or date of the row (section 5).
+- Status wording : verified = "Đã xác minh", not verified = "Chưa xác minh" (never "xác thực"); inspection valid = "Còn hiệu lực", expired = "Hết hạn".
 
 ## 2. Formats
 
@@ -23,22 +25,27 @@ Scope: the screens of Carpla CRM used by Carpla staff, designed for a desktop we
 | Phone | Displayed in groups 4-3-3 | 0901 234 567 |
 | VIN | 17 uppercase letters and digits, no I, O, Q; displayed without spaces | RLHJC6101PY000123 |
 | Names | Family name + middle name + given name, first letter of each word capitalised | Nguyễn Văn An |
+| Missing value in a table cell | One en dash "–"; the row is still shown | – |
+| Detail line under a Status badge | "Tra cứu ngày dd/MM/yyyy: …" for a lookup, "Ngày hết hạn: dd/MM/yyyy" for the inspection | Tra cứu ngày 20/11/2026: 1 lỗi chưa nộp, tổng 900.000 ₫ |
+| Ellipsis | One character "…", never three dots; used in loading labels and truncated text | Đang tạo báo cáo… |
+
 
 ## 3. Components (use these names in every Screen Spec)
 
 | Component | When to use | Notes |
 |---|---|---|
 | Page header | Top of the screen | Link "Quay lại" on the left (returns to the previous page of Carpla CRM), screen title "Xem xét yêu cầu bán xe và báo giá sơ bộ" on the left below it. Screen title is in Vietnamese, sentence case: capitalise only the first letter of the first word, plus abbreviations and proper names (VIN, SoH, VETC, Carpla); all other words lowercase |
-| Info panel | Read-only report: owner-declared information (current mileage, desired price, phone number) and the verified vehicle report (three blocks including block identification (VIN, model, color); block status (mileage, battery health, legal status), block market price | Label on the left, value on the right; a value that is not verified shows "Chưa xác minh" with a Status badge (icon + text) |
-| Data table | Maintenance and repair history, including external invoices uploaded by the car owner | Columns: Ngày, Nội dung, Nguồn (Carpla Service / Hóa đơn bên ngoài); newest on top; the invoice file opens in a new tab through a link in the row |
-| Status badge | Verification status of a value, legal status (inspection, unpaid traffic fines, mortgage) | Always icon + text, never colour alone. Include details right below icon + text. Fines and mortgage: a successful lookup that finds nothing shows a success badge ("Không có phạt nguội", "Không thế chấp"). Inspection shows "Còn hiệu lực" or "Hết hạn". A lookup that could not be done shows "Chưa xác minh".|
-| Text input | Quote range: "Giá thấp nhất" and "Giá cao nhất" | Label above, FE error message below (inline); the inline error is only for errors caught by FE validation, BE errors use a popup (section 4); digits auto-formatted with dots while typing; suffix "₫" shown inside the field |
-| Quote form | Staff enters the suggested quote range | Two Text inputs side by side: "Giá thấp nhất" and "Giá cao nhất" |
-| Primary button | Send the quote | "Gửi báo giá"; one per screen; spans the width of its container, filled with the brand colour; placed at the bottom right of the Quote form |
+| Section heading | Groups several Info panels or tables under one heading (for example the verified vehicle report) | Text only, no box, `type-heading`; sits directly above the first panel it groups |
+| Info panel | Read-only information in a white panel: the owner-declared information and each part of the verified vehicle report (identification, status including legal status, market price) | Panel title at the top; below it rows with the label on the left and the value on the right, each row ending in a divider. Rows are arranged in two columns (three in the identification panel; one when the panel has a single row). A value that is not verified shows a Status badge "Chưa xác minh" in place of the value. A Banner may sit between the title and the first row. A row with a Status badge has a detail line right-aligned below the badge. A row that does not apply (for example battery health of a non-electric vehicle) is not shown |
+| Data table | Maintenance and repair history, including external invoices uploaded by the car owner; the sale request list | Table title (not for the sale request list, whose title is the Page header), then a header row (label style, divider below) that is shown in every state, including loading, empty and error. <br> Maintenance and repair history columns: Ngày, Nội dung, Nguồn (Carpla Service / Hóa đơn bên ngoài); the columns of the sale request list are set in its Screen Spec. Newest on top. <br>A long text wraps and the row grows; the other columns keep their width. <br>A row has dividers between rows; only a link in the row is clickable, never the whole row. <br>An invoice link sits in the Nguồn cell after a middle dot ("Hóa đơn bên ngoài · Xem hóa đơn") and opens the file in a new tab |
+| Status badge | Verification status of a value, legal status (inspection, unpaid traffic fines, mortgage), request status in the sale request list, quote status | A small pill: always icon + text, never colour alone; warning icon for warning style, check icon for success style. Include details right below icon + text.<br>Wording: unverified or lookup not done "Chưa xác minh" (warning); fines "Có phạt nguội chưa nộp" (warning) or, when a successful lookup finds nothing, "Không có phạt nguội" (success); mortgage "Đang thế chấp" (warning) or "Không thế chấp" (success); inspection "Còn hiệu lực" (success) or "Hết hạn" (warning); request status "Chờ báo giá" (warning) or "Đã gửi báo giá" (success); the quote status badge of a sent quote is "Đã gửi báo giá" |
+| Text input | Quote range: "Giá thấp nhất" and "Giá cao nhất" | Label above, FE error message below (inline); the inline error is only for errors caught by FE validation, BE errors use a popup (section 4); digits auto-formatted with dots while typing; suffix "₫" shown inside the field; FE invalid state: the border and the inline error text are in `color-error`, the inline error has an error icon |
+| Quote form | Staff enters the suggested quote range | Two Text inputs side by side: "Giá thấp nhất" and "Giá cao nhất".<br>Read-only (quote already sent): Status badge "Đã gửi báo giá" at the right of the title, the two values as text, no Primary button and no inputs; only the Secondary button remains |
+| Primary button | Send the quote | "Gửi báo giá"; one per screen; spans the width of its container, filled with the brand colour; placed at the bottom right of the Quote form, does not span the full width of its container; at the bottom right of the Quote form, to the right of the Secondary button; disabled while the screen is loading |
 | Secondary button | Leave without sending; alternative actions | "Quay lại"; outline style: border and text only, transparent background (no fill) |
 | Banner | Non-blocking information: a value in the report is not verified | Sits inside the screen, never covers content; info style with icon + text; no buttons |
-| Modal | System error notification; success notification | Never for navigation; always has a close button |
-| Loading placeholder | While the data of the screen is loading, shown in place of the values of the Info panels and the rows of the Data table | Grey bars, 20 px high, full width of the panel, fill `color-disabled-bg`, corner `radius-sm`, stacked with a `space-5` gap; no animation; panel titles stay visible; the Quote form stays visible and its Primary button is disabled until loading ends; no buttons |
+| Modal | System error notification; success notification | Icon + title + message + buttons. Error: background `color-error-bg`, border, icon and title in `color-error`; buttons "Đóng" (Secondary, left) and "Thử lại" (Primary, right). Success: check icon, title and message; "Đóng" is the only button. "Đóng" is the close button of the Modal, so there is no separate × icon. Never for navigation. While a Modal is open, the controls behind it cannot be used |
+| Loading placeholder | While the data of the screen is loading, shown in place of the values of the Info panels and the rows of the Data table | Grey bars, 20 px high, full width of the panel, fill `color-disabled-bg`, corner `radius-sm`, stacked with a `space-5` gap; no animation; panel titles stay visible; the Quote form stays visible and its Primary button is disabled until loading ends. The placeholder itself has no buttons |
 
 ## 4. Messages
 
@@ -47,11 +54,11 @@ All message text shown to the user is in Vietnamese.
 | Situation | Pattern | Example |
 |---|---|---|
 | Validation error (FE) | **Inline**, right below the field. What is wrong + how to fix, ending with "Vui lòng ...". No request is sent to the server. | "Vui lòng nhập giá thấp nhất." / "Giá thấp nhất không được lớn hơn giá cao nhất. Vui lòng nhập lại." |
-| System error (BE) | **Popup** after the maximum retries. What happened + what the user can do now. Buttons "Thử lại" and "Đóng". | "Hệ thống chưa gửi được báo giá. Vui lòng bấm Thử lại, hoặc đóng và quay lại sau." |
+| System error (BE) | **Popup** after the maximum retries. Title (what failed) + message (what happened + what the user can do now). Buttons "Thử lại" and "Đóng". | Title "Không gửi được báo giá". Message "Hệ thống chưa gửi được báo giá. Vui lòng bấm Thử lại, hoặc đóng và quay lại sau." / Title "Không tải được danh sách". Message "Hệ thống chưa tải được danh sách yêu cầu bán xe. Vui lòng bấm Thử lại, hoặc đóng và quay lại sau." |
 | Empty state | **In the Data table area**, in the place where the rows would be. Why it is empty + what it means. | "Chưa có lịch sử bảo dưỡng và sửa chữa của xe này." |
-| Success | **Popup** with a "Đóng" button. What was done. | "Đã gửi báo giá sơ bộ cho chủ xe." |
+| Success | **Popup** with a title, a message and a single "Đóng" button. What was done. | Title "Đã gửi báo giá". Message "Đã gửi báo giá sơ bộ cho chủ xe." |
 | Unavailable data (not an error) | **Banner**, not a popup. The screen opens normally; the banner sits at the top of the Info panel, and the affected value shows "Chưa xác minh". The banner has no button and stays until the data exists. Reason for no popup: nothing failed and the user has nothing to retry. | "Số km chưa được xác minh vì không có bản ghi qua trạm thu phí." |
-| Loading | **Loading placeholder** in the place of the data, plus one line under the screen title. The screen opens normally; nothing failed, so there is no popup. When loading ends the placeholders are replaced by the data. If loading still fails after the maximum retries, use the System error ( Error validate BE) pattern. | "Đang tải thông tin yêu cầu bán xe." |
+| Loading | **Loading placeholder** in the place of the data, plus one line under the screen title. The screen opens normally; nothing failed, so there is no popup. When loading ends the placeholders are replaced by the data. If loading still fails after the maximum retries, use the System error (BE) pattern. | "Đang tải thông tin yêu cầu bán xe." |
 
 ## 5. Accessibility minimums
 
@@ -120,11 +127,11 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 
 | Token | HEX | Intended usage | Components |
 |---|---|---|---|
-| color-success | #1B7A43 | Success text and icon | Success Modal, Status badge (inspection valid, no unpaid traffic fine, no mortgage) |
+| color-success | #1B7A43 | Success text and icon | Success Modal, Status badge (inspection valid, no unpaid traffic fine, no mortgage, request status "Đã gửi báo giá") |
 | color-success-bg | #E7F4EC | Background behind success text | Status badge |
-| color-warning | #8A5300 | Warning text and icon | Status badge ("Chưa xác minh", unpaid traffic fine, mortgage) |
+| color-warning | #8A5300 | Warning text and icon | Status badge ("Chưa xác minh", "Hết hạn", unpaid traffic fine, mortgage, request status "Chờ báo giá") |
 | color-warning-bg | #FFF3DC | Background behind warning text | Status badge |
-| color-error | #B42318 | Error text and icon | Inline validation error, system error Modal |
+| color-error | #B42318 | Error text and icon | Inline validation error, border of an invalid Text input, system error Modal (border, icon and title) |
 | color-error-bg | #FDECEA | Background behind error text | System error Modal |
 | color-info | No new HEX: text and icon `color-brand-primary` (#253264) on background `color-brand-tint` (#E8EBF5) | Neutral information | Banner (a value in the report is not verified) |
 
@@ -148,10 +155,10 @@ Typography defines how text looks: size, line height and weight for each kind of
 | Role | Token | Size / Line height (CSS px) | Weight | Colour | Used for |
 |---|---|---|---|---|---|
 | Page title | type-title | 24 / 32 | 700 | color-text-primary | Screen title in Page header |
-| Section heading | type-heading | 18 / 26 | 600 | color-text-primary | Title of an Info panel block, title of the Data table and of the Quote form |
-| Body text | type-body | 16 / 24 | 400 | color-text-primary | Info panel values, Data table cells, messages, Banner |
-| Label | type-label | 14 / 20 | 500 | color-text-secondary | Info panel label, Text input label, Data table column header, Status badge text |
-| Button | type-button | 16 / 24 | 600 | per button | Primary button, Secondary button, links "Quay lại" and invoice link (links are underlined) |
+| Section heading | type-heading | 18 / 26 | 600 | color-text-primary | Title of an Info panel block, title of the Data table and of the Quote form, Section heading, Modal title |
+| Body text | type-body | 16 / 24 | 400 | color-text-primary | Info panel values, Data table cells, messages, Modal message, Banner |
+| Label | type-label | 14 / 20 | 500 | color-text-secondary | Info panel label, detail line under a Status badge, Text input label, Data table column header, Status badge text |
+| Button | type-button | 16 / 24 | 600 | per button | Primary button, Secondary button, links "Quay lại", invoice link and row action link (links are underlined) |
 | Form input | type-input | 16 / 24 | 400 | color-text-primary | Text input value |
 
 **Font family:** Be Vietnam Pro, with Roboto, "Segoe UI", system-ui, sans-serif as fallback fonts. Be Vietnam Pro is the project's standard UI typeface, selected for its support of Vietnamese diacritics and consistent readability across interface elements. This specification does not identify it as TASCO's or Carpla's official corporate brand font.
@@ -180,7 +187,7 @@ Base unit 4 px. Only these values are used.
 | Component (section 3) | Clickable element | Rule |
 |---|---|---|
 | Page header | Link "Quay lại" | Hit area at least 24 × 24 |
-| Data table | Invoice link in a row | Hit area at least 24 high |
+| Data table | Invoice link or row action link in a row | Hit area at least 24 high |
 | Text input | Whole field | Height at least 40 |
 | Primary button | Whole button | Height at least 40 |
 | Secondary button | Whole button | Height at least 40 |
@@ -259,6 +266,8 @@ Not subject to 1.4.11, because no control depends on them.
 | #848E97 input border | #FFFFFF surface | 3.33:1 | 3:1 | PASS |
 | #848E97 input border | #F6F7F9 main background | 3.11:1 | 3:1 | PASS |
 | #848E97 input border | #E8EBF5 brand tint | 2.80:1 | 3:1 | FAIL. Rule: a Text input must not sit directly on color-brand-tint (for example inside a Banner) |
+| #B42318 invalid input border | #FFFFFF surface | 6.57:1 | 3:1 | PASS |
+| #B42318 error Modal border | #FDECEA error-bg | 5.75:1 | 3:1 | PASS |
 | #3F5099 secondary button outline | #FFFFFF | 7.45:1 | 3:1 | PASS |
 | #3F5099 secondary button outline | #F6F7F9 | 6.95:1 | 3:1 | PASS |
 | #3F5099 secondary button outline | #FDECEA error-bg (system error Modal) | 6.51:1 | 3:1 | PASS |
