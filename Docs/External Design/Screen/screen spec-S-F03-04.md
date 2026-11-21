@@ -5,7 +5,7 @@
 | Field | Value |
 | ----- | ----- |
 | Screen ID | S-F03-03 |
-| Screen name | View Preliminary Quote (Vietnamese UI title in Top bar: "Báo giá sơ bộ") |
+| Screen name | Sale Request Detail & Preliminary Quote (Vietnamese UI title in Top bar: "Báo giá sơ bộ") |
 | Actor | Car Owner |
 | Priority | Should |
 | Feature | F-03 Sale Request |
@@ -28,15 +28,15 @@
 
 Default, numbered | Loading, numbered | Error API, numbered | Success, numbered |
 | ----- | ----- | ----- | ----- |
-| ![S-F03-03-default-number](img/img-numbered/S-F03-03-default-numbered.png) | ![S-F03-03-loading-number](img/img-numbered/S-F03-03-loading-numbered.png) | ![S-F03-03-error-API-number](img/img-numbered/S-F03-03-error-API-numbered.png) | ![S-F03-03-success-number](img/img-numbered/S-F03-03-success-numbered.png) |
+| ![S-F03-04-default-number](img/img-numbered/S-F03-04-default-numbered.png) | ![S-F03-04-loading-number](img/img-numbered/S-F03-04-loading-numbered.png) | ![S-F03-04-error-API-number](img/img-numbered/S-F03-04-error-API-numbered.png) | ![S-F03-04-success-number](img/img-numbered/S-F03-04-success-numbered.png) |
 
 | State | Image |
 | :---- | :---- |
-| Default | img/S-F03-03-default.png |
+| Default | img/S-F03-04-default.png |
 | Empty | not used (see section 4\) |
-| Loading  | img/S-F03-03-loading.png |
-| Error (API) | img/S-F03-03-error-API.png (system error popup, FR-03-06) |
-| Success | img/S-F03-03-success.png |
+| Loading  | img/S-F03-04-loading.png |
+| Error (API) | img/S-F03-04-error-API.png (system error popup, FR-03-06) |
+| Success | img/S-F03-04-success.png |
 
 All colours, fonts and corners come from the design tokens in [ui-conventions-car-owner](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/856166f4d066a07c84b66f96b604380801b82088/External%20Design/ui-conventions-car-owner.md).
 

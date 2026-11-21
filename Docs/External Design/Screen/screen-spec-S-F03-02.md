@@ -21,11 +21,11 @@
 **The user leaves this screen when:** the staff click the link "Xem xét" or "Xem" of a row, which opens that request in S-F03-03, or click "Quay lại" (1), which returns to the previous page of Carpla CRM.
 
 ## **2\. Mockup**
-![S-F03-02](img/S-F03-02-Default.png)
+![S-F03-02](img/S-F03-02-default.png)
 
 | Default, numbered | Loading, numbered | Empty, numbered | Error API, numbered |
 | ----- | ----- | ----- | ----- |
-| ![S-F03-02-Default-number](img/img-numbered/S-F03-02-Default-numbered.png) | ![S-F03-02-loading-number](img/img-numbered/S-F03-02-Loading-numbered.png) | ![S-F03-02-empty-number](img/img-numbered/S-F03-02-Empty-numbered.png) | ![S-F03-02-error-API-number](img/img-numbered/S-F03-02-Error-API-numbered.png) |
+| ![S-F03-02-default-number](img/img-numbered/S-F03-02-default-numbered.png) | ![S-F03-02-loading-number](img/img-numbered/S-F03-02-loading-numbered.png) | ![S-F03-02-empty-number](img/img-numbered/S-F03-02-empty-numbered.png) | ![S-F03-02-error-API-number](img/img-numbered/S-F03-02-error-API-numbered.png) |
 
 | State | Image |
 | ----- | ----- |
