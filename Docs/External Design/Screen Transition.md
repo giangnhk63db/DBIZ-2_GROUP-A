@@ -69,17 +69,20 @@ flowchart LR
 2. **Carpla staff**  
 ```mermaid  
 flowchart TB
-  entry_staff(["Entry: Carpla CRM receives sale request<br>with the verified vehicle report"])
-  S03_02["S-F03-02<br>Sale Request Review & Quote"]
+  entry_staff(["Entry: Carpla staff opens the<br>sale request list in Carpla CRM"])
+  S03_02["S-F03-02<br>Sale Request List"]
+  S03_03["S-F03-03<br>Sale Request Detail &<br>Preliminary Quote"]
   exit_staff(["Exit: Carpla CRM"])
 
-  entry_staff -->|"opens the sale request"| S03_02
-  S03_02 -->|"enters quote range,<br>sends it to car owner"| exit_staff
+  entry_staff -->|"opens the list"| S03_02
+  S03_02 -->|"clicks Xem xét / Xem<br>on a request row"| S03_03
+  S03_03 -.->|"back"| S03_02
+  S03_03 -->|"sends quote,<br>closes success popup"| S03_02
   S03_02 -.->|"back"| exit_staff
 
   classDef screen fill:#f2c9c9,stroke:#8b1a10,stroke-width:2px,color:#000;
   classDef entryNode fill:#fdf0b8,stroke:#c9a400,stroke-width:2px,color:#000;
-  class S03_02 screen;
+  class S03_02,S03_03 screen;
   class entry_staff,exit_staff entryNode;
   
 ```   
