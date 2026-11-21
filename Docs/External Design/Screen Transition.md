@@ -28,7 +28,7 @@ flowchart LR
   S02_01["S-F02-01<br>Market Price &<br>12-Week Trend"]
 
   S03_01["S-F03-01<br>Submit Sale Request"]
-  S03_03["S-F03-03<br>Sale Request &<br>Preliminary Quote"]
+  S03_04["S-F03-04<br>View Preliminary Quote"]
 
   entry --> S00_01
 
@@ -55,11 +55,11 @@ flowchart LR
 
   S01_02 -->|"clicks Submit<br>sale request"| S03_01
   S03_01 -.->|"back"| S01_02
-  S03_01 -->|"enters current mileage, desired price,<br>phone number, clicks Submit<br>[sale request saved]"| S03_03
+  S03_01 -->|"enters current mileage, desired price,<br>phone number, clicks Submit<br>[sale request saved]"| S01_02
 
   entry_quote -->|"[quote sent]"| S03_03
-  S03_03 -.->|"back<br>(after Submit)"| S01_02
-  S03_03 -.->|"back<br>(from notification)"| S00_01
+  S03_04 -.->|"back<br>(after Submit)"| S01_02
+  S03_04 -.->|"back<br>(from notification)"| S00_01
 
   classDef screen fill:#f2c9c9,stroke:#8b1a10,stroke-width:2px,color:#000;
   classDef entryNode fill:#fdf0b8,stroke:#c9a400,stroke-width:2px,color:#000;
