@@ -3,7 +3,7 @@
 | Field | Value |
 | ----- | ----- |
 | Product | TASCO Verified Vehicle Report System |
-| Version | v2|
+| Version | v3|
 | Date | 2026-11-05 |
 | Sources | W0 Table 1 (use case inventory); Use Case Diagram; Activity Diagram Index |
 
@@ -28,7 +28,7 @@ flowchart LR
 
 | Step | Use case | Activity diagram | Screens (fill in after Block 2\) |
 | :---: | ----- | ----- | :---: |
-| 1 | UC-1.01: Enter VIN to initialize Report | AD-UC-1.01.md | S-F01-01  |
+| 1 | UC-1.01: Enter VIN to initialize Report | AD-UC-1.01.md | S-F00-01, S-F01-01  |
 | 2 | UC-1.02: View Vehicle Identification | not needed | S-F01-02  |
 | 3 | UC-1.03: View Verified Minimum Mileage | AD-UC-1.03.md  | S-F01-03  |
 | 4 | UC-1.04: View Maintenance & Repair History in Carpla Service | not needed | S-F01-02, S-F01-05  |
@@ -81,7 +81,8 @@ U211 --> Z2(["Tracking stopped"])
 ```mermaid
 flowchart LR
   A(["Car Owner wants to sell the car to Carpla"]) --> U3["UC-3.01: Submit Sale Request"]
-  U3 --> U4["UC-3.09: View Preliminary Quote"]
+  U3 --> W["Carpla staff reviews and sends the quote<br>(see usage-flow-carpla-crm.md)"]
+  W --> U4["UC-3.09: View Preliminary Quote"]
   U4 --> Z(["Preliminary quote received"])
 ```
 
@@ -89,7 +90,7 @@ flowchart LR
 | Step | Use case | Activity diagram | Screens (fill in after Block 2\) |
 | ----- | ----- | ----- | ----- |
 | 1 | UC-3.01: Submit Sale Request | AD-UC-3.01.md | S-F03-01  |
-| 2 | UC-3.09: View Preliminary Quote | not needed | S-F03-03   |
+| 2 | UC-3.09: View Preliminary Quote | not needed | S-F03-04  |
 
 
 
