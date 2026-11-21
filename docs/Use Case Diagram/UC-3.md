@@ -1,14 +1,19 @@
+# Use Case Diagram: Sell Request & Preliminary Quote
+
+| Field | Value |
+|---|---|
+| Version | v1 |
+| Actors | Car Owner, Vehicle Inspection Portal, Traffic Fine Lookup Portal, Secured Transaction Registry Portal, Carpla Staff |
+
 ```mermaid
 usecase-beta
     direction LR
-
 
     actor CarOwner("Car Owner")
     actor InspectionPortal("Vehicle Inspection Portal")
     actor TrafficFinePortal("Traffic Fine Lookup Portal")
     actor SecuredRegistry("Secured Transaction Registry Portal")
     actor CarplaStaff("Carpla Staff")
-
 
     systemBoundary SellRequestQuote["Verified Vehicle Report System - Sell Request & Preliminary Quote"]
         UC01("UC-3.01: Submit Sale Request")
@@ -22,18 +27,16 @@ usecase-beta
         UC09("UC-3.09: View Preliminary Quote")
     end
 
-
     CarOwner -- UC01
     CarOwner -- UC09
-
 
     UC03 -- InspectionPortal
     UC04 -- TrafficFinePortal
     UC05 -- SecuredRegistry
     UC07 -- CarplaStaff
     UC08 -- CarplaStaff
-
-
     UC01 ..> : include UC02
     UC01 ..> : include UC06
 ```
+The full use case inventory, with features and login rules, is W0 Table 1 in
+[w0-scope.md](../Functionlist/w0-scope.md).
