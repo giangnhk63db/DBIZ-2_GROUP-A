@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Version | v1 |
+| Version | v2 |
 | Actors | Car Owner, Vehicle Inspection Portal, Traffic Fine Lookup Portal, Secured Transaction Registry Portal, Carpla Staff |
 
 ```mermaid
