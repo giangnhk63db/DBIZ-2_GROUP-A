@@ -81,7 +81,7 @@ U211 --> Z2(["Tracking stopped"])
 ```mermaid
 flowchart LR
   A(["Car Owner wants to sell the car to Carpla"]) --> U3["UC-3.01: Submit Sale Request"]
-  U3 --> W["Carpla staff reviews and sends the quote<br>(see usage-flow-carpla-crm.md)"]
+  U3 --> W["Carpla staff reviews and sends the quote<br>(see [usage-flow-carpla-crm.md](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/783033c5c2f2f93ae00011d7744b06867b20ea17/Docs/External%20Design/Usage-flow-carpla-crm.md)"]
   W --> U4["UC-3.09: View Preliminary Quote"]
   U4 --> Z(["Preliminary quote received"])
 ```
