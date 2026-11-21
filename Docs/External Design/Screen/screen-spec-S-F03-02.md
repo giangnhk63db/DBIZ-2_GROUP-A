@@ -13,7 +13,7 @@
 | Linked requirements | FR-03-04 Review verified report (Must), see section 7 |
 | Mockup images | img/S-F03-02-default.png, img/img-numbered/S-F03-02-default-numbered.png, and three other state images (section 2) |
 | Frame width | 1280px |
-| Figma frame | [Verified Vehicle Report \- S-F03-02](https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-3)|
+| Figma frame | [Verified Vehicle Report \- S-F03-02](https://www.figma.com/design/7ofe8uJ9ikmhr58L7Pzpqw/Verified-Vehicle-Report---S-F03-02?node-id=30-3),page S-F03-02 |
 | Status | Reviewed |
 
 **Shown when:** Carpla staff open the sale request list in the Carpla CRM menu. The screen shows every sale request sent by car owners, newest on top, with its status, so that the staff can pick one to review and quote.
@@ -143,11 +143,11 @@ This screen has no input and no action that creates or saves data, so two states
 
 * \[x\] The mockup is a separate cropped image file, named with the Screen ID, at the frame width. (Four files `img/S-F03-02-*.png`, 3840 px wide = 1280 px at 3x.)  
 * \[x\] The numbered image exists, and its numbers match the \# column of the element inventory. (Four files `img/img-numbered/S-F03-02-*-numbered.png`; numbers 1 to 17 checked against the images.)  
-* \[ \] Every visible element in the mockup appears in the element inventory. (Check against Figma.)  
+* \[x\] Every visible element in the mockup appears in the element inventory. 
 * \[x\] Every colour in the mockup is a design token from ui-conventions-carpla-staff.md. (The grey bars of the loading placeholder use `color-disabled-bg`, which ui-conventions already defines for the Loading placeholder.)  
 * \[x\] Every input element has a validation rule or an explicit "none". (The screen has no input element.)  
 * \[x\] All states are filled in. (Error validate FE and Success are not applicable: no input, nothing saved.)  
 * \[ \] Every navigation target is a Screen ID that exists in the Screen List. (S-F03-03 exists; "previous page of Carpla CRM" is not a screen of this list.)  
 * \[x\] Every element that displays data names the field it displays.  
-* \[ \] Every linked FR exists in the Function List. (FR-03-03, FR-03-04, FR-03-05, FR-01-01 exist; the list read has no L3 item, section 9, question 1.)  
+* \[x\] Every linked FR exists in the Function List. (FR-03-03, FR-03-04, FR-03-05, FR-01-01 exist; the list read has no L3 item, section 9, question 1.)  
 * \[ \] Every action of this screen in AD-UC-3.07 is covered. (UC-3.07 has no activity diagram in the repository; the behaviour comes from the Screen List and FR-03-04.)
