@@ -58,7 +58,7 @@ flowchart LR
   S03_01 -->|"enters current mileage, desired price,<br>phone number, clicks Submit<br>[sale request saved]"| S01_02
 
   entry_quote -->|"[quote sent]"| S03_04
-  S03_04 -.->|"back<br>(after view preliminary quote)"| S01_02
+  S03_04 -.->|"back"| S01_02
 
   classDef screen fill:#f2c9c9,stroke:#8b1a10,stroke-width:2px,color:#000;
   classDef entryNode fill:#fdf0b8,stroke:#c9a400,stroke-width:2px,color:#000;
