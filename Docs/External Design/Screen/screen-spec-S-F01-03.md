@@ -120,10 +120,8 @@ There are no text input fields on this screen (`S-F01-03` is a read-only inspect
 
 | # | Question | Blocking? | Status |
 |---|---|---|---|
-| 1 | [NEEDS CLARIFICATION: `AD-UC-1.03` traces `s1`, `s3`, `s4`, and `s2` to `FR-01-03-BE`, whereas the `Function List` extract for `S-F01-03` lists only `FR-01-03-FE` and `FR-01-03-INT` (assigning both VETC API retrieval and minimum ODO computation to `FR-01-03-INT`). Should `FR-01-03-BE` be added to `screen-list.md` / `Function List`, or should `AD-UC-1.03` node traces be aligned to `FR-01-03-INT`?] | No | Open |
-| 2 | [NEEDS CLARIFICATION: Is pagination (`"Tải thêm lịch sử"`) required when a vehicle has more than 3–10 VETC toll station passage entries, or does `FR-01-03-INT` load the full history list in a single vertical scroll?] | No | Open |
-
----
+| 1 | [NEEDS CLARIFICATION: `AD-UC-1.03` traces `s1`, `s3`, `s4`, and `s2` to `FR-01-03-BE`, whereas the `Function List` extract for `S-F01-03` lists only `FR-01-03-FE` and `FR-01-03-INT` (assigning both VETC API retrieval and minimum ODO computation to `FR-01-03-INT`). Should `FR-01-03-BE` be added to `screen-list.md` / `Function List`, or should `AD-UC-1.03` node traces be aligned to `FR-01-03-INT`?] | No | Default: Keep FR-01-03-FE and FR-01-03-INT as the linked requirements for S-F01-03 per screen-list.md and W1 Function List, while mapping internal distance aggregation and persistence (s1–s4 in AD-UC-1.03) to FR-01-03-BE when split by architectural layer. |
+| 2 | [NEEDS CLARIFICATION: Is pagination (`"Tải thêm lịch sử"`) required when a vehicle has more than 3–10 VETC toll station passage entries, or does `FR-01-03-INT` load the full history list in a single vertical scroll?] | No | Default: Render all synced VETC toll station passage records in a single reverse-chronological vertical list without a pagination button, matching img/S-F01-03-default.png and AI Log #5. |
 
 ## Completion checklist
 
