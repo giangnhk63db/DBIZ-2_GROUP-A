@@ -321,3 +321,12 @@ the design documents:
 | Không có | None: badge value for no fine or no mortgage |
 | Tuần 01 | Week 01: label on the x-axis of the 12-week chart |
 | bạn | "you" (informal): how the interface addresses the Car Owner |
+| Làm mới | Refresh: secondary button that triggers a VETC sync (S-F01-03) or parallel legal status query (S-F01-02) |
+| Số km đã đi | Verified minimum mileage: section card header on S-F01-02 and S-F01-03 |
+| Lịch sử qua trạm VETC | VETC toll passage history: screen title of S-F01-03 |
+| Lượt ra / Lượt vào | Exit pass / Entry pass: toll station direction badges on S-F01-03 |
+| Đồng bộ gần nhất | Last synced: prefix of the VETC synchronization timestamp on S-F01-03 |
+| Tải hóa đơn lên | Upload invoice: secondary button on S-F01-02 that opens the S-F01-04 upload sheet |
+| Đăng kiểm | Vehicle inspection: legal status label on S-F01-02 |
+| Còn hạn / Hết hạn | Valid / Expired: vehicle inspection status badges on S-F01-02 |
+| Màu sơn | Paint color: vehicle identification field on S-F01-02 |
