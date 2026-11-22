@@ -11,6 +11,7 @@
 | Linked requirements | `FR-01-01`, `FR-01-03`, `FR-01-05`, `FR-01-06`, `FR-01-07`, `FR-01-08`, `FR-01-09`, `FR-01-10`, `FR-01-11`, `FR-01-12`, `FR-01-13` (see section 7) |
 | Mockup images | `img/S-F01-02-default.png`, `img/img-numbered/S-F01-02-default-numbered.png`, and state images (section 2) |
 | Frame width | `360px` |
+| Figma frame | [Vehicle Identification & Status \- S-F01-03 ](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&p=f&t=jIrF9erJRZuQXgpQ-0), Page 2 |
 | Status | Reviewed |
 
 ## 1. Purpose
