@@ -1,4 +1,4 @@
-# LIST OF MESSAGES TRONG SEQUENCE DIAGRAM
+# List of messages in sequence diagrams
 
 | SEQ: S-X.Y | No. - Name | Message |From | To | Note |
 |---|---|---|---|---|---|
