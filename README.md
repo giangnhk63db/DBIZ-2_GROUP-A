@@ -249,7 +249,7 @@ those with an answer show it in the last column.
 
 | Step | Lesson | File | What it shows |
 |---|---|---|---|
-| 0 | | [Glossary.md](Glossary.md) | Every abbreviation and project term, in one place |
+| 0 | | [Glossary.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/1ace4bebdd9def3ee598c19f4c9e7f29b31717e9/Docs/Project/Glossary.md) | Every abbreviation and project term, in one place |
 | 1 | L1-L2 | [Project Brief.md](Docs/Project/Project%20Brief.md) | Client, problems, goals, team roles, milestones |
 | 2 | L3 | [CVCA.md](Docs/Context/CVCA.md) | Stakeholders, value flows, problems, stakeholder requirements |
 | 3 | L3 | [Context Diagram.md](Docs/Context/Context%20Diagram.md), [list-of-flow-context-diagram.md](Docs/Traceability/list-of-flow-context-diagram.md) | The system as a black box, the entities around it, every flow |
