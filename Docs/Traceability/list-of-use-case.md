@@ -1,4 +1,4 @@
-# LIST OF USE CASES TRONG USE CASE DIAGRAM
+# List of use cases in use case diagrams:
 
 | UC-ID | Diagram | Use Case Name | Primary Actor | Secondary Actor | include/extend | Note |
 |---|---|---|---|---|---|---|
