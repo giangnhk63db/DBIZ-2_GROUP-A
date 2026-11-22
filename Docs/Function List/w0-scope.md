@@ -74,3 +74,30 @@ Feature count: 3 (allowed 3 to 6): PASS.
 | **Total data-function points** | | | **103** |
 
 ILF = Internal Logical File (data the system maintains itself). EIF = External Interface File (data the system only reads from another system).
+
+## Table 5. Business rules
+
+
+| BR<br>BR-<TOPIC>-nn | Rule | Use case |
+|---|---|---|
+| BR-VFVR-01 | A VIN must have exactly 17 alphanumeric characters and must not contain the letters I, O or Q; otherwise the system rejects it and shows a format error. | UC-1.01 |
+| BR-RET-01 | When a call to VETC fails or times out, the system retries up to 3 times (4 attempts in total), then stops, logs the error and notifies the user. | UC-1.03 |
+| BR-DIST-01 | Verified minimum mileage is the sum of the distances between consecutive toll stations in time order; a turnaround counts both segments, and a duplicate scan at the same station counts 0. | UC-1.03 |
+| BR-FILE-01 | Only .pdf, .xml, .jpg and .png files within the size limit (e.g. 10 MB) are accepted; other files are rejected at validation. | UC-1.05 |
+| BR-OCR-01 | The system extracts the seller tax code, invoice number, total amount and date by OCR; if parsing fails the file is rejected, otherwise the owner reviews and confirms the data. Edits by the owner do not skip BR-INV-01. | UC-1.05 |
+| BR-INV-01 | An invoice is valid only if the tax code exists, the details match, and the invoice is not cancelled or replaced on the Electronic Invoice Portal. | UC-1.05 |
+| BR-RET-02 | When charging data cannot be retrieved, the system retries up to 3 times (4 attempts in total), then stops, logs the error and notifies the user. | UC-1.06 |
+| BR-SOH-01 | SoH grade: Good if SoH ≥ 80%; Average if 65% ≤ SoH < 80%; Low if SoH < 65%. | UC-1.06 |
+| BR-SOH-02 | SoH is calculated only with at least 3 valid charging sessions in the standard voltage window; otherwise the screen shows the Empty state. | UC-1.06 |
+| BR-SOH-03 | SoH is rounded to a whole number using Round Half Up (91.5% → 92%). | UC-1.06 |
+| BR-SOH-04 | SoH is recalculated only when at least one new valid session exists (at most once per day, or re-evaluated every 30 days); otherwise the cached result is shown. | UC-1.06 |
+| BR-SOH-05 | The success popup appears only when SoH is newly calculated. | UC-1.06 |
+| BR-REF-01 | When refreshing legal status, the system queries the Inspection, Traffic Fine and Secured Transaction portals in parallel. | UC-1.07 |
+| BR-ERR-01 | If one portal fails or times out, the system logs the error, skips it and still shows the data from the other portals. | UC-1.07 |
+| BR-MIL-01 | A price is calculated only if verified minimum mileage ÷ max(car age, 1) ≥ 2,000 km/year (configurable); otherwise INSUFFICIENT_DATA. | UC-2.04 |
+| BR-COM-01 | A price is calculated only if at least 30 comparable listings remain after outlier removal and widening up to Level 2; otherwise INSUFFICIENT_DATA. | UC-2.04 |
+| BR-RET-01 | When a marketplace sync fails, the system retries up to 3 times, 6 hours apart, then stops for that marketplace and logs an ERROR with the HTTP status. | UC-2.05 |
+| BR-PRI-01 | Requests to marketplaces contain only the vehicle make and model; VIN, plate and owner information are never sent. | UC-2.05 |
+| BR-COM-02 | At least 30 comparable listings are needed to calculate a price. | UC-2.09 |
+| BR-PRC-01 | Prices are rounded to the nearest million VND. | UC-2.09 |
+| BR-CONF-01 | Confidence: High = Level 0 and all sources available; Medium = Level 1 or one marketplace missing that week; Low = Level 2. | UC-2.09 |
