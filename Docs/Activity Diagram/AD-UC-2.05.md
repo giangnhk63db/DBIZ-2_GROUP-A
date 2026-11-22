@@ -1,4 +1,4 @@
-## AD-UC-2.05 Sync Listings from Partner Marketplaces
+# Activity Diagram: AD-UC-2.05 Sync Listings from Partner Marketplaces
 
 |Field|Value|
 |-|-|
