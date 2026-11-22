@@ -44,7 +44,7 @@
 | Loading | `img/S-F01-01-loading.png` | `img/img-numbered/S-F01-01-loading-numbered.png` |
 | Error validate BE | `img/S-F01-01-error-validate-BE.png` | `img/img-numbered/S-F01-01-error-validate-BE-numbered.png` |
 | Error validate FE | `img/S-F01-01-error-validate-FE.png` | `img/img-numbered/S-F01-01-error-validate-FE-numbered.png` |
-| Error (API / System) | `img/S-F01-01-error-API.png` | `img/img-numbered/S-F01-01-error-API-numbered.png` |
+| Error API | `img/S-F01-01-error-API.png` | `img/img-numbered/S-F01-01-error-API-numbered.png` |
 | Success | `img/S-F01-01-success.png` | `img/img-numbered/S-F01-01-success-numbered.png` |
 
 All colours, fonts, spacing, and corner radii come from the design tokens in `ui-conventions-car-owner.md`.
