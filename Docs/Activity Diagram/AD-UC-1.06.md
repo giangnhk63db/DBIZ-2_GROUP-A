@@ -1,4 +1,4 @@
-# **AD-UC-1.06** 
+# Activity Diagram: AD-UC-1.06 View Battery State of Health (SoH)
 
 | Field | Value |
 | :---- | :---- |
