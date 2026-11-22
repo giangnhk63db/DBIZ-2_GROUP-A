@@ -29,21 +29,21 @@
 - Popup elements `10–15` appear only in the `Error (VIN Not Found)`, `Error (API)`, and `Success` states (`Retry modal button` `15` appears only in the two error popups). When a popup is open, the dimmed background behind it is blocked and has no numbers.
 - The Top bar, the white/grey page background, the card/modal containers, and the dimmed layer behind a popup are layout containers and have no number.
 
-| Default, numbered | Loading, numbered | Error (Format), numbered |
+| Default, numbered | Loading, numbered | Error validate FE, numbered |
 | :---: | :---: | :---: |
-| ![S-F01-01-default-numbered](img/img-numbered/S-F01-01-default-numbered.png) | ![S-F01-01-loading-numbered](img/img-numbered/S-F01-01-loading-numbered.png) | ![S-F01-01-error-validate-be-numbered](img/img-numbered/S-F01-01-error-validate-be-numbered.png) |
+| ![S-F01-01-default-numbered](img/img-numbered/S-F01-01-default-numbered.png) | ![S-F01-01-loading-numbered](img/img-numbered/S-F01-01-loading-numbered.png) | ![S-F01-01-error-validate-FE-numbered](img/img-numbered/S-F01-01-error-validate-FE-numbered.png) |
 
-| Error (VIN Not Found), numbered | Error (API), numbered | Success, numbered |
+| Error validate BE, numbered | Error API, numbered | Success, numbered |
 | :---: | :---: | :---: |
-| ![S-F01-01-error-vin-not-found-numbered](img/img-numbered/S-F01-01-error-vin-not-found-numbered.png) | ![S-F01-01-error-api-numbered](img/img-numbered/S-F01-01-error-api-numbered.png) | ![S-F01-01-success-numbered](img/img-numbered/S-F01-01-success-numbered.png) |
+| ![S-F01-01-error-validate-BE-numbered](img/img-numbered/S-F01-01-error-validate-BE-numbered.png) | ![S-F01-01-error-api-numbered](img/img-numbered/S-F01-01-error-api-numbered.png) | ![S-F01-01-success-numbered](img/img-numbered/S-F01-01-success-numbered.png) |
 
 | State | Image | Numbered image |
 | :--- | :--- | :--- |
 | Default | `img/S-F01-01-default.png` | `img/img-numbered/S-F01-01-default-numbered.png` |
 | Empty (no data) | Described in Section 4 (textbox placeholder shown, primary CTA disabled) | — |
 | Loading | `img/S-F01-01-loading.png` | `img/img-numbered/S-F01-01-loading-numbered.png` |
-| Error (Client/BE Format) | `img/S-F01-01-error-validate-BE.png` | `img/img-numbered/S-F01-01-error-validate-BE-numbered.png` |
-| Error (VIN Not Found) | `img/S-F01-01-error-VIN-not-found.png` | `img/img-numbered/S-F01-01-error-VIN-not-found-numbered.png` |
+| Error validate BE | `img/S-F01-01-error-validate-BE.png` | `img/img-numbered/S-F01-01-error-validate-BE-numbered.png` |
+| Error validate FE | `img/S-F01-01-error-validate-FE.png` | `img/img-numbered/S-F01-01-error-validate-FE-numbered.png` |
 | Error (API / System) | `img/S-F01-01-error-API.png` | `img/img-numbered/S-F01-01-error-API-numbered.png` |
 | Success | `img/S-F01-01-success.png` | `img/img-numbered/S-F01-01-success-numbered.png` |
 
