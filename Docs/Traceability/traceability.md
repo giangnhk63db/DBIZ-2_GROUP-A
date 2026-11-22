@@ -1,6 +1,6 @@
 # Traceability: Context → Use Case → Sequence Diagram
 
-| Sequence Diagram<br>(Message flow) | CTX: flow-ID | USE CASE DIAGRAM: UC-ID | SEQUENCE DIAGRAM: SEQ: S-X.Y | Note |
+| Sequence Diagram | CTX: flow-ID | USE CASE DIAGRAM: UC-ID | SEQUENCE DIAGRAM: SEQ: S-X.Y | Note |
 |---|---|---|---|---|
 | 01 - Vehicle Report | flow-02 | UC-1.01 | S-1.01 → S-1.04 |  |
 | 01 - Vehicle Report | flow-12, flow-05 | UC-1.02 | S-1.05 → S-1.08 |  |
