@@ -1,4 +1,4 @@
-# LIST OF FLOWS IN CONTEXT DIAGRAM
+# List of flow in context diagram:
 
 | CTX: flow-No. | Direction | From | To | Flow label |
 |---|---|---|---|---|
