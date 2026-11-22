@@ -1,4 +1,4 @@
-# **Screen List: Verified Vehicle Report**
+# **Screen List:**
 
 Screen ID pattern: S-\<feature\>-\<nn\>, for example S-F01-02 is the second screen of feature F-01. Screens shared by every feature (sign in, settings) use S-F00-\<nn\>.
 
