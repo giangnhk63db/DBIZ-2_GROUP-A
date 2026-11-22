@@ -14,16 +14,16 @@ Screen ID pattern: S-\<feature\>-\<nn\>, for example S-F01-02 is the second scre
 | S-F03-01 | Submit Sale Request | Car Owner | F-03 | Shown when the car owner clicks the fixed “Submit sale request” button lying on the final of the Verified Vehicle Report (S-F01-02). The selling form is pre-filled from the verified report and updated legal status to fill in. The owner just enters current mileage, desired price and phone number, then clicks Submit. After submission, the screen shows the screen submitted successfully. | S-F01-02  | UC-3.01, UC-3.02; FR-03-01-FE, FR-03-02-BE | Must |  |
 | S-F03-02 | Sale Request List | Carpla Staff | F-03 | Shown when Carpla staff open the sale request list in Carpla CRM. Displays all sale requests sent by car owners. The staff selects a request to open its detail. | Carpla CRM menu; S-F03-01 (a submitted request appears in this list) | UC-3.07; FR-03-04-FE, FR-03-04-BE | Must |  |
 | S-F03-03 | Sale Request Detail & Preliminary Quote | Carpla Staff | F-03 | Shown when Carpla staff select a sale request in S-F03-02. Displays the packaged verified report: car owner declared information and fully verified vehicle report. The staff inputs a suggested quote range and sends it to the car owner. | S-F03-02 | UC-3.07, UC-3.08; FR-03-04-FE, FR-03-04-BE, FR-03-05-FE, FR-03-05-BE | Must |  |
-| S-F03-04 | Receive Preliminary Quote | Car Owner | F-03 | Displays the preliminary quote once Carpla staff has sent it, otherwise that the request is in the status of waiting for Carpla. | S-F03-03, S-F03-01 | UC-3.09; FR-03-06-FE, FR-03-06-BE | Should |  |
+| S-F03-04 | View Preliminary Quote | Car Owner | F-03 | Displays the preliminary quote once Carpla staff has sent it, otherwise that the request is in the status of waiting for Carpla. | S-F03-03, S-F03-01 | UC-3.09; FR-03-06-FE, FR-03-06-BE | Should |  |
 ## 
 
 ## **Modals and overlays**
 
 | Modal | Opened from screen | Purpose | Note |
 | ----- | ----- | ----- | ----- |
-| Error notification Validate FE)  | S-F01-01, S-F01-04, S-F03-01, S-F03-03 | Tells the user that the input failed the client-side check (wrong format, missing or invalid field). The user fixes the input and retries. No request is sent to the server. | Error notification (FE) displays in the format in-line; right below the field  |
-| Error notification (Validate BE) | S-F01-01, S-F01-03, S-F01-04, S-F01-06, S-F03-01 | Tells the user that the system or an external service could not complete the request after the maximum retries. Shows a message and a Retry or Close button. | Error notification (BE) displays in the format popups |
-| Success notification  | S-F01-01, S-F01-04, S-F03-01, S-F03-03 | Confirms that the system completed successfully and saved the action. Shows a message and a Close button. | Success notification displays in the format popups |
+| Error notification Validate FE)  | S-F01-01, S-F01-05, S-F03-01, S-F03-03 | Tells the user that the input failed the client-side check (wrong format, missing or invalid field). The user fixes the input and retries. No request is sent to the server. | Error notification (FE) displays in the format in-line; right below the field  |
+| Error notification (Validate BE) | S-F01-01, S-F01-03, S-F01-05, S-F01-06, S-F03-01 | Tells the user that the system or an external service could not complete the request after the maximum retries. Shows a message and a Retry or Close button. | Error notification (BE) displays in the format popups |
+| Success notification  | S-F01-01, S-F01-05, S-F03-01, S-F03-03 | Confirms that the system completed successfully and saved the action. Shows a message and a Close button. | Success notification displays in the format popups |
 
 ## **Use cases without a screen**
 
