@@ -1,4 +1,4 @@
-# **Activity Diagram: AD-UC-3.03**
+# Activity Diagram: AD-UC-3.03 Check inspection status
 
 | Field | Value |
 | ----- | ----- |
