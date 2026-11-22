@@ -34,16 +34,16 @@
 | :---: | :---: | :---: |
 | ![S-F01-02-default-numbered](img/img-numbered/S-F01-02-default-numbered.png) | ![S-F01-02-empty-numbered](img/img-numbered/S-F01-02-empty-numbered.png) | ![S-F01-02-loading-numbered](img/img-numbered/S-F01-02-loading-numbered.png) |
 
-| Error (System / API), numbered | Success (Upload Invoice), numbered |
+| Error API, numbered | Success (Upload Invoice), numbered |
 | :---: | :---: |
-| ![S-F01-02-error-numbered](img/img-numbered/S-F01-02-error-numbered.png) | ![S-F01-02-success-numbered](img/img-numbered/S-F01-02-success-numbered.png) |
+| ![S-F01-02-error-API-numbered](img/img-numbered/S-F01-02-error-API-numbered.png) | ![S-F01-02-success-numbered](img/img-numbered/S-F01-02-success-numbered.png) |
 
 | State | Image | Numbered image |
 | :--- | :--- | :--- |
 | Default | `img/S-F01-02-default.png` | `img/img-numbered/S-F01-02-default-numbered.png` |
 | Empty (no data) | `img/S-F01-02-empty.png` | `img/img-numbered/S-F01-02-empty-numbered.png` |
 | Loading | `img/S-F01-02-loading.png` | `img/img-numbered/S-F01-02-loading-numbered.png` |
-| Error (System / API) | `img/S-F01-02-error.png` | `img/img-numbered/S-F01-02-error-numbered.png` |
+| Error API | `img/S-F01-02-error-API.png` | `img/img-numbered/S-F01-02-error-API-numbered.png` |
 | Success (Upload Invoice) | `img/S-F01-02-success.png` | `img/img-numbered/S-F01-02-success-numbered.png` |
 
 All colours, fonts, spacing, and corner radii come from the design tokens in `ui-conventions-car-owner.md`.
