@@ -47,20 +47,20 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | VETC | Vietnam Electronic Toll Collection, a Tasco group toll-collection company. Read-only source of identification data and toll passage history | CVCA, W0 Table 4 |
 | Carpla | Tasco's used-car business. Its staff review sale requests and give the preliminary quote | Project Brief |
 | Carpla Service | Tasco group maintenance and repair business. Read-only source of the official maintenance and repair history | CVCA, SyR-04 |
-| Carpla CRM | The existing Carpla system in which staff review the sale request and enter the quote. This system builds no staff screens of its own (ADR-003) | ADR-003, Screen List |
-| CRM | Customer Relationship Management: software for managing customers | ADR-003 |
+| Carpla CRM | The existing Carpla system in which staff review the sale request and enter the quote. This system builds no staff screens of its own, only integrated staff screens in the CRM (ADR-003) | ADR-003, Screen List |
+| CRM | Customer Relationship Management: software for managing customers available of Carpla | ADR-003 |
 | Carpla staff | The actor who reviews a sale request and sends the preliminary quote (UC-3.07, UC-3.08) | W0, UC-3 |
-| Car Owner | The actor who creates the report, views it, tracks the market price and submits a sale request | W0, UC-1 to UC-3 |
+| Car Owner | The primary actor who creates the report, views it, tracks the market price and submits a sale request | W0, UC-1 to UC-3 |
 | Used Car Buyer | A stakeholder in the CVCA value chain who pays for the car; not an actor of the system | CVCA |
 | Tasco Insurance, Tasco Land | Tasco group companies shown in the CVCA; the new system reads nothing from them | CVCA |
-| Nextgen VN / Nextgen Việt Nam | Partner marketplace; source of used-car listing data | CVCA, FR-02-02 |
-| Chợ Tốt | Partner marketplace of Carousell Group; source of used-car listing data | CVCA, FR-02-02 |
+| Nextgen VN / Nextgen Việt Nam | Partner marketplace; source of used-car listing data for calculating market price for reference | CVCA, FR-02-02 |
+| Chợ Tốt | Partner marketplace of Carousell Group; source of used-car listing data for calculating market price for reference | CVCA, FR-02-02 |
 | Partner marketplaces | Nextgen VN and Chợ Tốt together | W0, W1 |
 | Vehicle Inspection Portal | Government portal that returns the inspection status (W0 calls it the National Vehicle Inspection Portal) | SyR-10, FR-01-10 |
 | Traffic Fine Lookup Portal | Government portal that returns the traffic fine status (W0: Traffic Police Department portal); queried by license plate | SyR-11, FR-01-11 |
 | Secured Transaction Registry Portal | Government portal that returns the mortgage status; queried by VIN | SyR-12, FR-01-12 |
 | Electronic Invoice Lookup Portal | Government portal that confirms whether an invoice is authentic (W0: General Department of Taxation electronic invoice portal) | SyR-08, FR-01-07 |
-| Lookup portals / the three portals | The inspection, traffic fine and secured transaction portals, queried together in a legal status refresh | ADR-006, BR-REF-01 |
+| Lookup portals / the three portals | The inspection, traffic fine and secured transaction portals | ADR-006, BR-REF-01 |
 | EV | Electric vehicle | SyR-05 |
 | EV charging stations | Partner and Tasco charging stations; read-only source of charging session data for the battery SoH | CVCA, W0 Table 4 |
 | Weekly timer / Weekly Timer | The non-human actor that starts the weekly jobs; in the architecture it is the Scheduler (ADR-002) | W0, UC-2 |
@@ -72,8 +72,7 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | Term | Stands for / meaning | Where used |
 |---|---|---|
 | VIN | Vehicle Identification Number: exactly 17 uppercase letters and digits, never I, O or Q. The only way a vehicle enters the system (BR-VFVR-01) | UC-1.01, FR-01-01 |
-| Vehicle profile / vehicle record | The digital record created from a VIN; the Vehicle Profile screen is S-F01-02 | SyR-01, Screen List |
-| Verified vehicle report | The consolidated record shown to the owner and forwarded to Carpla staff | CVCA, FR-03-03 |
+| Vehicle profile / vehicle record / Verified vehicle report| The digital record created from a VIN; the Vehicle Profile screen is S-F01-02. This consolidated record will also be sent to Carpla staff for preliminary quote | SyR-01, Screen List |
 | License plate | Vehicle registration plate; the key for the traffic fine query and one key for the inspection query | FR-01-10, FR-01-11 |
 | ODO | Odometer reading in km | FR-01-03 |
 | Verified minimum mileage | The lowest mileage the system can prove, computed from VETC toll passage history (sum of distances between consecutive stations, BR-DIST-01). Shown as "verified minimum ODO" | UC-1.03, FR-01-03 |
