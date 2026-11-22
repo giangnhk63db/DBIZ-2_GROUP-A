@@ -76,9 +76,9 @@ Feature count: 3 (allowed 3 to 6): PASS.
 ILF = Internal Logical File (data the system maintains itself). EIF = External Interface File (data the system only reads from another system).
 
 ## Table 5. Business rules
+Business rule ID: BR-<TOPIC>-nn
 
-
-| BR: BR-<TOPIC>-nn | Rule | Use case |
+| BR | Rule | Use case |
 |---|---|---|
 | BR-VFVR-01 | A VIN must have exactly 17 alphanumeric characters and must not contain the letters I, O or Q; otherwise the system rejects it and shows a format error. | UC-1.01 |
 | BR-RET-01 | When a call to VETC fails or times out, the system retries up to 3 times (4 attempts in total), then stops, logs the error and notifies the user. | UC-1.03 |
