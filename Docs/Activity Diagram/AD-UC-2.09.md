@@ -15,7 +15,7 @@
 | Success end state | Weekly price record is saved with the median price, the P25-P75 range (rounded to the nearest million VND) and a confidence level of High, Medium or Low |
 | Failure end state(s) | INSUFFICIENT\_DATA is recorded because fewer than 30 comparable listings remain; no price is calculated and no confidence level is assigned |
 | FRs covered | FR-02-06, FR-02-04 |
-| Business rules applied | BR-2.09-1 (at least 30 comparable listings are needed to calculate a price) · BR-2.09-2 (price values are rounded to the nearest million VND) · BR-2.09-3 (High \= Level 0 and all valid sources available; Medium \= Level 1 or one marketplace missing that week; Low \= Level 2\) |
+| Business rules applied | BR-COM-01 (at least 30 comparable listings are needed to calculate a price) · BR-PRC-01 (price values are rounded to the nearest million VND) · BR-CONF-01 (High \= Level 0 and all valid sources available; Medium \= Level 1 or one marketplace missing that week; Low \= Level 2\) |
 | Version / status | v0.3 · Reviewed |
 | Author | Nguyễn Hà Phương |
 
@@ -99,7 +99,7 @@ m1 --> s6 --> stop1
 
 - The workflow starts when the weekly timer fires and ends in one of two final nodes: the weekly price record is saved, or INSUFFICIENT\_DATA is recorded.  
 - Decision d1 checks the minimum sample size. Exactly 30 comparable listings is sufficient; fewer than 30 ends the use case without calculating a price or assigning confidence.  
-- Decisions d2 and d3 apply BR-2.09-3 in order: Low first (Level 2), then Medium (Level 1 or one marketplace missing), otherwise High (Level 0 and all valid sources).  
+- Decisions d2 and d3 apply BR-CONF-01 in order: Low first (Level 2), then Medium (Level 1 or one marketplace missing), otherwise High (Level 0 and all valid sources).  
 - Therefore, if Level 2 was used and one marketplace is missing, the result is Low because the Level 2 condition is evaluated first (Open Question 2).  
 - The diagram covers one vehicle. The loops over each vehicle model and each vehicle in the model group (Figure 13\) belong to UC-2.04.
 
@@ -108,11 +108,11 @@ m1 --> s6 --> stop1
 | Node | Kind | Text | Traces to |
 | ----- | ----- | ----- | ----- |
 | t1 | Time event | Every week (weekly timer fires) | FR-02-01-BE2; S-6.01 |
-| d1 | Decision | At least 30 listings? | FR-02-06-BE, FR-02-04-BE, BR-2.09-1; S-6.24 to S-6.25 |
+| d1 | Decision | At least 30 listings? | FR-02-06-BE, FR-02-04-BE, BR-COM-01; S-6.24 to S-6.25 |
 | s1 | Action | Calculate median and P25-P75 | FR-02-06-BE; S-6.25 |
 | s2 | Action | Round to nearest million VND | FR-02-06-BE; S-6.25 |
-| d2 | Decision | Level 2 criteria used? (mileage \+-40%) | FR-02-04-BE, BR-2.09-3; UC-2.09 description (Low when Level 2). “Criteria” means the comparison criteria chosen in UC-2.08; Level 2 widens mileage to \+-40% (S-6.23); S-6.26 |
-| d3 | Decision | Level 1 criteria used (year \+-2) or one marketplace missing? | FR-02-04-BE, BR-2.09-3; UC-2.09 description (Medium when Level 1 or one marketplace missing). Level 1 widens year to \+-2 (S-6.22); the marketplace condition uses the valid data sources determined at S-6.09 (FR-02-02-INT1, FR-02-02-INT2); S-6.26 |
+| d2 | Decision | Level 2 criteria used? (mileage \+-40%) | FR-02-04-BE, BR-CONF-01; UC-2.09 description (Low when Level 2). “Criteria” means the comparison criteria chosen in UC-2.08; Level 2 widens mileage to \+-40% (S-6.23); S-6.26 |
+| d3 | Decision | Level 1 criteria used (year \+-2) or one marketplace missing? | FR-02-04-BE, BR-CONF-01; UC-2.09 description (Medium when Level 1 or one marketplace missing). Level 1 widens year to \+-2 (S-6.22); the marketplace condition uses the valid data sources determined at S-6.09 (FR-02-02-INT1, FR-02-02-INT2); S-6.26 |
 | s5 | Action | Assign Low | FR-02-04-BE; S-6.26 |
 | s4 | Action | Assign Medium | FR-02-04-BE; S-6.26 |
 | s3 | Action | Assign High | FR-02-04-BE; S-6.26 (High when Level 0 is used and all valid sources are available; valid sources are determined at S-6.09) |
@@ -150,8 +150,7 @@ N/A
 | 2 | UC-2.09 says Medium applies when Level 1 is used or one marketplace is missing, and Low applies when Level 2 is used. Which level applies to Level 2 with one marketplace missing? | No | Low. Level 2 is tested first, so Low wins when two rules match |
 | 3 | FR-02-04 says confidence depends on the size of the comparable sample and the comparison level, but the UC-2.09 rule uses comparison level and marketplace availability. Is a sample-size rule needed? | No | Use the UC-2.09 rule. Sample size matters only through the minimum of 30 listings |
 | 4 | In Figure 13, the alternative \[Fewer than 30 listings after Level 2\] (step 24, INSUFFICIENT\_DATA) sits inside the UC-2.08 band, and the UC-2.09 band starts only in the alternative \[Sufficient sample size\]. FR-02-06 repeats the same guard. Which use case records the status? | No | d1 stays in this diagram as the guard for FR-02-06 and mirrors the Figure 13 alternative. The outcome is the same |
-| 5 | BR-2.09-1 to BR-2.09-3 are local labels because the W1 business-rule IDs were not available. Weekly Timer is an actor in Figure 6 but is not among the five blocks of the Context Diagram description, although Figure 13 shows it as a participant (step 1, weekly-job trigger). Confirm both names | No | Use the local BR labels and Weekly Timer lane as shown in Figure 6 until confirmed |
-| 6 | UC-2.09 says the weekly record also holds vehicle ID, week reference date, sample size, mileage used, expansion level, number of contributing marketplaces, source set, status and backfill flag, but no FR lists these fields. UC-2.09 is also reused per checkpoint by UC-2.10 (Figure 14, steps 19-20) with the back-calculation flag. Which FR owns the record fields? | No | Keep s6 generic (“Save weekly price record”). The backfill path is handled in AD-UC-2.10 |
+| 65| UC-2.09 says the weekly record also holds vehicle ID, week reference date, sample size, mileage used, expansion level, number of contributing marketplaces, source set, status and backfill flag, but no FR lists these fields. UC-2.09 is also reused per checkpoint by UC-2.10 (Figure 14, steps 19-20) with the back-calculation flag. Which FR owns the record fields? | No | Keep s6 generic (“Save weekly price record”). The backfill path is handled in AD-UC-2.10 |
 
 ## 7\. Verification log
 
