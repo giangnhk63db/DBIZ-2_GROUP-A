@@ -23,7 +23,7 @@ Screen ID pattern: S-\<feature\>-\<nn\>, for example S-F01-02 is the second scre
 | ----- | ----- | ----- | ----- |
 | Error notification Validate FE)  | S-F01-01, S-F01-05, S-F03-01, S-F03-03 | Tells the user that the input failed the client-side check (wrong format, missing or invalid field). The user fixes the input and retries. No request is sent to the server. | Error notification (FE) displays in the format in-line; right below the field  |
 | Error notification (Validate BE) | S-F01-01, S-F01-03, S-F01-05, S-F01-06, S-F03-01 | Tells the user that the system or an external service could not complete the request after the maximum retries. Shows a message and a Retry or Close button. | Error notification (BE) displays in the format popups |
-| Success notification  | S-F01-01, S-F01-05, S-F03-01, S-F03-03 | Confirms that the system completed successfully and saved the action. Shows a message and a Close button. | Success notification displays in the format popups |
+| Success notification  | S-F01-01, S-F01-05, S-F01-06 S-F03-01, S-F03-03, S-F03-04 | Confirms that the system completed successfully and saved the action. Shows a message and a Close button. | Success notification displays in the format popups |
 
 ## **Use cases without a screen**
 
