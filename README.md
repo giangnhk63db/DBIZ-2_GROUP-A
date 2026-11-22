@@ -18,7 +18,7 @@ from these files.
 
 **This README is written for two readers.** People can start at section 8 (reading order). AI agents
 read sections 1 to 7 before any task and follow them. Abbreviations and project terms are explained
-in [Glossary.md](Glossary.md); read it once, and look terms up there instead of guessing.
+in [Glossary.md]([https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/ec0588654a9926e8201e59026b5d7a39e8df804d/Docs/Project/Glossary.md]); read it once, and look terms up there instead of guessing.
 
 ## At a glance
 
