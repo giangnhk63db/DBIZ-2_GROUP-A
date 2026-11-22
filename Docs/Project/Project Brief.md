@@ -1,4 +1,4 @@
-# **Project brief**
+# Project brief:
 
 | Field | Value |
 | ----- | ----- |
