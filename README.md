@@ -252,7 +252,7 @@ those with an answer show it in the last column.
 | 0 | | [Glossary.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/1ace4bebdd9def3ee598c19f4c9e7f29b31717e9/Docs/Project/Glossary.md) | Every abbreviation and project term, in one place |
 | 1 | L1-L2 | [Project Brief.md](Docs/Project/Project%20Brief.md) | Client, problems, goals, team roles, milestones |
 | 2 | L3 | [CVCA.md](Docs/Context/CVCA.md) | Stakeholders, value flows, problems, stakeholder requirements |
-| 3 | L3 | [Context Diagram.md](Docs/Context/Context%20Diagram.md), [List of flows in context diagram.md](Docs/Traceability/list-of-flows-in-context-diagram.md) | The system as a black box, the entities around it, every flow |
+| 3 | L3 | [Context Diagram.md](Docs/Context/Context%20Diagram.md), [List of flows in context diagram.md](Docs/Traceability/List-of-flows-in-context-diagram.md) | The system as a black box, the entities around it, every flow |
 | 4 | L4 | [Overview Use Case Diagram](Docs/Use%20Case%20Diagram/Overview%20Verified%20Vehicle%20Report%20System%20Use%20Case%20Diagram.md), [UC-1](Docs/Use%20Case%20Diagram/UC-1.md), [UC-2](Docs/Use%20Case%20Diagram/UC-2.md), [UC-3](Docs/Use%20Case%20Diagram/UC-3.md), [list-of-use-case.md](Docs/Traceability/list-of-use-case.md) | Who wants the system to do what, per feature |
 | 5 | L4 | [Sequence Diagram folder](Docs/Sequence%20Diagram/), [list-of-message-sequence-diagram.md](Docs/Traceability/list-of-message-sequence-diagram.md) | How the parts talk for each use case |
 | 6 | L4 | [traceability.md](Docs/Traceability/traceability.md) | Context flow, use case and sequence messages in one table |
