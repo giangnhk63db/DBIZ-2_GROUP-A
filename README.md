@@ -85,9 +85,9 @@ Docs/
   Sequence Diagram/                Lesson 4      S-01.md ... S-10.md
   Architecture/                    Lesson 4      Architecture.md
     adr/                                         ADR-001 ... ADR-006 (decision records), readme
-  Traceability/                    Lessons 3-4   list-of-flow-context-diagram.md,
-                                                 list-of-use-case.md,
-                                                 list-of-message-sequence-diagram.md,
+  Traceability/                    Lessons 3-4   List of flows in context diagram.md,
+                                                 List of use cases in use case diagrams.md,
+                                                 List of messages in sequence diagrams.md,
                                                  traceability.md
   Function List/                   Lessons 5-6   w0-scope.md, w1-function-list.md, w2-cost.md,
                                                  w4-priorities.md, w5-handover.md, w6-cash-flow.md
@@ -242,34 +242,14 @@ update this list before each milestone.
 
 **Known inconsistencies** (each should become a `[NEEDS CLARIFICATION: ...]` row where it blocks work)
 
-- **Screen Spec file names** do not follow one pattern. Current names: `screen spec S-F01-01.md`,
-  `screen spec S-F01-02.md`, `screen spec S-F01-03.md`, `screen-spec-S-F01-05.md`,
-  `screen-spec-S-F01-06.md`, `screen-spec-S-F02-01.md`, `screen-spec-S-F03-01.md`,
-  `screen-spec-S-F03-02.md`, `screen-spec-S-F03-03.md`, `screen spec-S-F03-04.md`. The target
-  pattern is `screen-spec-S-Fxx-nn.md`; rename them in one commit, then fix links.
-- **W1 work-item IDs in F-02** do not follow their parent function: for example `FR-02-05-BE` belongs
-  to `FR-02-03`, and `FR-02-09-FE` belongs to `FR-02-10`. `FR-02-08` and `FR-02-09` have the same
-  name ("Backfill 12-week price history"). Cite the L2 function ID and the exact L3 ID from W1; do
-  not infer one from the other.
-- **W2 and W5 are not finished.** The threshold check in `w2-cost.md` ends with a REVIEW verdict on the
-  function-point cross-check, and its "three observations" are not filled in. The two open questions
-  in `w5-handover.md` section 4 mention workstations and card-swipe data and appear to come from
-  another project; do not use them.
-- **Links.** `Project Brief.md`, `CVCA.md` and `Architecture.md` link to old commit URLs and old
-  paths, and the Overview Use Case Diagram links to `../Functionlist/w0-scope.md` (the real folder is
-  `Function List`). Use the paths in section 2.
-- `CVCA.md` still carries the earlier title "Verified Vehicle Passport". The product name is
-  Verified Vehicle Report (`F-01` is called Vehicle Passport).
-
 **Open questions** marked `[NEEDS CLARIFICATION: ...]` are listed in the AD and Screen Spec files;
-those with an answer show it in the last column. ADR-003 also needs confirmation from Tasco and
-Carpla that the CRM can receive the report package and return the quote.
+those with an answer show it in the last column.
 
 ## 8. Reading order for people
 
 | Step | Lesson | File | What it shows |
 |---|---|---|---|
-| 0 | | [Glossary.md](Glossảy.md) | Every abbreviation and project term, in one place |
+| 0 | | [Glossary.md](Glossary.md) | Every abbreviation and project term, in one place |
 | 1 | L1-L2 | [Project Brief.md](Docs/Project/Project%20Brief.md) | Client, problems, goals, team roles, milestones |
 | 2 | L3 | [CVCA.md](Docs/Context/CVCA.md) | Stakeholders, value flows, problems, stakeholder requirements |
 | 3 | L3 | [Context Diagram.md](Docs/Context/Context%20Diagram.md), [list-of-flow-context-diagram.md](Docs/Traceability/list-of-flow-context-diagram.md) | The system as a black box, the entities around it, every flow |
