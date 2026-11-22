@@ -278,7 +278,7 @@ Carpla that the CRM can receive the report package and return the quote.
 | 6 | L4 | [traceability.md](Docs/Traceability/traceability.md) | Context flow, use case and sequence messages in one table |
 | 7 | L4 | [Architecture.md](Docs/Architecture/Architecture.md), [adr/](Docs/Architecture/adr/) | System requirements, design, six decisions |
 | 8 | L5 | [w0-scope.md](Docs/Function%20List/w0-scope.md) | Use case inventory, features, Won't-have, data functions |
-| 9 | L5 | [w1-function-list.md](Docs/Function%20List/w1-function-list.md) | Every function with its EARS criterion, split into work items |
+| 9 | L5 | [w1-function-list.md]([Docs/Function%20List/w1-function-list.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/24459c6198943fe2fea091cafab3e19308dd44a8/Docs/Function%20List/w1-function-list.md)) | Every function with its EARS criterion, split into work items |
 | 10 | L5 | [w2-cost.md](Docs/Function%20List/w2-cost.md), [w4-priorities.md](Docs/Function%20List/w4-priorities.md), [w5-handover.md](Docs/Function%20List/w5-handover.md) | Cost, priorities, threshold checks, scenarios |
 | 11 | L6 | [w6-cash-flow.md](Docs/Function%20List/w6-cash-flow.md) | Cash flow, NPV, IRR, payback |
 | 12 | L7 | [Activity Index.md](Docs/Activity%20Diagram/Activity%20Index.md), [Activity Diagram folder](Docs/Activity%20Diagram/) | Inputs check, then activity diagrams with business rules |
