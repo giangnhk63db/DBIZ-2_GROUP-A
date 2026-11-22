@@ -76,7 +76,7 @@ Feature count: 3 (allowed 3 to 6): PASS.
 ILF = Internal Logical File (data the system maintains itself). EIF = External Interface File (data the system only reads from another system).
 
 ## Table 5. Business rules
-Business rule ID: BR-<TOPIC>-nn
+Business rule ID: BR-TOPIC-nn
 
 | BR | Rule | Use case |
 |---|---|---|
