@@ -34,17 +34,17 @@
 | :---: | :---: | :---: |
 | ![S-F01-03-default-numbered](img/img-numbered/S-F01-03-default-numbered.png) | ![S-F01-03-empty-numbered](img/img-numbered/S-F01-03-empty-numbered.png) | ![S-F01-03-loading-numbered](img/img-numbered/S-F01-03-loading-numbered.png) |
 
-| Error (VETC Connection), numbered | Success (VETC Sync), numbered |
+| Error API, numbered | Success, numbered |
 | :---: | :---: |
-| ![S-F01-03-error-numbered](img/img-numbered/S-F01-03-error-numbered.png) | ![S-F01-03-success-numbered](img/img-numbered/S-F01-03-success-numbered.png) |
+| ![S-F01-03-error-API-numbered](img/img-numbered/S-F01-03-error-API-numbered.png) | ![S-F01-03-success-numbered](img/img-numbered/S-F01-03-success-numbered.png) |
 
 | State | Image | Numbered image |
 | :--- | :--- | :--- |
 | Default | `img/S-F01-03-default.png` | `img/img-numbered/S-F01-03-default-numbered.png` |
 | Empty (no data) | `img/S-F01-03-empty.png` | `img/img-numbered/S-F01-03-empty-numbered.png` |
 | Loading | `img/S-F01-03-loading.png` | `img/img-numbered/S-F01-03-loading-numbered.png` |
-| Error (VETC Connection) | `img/S-F01-03-error.png` | `img/img-numbered/S-F01-03-error-numbered.png` |
-| Success (VETC Sync) | `img/S-F01-03-success.png` | `img/img-numbered/S-F01-03-success-numbered.png` |
+| Error API | `img/S-F01-03-error-API.png` | `img/img-numbered/S-F01-03-error-API-numbered.png` |
+| Success | `img/S-F01-03-success.png` | `img/img-numbered/S-F01-03-success-numbered.png` |
 
 All colours, fonts, spacing, and corner radii come from the design tokens in `ui-conventions-car-owner.md`.
 
