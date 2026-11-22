@@ -57,8 +57,4 @@ Risk order: 1 = INT (external services), 2 = BE, 3 = FE. The riskiest rows start
 | FR-03-04-FE | FE | 2.0 | 3 |
 
 ## 4. Open questions for the client
-
-| # | Question | Blocking? | Owning feature | Default applied |
-|---|---|---|---|---|
-| 1 | [NEEDS CLARIFICATION: which totals must the weekly summary contain?] | No | F-03 | Assuming sessions per workstation and hours per workstation |
-| 2 | [NEEDS CLARIFICATION: is card-swipe data pulled as a daily batch or in real time?] | Yes | F-02 | Assuming a daily batch |
+N/A
