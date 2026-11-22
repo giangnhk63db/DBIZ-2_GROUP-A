@@ -30,7 +30,7 @@ Cut by lowering priority, never by lowering effort. Every change names its rule.
 | F-02 | FR-02-05 | Calculate the confidence | Should | Should |  | 3.4 | 1.020.000 |
 | F-02 | FR-02-06 | Calculate market price | Must | Must |  | 13.6 | 4.080.000 |
 | F-02 | FR-02-07 | Sync 180-day listing history (first-time signed-up car) | Could | Could |  | 12.6 | 3.780.000 |
-| F-02 | FR-02-08 | Backfill 12-week price history | Could | Could |  | 9.2 | 2.760.000 |
+| F-02 | FR-02-08 | Retrieve 12-week mileage history for backfill | Could | Could |  | 9.2 | 2.760.000 |
 | F-02 | FR-02-09 | Backfill 12-week price history | Could | Could |  | 6.8 | 2.040.000 |
 | F-02 | FR-02-10 | View market price | Must | Must |  | 5.4 | 1.420.000 |
 | F-02 | FR-02-11 | View 12-week price trend chart | Should | Should |  | 7.4 | 1.820.000 |
