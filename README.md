@@ -186,7 +186,7 @@ in `traceability.md`, then a row in `Activity Index.md`, then its place in the u
 **Add or change a screen.** Add the row to `Screen List.md`, the node and arrows to
 `Screen Transition.md`, the screen to the matching usage-flow step, and the Screen ID to the
 "Screens touched" section of each AD it serves. Then write the Screen Spec, using a finished one
-(for example `screen-spec-S-F01-04.md`) as the model, and list the images the team must draw.
+(for example `screen-spec-S-F01-05.md`) as the model, and list the images the team must draw.
 
 **Add or change a business rule.** Edit the business rules table of the AD that owns it, give it
 the next free number for its topic, and cite the ID (not the text) in the Screen Spec rules that
@@ -237,22 +237,16 @@ update this list before each milestone.
 - `Docs/Activity Diagram/` has 16 diagrams (`AD-UC-1.01`, `1.03`, `1.05`, `1.06`, `1.07`, `2.04`,
   `2.05`, `2.07` to `2.10`, `3.01`, `3.03` to `3.06`). The other use cases of the 30 in W0 Table 1
   are recorded in `Activity Index.md` with the reason they have no diagram.
-- Screen Specs exist for `S-F01-01`, `S-F01-02`, `S-F01-03`, `S-F01-04`, `S-F01-06`, `S-F02-01`,
+- Screen Specs exist for `S-F01-01`, `S-F01-02`, `S-F01-03`, `S-F01-05`, `S-F01-06`, `S-F02-01`,
   `S-F03-01`, `S-F03-02`, `S-F03-03` and `S-F03-04`. `S-F00-01` (Home) has no Screen Spec yet.
 
 **Known inconsistencies** (each should become a `[NEEDS CLARIFICATION: ...]` row where it blocks work)
 
-- **Maintenance History screen ID.** `Screen List.md`, `Screen Transition.md` and the Car Owner usage
-  flow call it `S-F01-05`; the Screen Spec file, its title and `AI Log.md` call it `S-F01-04`, and the
-  modals table in `Screen List.md` also lists `S-F01-04`. Until the team picks one, do not add or
-  renumber screens of F-01.
 - **Screen Spec file names** do not follow one pattern. Current names: `screen spec S-F01-01.md`,
-  `screen spec S-F01-02.md`, `screen spec S-F01-03.md`, `screen-spec-S-F01-04.md`,
+  `screen spec S-F01-02.md`, `screen spec S-F01-03.md`, `screen-spec-S-F01-05.md`,
   `screen-spec-S-F01-06.md`, `screen-spec-S-F02-01.md`, `screen-spec-S-F03-01.md`,
   `screen-spec-S-F03-02.md`, `screen-spec-S-F03-03.md`, `screen spec-S-F03-04.md`. The target
   pattern is `screen-spec-S-Fxx-nn.md`; rename them in one commit, then fix links.
-- **Title of `screen spec-S-F03-04.md`** reads "S-F03-03 View preliminary quote"; the Screen List
-  gives that screen the ID `S-F03-04`.
 - **W1 work-item IDs in F-02** do not follow their parent function: for example `FR-02-05-BE` belongs
   to `FR-02-03`, and `FR-02-09-FE` belongs to `FR-02-10`. `FR-02-08` and `FR-02-09` have the same
   name ("Backfill 12-week price history"). Cite the L2 function ID and the exact L3 ID from W1; do
