@@ -1,4 +1,4 @@
-# CVCA: Verified Vehicle Passport
+# CVCA: Verified Vehicle Report
 
 The Customer Value Chain Analysis (CVCA) lists every stakeholder of the project and what flows
 between them: money (`$`), information and goods or services. It is drawn before the system is
