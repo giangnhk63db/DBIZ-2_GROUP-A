@@ -27,5 +27,3 @@ usecase-beta
     UC03 ..> : include UC01
     UC04 ..> : include UC01
 ```
-The full use case inventory, with features and login rules, is W0 Table 1 in
-[w0-scope.md](../Functionlist/w0-scope.md).
