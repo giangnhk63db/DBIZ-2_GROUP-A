@@ -1,4 +1,4 @@
-# **Activity Diagram: AD-UC-3.05**
+# Activity Diagram: AD-UC-3.05 Check mortgage status
 
 | Field | Value |
 | ----- | ----- |
