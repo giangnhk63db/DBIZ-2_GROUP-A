@@ -1,4 +1,4 @@
-#### **AD-UC-2.07** 
+# Activity Diagram: AD-UC-2.07 Clean Marketplace Listings
 
 | Field | Value |
 | :---- | :---- |
