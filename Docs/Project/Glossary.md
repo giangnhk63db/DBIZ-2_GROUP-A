@@ -1,4 +1,4 @@
-# Glossary: Verified Vehicle Report
+# Glossary: 
 
 Every abbreviation and project-specific term used in this repository, with what it means **here**.
 Terms are grouped by topic and sorted by usage; use your editor's search to find one. Paths are
