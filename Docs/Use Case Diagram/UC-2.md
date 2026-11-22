@@ -60,4 +60,4 @@ usecase-beta
 ```
 
 The full use case inventory, with features and login rules, is W0 Table 1 in
-[w0-scope.md](../Functionlist/w0-scope.md).
+[w0-scope.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/eff1a73d45da71f6033bf9a94d2f23a57c24f5b3/Docs/Function%20List/w0-scope.md).
