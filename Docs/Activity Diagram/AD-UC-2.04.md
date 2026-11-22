@@ -1,4 +1,4 @@
-## AD-UC-2.04 Calculate Weekly Market Price
+# Activity Diagram: AD-UC-2.04 Calculate Weekly Market Price
 
 |Field|Value|
 |-|-|
