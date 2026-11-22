@@ -1,4 +1,4 @@
-# **Activity Diagram: AD-UC-3.01**
+# **Activity Diagram: AD-UC-3.01 Submit sale request
 
 | Field | Value |
 | ----- | ----- |
