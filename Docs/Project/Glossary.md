@@ -26,27 +26,26 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | DBIZ2 | Digital Business Project II: the course in which this design package is written | README, Project Brief |
 | DBIZ3 | The follow-up course in which the team builds the product from these files with an AI coding agent | README, Project Brief |
 | FTU | Foreign Trade University | README |
-| VJCBI College | College named in the README header together with FTU; the name is not expanded in the repository | README |
+| VJCBI College | Vietnam – Japan College of Business and Innovation, subsidiary school of Foreign Trade university | README |
 | Group A | The five-member team that owns this repository | README, Project Brief |
 | L1 to L8 | Lesson 1 to Lesson 8 of DBIZ2. Not the same as L2/L3 function levels (section 9) | README folder map, reading order |
 | Senior Meeting | A client review: after Lesson 4 (scope confirmation) and after Lesson 8 (final package review) | Project Brief |
 | Midterm | Review after Lesson 6: function list, cost and capital budgeting (W0 to W6) | Project Brief |
-| W0 to W6 | The numbered worksheets of the Lesson 5-6 workbook, kept as files in `Function List/` (W0 scope, W1 function list, W2 cost, W4 priorities, W5 handover, W6 cash flow; there is no W3 file) | Function List |
+| W0 to W6 | The numbered worksheets of the Lesson 5-6 workbook, kept as files in `Function List/`<br>W0 scope, W1 function list, W2 cost, W4 priorities, W5 handover, W6 cash flow; there is no W3 file) | Function List |
 | Design package | What this repository is: requirements, analysis and external design only, no code | README |
 | Integrator | Team role that merges every file and keeps names consistent | Project Brief |
 | AI Log | `Project/AI Log.md`: one row each time an AI tool proposed something the team did not accept | README rule 9 |
 | AI coding agent | The AI tool that builds the product in DBIZ3 from these files | README |
-| Zalo | Vietnamese messaging app that Carpla staff use to contact owners; the source of the 30/09/2026 confirmation in the Project Brief | Project Brief |
 
 ## 2. Organisations, partners, systems
 
 | Term | Stands for / meaning | Where used |
 |---|---|---|
 | TASCO / Tasco Corporations | The client, a corporate group. Written `TASCO` in system names and `Tasco` in prose; same company | Project Brief, CVCA |
-| TASCO Mobility | The existing consumer app of Tasco, in which this feature is built (ADR-001). Also called "TASCO Mobility System" in diagrams | ADR-001, Architecture |
-| Verified Vehicle Report | The product and the feature: a verified record of one car, plus market price and a path to a preliminary quote. "Report" is the name; "Passport" was the earlier name | Project Brief, W0 |
-| VETC | Tasco group toll-collection company (Vietnam Electronic Toll Collection; expansion from general knowledge, not written in the repository). Read-only source of identification data and toll passage history | CVCA, W0 Table 4 |
-| Carpla | Tasco's used-car business (client contact: Head of Carpla Sale Department). Its staff review sale requests and give the preliminary quote | Project Brief |
+| TASCO Mobility | The existing consumer app of Tasco, in which this feature is built (ADR-001). Also called "TASCO Mobility System" in diagrams. | ADR-001, Architecture |
+| Verified Vehicle Report | The product and the feature: a verified record of one car, plus market price and a path to a preliminary quote. "Report" is the name; "Passport" was the earlier name. Verified Vehicle Report is aimed to be integrated in Tasco Mobility | Project Brief, W0 |
+| VETC | Vietnam Electronic Toll Collection, a Tasco group toll-collection company. Read-only source of identification data and toll passage history | CVCA, W0 Table 4 |
+| Carpla | Tasco's used-car business. Its staff review sale requests and give the preliminary quote | Project Brief |
 | Carpla Service | Tasco group maintenance and repair business. Read-only source of the official maintenance and repair history | CVCA, SyR-04 |
 | Carpla CRM | The existing Carpla system in which staff review the sale request and enter the quote. This system builds no staff screens of its own (ADR-003) | ADR-003, Screen List |
 | CRM | Customer Relationship Management: software for managing customers | ADR-003 |
