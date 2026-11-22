@@ -1,11 +1,11 @@
-**Screen Spec: S-F03-03 View preliminary quote**
+**Screen Spec: S-F03-04 View preliminary quote**
 
 **1\. Purpose**
 
 | Field | Value |
 | ----- | ----- |
 | Screen ID | S-F03-04 |
-| Screen name | Receive Preliminary Quote (Vietnamese UI title in Top bar: "Báo giá sơ bộ") |
+| Screen name | View Preliminary Quote (Vietnamese UI title in Top bar: "Báo giá sơ bộ") |
 | Actor | Car Owner |
 | Priority | Should |
 | Feature | F-03 Sale Request |
