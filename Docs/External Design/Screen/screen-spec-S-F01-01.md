@@ -1,4 +1,4 @@
-# Screen Spec: S-F01-01 Create Vehicle Report (Enter VIN)
+# Screen Spec: S-F01-01 Create Vehicle Report 
 
 | Field | Value |
 |---|---|
