@@ -25,7 +25,7 @@ in [Glossary.md]([https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-
 | | |
 |---|---|
 | Product | Verified Vehicle Report, inside the TASCO Mobility app |
-| Client | Tasco Corporations (Carpla Sale Department) |
+| Client | Tasco Corporations |
 | Actors with screens | Car Owner (mobile, TASCO Mobility app); Carpla Staff (web, Carpla CRM) |
 | Features | 3: F-01 Vehicle Passport, F-02 Market Price, F-03 Sell Request & Preliminary Quote |
 | Size of the design | 30 use cases, 10 sequence diagrams, 6 ADRs, 31 functions (L2) split into 49 work items (L3), 16 activity diagrams, 11 screens, 10 Screen Specs |
