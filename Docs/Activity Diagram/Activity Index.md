@@ -1,3 +1,5 @@
+# Activity Index: 
+
 One row per use case in the Use Case inventory. Every use case appears, even when it needs no diagram, so a reader can see that the decision was made on purpose.
 
 1. **Input checks**
