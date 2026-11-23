@@ -125,10 +125,10 @@ swimlane-beta TB
 
 | Actor action | Screen ID |
 | :---- | :---- |
-| Open maintenance history and select upload invoice (a1) | S-F01-02 -> S-F01-04 (Upload invoice modal) |
-| Upload invoice file PDF, XML, or image (a2) | S-F01-04 (Upload invoice modal) |
-| Review and edit extracted invoice info if needed, then confirm (a_edit) | S-F01-04 (Invoice review & confirmation view) |
-| See updated maintenance timeline or error message (a3) | S-F01-04 / S-F01-02 |
+| Open maintenance history and select upload invoice (a1) | S-F01-02 -> S-F01-05 (Upload invoice modal) |
+| Upload invoice file PDF, XML, or image (a2) | S-F01-05 (Upload invoice modal) |
+| Review and edit extracted invoice info if needed, then confirm (a_edit) | S-F01-05 (Invoice review & confirmation view) |
+| See updated maintenance timeline or error message (a3) | S-F01-05 / S-F01-02 |
 ## 
 
 ## **6\. Open questions**
