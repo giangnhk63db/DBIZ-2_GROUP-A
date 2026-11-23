@@ -34,7 +34,7 @@ Measures agreed with the client are in [the CVCA](https://github.com/giangnhk63d
 
 | Member | Role | Owns |
 | ----- | ----- | ----- |
-| Nguyễn Hương Giang | Integrator, Project manager, Feature owner | - Merges every file<br>- Keeps names consistent<br>- Assign tasks and deadlines<br>- Review, check and comment for tasks of members<br>- F-03 Submit Sale Request and Preliminary Quote<br>Screen list<br>- Project brief<br>- Architecture<br>README<br>Function list  |
+| Nguyễn Hương Giang | Integrator, Project manager, Feature owner | - Merges every file<br>- Keeps names consistent<br>- Assign tasks and deadlines<br>- Review, check and comment for tasks of members<br>- F-03 Submit Sale Request and Preliminary Quote<br>Screen list<br>- Project brief<br>- Architecture<br>- README<br>- Function list  |
 | Vũ Hương Ly | Feature owner | - F-02 Market Price (idea, use case, sequence, activity diagram, draw screen, screen specs)<br>- Ui conventions<br>- Usage flow<br>- Traceability |
 | Nguyễn Hà Phương | Feature owner | - F-02 Market Price (activity diagram, draw screen, screen specs)<br>- Ui conventions<br>- Screen transition<br>- Cost |
 | Đinh Thu Thảo | Feature owner | - F-01 Vehicle Identification and Status (activity diagram, draw screen, screen specs)<br>- Screen list<br>- Function list  |
