@@ -76,30 +76,30 @@ URL-encode paths. The lesson number is the DBIZ2 lesson in which the folder was 
 
 ```text
 README.md                          this file
-Glossary.md                        abbreviations and project terms
-Docs/
-  Project/                         Lessons 1-2   Project Brief.md, AI Log.md
-  Context/                         Lesson 3      CVCA.md, Context Diagram.md
-  Use Case Diagram/                Lesson 4      Overview Verified Vehicle Report System Use Case Diagram.md,
-                                                 UC-1.md, UC-2.md, UC-3.md (one per feature)
-  Sequence Diagram/                Lesson 4      S-01.md ... S-10.md
-  Architecture/                    Lesson 4      Architecture.md
-    adr/                                         ADR-001 ... ADR-006 (decision records), readme
-  Traceability/                    Lessons 3-4   List of flows in context diagram.md,
-                                                 List of use cases in use case diagrams.md,
-                                                 List of messages in sequence diagrams.md,
+glossary.md                        abbreviations and project terms
+docs/
+  project/                         Lessons 1-2   project-brief.md, ai-log.md
+     traceability/                 Lessons 3-4   list-of-flows-in-context-diagram.md,
+                                                 list-of-use-cases-in-use-case-diagrams.md,
+                                                 list-of-messages-in-sequence-diagrams.md,
                                                  traceability.md
-  Function List/                   Lessons 5-6   w0-scope.md, w1-function-list.md, w2-cost.md,
+  context/                         Lesson 3      cvca.md, context-diagram.md
+  use-case-diagram/                Lesson 4      overview-verified-vehicle-report-system-use-case-diagram.md,
+                                                 UC-1.md, UC-2.md, UC-3.md (one per feature)
+     sequence-diagram/             Lesson 4      S-01.md ... S-10.md
+  architecture/                    Lesson 4      Architecture.md
+    adr/                                         ADR-001 ... ADR-006 (decision records)
+  function-list/                   Lessons 5-6   w0-scope.md, w1-function-list.md, w2-cost.md,
                                                  w4-priorities.md, w5-handover.md, w6-cash-flow.md
-  Activity Diagram/                Lesson 7      Activity Index.md, AD-UC-<n.nn>.md
-  External Design/                 Lesson 8      Screen List.md, Screen Transition.md,
-                                                 Usage-flow-*.md, Ui-conventions-*.md
-    Screen/                                      one Screen Spec per screen (see section 7 for names)
+  activity-diagram/                Lesson 7      activity-index.md, AD-UC-<n.nn>.md
+  external-design/                 Lesson 8      screen-list.md, screen-transition.md,
+                                                 usage-flow-*.md, ui-conventions-*.md
+    screens/                                     one Screen Spec per screen (see section 7 for names)
       img/                                       state images drawn by the team
         img-numbered/                            the same images with numbered elements
 ```
 
-Two actors have screens, so there are two usage-flow files and two UI-conventions files:
+Note: Two actors have screens, so there are two usage-flow files and two UI-conventions files:
 
 | Actor | Platform | Usage flow | UI conventions |
 |---|---|---|---|
@@ -112,33 +112,33 @@ Two actors have screens, so there are two usage-flow files and two UI-convention
 
 | Fact | Owning file | Cited by |
 |---|---|---|
-| Product name, client, team, roles, milestones, problems, goals | `Docs/Project/Project Brief.md` | every file |
-| Abbreviations and project terms | `Glossary.md` | every file |
-| Stakeholders, value flows, problems `P-n`, stakeholder requirements `StR-nn` | `Docs/Context/CVCA.md` | Architecture |
-| System boundary and external entities | `Docs/Context/Context Diagram.md` | Use case diagrams, AD lanes |
-| List of all context flows `CTX: flow-nn` | `Docs/Traceability/list-of-flow-context-diagram.md` | Traceability, sequence diagrams |
-| Actors and use cases (diagrams) | `Docs/Use Case Diagram/` | W0, AD, usage flows |
-| List of all use cases `UC-f.nn` in the diagrams | `Docs/Traceability/list-of-use-case.md` | Use case diagrams, W0 |
-| How the system's parts talk for one use case | `Docs/Sequence Diagram/S-nn.md` | W1 source trace, AD |
-| List of all messages `S-X.YY` in the sequence diagrams | `Docs/Traceability/list-of-message-sequence-diagram.md` | Traceability |
-| Mapping context flow to use case to sequence message | `Docs/Traceability/traceability.md` | review, tests |
-| System requirements `SyR-nn` (from `StR-nn`), functional and physical design | `Docs/Architecture/Architecture.md`, sections 1 to 3 | ADRs, W1 |
-| Technical decisions `ADR-nnn` | `Docs/Architecture/adr/` | W1, Architecture |
-| Use case inventory `UC-f.nn` and its feature | `Docs/Function List/w0-scope.md`, Table 1 | AD index, usage flows, screens |
+| Product name, client, team, roles, milestones, problems, goals | `docs/project/project-brief.md` | every file |
+| Abbreviations and project terms explanation | `glossary.md` | every file |
+| Stakeholders, value flows, problems `P-n`, stakeholder requirements `StR-nn` | `docs/context/CVCA.md` | architecture |
+| System boundary and external entities | `docs/context/context-diagram.md` | use-case-diagram, AD lanes |
+| List of all context flows `CTX: flow-nn` | `docs/project/traceability/list-of-flow-context-diagram.md` | traceability, sequence diagrams |
+| Actors and use cases (diagrams) | `docs/use-case/` | W0, AD, usage flows |
+| List of all use cases `UC-f.nn` in the diagrams | `docs/traceability/list-of-use-cases-in-use-case-diagrams.md` | use case diagrams, W0 |
+| How the system's parts talk for one use case | `docs/use-case/sequence-diagram/S-nn.md` | W1 source trace, AD |
+| List of all messages `S-X.YY` in the sequence diagrams | `docs/project/traceability/list-of-messages-in-sequence-diagrams.md` | Traceability |
+| Mapping context flow to use case to sequence message | `docs/traceability/traceability.md` | review, tests |
+| System requirements `SyR-nn` (from `StR-nn`), functional and physical design | `docs/architecture/architecture.md`, sections 1 to 3 | ADRs, W1 |
+| Technical decisions `ADR-nnn` | `docs/architecture/adr/` | W1, Architecture |
+| Use case inventory `UC-f.nn` and its feature | `docs/function-list/w0-scope.md`, Table 1 | AD index, usage flows, screens |
 | Features `F-nn` | W0 Table 2 | W1, screen IDs |
 | Won't-have (out of scope) | W0 Table 3 | everyone: never build these |
 | Data groups, ILF and EIF (what is stored, what is read) | W0 Table 4 | Screen Spec data sources |
-| Functions `FR-ff-nn` with the EARS acceptance criterion, and work items `FR-ff-nn-FE/BE/INT` | `Docs/Function List/w1-function-list.md` | AD, Screen Spec, tests |
-| Effective priority (Must, Should, Could) | `Docs/Function List/w4-priorities.md` | Screen List, build order |
+| Functions `FR-ff-nn` with the EARS acceptance criterion, and work items `FR-ff-nn-FE/BE/INT` | `docs/function-list/w1-function-list.md` | AD, Screen Spec, tests |
+| Effective priority (Must, Should, Could) | `docs/function-list/w4-priorities.md` | Screen List, build order |
 | Cost, scenarios, baseline for DBIZ3 | `w2-cost.md`, `w5-handover.md`, `w6-cash-flow.md` | project decisions |
-| Behaviour of one use case, its branches, object states, business rules `BR-<topic>-nn` | `Docs/Activity Diagram/AD-UC-<f.nn>.md` | Screen Spec states and rules, tests |
-| Which use cases have a diagram, and why not; object state lists | `Docs/Activity Diagram/Activity Index.md` | data model in DBIZ3 |
-| Order in which an actor uses the use cases | `Usage-flow-*.md` in `Docs/External Design/` | Screen Transition |
-| Screens `S-Fxx-nn` | `Docs/External Design/Screen List.md` | everything about screens |
-| Navigation between screens | `Docs/External Design/Screen Transition.md` | Screen Spec, navigation section |
-| Language, formats, components, messages, design tokens | `Ui-conventions-car-owner.md`, `Ui-conventions-carpla-staff.md` | every screen of that actor |
-| One screen: elements, states, interactions, screen rules `SR-nnn` | `Docs/External Design/Screen/` | build and test |
-| Mistakes AI made and what the team decided | `Docs/Project/AI Log.md` | |
+| Behaviour of one use case, its branches, object states, business rules `BR-<topic>-nn` | `docs/activity/AD-UC-<f.nn>.md` | Screen Spec states and rules, tests |
+| Which use cases have a diagram, and why not; object state lists | `docs/activity/activity-index.md` | data model in DBIZ3 |
+| Order in which an actor uses the use cases | `usage-flow-*.md` in `docs/external-design/` | screen transition |
+| Screens `S-Fxx-nn` | `docs/external-design/screen-list.md` | everything about screens |
+| Navigation between screens | `docs/external-design/screen-transition.md` | screen spec, navigation section |
+| Language, formats, components, messages, design tokens | `ui-conventions-car-owner.md`, `ii-conventions-carpla-staff.md` | every screen of that actor |
+| One screen: elements, states, interactions, screen rules `SR-nnn` | `docs/external-design/screens/` | build and test |
+| Mistakes AI made and what the team decided | `docs/project/ai-log.md` | |
 
 ## 4. IDs
 
