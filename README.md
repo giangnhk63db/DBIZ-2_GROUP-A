@@ -18,7 +18,7 @@ from these files.
 
 **This README is written for two readers.** People can start at section 8 (reading order). AI agents
 read sections 1 to 7 before any task and follow them. Abbreviations and project terms are explained
-in [Glossary.md]([https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/ec0588654a9926e8201e59026b5d7a39e8df804d/Docs/Project/Glossary.md]); read it once, and look terms up there instead of guessing.
+in [Glossary.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/54c39bd138f3b3ef8ce001ff3bdda0de7a75a7d6/docs/project/glossary.md); read it once, and look terms up there instead of guessing.
 
 ## At a glance
 
@@ -252,7 +252,7 @@ those with an answer show it in the last column.
 | 0 | | [Glossary.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/1ace4bebdd9def3ee598c19f4c9e7f29b31717e9/Docs/Project/Glossary.md) | Every abbreviation and project term, in one place |
 | 1 | L1-L2 | [Project Brief.md](Docs/Project/Project%20Brief.md) | Client, problems, goals, team roles, milestones |
 | 2 | L3 | [CVCA.md](Docs/Context/CVCA.md) | Stakeholders, value flows, problems, stakeholder requirements |
-| 3 | L3 | [Context Diagram.md](Docs/Context/Context%20Diagram.md), [List of flows in context diagram.md]([Docs/Traceability/List-of-flows-in-context-diagram.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/7a17656030056c10fa1fb9824986ec18353f5319/Docs/Traceability/List%20of%20flows%20in%20context%20diagram.md)) | The system as a black box, the entities around it, every flow |
+| 3 | L3 | [Context Diagram.md](Docs/Context/Context%20Diagram.md), [List of flows in context diagram.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/7a17656030056c10fa1fb9824986ec18353f5319/Docs/Traceability/List%20of%20flows%20in%20context%20diagram.md) | The system as a black box, the entities around it, every flow |
 | 4 | L4 | [Overview Use Case Diagram](Docs/Use%20Case%20Diagram/Overview%20Verified%20Vehicle%20Report%20System%20Use%20Case%20Diagram.md), [UC-1](Docs/Use%20Case%20Diagram/UC-1.md), [UC-2](Docs/Use%20Case%20Diagram/UC-2.md), [UC-3](Docs/Use%20Case%20Diagram/UC-3.md), [List of use cases in use case diagrams.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/38d7086b731c13ae17bb01922160d51abed382b1/Docs/Traceability/List%20of%20use%20cases%20in%20use%20case%20diagrams.md) | Who wants the system to do what, per feature |
 | 5 | L4 | [Sequence Diagram folder](Docs/Sequence%20Diagram/), [List of messages in sequence diagrams.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/7a17656030056c10fa1fb9824986ec18353f5319/Docs/Traceability/List%20of%20messages%20in%20sequence%20diagram.md) | How the parts talk for each use case |
 | 6 | L4 | [traceability.md](Docs/Traceability/traceability.md) | Context flow, use case and sequence messages in one table |
