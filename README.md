@@ -56,7 +56,7 @@ in [glossary.md](docs/project/glossary.md); read it once, and look terms up ther
    in the UI conventions file of the matching actor (section 3). The Element names in the element
    inventory of a Screen Spec are the component names; the numbers on `*-numbered.png` match its
    `#` column.
-8. **Use the project's words.** Terms and abbreviations are defined in [Glossary.md](Glossary.md).
+8. **Use the project's words.** Terms and abbreviations are defined in [glossary.md](docs/project/glossary.md).
    Do not introduce a synonym for a defined term. When a new term or abbreviation enters any file,
    add it to the glossary in the same change.
 9. **Do not edit history.** Accepted ADRs are not rewritten: a new ADR supersedes an old one.
@@ -251,19 +251,19 @@ those with an answer show it in the last column.
 |---|---|---|---|
 | 0 | | [glossary.md](docs/project/glossary.md) | Every abbreviation and project term, in one place |
 | 1 | L1-L2 | [project-brief.md](docs/project/project-brief.md) | Client, problems, goals, team roles, milestones |
-| 2 | L3 | [cvca.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/c183753be4e53dbc401dedbb6933910b2d125065/docs/context/cvca.md) | Stakeholders, value flows, problems, stakeholder requirements |
-| 3 | L3 | [context-diagram.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/c183753be4e53dbc401dedbb6933910b2d125065/docs/context/context-diagram.md), [List of flows in context diagram.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/7a17656030056c10fa1fb9824986ec18353f5319/Docs/Traceability/List%20of%20flows%20in%20context%20diagram.md) | The system as a black box, the entities around it, every flow |
-| 4 | L4 | [Overview Use Case Diagram](Docs/Use%20Case%20Diagram/Overview%20Verified%20Vehicle%20Report%20System%20Use%20Case%20Diagram.md), [UC-1](Docs/Use%20Case%20Diagram/UC-1.md), [UC-2](Docs/Use%20Case%20Diagram/UC-2.md), [UC-3](Docs/Use%20Case%20Diagram/UC-3.md), [List of use cases in use case diagrams.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/38d7086b731c13ae17bb01922160d51abed382b1/Docs/Traceability/List%20of%20use%20cases%20in%20use%20case%20diagrams.md) | Who wants the system to do what, per feature |
-| 5 | L4 | [Sequence Diagram folder](Docs/Sequence%20Diagram/), [List of messages in sequence diagrams.md](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/7a17656030056c10fa1fb9824986ec18353f5319/Docs/Traceability/List%20of%20messages%20in%20sequence%20diagram.md) | How the parts talk for each use case |
-| 6 | L4 | [traceability.md](Docs/Traceability/traceability.md) | Context flow, use case and sequence messages in one table |
+| 2 | L3 | [cvca.md](docs/context/cvca.md) | Stakeholders, value flows, problems, stakeholder requirements |
+| 3 | L3 | [context-diagram.md](docs/context/context-diagram.md), [List of flows in context diagram.md](docs/project/traceability/list-of-flows-in-context-diagram.md) | The system as a black box, the entities around it, every flow |
+| 4 | L4 | [Overview Use Case Diagram](Docs/Use%20Case%20Diagram/Overview%20Verified%20Vehicle%20Report%20System%20Use%20Case%20Diagram.md), [UC-1](docs/use-case/UC-1.md), [UC-2](docs/use-case/UC-2.md), [UC-3](docs/use-case/UC-3.md), [List of use cases in use case diagrams.md](docs/project/traceability/list-of-use-cases-in-use-case-diagrams.md) | Who wants the system to do what, per feature |
+| 5 | L4 | [Sequence Diagram folder](docs/use-case/Sequence Diagram), [List of messages in sequence diagrams.md](docs/project/traceability/list-of-messages-in-sequence-diagram.md) | How the parts talk for each use case |
+| 6 | L4 | [traceability.md](docs/project/traceability/traceability.md) | Context flow, use case and sequence messages in one table |
 | 7 | L4 | [architecture.md](docs/architecture/architecture.md), [adr/](docs/architecture/adr/) | System requirements, design, six decisions |
 | 8 | L5 | [w0-scope.md](docs/function-list/w0-scope.md) | Use case inventory, features, Won't-have, data functions |
 | 9 | L5 | [w1-function-list.md](docs/function-list/w1-function-list.md) | Every function with its EARS criterion, split into work items |
 | 10 | L5 | [w2-cost.md](docs/function-list/w2-cost.md), [w4-priorities.md](docs/function-list/w4-priorities.md), [w5-handover.md](docs/function-list/w5-handover.md) | Cost, priorities, threshold checks, scenarios |
 | 11 | L6 | [w6-cash-flow.md](docs/function-list/w6-cash-flow.md) | Cash flow, NPV, IRR, payback |
 | 12 | L7 | [activity-index.md](docs/activity/activity-index.md), [activity](docs/activity) | Inputs check, then activity diagrams with business rules |
-| 13 | L8 | [Car owner usage flow](Docs/External%20Design/Usage-flow-tasco-verifed-vehicle-report-system.md), [Carpla CRM usage flow](Docs/External%20Design/Usage-flow-carpla-crm.md) | One usage flow per actor |
+| 13 | L8 | [Car owner usage flow](docs/external-design/usage-flow-tasco-verifed-vehicle-report-system.md), [Carpla CRM usage flow](docs/external-design/usage-flow-carpla-crm.md) | One usage flow per actor |
 | 14 | L8 | [screen-list.md](docs/external-design/screen-list.md) | Screens and how users move between them |
-| 15 | L8 | [Ui-conventions-car-owner.md](Docs/External%20Design/Ui-conventions-car-owner.md), [Ui-conventions-carpla-staff.md](Docs/External%20Design/Ui-conventions-carpla-staff.md) | Language, formats, components, design tokens |
+| 15 | L8 | [ui-conventions-car-owner.md](docs/external-design/ui-conventions-car-owner.md), [ui-conventions-carpla-staff.md](docs/external-design/ui-conventions-carpla-staff.md) | Language, formats, components, design tokens |
 | 16 | L8 | [screens](docs/external-design/screens) | Screen Specs with state images |
 | all | all | [ai-log.md](docs/project/ai-log.md) | Where AI suggested something wrong, and what the team did |
