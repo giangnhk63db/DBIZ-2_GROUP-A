@@ -254,7 +254,7 @@ those with an answer show it in the last column.
 | 2 | L3 | [cvca.md](docs/context/cvca.md) | Stakeholders, value flows, problems, stakeholder requirements |
 | 3 | L3 | [context-diagram.md](docs/context/context-diagram.md), [List of flows in context diagram.md](docs/project/traceability/list-of-flows-in-context-diagram.md) | The system as a black box, the entities around it, every flow |
 | 4 | L4 | [Overview Use Case Diagram](Docs/Use%20Case%20Diagram/Overview%20Verified%20Vehicle%20Report%20System%20Use%20Case%20Diagram.md), [UC-1](docs/use-case/UC-1.md), [UC-2](docs/use-case/UC-2.md), [UC-3](docs/use-case/UC-3.md), [List of use cases in use case diagrams.md](docs/project/traceability/list-of-use-cases-in-use-case-diagrams.md) | Who wants the system to do what, per feature |
-| 5 | L4 | [Sequence Diagram folder](docs/use-case/Sequence Diagram), [List of messages in sequence diagrams.md](docs/project/traceability/list-of-messages-in-sequence-diagram.md) | How the parts talk for each use case |
+| 5 | L4 | [sequence diagram.md](docs/use-case/sequence-diagram.md), [List of messages in sequence diagrams.md](docs/project/traceability/list-of-messages-in-sequence-diagram.md) | How the parts talk for each use case |
 | 6 | L4 | [traceability.md](docs/project/traceability/traceability.md) | Context flow, use case and sequence messages in one table |
 | 7 | L4 | [architecture.md](docs/architecture/architecture.md), [adr/](docs/architecture/adr/) | System requirements, design, six decisions |
 | 8 | L5 | [w0-scope.md](docs/function-list/w0-scope.md) | Use case inventory, features, Won't-have, data functions |
