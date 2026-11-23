@@ -8,7 +8,7 @@ designed, to find the problems and opportunities.
 |---|---|
 | Project | Verified Vehicle Report (TASCO MOBILITY) |
 | Version | v8.0 - Reviewed |
-| Next | [Context Diagram](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/54dfee8446b27095bd1a4cd3b07deadc3627deb5/Context/Context%20Diagram.md) |
+| Next | [Context Diagram](https://github.com/giangnhk63db/DBIZ2-GROUPA-Verified-Vehicle-Report/blob/84de9dc3184ba51f2ce4bb5d22c3b881e7154c86/docs/context/context-diagram.md) |
 
 ## 1. Value chain (with the old system)
 
