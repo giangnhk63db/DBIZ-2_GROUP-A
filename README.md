@@ -26,7 +26,7 @@ in [glossary.md](docs/project/glossary.md); read it once, and look terms up ther
 |---|---|
 | Product | Verified Vehicle Report, inside the TASCO Mobility app |
 | Client | Tasco Corporations |
-| Actors with screens | Car Owner (mobile, TASCO Mobility app); Carpla Staff (web, Carpla CRM) |
+| Actors with screens | Car Owner (mobile, Tasco Mobility app); Carpla Staff (web, Carpla CRM) |
 | Features | 3: F-01 Vehicle Passport, F-02 Market Price, F-03 Sell Request & Preliminary Quote |
 | Size of the design | 30 use cases, 10 sequence diagrams, 6 ADRs, 31 functions (L2) split into 49 work items (L3), 16 activity diagrams, 11 screens, 10 Screen Specs |
 | Estimate (W2, W5) | Must only 168.4 person-hours; Must + Should 216.8 (the figure given to the client); full scope 293.2 |
@@ -60,19 +60,18 @@ in [glossary.md](docs/project/glossary.md); read it once, and look terms up ther
    Do not introduce a synonym for a defined term. When a new term or abbreviation enters any file,
    add it to the glossary in the same change.
 9. **Do not edit history.** Accepted ADRs are not rewritten: a new ADR supersedes an old one.
-   Change log rows, verification log rows and `AI Log.md` rows are only appended.
-10. **Do not edit images by hand.** Images in `Docs/External Design/Screen/img/` are exports from
+   Change log rows, verification log rows and `ai-log.md` rows are only appended.
+10. **Do not edit images by hand.** Images in `docs/external-design/screen/img/` are exports from
     the team's drawing tool. If a screen changes, say which image must be redrawn.
 11. **Keep the traceability files in step.** Any change to a use case, a sequence diagram message
-    or a context flow must also be reflected in `Docs/Traceability/` (section 3).
+    or a context flow must also be reflected in `docs/project/traceability/`(section 3).
 12. **Do not fix the gaps of section 7 on your own.** Work around them, record them as open
     questions, and report them.
 13. **Report what you changed and what you could not check**, file by file, at the end of the task.
 
 ## 2. Repository map
 
-All documents live in `Docs/` (capital D). Folder and file names contain spaces, so quote or
-URL-encode paths. The lesson number is the DBIZ2 lesson in which the folder was produced.
+All documents live in `docs/`. Folder and file names do not contain any spaces and words should be joined by hyphens -. File name must be in lowercases, uppercase letters are not permitted.. 
 
 ```text
 README.md                          this file
@@ -87,7 +86,7 @@ docs/
   use-case-diagram/                Lesson 4      overview-verified-vehicle-report-system-use-case-diagram.md,
                                                  UC-1.md, UC-2.md, UC-3.md (one per feature)
      sequence-diagram/             Lesson 4      S-01.md ... S-10.md
-  architecture/                    Lesson 4      Architecture.md
+  architecture/                    Lesson 4      architecture.md
     adr/                                         ADR-001 ... ADR-006 (decision records)
   function-list/                   Lessons 5-6   w0-scope.md, w1-function-list.md, w2-cost.md,
                                                  w4-priorities.md, w5-handover.md, w6-cash-flow.md
@@ -103,10 +102,8 @@ Note: Two actors have screens, so there are two usage-flow files and two UI-conv
 
 | Actor | Platform | Usage flow | UI conventions |
 |---|---|---|---|
-| Car Owner | Mobile, TASCO Mobility app | `Usage-flow-tasco-verifed-vehicle-report-system.md` | `Ui-conventions-car-owner.md` |
-| Carpla Staff | Web, Carpla CRM | `Usage-flow-carpla-crm.md` | `Ui-conventions-carpla-staff.md` |
-
-(`verifed` is spelled that way in the real file name. Keep it until the file is renamed in one commit.)
+| Car Owner | Mobile, TASCO Mobility app | `usage-flow-tasco-verifed-vehicle-report-system.md` | `ui-conventions-car-owner.md` |
+| Carpla Staff | Web, Carpla CRM | `usage-flow-carpla-crm.md` | `ui-conventions-carpla-staff.md` |
 
 ## 3. Which file owns which fact
 
@@ -159,8 +156,8 @@ Note: Two actors have screens, so there are two usage-flow files and two UI-conv
 | Screen | `S-F<ff>-<nn>` (`S-F00-nn` = shared) | S-F01-02 | Screen List |
 | Screen rule | `SR-nnn`, numbered inside one Screen Spec | SR-004 | that Screen Spec |
 
-`S-nn`, `S-X.YY` and `S-Fxx-nn` look alike but are three different things (sequence diagram,
-sequence message, screen). The glossary has a look-alike table.
+Notes: `S-nn`, `S-X.YY` and `S-Fxx-nn` look alike but are three different things (sequence diagram,
+sequence message, screen).
 
 The chain that every change must keep intact:
 
@@ -172,19 +169,19 @@ CTX flow -> UC -> SD message      (kept in Docs/Traceability/traceability.md)
 
 ## 5. How to do common tasks
 
-**Before any task:** read this README, `Glossary.md`, `Project Brief.md`, then the owning files of
+**Before any task:** read this README, `glossary.md`, `project-brief.md`, then the owning files of
 the facts the task touches (section 3).
 
 **Change or add a function.** Edit W1 (ID, EARS criterion, source trace), then W4 (effective
 priority and justification), then W2 and W5 if the cost changes. Then update every AD and Screen
 Spec that cites the FR.
 
-**Add a use case.** Add it to the Use Case Diagram of its feature and to `list-of-use-case.md`,
+**Add a use case.** Add it to the use case diagram of its feature and to `list-of-use-cases-in-use-case-diagram.md`,
 then W0 Table 1 with its feature, then its functions in W1, then the sequence messages and a row
-in `traceability.md`, then a row in `Activity Index.md`, then its place in the usage flow.
+in `traceability.md`, then a row in `activity-index.md`, then its place in the usage flow.
 
-**Add or change a screen.** Add the row to `Screen List.md`, the node and arrows to
-`Screen Transition.md`, the screen to the matching usage-flow step, and the Screen ID to the
+**Add or change a screen.** Add the row to `screen-list.md`, the node and arrows to
+`screen-transition.md`, the screen to the matching usage-flow step, and the Screen ID to the
 "Screens touched" section of each AD it serves. Then write the Screen Spec, using a finished one
 (for example `screen-spec-S-F01-05.md`) as the model, and list the images the team must draw.
 
@@ -215,8 +212,8 @@ empty. Do not change files while checking.
 - Diagrams are Mermaid code blocks inside the `.md` files. The use case diagrams use
   `usecase-beta` and the activity diagrams use `swimlane-beta`, which need a recent Mermaid
   version; if a block does not render, paste it into [mermaid.live](https://mermaid.live).
-- Car Owner interface text is in Vietnamese only, addressing the user as "bạn"
-  (`Ui-conventions-car-owner.md`). Documents are written in English; proper names such as VIN,
+- Car Owner and Carpla Staff interface text is in Vietnamese only, addressing the user as "bạn"
+  (`ui-conventions-car-owner.md`). Documents are written in English; proper names such as VIN,
   VETC, Carpla Service and SoH stay as they are.
 - Dates `dd/MM/yyyy`, times `HH:mm` (24-hour), money in VND with dots for thousands and the suffix
   `₫` (`850.000.000 ₫`), mileage as `45.230 km`, percentages as whole numbers (`92%`).
@@ -234,9 +231,9 @@ update this list before each milestone.
 - External systems the product reads (VETC, Carpla Service, the electronic invoice portal, EV
   charging stations, the inspection, traffic fine and secured transaction portals, partner
   marketplaces) are read-only data sources (W0 Table 4). Do not design writes to them.
-- `Docs/Activity Diagram/` has 16 diagrams (`AD-UC-1.01`, `1.03`, `1.05`, `1.06`, `1.07`, `2.04`,
+- `docs/activity/` has 16 diagrams (`AD-UC-1.01`, `1.03`, `1.05`, `1.06`, `1.07`, `2.04`,
   `2.05`, `2.07` to `2.10`, `3.01`, `3.03` to `3.06`). The other use cases of the 30 in W0 Table 1
-  are recorded in `Activity Index.md` with the reason they have no diagram.
+  are recorded in `activity-index.md` with the reason they have no diagram.
 - Screen Specs exist for `S-F01-01`, `S-F01-02`, `S-F01-03`, `S-F01-05`, `S-F01-06`, `S-F02-01`,
   `S-F03-01`, `S-F03-02`, `S-F03-03` and `S-F03-04`. `S-F00-01` (Home) has no Screen Spec yet.
 
