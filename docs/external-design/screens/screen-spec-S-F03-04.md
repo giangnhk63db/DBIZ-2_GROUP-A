@@ -20,7 +20,7 @@
 
 **The user leaves this screen when:** the car owner goes back to S-F01-02 with the Back arrow of the Top bar.
 
-**2\. Mockup**
+## 2. Mockup
 
 ![S-F03-04](img/S-F03-04-default.png)
 
@@ -40,7 +40,7 @@ Default, numbered | Loading, numbered | Error API, numbered | Success, numbered 
 
 All colours, fonts and corners come from the design tokens in [ui-conventions-car-owner](https://github.com/giangnhk63db/DBIZ-2_GROUP-A/blob/856166f4d066a07c84b66f96b604380801b82088/External%20Design/ui-conventions-car-owner.md).
 
-**3\. Element inventory**
+## 3. Element Inventory
 
 This screen is read-only: it has no Input, Date time, Upload or Security element, so no textbox or textarea.
 
@@ -68,7 +68,7 @@ This screen is read-only: it has no Input, Date time, Upload or Security element
 
 **Note**: vehicle., sale\_request., quote. are the fields sourced from tables in the data source. The field names are proposed and will be finalized with the data dictionary.
 
-**4\. States**
+## 4. State
 
 | State | What the user sees | Trigger |
 | ----- | ----- | ----- |
@@ -78,7 +78,7 @@ This screen is read-only: it has no Input, Date time, Upload or Security element
 | Error  (API) | Error popup (16 to 19\) with warning icon, title "Chưa lấy được báo giá", message, button "Thử lại" and button "Đóng" (and X). Behind it the quote area shows "—" (14) and the text (15); the content cannot be used while the popup is open. | The system could not get the quote data from the server after the maximum retries |
 | Success | Success popup (16, 17, 19\) with check icon, title "Đã nhận báo giá", the message and button "Đóng" (and X). Behind it the badge (3), the price range (14) and the sent time (15) are filled. | The quote is received while the car owner is on this screen |
 
-**5\. Interactions and navigation**
+## 5. Interactions and navigation
 
 | \# | Element | User action | System response | Goes to screen |
 | ----- | ----- | ----- | ----- | ----- |
@@ -89,7 +89,7 @@ This screen is read-only: it has no Input, Date time, Upload or Security element
 
 The other elements are read-only and have no interaction.
 
-**6\. Screen-level rules**
+## 6. Screen-level rules
 
 | Rule ID | Rule | Source |
 | :---- | :---- | :---- |
@@ -105,7 +105,7 @@ The other elements are read-only and have no interaction.
 | SR-010 | This screen has no button to book an inspection. Booking an inspection is a separate use case and is not part of this screen. | FR-03-06 (scope decision) |
 | SR-011 | The quote is entered and sent by Carpla staff. This screen only displays it. | FR-03-05 |
 
-**7\. Linked requirements**
+## 7. Linked requirements
 
 | FR ID (L2) | What this screen does for it | L3 work items (IDs as written in the Function List) |
 | :---- | :---- | :---- |
@@ -113,7 +113,7 @@ The other elements are read-only and have no interaction.
 | FR-03-05 Send preliminary quote to car owner | Background, no UI on this screen. Stores the quote and notifies the car owner | FR-03-05-BE (not part of this screen) |
 | FR-03-01 Submit sale request | Source of the request data shown in the request card (element 9 to 12\) | FR-03-01-FE (S-F03-01, not part of this screen) |
 
-**8\. Responsive and accessibility notes**
+## 8. Responsive and accessibility notes
 
 * Smallest supported width: 360px, single column, vertical scroll only; no horizontal scroll.  
 * On a narrow screen the labels and values of the cards stay on one row; a long value wraps to the next line and does not cut the label.  
@@ -122,7 +122,7 @@ The other elements are read-only and have no interaction.
 * Tap targets at least 44 x 44 px: Back arrow (1), popup X (16), "Thử lại" (18), "Đóng" (19).  
 * The waiting banner and the popups must be readable by a screen reader (info icon, check icon and warning icon have a text alternative).
 
-**9\. Open questions**
+## 9. Open questions
 
 | \# | Question | Blocking? | Status |
 | :---- | :---- | :---- | :---- |
