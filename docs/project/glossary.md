@@ -1,4 +1,4 @@
-# Glossary: 
+# Glossary: Verified Vehicle Report
 
 Every abbreviation and project-specific term used in this repository, with what it means **here**.
 Terms are grouped by topic and sorted by usage; use your editor's search to find one. Paths are
@@ -42,25 +42,25 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | Term | Stands for / meaning | Where used |
 |---|---|---|
 | TASCO / Tasco Corporations | The client, a corporate group. Written `TASCO` in system names and `Tasco` in prose; same company | Project Brief, CVCA |
-| TASCO Mobility | The existing consumer app of Tasco, in which this feature is built (ADR-001). Also called "TASCO Mobility System" in diagrams. | ADR-001, Architecture |
-| Verified Vehicle Report | The product and the feature: a verified record of one car, plus market price and a path to a preliminary quote. "Report" is the name; "Passport" was the earlier name. Verified Vehicle Report is aimed to be integrated in Tasco Mobility | Project Brief, W0 |
+| Tasco Mobility | The existing consumer app of Tasco, in which this feature is built (ADR-001). Also called "TASCO Mobility System" in diagrams. | ADR-001, Architecture |
+| Verified Vehicle Report | The product and the feature: a verified record of one car, plus market price and a path to a preliminary quote. "Report" is the name; "Passport" was the earlier name, do not use it now. Verified Vehicle Report is aimed to be integrated in Tasco Mobility | Project Brief, W0 |
 | VETC | Vietnam Electronic Toll Collection, a Tasco group toll-collection company. Read-only source of identification data and toll passage history | CVCA, W0 Table 4 |
 | Carpla | Tasco's used-car business. Its staff review sale requests and give the preliminary quote | Project Brief |
 | Carpla Service | Tasco group maintenance and repair business. Read-only source of the official maintenance and repair history | CVCA, SyR-04 |
 | Carpla CRM | The existing Carpla system in which staff review the sale request and enter the quote. This system builds no staff screens of its own, only integrated staff screens in the CRM (ADR-003) | ADR-003, Screen List |
 | CRM | Customer Relationship Management: software for managing customers available of Carpla | ADR-003 |
-| Carpla staff | The actor who reviews a sale request and sends the preliminary quote (UC-3.07, UC-3.08) | W0, UC-3 |
+| Carpla staff | The actor who reviews a sale request and sends the preliminary quote | W0, UC-3 |
 | Car Owner | The primary actor who creates the report, views it, tracks the market price and submits a sale request | W0, UC-1 to UC-3 |
-| Used Car Buyer | A stakeholder in the CVCA value chain who pays for the car; not an actor of the system | CVCA |
+| Used Car Buyer | A stakeholder who pays for the car; not an actor of the system | CVCA |
 | Tasco Insurance, Tasco Land | Tasco group companies shown in the CVCA; the new system reads nothing from them | CVCA |
 | Nextgen VN / Nextgen Việt Nam | Partner marketplace; source of used-car listing data for calculating market price for reference | CVCA, FR-02-02 |
 | Chợ Tốt | Partner marketplace of Carousell Group; source of used-car listing data for calculating market price for reference | CVCA, FR-02-02 |
 | Partner marketplaces | Nextgen VN and Chợ Tốt together | W0, W1 |
-| Vehicle Inspection Portal | Government portal that returns the inspection status (W0 calls it the National Vehicle Inspection Portal) | SyR-10, FR-01-10 |
-| Traffic Fine Lookup Portal | Government portal that returns the traffic fine status (W0: Traffic Police Department portal); queried by license plate | SyR-11, FR-01-11 |
+| Vehicle Inspection Portal | Government portal that returns the inspection status; queried by license plate number and VIN| SyR-10, FR-01-10 |
+| Traffic Fine Lookup Portal | Government portal that returns the traffic fine status; queried by license plate number | SyR-11, FR-01-11 |
 | Secured Transaction Registry Portal | Government portal that returns the mortgage status; queried by VIN | SyR-12, FR-01-12 |
-| Electronic Invoice Lookup Portal | Government portal that confirms whether an invoice is authentic (W0: General Department of Taxation electronic invoice portal) | SyR-08, FR-01-07 |
-| Lookup portals / the three portals | The inspection, traffic fine and secured transaction portals | ADR-006, BR-REF-01 |
+| Electronic Invoice Lookup Portal | Government portal that confirms whether an invoice is authentic; queried by seller's tax code, invoice type, serial number, invoice number  | SyR-08, FR-01-07 |
+| Lookup portals / the three portals/ government portal | The inspection, traffic fine and secured transaction portals | ADR-006, BR-REF-01 |
 | EV | Electric vehicle | SyR-05 |
 | EV charging stations | Partner and Tasco charging stations; read-only source of charging session data for the battery SoH | CVCA, W0 Table 4 |
 | Weekly timer / Weekly Timer | The non-human actor that starts the weekly jobs; in the architecture it is the Scheduler (ADR-002) | W0, UC-2 |
@@ -72,28 +72,27 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | Term | Stands for / meaning | Where used |
 |---|---|---|
 | VIN | Vehicle Identification Number: exactly 17 uppercase letters and digits, never I, O or Q. The only way a vehicle enters the system (BR-VFVR-01) | UC-1.01, FR-01-01 |
-| Vehicle profile / vehicle record / Verified vehicle report| The digital record created from a VIN; the Vehicle Profile screen is S-F01-02. This consolidated record will also be sent to Carpla staff for preliminary quote | SyR-01, Screen List |
+| Vehicle profile / vehicle record / Verified vehicle report| The digital record created from a VIN; the Vehicle Profile screen is S-F01-02.<br>The digital record includes the vehicle identification, vehicle status (minimum mileage, battery state of health (SoH),maintenance and repair history, inspection status, unpaid traffic fine status, mortgage status), market price and trend.<br>This consolidated record will also be sent to Carpla staff for preliminary quote | SyR-01, Screen List |
 | License plate | Vehicle registration plate; the key for the traffic fine query and one key for the inspection query | FR-01-10, FR-01-11 |
 | ODO | Odometer reading in km | FR-01-03 |
 | Verified minimum mileage | The lowest mileage the system can prove, computed from VETC toll passage history (sum of distances between consecutive stations, BR-DIST-01). Shown as "verified minimum ODO" | UC-1.03, FR-01-03 |
-| Toll passage history | The record of toll stations a car passed, from VETC | CVCA, S-F01-03 |
+| Toll passage history | The record of toll stations a car passed, retrieved from VETC, input to calculate the minimum mileage | CVCA, S-F01-03 |
 | Mileage unverified | Status shown when VETC has no passage record for the car | FR-01-03 |
-| Declared mileage | The mileage the owner enters in a sale request. Blocked when more than 20% below the VETC minimum mileage until declared again (SyR-19) | SyR-19, S-F03-01 |
+| Declared mileage | The real mileage the owner enters in a sale request. Blocked when more than 20% below the VETC minimum mileage until declared again (SyR-19) | SyR-19, S-F03-01 |
 | Mileage plausibility | Check that minimum mileage divided by max(car age in years, 1) reaches 2,000 km per year; otherwise INSUFFICIENT_DATA (BR-MIL-01, UC-2.03) | FR-02-01 |
 | SoH | State of Health of the battery, as a rounded percentage, for electric vehicles only. Charging time in the standard voltage window V1 to V2 of the current battery divided by that of a new battery; needs at least 3 valid sessions (BR-SOH-02). Grades: Tốt (Good) at 80% or more, Trung bình (Average) from 65% to below 80%, Thấp (Low) below 65% (BR-SOH-01) | UC-1.06, AD-UC-1.06 |
-| Charging session data | Records of charging sessions from the charging stations; input to the SoH | SyR-05 |
+| Charging session data | Records of charging sessions from the charging stations; input to calculate the SoH | SyR-05 |
 | Legal status | Inspection status, unpaid traffic fines and mortgage status of the car together | UC-1.07, FR-01-13 |
 | Inspection status | Validity period of the vehicle inspection | FR-01-10 |
 | Unpaid traffic fines | Traffic violations with a penalty that is not yet paid | FR-01-11 |
 | Mortgage status | Whether the car is mortgaged (credit institution, loan amount, active or released) | FR-01-12, CVCA |
 | Refresh | The owner's action that re-queries the three portals in parallel (BR-REF-01) | UC-1.07 |
-| Re-check legal status | The same three queries run by the system when a sale request is submitted | UC-3.02, FR-03-02 |
+| Re-check legal status | The same three queries run automatically by the system when a sale request is submitted | UC-3.02, FR-03-02 |
 | "No data" | Legal status result when a portal has no record or does not answer; the request is still forwarded | FR-03-02, Activity Index |
 | Sale request (use) / sell request | A request from the Car Owner to sell the car to Carpla, with current mileage, desired price and phone number. Both spellings occur; "sale request" is the form in UC and FR names | UC-3.01, SyR-21 |
 | Preliminary quote | Price range that Carpla staff send back for a sale request; "more accurate" than before because it rests on the verified report | StR-04, UC-3.08 |
 | Package | The verified report plus the latest market price, made available to Carpla staff (UC-3.06) | FR-03-03 |
 | Pre-filled form / automatically filled selling form | The sale request form filled from the vehicle record; the owner only adds mileage, desired price and phone number | StR-03, SyR-20 |
-| Vehicle Passport | Name of feature F-01 | W0 Table 2 |
 
 ## 4. Market price 
 
@@ -121,7 +120,7 @@ relative to `Docs/` unless they start with `README` or `GLOSSARY`.
 | "Calculating" | Message shown when a car has no weekly price yet | FR-02-10 |
 | Backfill | Building the 12 earlier weekly prices of a newly tracked car from the 180-day listing history and past VETC readings | UC-2.10, FR-02-08, FR-02-09 |
 | 180-day listing history | Listing history fetched once per car model, the first time it is signed up (UC-2.06). `<<extend>>` of UC-2.10 | UC-2.06, AI Log #1 |
-| First sign-up | A car model that is not yet in the listing store | FR-02-07 |
+| First sign-up | A car model that is not yet in the listing storage | FR-02-07 |
 
 ## 5. Invoices 
 
