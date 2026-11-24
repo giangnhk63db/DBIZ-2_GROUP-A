@@ -41,7 +41,7 @@ Use cases listed: 30. All use cases are assigned to a feature.
 
 | Feature ID | Feature name (business noun) | Scope in one sentence | Primary actors served | Owner | Use cases covered |
 |---|---|---|---|---|---|
-| F-01 | Vehicle Passport | A car owner creates a vehicle profile from its VIN and builds a verified record of identity, repair invoices and legal status | Car Owner | Owner A | UC-1.01 to UC-1.10 |
+| F-01 | Vehicle Identfication & Status | A car owner creates a vehicle profile from its VIN and builds a verified record of identity, repair invoices and legal status | Car Owner | Owner A | UC-1.01 to UC-1.10 |
 | F-02 | Market Price | Every week the system collects partner-marketplace listings and shows the car owner a market price with a 12-week price chart | Car Owner, Weekly Timer | Owner B | UC-2.01 to UC-2.11 |
 | F-03 | Sell Request & Preliminary Quote | The owner asks to sell; the system re-checks legal status and sends the verified report including vehicle identification, status and market price to Carpla staff, who return a preliminary quote | Car Owner, Carpla Staff | Owner C | UC-3.01 to UC-3.09 |
 
