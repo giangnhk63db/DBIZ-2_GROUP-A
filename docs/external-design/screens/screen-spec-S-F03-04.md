@@ -1,6 +1,6 @@
 # Screen Spec: S-F03-04 View preliminary quote
 
-**1\. Purpose**
+## 1. Purpose
 
 | Field | Value |
 | ----- | ----- |
