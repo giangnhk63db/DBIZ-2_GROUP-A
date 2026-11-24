@@ -83,14 +83,14 @@ docs/
                                                  list-of-messages-in-sequence-diagrams.md,
                                                  traceability.md
   context/                         Lesson 3      cvca.md, context-diagram.md
-  use-case-diagram/                Lesson 4      overview-verified-vehicle-report-system-use-case-diagram.md,
+  use-case/                Lesson 4      overview-verified-vehicle-report-system-use-case-diagram.md,
                                                  UC-1.md, UC-2.md, UC-3.md (one per feature)
      sequence-diagram/             Lesson 4      S-01.md ... S-10.md
   architecture/                    Lesson 4      architecture.md
     adr/                                         ADR-001 ... ADR-006 (decision records)
   function-list/                   Lessons 5-6   w0-scope.md, w1-function-list.md, w2-cost.md,
                                                  w4-priorities.md, w5-handover.md, w6-cash-flow.md
-  activity-diagram/                Lesson 7      activity-index.md, AD-UC-<n.nn>.md
+  activity/                Lesson 7      activity-index.md, AD-UC-<n.nn>.md
   external-design/                 Lesson 8      screen-list.md, screen-transition.md,
                                                  usage-flow-*.md, ui-conventions-*.md
     screens/                                     one Screen Spec per screen (see section 7 for names)
@@ -115,10 +115,10 @@ Note: Two actors have screens, so there are two usage-flow files and two UI-conv
 | System boundary and external entities | `docs/context/context-diagram.md` | use-case-diagram, AD lanes |
 | List of all context flows `CTX: flow-nn` | `docs/project/traceability/list-of-flow-context-diagram.md` | traceability, sequence diagrams |
 | Actors and use cases (diagrams) | `docs/use-case/` | W0, AD, usage flows |
-| List of all use cases `UC-f.nn` in the diagrams | `docs/traceability/list-of-use-cases-in-use-case-diagrams.md` | use case diagrams, W0 |
+| List of all use cases `UC-f.nn` in the diagrams | `docs/project/traceability/list-of-use-cases-in-use-case-diagrams.md` | use case diagrams, W0 |
 | How the system's parts talk for one use case | `docs/use-case/sequence-diagram/S-nn.md` | W1 source trace, AD |
 | List of all messages `S-X.YY` in the sequence diagrams | `docs/project/traceability/list-of-messages-in-sequence-diagrams.md` | Traceability |
-| Mapping context flow to use case to sequence message | `docs/traceability/traceability.md` | review, tests |
+| Mapping context flow to use case to sequence message | `docs/project/traceability/traceability.md` | review, tests |
 | System requirements `SyR-nn` (from `StR-nn`), functional and physical design | `docs/architecture/architecture.md`, sections 1 to 3 | ADRs, W1 |
 | Technical decisions `ADR-nnn` | `docs/architecture/adr/` | W1, Architecture |
 | Use case inventory `UC-f.nn` and its feature | `docs/function-list/w0-scope.md`, Table 1 | AD index, usage flows, screens |
@@ -144,7 +144,7 @@ Note: Two actors have screens, so there are two usage-flow files and two UI-conv
 | Problem | `P-n` | P-3 | CVCA section 3 |
 | Stakeholder requirement | `StR-nn` | StR-01 | CVCA section 4, Architecture section 1 |
 | System requirement | `SyR-nn` | SyR-01 | Architecture section 1 |
-| Decision | `ADR-nnn` | ADR-004 | `Docs/Architecture/adr/` |
+| Decision | `ADR-nnn` | ADR-004 | `docs/architecture/adr/` |
 | Context flow | `CTX: flow-nn` | CTX: flow-02 | `list-of-flow-context-diagram.md` |
 | Use case | `UC-f.nn` (f = feature number) | UC-1.05 | W0 Table 1, `list-of-use-case.md` |
 | Feature | `F-nn` (`F-00` = platform and access) | F-01 | W0 Table 2 |
@@ -164,7 +164,7 @@ The chain that every change must keep intact:
 ```text
 P -> StR -> SyR -> UC -> F -> FR (EARS) -> AD (cites FR on each system action) -> S (cites UC and FR)
 
-CTX flow -> UC -> SD message      (kept in Docs/Traceability/traceability.md)
+CTX flow -> UC -> SD message      (kept in docs/project/traceability/traceability.md)
 ```
 
 ## 5. How to do common tasks
@@ -176,7 +176,7 @@ the facts the task touches (section 3).
 priority and justification), then W2 and W5 if the cost changes. Then update every AD and Screen
 Spec that cites the FR.
 
-**Add a use case.** Add it to the use case diagram of its feature and to `list-of-use-cases-in-use-case-diagram.md`,
+**Add a use case.** Add it to the use case diagram of its feature and to `list-of-use-cases-in-use-case-diagrams.md`,
 then W0 Table 1 with its feature, then its functions in W1, then the sequence messages and a row
 in `traceability.md`, then a row in `activity-index.md`, then its place in the usage flow.
 
