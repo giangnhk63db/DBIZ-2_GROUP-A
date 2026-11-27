@@ -178,7 +178,7 @@ swimlane-beta TB
 | No action has two incoming flows (merge used instead) | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Every fork has a matching join | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Every system action cites an FR | Pass | Đinh Thu Thảo | 2026-10-26 |
-| Every FR of this use case appears in the diagram | 5 of 5 | Đinh Thu Thảo | 2026-10-26 |
+| Every FR of this use case appears in the diagram | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions | Pass | Đinh Thu Thảo | 2026-10-26 |
 | AI critic prompt run, findings resolved or logged as open questions | Pass | Đinh Thu Thảo | 2026-10-26 |
