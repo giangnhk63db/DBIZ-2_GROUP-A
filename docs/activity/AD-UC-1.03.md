@@ -19,9 +19,7 @@
 
 ## 
 
-## **1\. Diagram**
-
-*Code:* 
+1. ## **Diagram** 
 
 ```mermaid
 swimlane-beta TB
@@ -62,7 +60,7 @@ swimlane-beta TB
 * Success & Distance Calculation: Valid logs are parsed and processed through a routing algorithm to compute the minimum travel distance for display on the UI.   
 * Error Handling: If maximum retries are exceeded, a timeout error notification is displayed on UI and terminates at a dedicated end node stop2.
 
-## **2\. Node trace**
+2. ## **Node trace**
 
 | Node | Kind | Text | Traces to |
 | :---- | :---- | ----- | :---- |
@@ -86,7 +84,7 @@ swimlane-beta TB
 | BR-RET-01 | VETC Integration Retry Rule: When requesting toll transaction logs from the external VETC Toll System, if a connection timeout or API failure occurs, the TASCO backend must automatically retry, up to 3 retries after the initial request (maximum 4 attempts in total). If the 3rd retry (4th attempt) also fails, the system stops retrying, logs the timeout error and notifies the user. | d1 |
 | BR-DIST-01 | Minimum Travel Distance Accumulation Rule: The system sorts station passing logs chronologically ($S_1 \rightarrow S_2 \rightarrow \dots \rightarrow S_n$) and computes the total distance with: $$D_{\text{total}} = \sum_{i=1}^{n-1} d(S_i, S_{i+1})$$. Notations: $S_i, S_{i+1}$ are two consecutive toll stations passed by the vehicle, $d(S_i, S_{i+1})$ is the standard physical distance between consecutive stations, provided directly by the VETC system. Turnaround and duplicate rule: A turnaround $A \rightarrow B \rightarrow A$ still counts both segments ($A$ to $B$ and $B$ to $A$); only consecutive records at the same station ($S_i = S_{i+1}$, e.g. duplicate card scan) have an increment of $0$. The final result is rendered on the UI. | s4 |
 
-## **3\. Branches and acceptance tests**
+3. ## **Branches and acceptance tests**
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
@@ -96,7 +94,7 @@ swimlane-beta TB
 
 ## 
 
-## **4\. Object states used**
+4. ## **Object states used** ##
 
 | Object | States in this diagram | Full state list (all diagrams) |
 | :---- | :---- | :---- |
@@ -105,7 +103,7 @@ swimlane-beta TB
 
 ## 
 
-## **5\. Screens touched**
+5. ## **Screens touched** ## 
 
 | Actor action | Screen ID |
 | :---- | :---- |
@@ -117,7 +115,7 @@ swimlane-beta TB
 
 ## 
 
-## **6\. Open questions**
+6. ## **Open questions** ## 
 
 | \# | Question | Blocking? | Default applied |
 | :---- | :---- | :---- | :---- |
@@ -125,7 +123,7 @@ swimlane-beta TB
 
 ## 
 
-## **7\. Verification log**
+7. ## **Verification log** ## 
 
 | Check | Result | By | Date |
 | :---- | :---- | :---- | :---- |
@@ -134,7 +132,7 @@ swimlane-beta TB
 | No action has two incoming flows (merge used instead) | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Every fork has a matching join | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Every system action cites an FR | Pass | Đinh Thu Thảo | 2026-10-26 |
-| Every FR of this use case appears in the diagram | 3 of 3 | Đinh Thu Thảo | 2026-10-26 |
+| Every FR of this use case appears in the diagram | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions | Pass | Đinh Thu Thảo | 2026-10-26 |
 | AI critic prompt run, findings resolved or logged as open questions | Pass | Đinh Thu Thảo | 2026-10-26 |
