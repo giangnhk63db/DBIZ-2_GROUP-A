@@ -63,13 +63,13 @@ All message text shown to the user is in Vietnamese.
 - Smallest supported screen width: 360px, single column, vertical scroll only; no horizontal scroll.
 - Body text at least 14 px; the layout must not break when the user enlarges the system font size.
 
-  # 6. Design tokens
+## 6. Design tokens
 
-## 6.1 Colour tokens
+### 6.1 Colour tokens
 
 In the tables below, read each row as: token name, its HEX value, what it is used for, and which section 3 components use it.
 
-### Token naming convention
+#### Token naming convention
 
 Colour token names follow the pattern `[category]-[role/purpose]-[state/variant]`, so the meaning of a token can be read from its name without looking at the HEX value. The `[state/variant]` part is written only when it is needed. If a token name does not have `[state/variant]`, it is the default form of that role.
 
@@ -82,7 +82,7 @@ Colour token names follow the pattern `[category]-[role/purpose]-[state/variant]
 
 Examples: `color-brand-primary` is the primary brand colour; `color-bg-main` is the main page background; `color-text-primary` is the main text colour; `color-border-input` is the border of an input field; `color-success-bg` is the background behind success content; `color-hover` is the hover colour; `color-disabled-text` is the text colour of a disabled control.
 
-### Colour categories
+#### Colour categories
 
 Colours are divided into four categories so that each colour has one clear job and a new colour can be placed without ambiguity:
 
@@ -91,7 +91,7 @@ Colours are divided into four categories so that each colour has one clear job a
 - **C. Semantic colours:** colours whose meaning comes from the state or information they communicate: success, loading, warning, empty, error and information.
 - **D. Interactive colours:** colours that show interaction states: hover, pressed, disabled and focus.
 
-### A. Brand colours
+#### A. Brand colours
 
 | Token | HEX | Intended usage | Components |
 | --- | --- | --- | --- |
@@ -99,7 +99,7 @@ Colours are divided into four categories so that each colour has one clear job a
 | color-brand-secondary | #3F5099 | Lighter navy for links and secondary emphasis. Links are always underlined (see 6.6 F) | "Xem chi tiết" / "Xem tất cả" / "Xem xu hướng" links, Secondary button outline and text |
 | color-brand-tint | #E8EBF5 | Very light navy for soft backgrounds | Banner (information), Status badge (information) |
 
-### B. Neutral colours
+#### B. Neutral colours
 
 | Token | HEX | Intended usage | Components |
 | --- | --- | --- | --- |
@@ -110,7 +110,7 @@ Colours are divided into four categories so that each colour has one clear job a
 | color-border-default | #D5D9E0 | Decorative lines only. Never the only way to recognise a control. | Divider between List items, Section card outline |
 | color-border-input | #848E97 | Functional border of a control the user must recognise (3:1, WCAG 1.4.11) | Text input border |
 
-### C. Semantic colours
+#### C. Semantic colours
 
 Each status is shown with icon + text (section 5), never colour alone. Icons use the same colour as the text.
 
@@ -124,7 +124,7 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 | color-error-bg | #FDECEA | Background behind error text | System error Modal |
 | color-info | No new HEX: text and icon `color-brand-primary` (#253264) on background `color-brand-tint` (#E8EBF5) | Neutral information | Banner (price being calculated, waiting for Carpla), Status badge (information) |
 
-### D. Interactive colours
+#### D. Interactive colours
 
 | Token | HEX | Intended usage | Components |
 | --- | --- | --- | --- |
@@ -135,13 +135,13 @@ Each status is shown with icon + text (section 5), never colour alone. Icons use
 | color-disabled-text | #6B7280 | Text of a disabled control (exempt from contrast rules). A disabled Secondary button has no outline: its outline is removed and only the fill and text above remain | Primary button, Secondary button |
 | color-focus | #2F5BEA | Focus ring, 2 px thick, drawn with a 2 px offset so it never touches the control's own fill | All keyboard-focusable interactive elements defined in Section 3 |
 
-### Token usage audit
+#### Token usage audit
 
 - Every defined token has an assigned purpose and maps to a component, UI role or interaction state in this document.
 - No additional accent colours are used. Rules: no gradients, no shadows, and no unlisted colours.
 - Any new colour must be defined in this section before use.
 
-## 6.2 Typography
+### 6.2 Typography
 
 Typography defines how text looks: size, line height and weight for each kind of text, so that titles, headings, body text, labels, buttons and supporting text have a clear visual hierarchy and look the same on every screen. Read each row as: the role of the text, its token, its size and line height, weight and colour, and where it is used.
 
@@ -159,7 +159,7 @@ Font family: Be Vietnam Pro, with Roboto, "Segoe UI", system-ui, sans-serif as f
 
 The smallest size is 14 px, in line with section 5.
 
-## 6.3 Spacing and touch target
+### 6.3 Spacing and touch target
 
 Spacing defines the gaps and padding between elements, giving the interface a regular rhythm and keeping content from looking crowded. The touch target is the minimum tappable area of a control; on a phone, small targets are hard to tap accurately, so this rule keeps every interactive element large enough to use. The first table lists the allowed spacing values; the second table states the tap-area rule for each tappable component.
 
@@ -190,7 +190,7 @@ Not tappable, no rule: Status badge, Timeline item, Line chart, Banner. Section 
 
 **Card separation.** Because `color-border-default` on `color-bg-main` is only 1.32:1 and shadows are not allowed, Section cards are separated by the `space-5` (24 px) gap and the white `color-bg-surface` fill, not by the outline alone. To be confirmed against the Screen Spec.
 
-## 6.4 Border radius
+### 6.4 Border radius
 
 Border radius defines how rounded the corners of a component are. Using a small set of fixed radius values gives buttons, inputs, cards, banners, badges and modals a consistent shape across screens. Read each row as: the radius token, its value in CSS px, and the components that use it.
 
@@ -200,7 +200,7 @@ Border radius defines how rounded the corners of a component are. Using a small 
 | radius-md | 8 | Primary button, Secondary button, Text input, Banner |
 | radius-lg | 12 | Section card, Modal |
 
-## 6.5 Frame width
+### 6.5 Frame width
 
 Frame width is the screen width used when drawing the screen images and writing the specifications. Fixing it, together with the orientation and layout rules, ensures that all screens are designed for the same phone size and that nothing needs horizontal scrolling. Read each row as a layout constraint that every screen image must follow.
 
@@ -211,13 +211,13 @@ Frame width is the screen width used when drawing the screen images and writing 
 | Layout | Single column, vertical scroll only, no horizontal scroll |
 | Minimum supported screen width | 360 px |
 
-## 6.6 WCAG 2.2 AA contrast checks
+### 6.6 WCAG 2.2 AA contrast checks
 
 Contrast is the difference in brightness between two colours, such as text and its background; WCAG 2.2 AA is the accessibility standard that sets the minimum contrast so that text and controls remain readable for people with low vision. These checks measure the colour pairs used in this system instead of relying on visual judgement alone. In each table, the ratio is the measured contrast, "Required" is the minimum for that kind of element, and "Result" shows whether the pair passes.
 
 Ratios are computed with the WCAG relative-luminance formula, not estimated by eye. Thresholds: normal text 4.5:1; large text, UI components and graphical objects 3:1. No HEX was changed to obtain a result.
 
-### A. Text
+#### A. Text
 
 | Foreground | Background | Ratio | Required | Result |
 | --- | --- | --- | --- | --- |
@@ -246,7 +246,7 @@ Ratios are computed with the WCAG relative-luminance formula, not estimated by e
 | #B42318 error | #FFFFFF | 6.57:1 | 4.5:1 | PASS |
 | #B42318 error | #F6F7F9 main background | 6.13:1 | 4.5:1 | PASS |
 
-### B. Decorative borders
+#### B. Decorative borders
 
 Not subject to 1.4.11, because no control depends on them.
 
@@ -255,7 +255,7 @@ Not subject to 1.4.11, because no control depends on them.
 | #D5D9E0 divider / card outline | #FFFFFF | 1.42:1 | none | Not applicable (decorative). Content stays readable without the line |
 | #D5D9E0 divider / card outline | #F6F7F9 main background | 1.32:1 | none | Not applicable (decorative). Cards stay separated by the space-5 gap and the white fill (see 6.3) |
 
-### C. Interactive control borders and graphical objects (WCAG 1.4.11, 3:1)
+#### C. Interactive control borders and graphical objects (WCAG 1.4.11, 3:1)
 
 | Foreground | Background | Ratio | Required | Result |
 | --- | --- | --- | --- | --- |
@@ -268,7 +268,7 @@ Not subject to 1.4.11, because no control depends on them.
 | #3F5099 secondary button outline | #F3F5FA hover-soft (hover and pressed) | 6.83:1 | 3:1 | PASS |
 | #253264 chart line | #FFFFFF | 12.22:1 | 3:1 | PASS |
 
-### D. Focus indicator
+#### D. Focus indicator
 
 The ring is 2 px thick with a 2 px offset *[Proposed]*; WCAG 2.2 AA requires 3:1 against adjacent colours (1.4.11) but sets no thickness (the thickness criterion 2.4.13 is AAA). Because of the offset, both sides of the ring show the surface behind the control, so the ring is checked against every surface a focusable control can sit on, not only white.
 
@@ -283,13 +283,13 @@ The ring is 2 px thick with a 2 px offset *[Proposed]*; WCAG 2.2 AA requires 3:1
 | #2F5BEA focus ring | #FDECEA error-bg | 4.83:1 | 3:1 | PASS |
 | #2F5BEA focus ring | #253264 navy fill, if the ring touched it | 2.21:1 | 3:1 | Not applicable by design. The offset is mandatory: the ring must never touch a navy fill, because it would fall to 2.21:1 |
 
-### E. Disabled controls
+#### E. Disabled controls
 
 | Foreground | Background | Ratio | Required | Result |
 | --- | --- | --- | --- | --- |
 | #6B7280 disabled text | #E4E6EB disabled fill | 3.87:1 | none | Exempt (inactive component, WCAG 1.4.3). Shown for reference only |
 
-### F. Link distinction (WCAG 1.4.1)
+#### F. Link distinction (WCAG 1.4.1)
 
 | Foreground | Compared with | Ratio | Required | Result |
 | --- | --- | --- | --- | --- |
