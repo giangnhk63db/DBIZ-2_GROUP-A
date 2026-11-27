@@ -148,9 +148,8 @@ swimlane-beta TB
 | # | Question | Blocking? | Default applied |
 | :---- | :---- | :---- | :---- |
 | 1 | Standard time interval delay between automated retry requests? | No | 2-second delay between consecutive retries, now shown in the diagram as action s4 and in BR-RET-02 |
-| 2 | Does the cache and recalculation check (d0, BR-SOH-04) belong in this use case, or in the session sync process of another use case? | No | Kept in this diagram as decision d0 so that BR-SOH-04 and BR-SOH-05 are visible in the flow; remove d0 and stop3 if the team moves it elsewhere |
+| 2 | Does the cache and recalculation check (d0, BR-SOH-04) belong in this use case, or in the session sync process of another use case? | No | Kept in this diagram as decision d0 so that BR-SOH-04 and BR-SOH-05 are visible in the flow |
 | 3 | Should the Empty state (stop4) be treated as a success variant or a failure variant in the use case end states? | No | Treated as an alternative end state, separate from the success and failure end states |
-| 4 | Exact Vietnamese wording of the error popup (currently 'Không kết nối được trạm sạc') and of the Empty state banner, to match screen spec S-F01-06? | No | All quoted UI strings in this diagram are Vietnamese, consistent with BR-SOH-01 to BR-SOH-05 ('Tốt', 'Trung bình', 'Thấp', 'Cập nhật', 'Đã tính xong sức khỏe pin'); node descriptions stay in English. Replace the error text if S-F01-06 uses different wording |
 
 ## 
 
