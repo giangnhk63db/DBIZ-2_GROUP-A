@@ -19,7 +19,7 @@
 
 ## 
 
-## **1\. Diagram**
+1. ## **Code** 
 
 *Code:*  
 
@@ -86,7 +86,7 @@ swimlane-beta TB
 - Authentication Check: After the car owner confirms (from review or manual entry), the system sends the invoice information via API to the Electronic Invoice Portal to verify authenticity.
 - Result & Timeline Update: If the invoice is valid, it is merged into the vehicle's maintenance history and the updated timeline is displayed; if invalid (or the file was rejected at validation), an error message is shown.
 
-## 2. Node trace
+2. ## **Node trace**
 
 | Node | Kind | Text | Traces to |
 | :---- | :---- | :---- | :---- |
@@ -126,7 +126,7 @@ swimlane-beta TB
 | BR-OCR-01 | Automated OCR Data Extraction & Review Rule: The system extracts four key invoice fields: seller tax code, invoice number, total amount, and invoice date. (1) File type is detected from the actual file content, not only the extension. (2) XML files are parsed directly from their tags and do not go through OCR. (3) PDF files with a text layer have their text extracted directly; scanned PDFs and images are preprocessed (rotation, deskew, noise removal, contrast enhancement) and then run through OCR, which returns text, position, and confidence per token. (4) Each field is located by keyword and position and then normalized and format-checked: **Tax code** is the seller's (not the buyer's), 10 digits or 13 digits (10 + 3-digit branch code), spaces and hyphens removed; **Invoice number** is digits only; **Total amount** is the final payable total (including VAT, not line-item or pre-tax amounts), thousand separators removed, converted to a positive integer in VND, and cross-checked against the amount in words when available; **Invoice date** is a valid date (dd/mm/yyyy), not in the future, and stored in ISO format. (5) If all four fields are extracted in a valid format, the data is shown on an edit/confirmation screen, with low-confidence fields (e.g., confidence < 80%) highlighted, so the car owner can review and edit if needed before confirming. (6) If the file is unreadable, or any field is missing or invalid, the file is not rejected: the system notifies the car owner, opens the manual entry screen with any extracted values kept, and the car owner either fills in the missing fields or enters all invoice info manually, or chooses another file to upload. (7) The car owner must provide all four fields before confirming. User edits and manual entries do not bypass BR-INV-01: the Portal still decides whether the invoice is valid. | d_xml, s3b, s3c, s3d, d2, s_ocr, s4, a_edit, d_choice, a_manual |
 | BR-INV-01 | Invoice Authenticity Cross-Check Rule: After confirmation, invoice data is sent via API to the Electronic Invoice Portal for verification. An invoice is considered valid only if the tax code exists, details match, and the invoice status is not cancelled or replaced on the tax system. | d3 |
 
-## 3. Branches and acceptance tests
+3. ## **Branches and acceptance tests**
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
@@ -141,14 +141,14 @@ swimlane-beta TB
 | d3 [yes] | Car owner confirms invoice data and API request is sent | Electronic Invoice Portal confirms invoice authenticity and returns valid status | System merges the validated external invoice into the vehicle maintenance history and displays the updated timeline |
 | d3 [no] | Car owner confirms invoice data and API request is sent | Electronic Invoice Portal returns invalid, fake, or unmatched status | System rejects the invoice, prevents merging, and displays an error message |
 
-## 4. Object states used
+4. ## **Object states used** ## 
 
 | Object | States in this diagram | Full state list (all diagrams) |
 | :---- | :---- | :---- |
 | Invoice File | Uploaded -> Stored -> Parsed -> Verified / Rejected | Uploaded, Stored, Parsed, Verified, Archived, Rejected |
 | Maintenance Timeline | Consolidated -> Pending Update -> Updated | Initial, Pending Update, Updated, Synced |
 
-## 5. Screens touched
+5. ## **Screens touched** ## 
 
 | Actor action | Screen ID |
 | :---- | :---- |
@@ -160,7 +160,7 @@ swimlane-beta TB
 | See updated maintenance timeline or error message (a3) | S-F01-05 / S-F01-02 |
 ## 
 
-## **6\. Open questions**
+6. ## **Open questions** ## 
 
 | \# | Question | Blocking? | Default applied |
 | :---- | :---- | :---- | :---- |
@@ -171,7 +171,7 @@ swimlane-beta TB
 
 ## 
 
-## **7\. Verification log**
+7. ## **Verification log** ## 
 
 | Check | Result | By | Date |
 | :---- | :---- | :---- | :---- |
