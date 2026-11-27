@@ -17,7 +17,7 @@
 |Version / status|v0.3 · Review|
 |Author|Vũ Hương Ly|
 
-## **1. Diagram**
+## 1. Diagram
 
 ```mermaid 
 
@@ -78,13 +78,13 @@ swimlane-beta TB
 
 Reading notes:
 
-* The two marketplaces are synced independently and in parallel (fork/join). One marketplace giving up after 3 retries does not stop the other.
-* "Retry limit reached?" counts retries after the first attempt: 1 first try + up to 3 retries, 6 hours apart.
-* UC-2.05 only returns the outcome. When no marketplace succeeded it returns API\_FAILED to UC-2.04, which records the status and sends the alert (see AD-UC-2.04). When only one succeeded, the weekly run goes on with that marketplace's listings and the sync is flagged partial.
-* The merges before the join (`mjN`, `mjC`) make each branch deliver exactly one token to the join.
-* Only the system lane cites FR IDs. Nextgen Việt Nam and Chợ Tốt - Carousell Group are external systems.
+- The two marketplaces are synced independently and in parallel (fork/join). One marketplace giving up after 3 retries does not stop the other.
+- "Retry limit reached?" counts retries after the first attempt: 1 first try + up to 3 retries, 6 hours apart.
+- UC-2.05 only returns the outcome. When no marketplace succeeded it returns API\_FAILED to UC-2.04, which records the status and sends the alert (see AD-UC-2.04). When only one succeeded, the weekly run goes on with that marketplace's listings and the sync is flagged partial.
+- The merges before the join (`mjN`, `mjC`) make each branch deliver exactly one token to the join.
+- Only the system lane cites FR IDs. Nextgen Việt Nam and Chợ Tốt - Carousell Group are external systems.
 
-## **2. Node trace**
+## 2. Node trace
 
 |Node|Kind|Text|Traces to|
 |-|-|-|-|
@@ -116,7 +116,7 @@ C: Chợ Tốt - Carousell Group
 | BR-RET-01 | When a marketplace sync fails, the system retries up to 3 times, 6 hours apart. After the 3rd retry fails, it stops retrying that marketplace and logs an ERROR with the HTTP status. | qN, wN, eN, qC, wC, eC |
 | BR-PRI-01 | Requests to the marketplaces contain only the vehicle make and model. VIN, license plate and owner information are never sent. | rN, rC |
 
-## **3. Branches and acceptance tests**
+## 3. Branches and acceptance tests
 
 |Branch|Given|When|Then|
 |-|-|-|-|
@@ -132,16 +132,16 @@ C: Chợ Tốt - Carousell Group
 |d1 \[only one]|Nextgen Việt Nam stored its listings; Chợ Tốt ended with an ERROR log|Both branches reach the join|The system flags partial sync status; the weekly run goes on with the Nextgen Việt Nam listings|
 |d1 \[both]|Both marketplaces stored their listings|Both branches reach the join|The activity ends; the valid source set has both marketplaces|
 
-## **4. Object states used**
+## 4. Object states used
 
 |Object|States in this diagram|Full state list (all diagrams)|
 |-|-|-|
 |No object node in this diagram (API\_FAILED is returned here and recorded in AD-UC-2.04)|||
 
-## **5. Screens touched**
+## 5. Screens touched
 N/A
 
-## **6. Open questions**
+## 6. Open questions
 
 |#|Question|Blocking?|Default applied|
 |-|-|-|-|
@@ -149,7 +149,7 @@ N/A
 |2|\[NEEDS CLARIFICATION: SEQ diagram 06 names the system "Market Price Service" and the partners "Nextgen VN" and "Cho Tot"; the Context Diagram uses "TASCO Mobility", "Nextgen Việt Nam", "Chợ Tốt - Carousell Group"]|No|Lanes use the Context Diagram names; SEQ labels to be aligned|
 |3|\[NEEDS CLARIFICATION: no BR IDs exist for the 3 retries / 6 hours rule]|No|Rule written in the text only|
 
-## **7. Verification log**
+## 7. Verification log
 
 |Check|Result|By|Date|
 |-|-|-|-|
@@ -162,6 +162,4 @@ N/A
 |Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes|PASS|Vũ Hương Ly|2026-11-04|
 |Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions|PASS except names (open question 2)|Vũ Hương Ly|2026-11-04|
 |AI critic prompt run, findings resolved or logged as open questions|Pending|||
-
-
 
