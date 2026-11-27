@@ -5,6 +5,7 @@
 | Version | v2 |
 | Actors | Car owner, Weekly timer, Nextgen VN, Chợ Tốt, VETC |
 
+## Diagram
 
 ```mermaid
 usecase-beta
@@ -55,8 +56,6 @@ usecase-beta
     UC10 ..> : include UC09
 
     UC06 ..> : extend UC10
-
-
 ```
 
 The full use case inventory, with features and login rules, is W0 Table 1 in
