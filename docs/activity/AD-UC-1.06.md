@@ -19,9 +19,8 @@
 
 ## 
 
-## **1\. Diagram**
-
-*Code:*  
+1. ## **Diagram**
+  
 ```mermaid
 
 swimlane-beta TB
@@ -64,7 +63,7 @@ swimlane-beta TB
 * SoH Calculation & Display: If valid, State of Health is computed using the charging time ratio and displayed on the UI.  
 * Error Management: If all retries fail, a persistent error is logged and a connection failure popup is shown, terminating at dedicated end node stop2.
 
-## **2\. Node trace**
+2. ## **Node trace**
 
 | Node | Kind | Text | Traces to |
 | :---- | :---- | :---- | :---- |
@@ -91,7 +90,7 @@ swimlane-beta TB
 | BR-SOH-04 | SoH Calculation Frequency & Update Rule: SoH is recalculated on an event-driven/periodic basis only when **at least one new valid charging session** is recorded since the last calculation (at most once per day upon session sync, or re-evaluated every 30 days). Otherwise, the system returns the latest cached SoH result. The "Cập nhật" (Updated) date reflects the date of the latest calculation (`dd/MM/yyyy`). | s3 |
 | BR-SOH-05 | SoH Success Notification Trigger Rule: The success popup ("Đã tính xong sức khỏe pin") is displayed **only when SoH is newly calculated** (either on the first successful calculation for the vehicle or when recalculated after new charging sessions). On subsequent routine views with no new calculation, the screen opens directly in the Default state without the popup. | a2 |
 
-## **3\. Branches and acceptance tests**
+3. ## **Branches and acceptance tests**
 
 | Branch | Given | When | Then |
 | :---- | :---- | :---- | :---- |
@@ -101,7 +100,7 @@ swimlane-beta TB
 
 ## 
 
-## **4\. Object states used**
+4. ## **Object states used** ##
 
 | Object | States in this diagram | Full state list (all diagrams) |
 | :---- | :---- | :---- |
@@ -110,7 +109,7 @@ swimlane-beta TB
 
 ## 
 
-## **5\. Screens touched**
+5. ## **Screens touched** ## 
 
 | Actor action | Screen ID |
 | :---- | :---- |
@@ -120,7 +119,7 @@ swimlane-beta TB
 
 ## 
 
-## **6\. Open questions**
+6. ## **Open questions** ## 
 
 | \# | Question | Blocking? | Default applied |
 | :---- | :---- | :---- | :---- |
@@ -128,7 +127,7 @@ swimlane-beta TB
 
 ## 
 
-## **7\. Verification log**
+7. ## **Verification log** ## 
 
 | Check | Result | By | Date |
 | :---- | :---- | :---- | :---- |
@@ -137,7 +136,7 @@ swimlane-beta TB
 | No action has two incoming flows (merge used instead) | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Every fork has a matching join | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Every system action cites an FR | Pass | Đinh Thu Thảo | 2026-10-26 |
-| Every FR of this use case appears in the diagram | 3 of 3 | Đinh Thu Thảo | 2026-10-26 |
+| Every FR of this use case appears in the diagram | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Lane names match the Context Diagram and the use case actors; no Web App, API or database lanes | Pass | Đinh Thu Thảo | 2026-10-26 |
 | Related sequence diagram uses the same names and FR IDs; its alt fragments appear here as decisions | Pass | Đinh Thu Thảo | 2026-10-26 |
 | AI critic prompt run, findings resolved or logged as open questions | Pass | Đinh Thu Thảo | 2026-10-26 |
