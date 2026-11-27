@@ -10,7 +10,7 @@
 | Feature | F-01 Vehicle Identification & Status |
 | Activity diagrams | AD-UC-1.05 |
 | Linked requirements | FR-01-04, FR-01-05, FR-01-06, FR-01-07 (FE, INT, BE), see section 7 |
-| Mockup images | `img/S-F01-05-default.png`, `img/img-numbered/S-F01-05-default-numbered.png`, state images of the main screen (PNG), the Upload invoice sheet, its popups and the camera steps (SVG) (section 2) |
+| Mockup images | `img/S-F01-05-default.png`, `img/img-numbered/S-F01-05-default-numbered.png`, state images of the main screen, the Upload invoice sheet, its popups and the camera steps (section 2) |
 | Frame width | 360 px |
 | Figma frame | [Vehicle Identification & Status \- S-F01-05 ](https://www.figma.com/design/ahzD4prkBFDCttQimszLWw/Vehicle-Identification---Status?node-id=0-1&p=f&t=jIrF9erJRZuQXgpQ-0) |
 | Status | Reviewed |
