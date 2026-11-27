@@ -56,7 +56,7 @@ swimlane-beta TB
     s7("Reject invoice and show error message (FR-01-07-BE)")
   end
   subgraph PORTAL["Electronic Invoice Portal"]
-    e1("Verify invoice and return authenticity result (FR-01-07-INT)")
+    e1("Verify via API at Electronic Invoice Portal: check seller tax code exists, invoice details match, and status is not cancelled/replaced (FR-01-07-INT)")
   end
 
   start --> a1 --> m1 --> a2 --> d1
