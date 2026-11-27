@@ -7,7 +7,7 @@
 | Date | 2026-11-18 |
 | Sources | W0 Table 1 (use case inventory); Use Case Diagram; Activity Diagram Index |
 
-## 1. Carpla Staff: Process sale request and send quote
+## Carpla Staff: Process sale request and send quote
 
 ``` mermaid 
 flowchart LR
