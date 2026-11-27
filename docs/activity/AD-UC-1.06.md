@@ -15,7 +15,7 @@
 | Failure end state(s) | `stop2`: charging station data retrieval fails and the maximum of 3 retries is exceeded, triggering an error notification |
 | FRs covered | FR-01-08-FE, FR-01-08-BE, FR-01-08-INT |
 | Business rules applied | BR-RET-02 (Telemetry Data Retry & Fallback Rule) · BR-SOH-01 (SoH Grade Classification Rule) · BR-SOH-02 (Minimum Charging Sessions Rule) · BR-SOH-03 (SoH Rounding Rule) · BR-SOH-04 (SoH Calculation Frequency & Update Rule) · BR-SOH-05 (SoH Success Notification Trigger Rule) |
-| Version / status | v0.5 · Reviewed |
+| Version / status | v0.4 · Reviewed |
 | Author | Đinh Thu Thảo |
 
 ## 
