@@ -146,16 +146,22 @@ swimlane-beta TB
 | Invoice File | Uploaded -> Stored -> Parsed -> Verified / Rejected | Uploaded, Stored, Parsed, Verified, Archived, Rejected |
 | Maintenance Timeline | Consolidated -> Pending Update -> Updated | Initial, Pending Update, Updated, Synced |
 
-5. ## **Screens touched** ## 
+5. ## **Screens touched**
 
 | Actor action | Screen ID |
 | :---- | :---- |
 | Open maintenance history and select upload invoice (a1) | S-F01-02 -> S-F01-05 (Upload invoice modal) |
 | Upload invoice file PDF, XML, or image (a2) | S-F01-05 (Upload invoice modal) |
+| Reject invalid file and show error (s1) | S-F01-05 (Upload invoice modal, error state) |
+| Display extracted data on edit/confirmation screen, highlight low-confidence fields (s4) | S-F01-05 (Invoice review & confirmation view) |
 | Review and edit extracted invoice info if needed, then confirm (a_edit) | S-F01-05 (Invoice review & confirmation view) |
-| Choose to enter manually or choose another file (d_choice) | S-F01-05 (Invoice review & confirmation view) / S-F01-05 (Upload invoice modal) |
-| Fill in missing fields or enter all invoice info manually, then confirm (a_manual) | S-F01-05 (Invoice review & confirmation view) |
+| Notify OCR failure or missing fields and open manual entry screen, keep any extracted values (s_ocr) | S-F01-05 (Invoice review – OCR incomplete / manual entry state) |
+| Choose to enter manually or choose another file (d_choice) | S-F01-05 (Invoice review – OCR incomplete / manual entry state) -> S-F01-05 (Upload invoice modal) if "choose another file" |
+| Fill in missing fields or enter all invoice info manually, then confirm (a_manual) | S-F01-05 (Invoice review – OCR incomplete / manual entry state) |
+| Reject invoice and show error message (s7) | S-F01-05 (Invoice error state) |
 | See updated maintenance timeline or error message (a3) | S-F01-05 / S-F01-02 |
+
+**Screen state note:** The OCR incomplete / manual entry state is shared by every case where extraction is incomplete (1 to 4 fields missing or invalid, or an unreadable file). Extracted values are pre-filled and missing fields are flagged; the confirm button stays disabled until all 4 fields are provided. The number of pre-filled fields varies with the extraction result, so no separate screen is needed per case.
 ## 
 
 6. ## **Open questions** ## 
