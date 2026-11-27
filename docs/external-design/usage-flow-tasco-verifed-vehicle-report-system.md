@@ -25,7 +25,6 @@ flowchart LR
   U6 --> Z(["Vehicle identification & condition are viewed"])
 ```
 
-
 | Step | Use case | Activity diagram | Screens (fill in after Block 2\) |
 | :---: | ----- | ----- | :---: |
 | 1 | UC-1.01: Enter VIN to initialize Report | AD-UC-1.01.md | S-F00-01, S-F01-01  |
@@ -69,7 +68,6 @@ Choice -->|"Stop tracking"| U211["UC-2.11: Stop Market Price Tracking"]
 U211 --> Z2(["Tracking stopped"])
 ```
 
-
 | Step | Use case | Activity diagram | Screens (fill in after Block 2\) |
 | ----- | ----- | ----- | ----- |
 | 1 | UC-2.01: View Market Price | not needed | S-F01-02, S-F02-01  |
@@ -86,12 +84,10 @@ flowchart LR
   U4 --> Z(["Preliminary quote received"])
 ```
 
-
 | Step | Use case | Activity diagram | Screens (fill in after Block 2\) |
 | ----- | ----- | ----- | ----- |
 | 1 | UC-3.01: Submit Sale Request | AD-UC-3.01.md | S-F03-01  |
 | 2 | UC-3.09: View Preliminary Quote | not needed | S-F03-04  |
-
 
 
 ## Use cases without a flow
