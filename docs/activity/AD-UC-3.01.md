@@ -19,23 +19,32 @@
 
 1. ## **Code**
 ```mermaid
-swimlane-beta TB
 subgraph CO["Car Owner"]
 start@{ shape: sm-circ }
-a1("Submit sale request with entering mileage, desired price and phone number (FR-03-01-FE)")
+m1{" "}
+a0("Enter current mileage, desired price and phone number (FR-03-01-FE)")
+a1("Select Submit sale request (FR-03-01-FE)")
+d3{"Retry or Close in the error popup? (FR-03-01-FE)"}
 end
 subgraph TMS["Tasco Mobility System"]
+d0{"Do the three inputs pass validation? (FR-03-01-FE)"}
+s0("Show inline error under each invalid field and keep Submit inactive (FR-03-01-FE)")
+m2{" "}
 s1("Receive sale request for the verified report (FR-03-01-BE)")
 d1{"Has the report been created for this VIN? (FR-03-01-BE)"}
 s2("Create sale request (FR-03-01-BE)")
-s3("Notify car owner that the sale request is being processed (FR-03-01-FE)")
-s4("Reject request and return error (FR-03-01-BE)")
+s3("Show loading state: re-check banner, legal badges as dash, Submit shows sending label (FR-03-01-FE)")
+s4("Reject request and show error popup with Retry and Close (FR-03-01-BE, FR-03-01-FE)")
 stop1@{ shape: fr-circ }
 stop2@{ shape: fr-circ }
 end
-start --> a1 --> s1 --> d1
+start --> m1 --> a0 --> d0
+d0 -->|"Not pass"| s0 --> m1
+d0 -->|"Pass"| a1 --> m2 --> s1 --> d1
 d1 -->|"Yes"| s2 --> s3 --> stop1
-d1 -->|"No"| s4 --> stop2
+d1 -->|"No"| s4 --> d3
+d3 -->|"Retry"| m2
+d3 -->|"Close"| stop2
 
 ```
 
