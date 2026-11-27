@@ -17,7 +17,7 @@
 |Version / status|v0.3 · Review|
 |Author|Vũ Hương Ly|
 
-## **1. Diagram**
+## 1. Diagram
 
 ```mermaid
 swimlane-beta TB
@@ -64,12 +64,12 @@ swimlane-beta TB
 
 Reading notes:
 
-* UC-2.04 only reads the result of UC-2.05. Calling the marketplace APIs and retrying (3 retries, 6 hours apart) happen in UC-2.05 (see AD-UC-2.05). UC-2.04 is where API\_FAILED is recorded and alerted.
-* The weekly run stops as a whole only when every marketplace failed (API\_FAILED, end `stop1`). INSUFFICIENT\_DATA or a failed calculation affects one car only; the loop goes on with the next car (end `stop2` when no car is left).
-* UC-2.05, 2.07, 2.03, 2.08 and 2.09 are one action each. Level 0/1/2 widening and outlier removal are inside UC-2.08. The VETC call for mileage is inside UC-2.03.
-* Order inside the loop follows SEQ S-6.11 to S-6.27: clean listings, check mileage, select comparable, calculate, save.
+- UC-2.04 only reads the result of UC-2.05. Calling the marketplace APIs and retrying (3 retries, 6 hours apart) happen in UC-2.05 (see AD-UC-2.05). UC-2.04 is where API\_FAILED is recorded and alerted.
+- The weekly run stops as a whole only when every marketplace failed (API\_FAILED, end `stop1`). INSUFFICIENT\_DATA or a failed calculation affects one car only; the loop goes on with the next car (end `stop2` when no car is left).
+- UC-2.05, 2.07, 2.03, 2.08 and 2.09 are one action each. Level 0/1/2 widening and outlier removal are inside UC-2.08. The VETC call for mileage is inside UC-2.03.
+- Order inside the loop follows SEQ S-6.11 to S-6.27: clean listings, check mileage, select comparable, calculate, save.
 
-## **2. Node trace**
+## 2. Node trace
 
 |Node|Kind|Text|Traces to|
 |-|-|-|-|
@@ -99,7 +99,7 @@ Reading notes:
 | BR-MIL-01 | A car's price is calculated only if its minimum verified mileage divided by max(car age in years, 1) reaches the configurable threshold of 2,000 km/year. Otherwise the car gets INSUFFICIENT_DATA. | d3, s4 |
 | BR-COM-01 | A market price is calculated only if at least 30 comparable listings remain after outlier removal and widening up to Level 2. Otherwise the car gets INSUFFICIENT_DATA. | d4, s5 |
 
-## **3. Branches and acceptance tests**
+## 3. Branches and acceptance tests
 
 |Branch|Given|When|Then|
 |-|-|-|-|
@@ -114,16 +114,16 @@ Reading notes:
 |d5 \[yes]|Calculation for the car finishes without error|The system checks the calculation result|The weekly price record (median and P25-P75 rounded to the nearest million VND, confidence level) is saved; loop goes on|
 |d5 \[no]|Calculation fails for one car; its previous weekly price is 650 million VND|The system checks the calculation result|The previous price (650 million VND) is kept, the failure is logged, and the loop goes on with the remaining cars|
 
-## **4. Object states used**
+## 4. Object states used
 
 |Object|States in this diagram|Full state list (all diagrams)|
 |-|-|-|
 |Weekly price record|API\_FAILED, INSUFFICIENT\_DATA|API\_FAILED, INSUFFICIENT\_DATA, \[success state: name to be fixed in the data model]|
 
-## **5. Screens touched**
+## 5. Screens touched
 N/A
 
-## **6. Open questions**
+## 6. Open questions
 
 |#|Question|Blocking?|Default applied|
 |-|-|-|-|
@@ -133,7 +133,7 @@ N/A
 |4|\[NEEDS CLARIFICATION: SEQ diagram 06 names the system "Market Price Service"; the Context Diagram names it "TASCO Mobility"]|No|Lane uses "TASCO Mobility"; SEQ labels to be aligned|
 |5|\[NEEDS CLARIFICATION: no BR IDs exist for the 2,000 km/year threshold and the 30-listing minimum]|No|Rules written in the text only|
 
-## **7. Verification log**
+## 7. Verification log
 
 |Check|Result|By|Date|
 |-|-|-|-|
