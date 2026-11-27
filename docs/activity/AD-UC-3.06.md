@@ -24,7 +24,7 @@ swimlane-beta TB
 subgraph CO["Car Owner"]
 start@{ shape: sm-circ }
 e1("Submit sale request (AD-UC-3.01)")
-e2("Receive and view car price (FR-03-06)")
+e2("Receive and display car price (FR-03-06)")
 stop1@{ shape: fr-circ }
 stop2@{ shape: fr-circ }
 end
@@ -71,7 +71,7 @@ d2 -->|"Forward failed and 3 retries made"| s5 --> s6 --> stop2
 | s6 | Action | Notify car owner that the sale request could not be forwarded | FR-03-06-FE |
 | c1 | Action (Carpla CRM) | Receive packaged verified inspection & status, market price and car owner declared information | FR-03-04 |
 | c2 | Action (Carpla CRM) | Review, decide price and send to car owner | FR-03-04, FR-03-05 |
-| e2 | Action (Car Owner) | Receive and view car price | FR-03-06 |
+| e2 | Action (Car Owner) | Receive and display car price | FR-03-06 |
 
 3. ## **Branches and Acceptance tests**
 
