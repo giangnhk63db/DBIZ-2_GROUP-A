@@ -21,8 +21,6 @@
 
 1. ## **Diagram** 
 
-*Code:*  
-
 ```mermaid
 
 swimlane-beta TB
