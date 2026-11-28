@@ -7,7 +7,7 @@
 | Feature | `F-01 Vehicle Passport` |
 | Primary actor | Car Owner |
 | Lanes | Car Owner · TASCO Mobility System · Vehicle Inspection Portal · Traffic Fine Lookup Portal · Secured Transaction Registry Portal |
-| Inputs (L3-L5) | [Context Diagram](../context/context-diagram.md) · [Use Case Diagram 1](UC-1.md) · Sequence: [S-04](../sequence/S-04.md) · [W1 Function List](../function-list/w1-function-list.md) (`FR-01-09-FE`, `FR-01-10-INT`, `FR-01-11-INT`, `FR-01-12-INT`, `FR-01-13-BE`, `FR-01-13-FE`) |
+| Inputs (L3-L5) | Context Diagram v1 · Use Case Diagram v1 · Sequence: `S-04` · W1 rows (`FR-01-09-FE`, `FR-01-10-INT`, `FR-01-11-INT`, `FR-01-12-INT`, `FR-01-13-BE`, `FR-01-13-FE`) |
 | Trigger | Car Owner taps `"Làm mới"` in the `"Tình trạng pháp lý"` section on `S-F01-02` to update the vehicle's consolidated legal status |
 | Preconditions | Car Owner is signed in and viewing an existing vehicle profile on `S-F01-02` |
 | Success end state | Legal status data (inspection validity, unpaid traffic fines, and mortgage status) is refreshed in parallel from all three external portals, aggregated into `Verified Vehicle Report`, and displayed on `S-F01-02` |
