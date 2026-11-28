@@ -33,7 +33,7 @@
 
 | Error validate BE, numbered | Error API, numbered | Success, numbered |
 | :---: | :---: | :---: |
-| ![S-F01-01-error-validate-BE-numbered](img/img-numbered/S-F01-01-error-validate-BE-numbered.png) | ![S-F01-01-error-API-numbered](img/img-numbered/S-F01-01-error-API-numbered.png) | ![S-F01-01-success-numbered](img/img-numbered/S-F01-01-success-numbered.png) |
+| ![S-F01-01-error-validate-BE-numbered](img/img-numbered/S-F01-01-error-validate-BE-numbered.png) | ![S-F01-01-error-API-numbered](img/img-numbered/S-F01-01-error-api-numbered.png) | ![S-F01-01-success-numbered](img/img-numbered/S-F01-01-success-numbered.png) |
 
 | State | Image | Numbered image |
 | :--- | :--- | :--- |
