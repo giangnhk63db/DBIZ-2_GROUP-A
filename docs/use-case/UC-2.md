@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Version | v3 |
+| Version | v4 |
 | Actors | Car owner, Weekly timer, Nextgen VN, Chợ Tốt, VETC |
 
 ## Diagram
@@ -18,7 +18,6 @@ usecase-beta
     actor VETC("VETC")
 
     systemBoundary MarketPrice["Verified Vehicle Report - Market Price"]
-        UC11("UC-2.11: Stop Market Price Tracking")
         UC01("UC-2.01: View Market Price")
         UC02("UC-2.02: View 12-Week Price Trend Chart")
         UC04("UC-2.04: Calculate Weekly Market Price")
@@ -31,7 +30,6 @@ usecase-beta
         UC09("UC-2.09: Calculate Market Price and Confidence")
     end
 
-    Owner -- UC11
     Owner -- UC01
     Owner -- UC10
     Timer -- UC04
