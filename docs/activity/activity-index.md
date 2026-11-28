@@ -35,7 +35,6 @@ Rule used in this course: draw an activity diagram for every Must use case that 
 | UC-2.08 | Select Comparable Vehicles | F-02 | Must  | AD-UC-2.08 | Review |  |
 | UC-2.09 | Calculate Market Price and Confidence | F-02 | Must | AD-UC-2.09 | Review |  |
 | UC-2.10 | Backfill 12-Week Price History | F-02 | Must | AD-UC-2.10 | Review |  |
-| UC- 2.11 | Stop Market Price Tracking | F-02 | Should  |  | Review | A straightforward flow, no branching conditions. |
 | UC-3.01 | Submit Sale Request | F-03 | Must | AD-UC-3.01 | Review |  |
 | UC-3.02 | Re-check Legal Status | F-03 | Should |  | Review | Only invokes the re-check of each legal-status type; the real logic is covered by the activity diagrams of each legal status below. |
 | UC-3.03 | Check Inspection Status | F-03 | Must | AD-UC-3.03 | Review |  |
