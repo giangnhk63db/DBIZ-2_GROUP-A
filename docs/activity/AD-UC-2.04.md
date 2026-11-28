@@ -35,7 +35,7 @@ swimlane-beta TB
     s4("Check verified mileage plausibility, UC-2.03 (FR-02-01-BE)")
     d3{"Mileage plausible?"}
     s5("Select comparable vehicles, UC-2.08 (FR-02-05-BE)")
-    d4{"At least 30 comparable listings? (go to system database to validate whether there are at least 30 comparable listings)"}
+    d4{"At least 30 comparable listings? (go to verified vehicle report system database to validate whether there are at least 30 comparable listings)"}
     m2{" "}
     s6("Record INSUFFICIENT_DATA status (FR-02-01-BE, FR-02-06-BE)")
     o2["Weekly price record [INSUFFICIENT_DATA]"]
@@ -97,7 +97,7 @@ Reading notes:
 | Rule ID | Description | Applied Node |
 |---|---|---|
 | BR-MIL-01 | A car's price is calculated only if its minimum verified mileage divided by max(car age in years, 1) reaches the configurable threshold of 2,000 km/year. Otherwise the car gets INSUFFICIENT_DATA. | d3, s4 |
-| BR-COM-01 | A market price is calculated only if at least 30 comparable listings remaining in system database after outlier removal and widening up to Level 2. Otherwise the car gets INSUFFICIENT_DATA. | d4, s5 |
+| BR-COM-01 | A market price is calculated only if at least 30 comparable listings remaining in verified vehicle report system database after outlier removal and widening up to Level 2. Otherwise the car gets INSUFFICIENT_DATA. | d4, s5 |
 
 ## 3. Branches and acceptance tests
 
