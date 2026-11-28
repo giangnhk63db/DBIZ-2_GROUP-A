@@ -4,7 +4,7 @@
 |---|---|
 | AD ID | `AD-UC-1.01` |
 | Use case | `UC-1.01 Enter VIN to initialize Report` |
-| Feature | `F-01 Vehicle Passport` |
+| Feature | `F-01 Vehicle Identification & Status` |
 | Primary actor | Car Owner |
 | Lanes | Car Owner · TASCO Mobility System |
 | Inputs (L3-L5) | [Context Diagram](../context/context-diagram.md) · [Use Case Diagram](../use-case/use-case-diagram.md) · Sequence: [S-01](../sequence/S-01.md) · [W1 Function List](../function-list/w1-function-list.md) (`FR-01-01-FE`, `FR-01-01-BE`) |
