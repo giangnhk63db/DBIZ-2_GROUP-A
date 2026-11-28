@@ -4,7 +4,7 @@
 |---|---|
 | AD ID | `AD-UC-1.07` |
 | Use case | `UC-1.07 Refresh Legal Status` (includes `UC-1.08`, `UC-1.09`, `UC-1.10`) |
-| Feature | `F-01 Vehicle Passport` |
+| Feature | `F-01 Vehicle Identification & Status` |
 | Primary actor | Car Owner |
 | Lanes | Car Owner · TASCO Mobility System · Vehicle Inspection Portal · Traffic Fine Lookup Portal · Secured Transaction Registry Portal |
 | Inputs (L3-L5) | Context Diagram v1 · Use Case Diagram v1 · Sequence: `S-04` · W1 rows (`FR-01-09-FE`, `FR-01-10-INT`, `FR-01-11-INT`, `FR-01-12-INT`, `FR-01-13-BE`, `FR-01-13-FE`) |
