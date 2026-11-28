@@ -97,7 +97,7 @@ Reading notes:
 | Rule ID | Description | Applied Node |
 |---|---|---|
 | BR-MIL-01 | A car's price is calculated only if its minimum verified mileage divided by max(car age in years, 1) reaches the configurable threshold of 2,000 km/year. Otherwise the car gets INSUFFICIENT_DATA. | d3, s4 |
-| BR-COM-01 | A market price is calculated only if at least 30 comparable listings remain in system database after outlier removal and widening up to Level 2. Otherwise the car gets INSUFFICIENT_DATA. | d4, s5 |
+| BR-COM-01 | A market price is calculated only if at least 30 comparable listings remaining in system database after outlier removal and widening up to Level 2. Otherwise the car gets INSUFFICIENT_DATA. | d4, s5 |
 
 ## 3. Branches and acceptance tests
 
