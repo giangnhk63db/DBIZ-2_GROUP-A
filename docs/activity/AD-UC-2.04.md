@@ -35,7 +35,7 @@ swimlane-beta TB
     s4("Check verified mileage plausibility, UC-2.03 (FR-02-01-BE)")
     d3{"Mileage plausible?"}
     s5("Select comparable vehicles, UC-2.08 (FR-02-05-BE)")
-    d4{"At least 30 comparable listings?"}
+    d4{"At least 30 comparable listings? (go to system database to validate whether there are at least 30 comparable listings)"}
     m2{" "}
     s6("Record INSUFFICIENT_DATA status (FR-02-01-BE, FR-02-06-BE)")
     o2["Weekly price record [INSUFFICIENT_DATA]"]
