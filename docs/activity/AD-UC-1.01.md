@@ -7,7 +7,7 @@
 | Feature | `F-01 Vehicle Identification & Status` |
 | Primary actor | Car Owner |
 | Lanes | Car Owner · TASCO Mobility System |
-| Inputs (L3-L5) | [Context Diagram](../context/context-diagram.md) · [Use Case Diagram](../use-case/use-case-diagram.md) · Sequence: [S-01](../sequence/S-01.md) · [W1 Function List](../function-list/w1-function-list.md) (`FR-01-01-FE`, `FR-01-01-BE`) |
+|Inputs (L3-L5) | Context Diagram · Use Case Diagram  · Sequence: `S-01` (Figure 1) · W1 rows (`FR-01-01-FE`, `FR-01-01-BE`) |
 | Trigger | Car Owner selects `"Tạo báo cáo xe"` and enters a 17-character VIN |
 | Preconditions | User is on the system home screen and is authenticated |
 | Success end state | 17-character VIN is successfully validated, backend existence is confirmed, a new `Verified vehicle report` is initialized, and confirmation popup `"Đã tạo báo cáo xe"` is displayed before proceeding to `S-F01-02` |
